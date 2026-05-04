@@ -1,0 +1,2766 @@
+{
+  "fuente": "https://portales.utpl.edu.ec/servicios-academicos",
+  "total_tipos": 5,
+  "total_servicios": 113,
+  "tipos_de_estudiante": [
+    {
+      "tipo": "ALUMNI",
+      "total_categorias": 4,
+      "total_servicios": 13,
+      "categorias": [
+        {
+          "nombre": "SERVICIOS-CARRERAS",
+          "servicios": [
+            {
+              "nombre": "Cambio de grupo de créditos materias cursadas y aprobadas",
+              "descripcion": "Dirigido a estudiantes que solicitan que un componente académico aprobado de un área de cumplimiento pase a otra área. Este servicio no requiere la presentación de requisitos y no aplica costo de aranceles.",
+              "modalidad_nivel": "Distancia/Presencial – Grado - Todas las carreras o programas académicos.",
+              "nota": "Este servicio no requiere la presentación de requisitos y no aplica costo de aranceles."
+            }
+          ]
+        },
+        {
+          "nombre": "SERVICIOS-CERTIFICACIONES",
+          "servicios": [
+            {
+              "nombre": "Revisa nuestro catálogo de certificados",
+              "manual": [
+                {
+                  "texto": "Catálogo de Certificados 2024",
+                  "url": "https://portales.utpl.edu.ec/sites/default/files/pdf/Manual de Certificados_2024_digital-1_1.pdf"
+                }
+              ]
+            },
+            {
+              "nombre": "Certificados de graduación",
+              "descripcion": "Dirigido a estudiantes egresados y graduados que requieren certificados por motivos como: notas de grado, copia de título, copia acta de grado, acta de refrendación, tema de tesis, desarrollo de tesis, disertación de tesis, incorporación, promedio general de grado, entre otros.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "2 días",
+              "nota": "Registrar el año de graduación. Si la solicitud de servicio es para copia de título, se debe adjuntar la copia correspondiente del documento."
+            },
+            {
+              "nombre": "Certificados académicos",
+              "descripcion": "Dirigido a estudiantes y egresados que requieren certificados de: duración de la carrera, esquema de evaluación,impedimentos de tercera matrícula, tipos de beca (económica y méritos), avance de carrera, culminación de malla, entre otros.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "12 días",
+              "costo": "10% del valor de los aranceles de matrícula",
+              "nota": "Este servicio no requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Certificados de normativa",
+              "descripcion": "Dirigido a estudiantes, egresados y titulados que requieren certificados de la normativa institucional como: estatuto UTPL, cambio de malla, normativa de carreras, entre otras.",
+              "tiempo_respuesta": "10 días",
+              "costo": "10% del valor de los aranceles de matrícula",
+              "nota": "Este servicio no requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Certificados de notas",
+              "descripcion": "Dirigido a estudiantes, egresados y titulados que requieren certificados de notas por componentes educativos por período, componentes aprobados con carga horaria, componentes niveles de inglés, promedio de notas de componentes, entre otros.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "10 días",
+              "costo": "10% del valor de los aranceles de matrícula",
+              "nota": "Este servicio no requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Certificados de crédito educativo",
+              "descripcion": "Dirigido a estudiantes que requieren certificados de crédito educativo, crédito educativo por costo ciclo, crédito educativo costo total, posgrados, o por materias reprobadas.",
+              "modalidad_nivel": ": Distancia/Presencial - Grado/Posgrado - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "10 días",
+              "nota": "Este servicio no requiere la presentación de requisitos y no aplica costo de aranceles."
+            },
+            {
+              "nombre": "Certificados de matrícula",
+              "descripcion": "Dirigido a estudiantes que requieren certificados de matrícula como: Matrícula más asistencia a clases (presencial), Matrícula Internado rotativo, Matrícula más componentes, Matrícula por período académico, No matrícula, entre otros.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "10 días",
+              "costo": "10% del valor de los aranceles de matrícula",
+              "nota": "Este servicio no requiere la presentación de requisitos."
+            }
+          ]
+        },
+        {
+          "nombre": "SERVICIOS-MATRÍCULA",
+          "servicios": [
+            {
+              "nombre": "Solicitar devolución de documentos",
+              "descripcion": "Dirigido a estudiantes que solicitan la devolución de sus documentos originales físicos: título de bachiller, acta de grado de bachiller o documentos de reconocimiento de estudio.",
+              "imagen": "https://portales.utpl.edu.ec/sites/default/files/inline-images/SOLICITAR%20DEVOLUCI%C3%93N%20DE%20DOCUMENTOS.png",
+              "modalidad_nivel": "presencial/distancia, grado/posgrado/tecnologías, todas la carreras o programas académicos.",
+              "tiempo_respuesta": "5 días laborales",
+              "costo": "10% del valor de matrícula",
+              "nota": "Este servicio no requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Solicitar retiro por caso fortuito o fuerza mayor",
+              "descripcion": "Dirigido a estudiantes que desean retirarse de uno o varios componentes por situaciones fortuitas o de fuerza mayor debidamente documentadas que impidan la culminación del período académico. Entre los motivos considerados como casos fortuitos se encuentran: cambio de centro de rehabilitación, privado de la libertad, fallecimiento de cónyuge, accidentes, embarazos riesgosos, enfermedad, entre otros. Aplica desde el inicio de actividades académica hasta un día antes del evento de recuperación.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado/Competencias Específicas",
+              "tiempo_respuesta": "10 días laborales",
+              "requisitos": [
+                "Formato de retiro por Caso Fortuito o Fuerza Mayor:",
+                "Factura de matrícula período vigente",
+                "Carta dirigida a Dirección Financiera argumentando el retiro e indicando los datos de la cuenta bancaria a la que requiere el reembolso. Si el reembolso se debe realizar a la cuenta de una tercera persona adjuntar copia de cédula del estudiante y del titular de la cuenta y copia de cartola o certificado de cuenta activa.",
+                "Justificativo que permita evidenciar el motivo que le impide continuar con los estudios. Los justificativos médicos y psicológicos deben ser avalados por el MSP o IESS"
+              ],
+              "requisitos_pestanas": [
+                {
+                  "pestaña": "GRADO / POSGRADO",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Formato de Retiro Caso Fortuito 202630.pdf"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "pestaña": "TECNOLOGÍAS",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Formato de Retiro Caso Fortuito 202630.pdf"
+                        },
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Retiro fortuito TEC-Trimestral 202625.pdf"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "periodos": [
+                {
+                  "nombre": "Periodo abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "Modalidad presencial",
+                      "solicitud": "desde el 22 de junio al 31 de julio de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad a distancia y en línea",
+                      "solicitud": "desde el 6 de abril al 28 de agosto de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad en línea",
+                      "solicitud": "desde el 6 de abril al 28 de agosto de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad en línea, híbrida y presencial",
+                      "solicitud": "desde el 6 de abril al 31 de julio de 2026."
+                    },
+                    {
+                      "modalidad": "Especialización en Medicina Familiar y Comunitaria",
+                      "solicitud": "desde el 13 de abril al 25 de septiembre de 2026."
+                    },
+                    {
+                      "modalidad": "Especializaciones: Imagenología y Anestesiología, Reanimación y Terapia del Dolor",
+                      "solicitud": "desde el 6 de abril al 25 de septiembre de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas establecidas en el calendario académico. No aplica costo de aranceles."
+            },
+            {
+              "nombre": "Solicitar retiro voluntario",
+              "descripcion": "Dirigido a estudiantes que cursan una carrera y requieran retirarse voluntariamente de una o varias asignaturas cursos o sus equivalentes en un período ordinario, contado a partir de la fecha de inicio de las actividades académicas. En caso de posgrado el retiro voluntario podrá realizarse siempre y cuando no se haya cumplido más del 30% de las horas del componente de aprendizaje en contacto con el docente, curso o su equivalente.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado/Competencias Específicas - Tecnología",
+              "tiempo_respuesta": "10 días laborales",
+              "requisitos": [
+                "Formato de retiro voluntario:",
+                "Factura de matrícula período vigente.",
+                "Si solicita retiro voluntario total con reembolso de valores debe adjuntar: Carta dirigida a Dirección Financiera argumentando el retiro e indicando los datos de la cuenta bancaria a la que requiere el reembolso. Si el reembolso se debe realizar a una tercera persona adjuntar copia de cédula del estudiante y del titular de la cuenta y copia de cartola o certificado de cuenta activa."
+              ],
+              "requisitos_pestanas": [
+                {
+                  "pestaña": "GRADO / POSGRADO",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Formato Retiro voluntario 202630.pdf"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "pestaña": "TECNOLOGIAS",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Formato Retiro voluntario 202630.pdf"
+                        },
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Retiro voluntario TEC-Trimestral 202625.pdf"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "periodos": [
+                {
+                  "nombre": "Periodo abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "Modalidad presencial",
+                      "solicitud": "desde el 23 de marzo al 21 de junio de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad a distancia y en línea",
+                      "solicitud": "desde el 6 de abril al 25 de junio de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad en línea",
+                      "solicitud": "desde el 6 de abril al 25 de junio de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad presencial, en línea, híbrida",
+                      "solicitud": "desde el 6 de abril al 23 de julio de 2026."
+                    },
+                    {
+                      "modalidad": "Especialización en Medicina Familiar y Comunitaria",
+                      "solicitud": "desde el 13 de abril al 25 de septiembre de 2026."
+                    },
+                    {
+                      "modalidad": "Especializaciones: Imagenología y Anestesiología, Reanimación y Terapia del Dolor",
+                      "solicitud": "desde el 6 de abril al 25 de septiembre de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas establecidas en el calendario académico. No aplica costo de aranceles."
+            },
+            {
+              "nombre": "Solicitar segunda carrera",
+              "descripcion": "Dirigido a estudiantes que requieren cursar en el mismo período académico 2 carreras ya sea en Modalidad Presencial o Modalidad a Distancia.",
+              "imagen": "https://portales.utpl.edu.ec/sites/default/files/inline-images/SOLICITAR%20SEGUNDA%20CARRERA.png",
+              "tiempo_respuesta": "17 días laborales",
+              "periodos": [
+                {
+                  "nombre": "Calendario para matrícula del periodo octubre 2026 – febrero 2027.",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "desde el 17 de abril al 2 de octubre de 2026."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "SERVICIOS-RECONOCIMIENTO DE ESTUDIOS",
+          "servicios": [
+            {
+              "nombre": "🟢 Homologación cert. internacional/otras IES/titulos en segunda lengua.",
+              "descripcion": "Dirigido a estudiantes de carreras nuevas o rediseñadas que cuenten con un certificado internacional, un certificado emitido por otra IES o un título académico obtenido en una lengua distinta a la materna, para acreditar el requisito de segunda lengua previo a su graduación. Se aceptarán certificados con una vigencia de hasta diez años, salvo aquellos que especifiquen un periodo de vigencia diferente. No aplica para estudiantes de la carrera de Pedagogía de los Idiomas Nacionales y extranjeros ya que no requieren cumplir con este requisito para graduación. Opciones: Certificados emitidos por IES nacionales o extranjeras reconocidas por el CES dde haber cursado una segunda lengua en el que se describa el tiempo de estudio y el nivel de suficiencia adquirido debidamente legalizado por la institución emisora. Carreras de Grado: B1 Carreras Técnicas o Tecnologías: A2",
+              "tiempo_respuesta": "6 días.",
+              "costo": "10% de la matricula.",
+              "manual": [
+                {
+                  "texto": "https://www.utpl.edu.ec/segunda-lengua#certificados",
+                  "url": "https://www.utpl.edu.ec/segunda-lengua#certificados"
+                }
+              ],
+              "importante": [
+                "Los documentos se deben adjuntar de forma digital, si el tamaño del archivo impide su carga directa, se recomienda subirlo a una plataforma en la nube (como Google Drive, OneDrive, entre otras) y compartir el enlace correspondiente.",
+                "Se aceptan certificados tengan una vigencia de hasta diez años, salvo aquellos que especifiquen su periodo de vigencia."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "CONTINUO",
+      "total_categorias": 8,
+      "total_servicios": 53,
+      "categorias": [
+        {
+          "nombre": "QUEJAS Y RECLAMOS",
+          "servicios": [
+            {
+              "nombre": "Solicitar notas faltantes",
+              "descripcion": "Dirigido a estudiantes que verifican que las notas no han sido publicadas dentro del tiempo establecido en el calendario académico, o las notas que se visualizan en el Sistema Académico difieren de las obtenidas por el estudiante.",
+              "tiempo_respuesta": "6 días",
+              "requisitos": [
+                "Para actividades en línea (chat, foro, taller, etc.): Detallar el/los componentes, la actividad que no tiene nota y el paralelo al que pertenece.",
+                "Para evaluaciones presenciales (examen de grado, validación, inglés): Detallar el/los componentes y el código de presentación del examen."
+              ],
+              "periodos": [
+                {
+                  "nombre": "PERIODO OCTUBRE 2025 - FEBRERO 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "Grado y tecnología: modalidad a distancia y en línea."
+                    },
+                    {
+                      "modalidad": "Primer bimestre",
+                      "solicitud": "desde el 11 al 18 de diciembre de 2025.",
+                      "respuesta": "desde el 19 al 26 de diciembre de 2025."
+                    },
+                    {
+                      "modalidad": "Segundo bimestre",
+                      "solicitud": "desde el 5 al 12 de febrero de 2026.",
+                      "respuesta": "desde el 13 al 20 de marzo de 2026."
+                    },
+                    {
+                      "modalidad": "Recuperación",
+                      "solicitud": "desde el 5 al 12 de marzo de 2026.",
+                      "respuesta": "desde el 13 al 20 de marzo de 2026."
+                    }
+                  ]
+                },
+                {
+                  "nombre": "PERIODO ABRIL AGOSTO 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "Grado y tecnología: modalidad a distancia y en línea."
+                    },
+                    {
+                      "modalidad": "Primer bimestre",
+                      "solicitud": "desde el 11 al 18 de junio de 2026.",
+                      "respuesta": "desde el 19 al 26 de junio de 2026."
+                    },
+                    {
+                      "modalidad": "Segundo bimestre",
+                      "solicitud": "desde el 7 al 27 de agosto de 2026.",
+                      "respuesta": "desde el 28 de agosto al 4 de septiembre 2026."
+                    },
+                    {
+                      "modalidad": "Recuperación",
+                      "solicitud": "desde el 10 al 17 de septiembre de 2026.",
+                      "respuesta": "desde el 18 al 25 de septiembre de 2026."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "Solicitar recalificación de evaluaciones",
+              "descripcion": "Dirigida a estudiantes que desean solicitar recalificación de las evaluaciones presenciales bimestrales, o de actividades académicas de el Entorno Virtual de Aprendizaje. Este trámite debe contener el sustento respectivo en donde se evidencia la razón por la que solicita el trámite (contenidos evaluados) También aplica para aquellos estudiantes que rinden el examen complexivo por escrito. No procede la recalificación para evaluaciones de validación de conocimientos.",
+              "tiempo_respuesta": "6",
+              "requisitos": [
+                "Para evaluación presencial bimestral: oficio dirigido al director de carrera/programa en donde se indique el nombre del componente, bimestre y las preguntas a recalificar con la debida sustentación. Adjuntar el cuadernillo de preguntas.",
+                "Para la recalificación del examen complexivo, debe enviar el cuadernillo de preguntas y sustentar el pedido de recalificación.",
+                "Para las actividades académicas de CANVAS: oficio dirigido al director de carrera/programa en donde se indique la actividad a recalificar, bimestre, en donde contenga la sustentación para solicitar el trámite."
+              ],
+              "periodos": [
+                {
+                  "nombre": "PERIODO OCTUBRE 2025 - FEBRERO 2026.",
+                  "modalidades": [
+                    {
+                      "modalidad": "Grado y tecnología: modalidad a distancia y en línea."
+                    },
+                    {
+                      "modalidad": "Primer bimestre",
+                      "solicitud": "desde el 11 al 17 de diciembre de 2025.",
+                      "respuesta": "desde el 11 al 18 de diciembre de 2025."
+                    },
+                    {
+                      "modalidad": "Segundo bimestre",
+                      "solicitud": "desde el 5 al 11 de febrero de 2026.",
+                      "respuesta": "desde el 5 al 12 de febrero de 2026."
+                    },
+                    {
+                      "modalidad": "Recuperación",
+                      "solicitud": "desde el 5 al 11 de marzo de 2026.",
+                      "respuesta": "desde el 5 al 12 de marzo de 2026."
+                    }
+                  ]
+                },
+                {
+                  "nombre": "PERIODO ABRIL - AGOSTO 2026.",
+                  "modalidades": [
+                    {
+                      "modalidad": "Grado y tecnología: modalidad a distancia y en línea."
+                    },
+                    {
+                      "modalidad": "Primer bimestre",
+                      "solicitud": "desde el 11 al 17 de junio de 2026.",
+                      "respuesta": "desde el 11 al 18 de junio de 2026."
+                    },
+                    {
+                      "modalidad": "Segundo bimestre",
+                      "solicitud": "6 y 7 de agosto de 2026.",
+                      "respuesta": "desde el 6 al 27 de agosto de 2026."
+                    },
+                    {
+                      "modalidad": "Recuperación",
+                      "solicitud": "desde el 10 al 16 de septiembre de 2026.",
+                      "respuesta": "desde el 10 al 17 de septiembre de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio no aplica costo de aranceles."
+            },
+            {
+              "nombre": "Entorno Virtual de Aprendizaje",
+              "descripcion": "Dirigido a estudiantes que tienen inconvenientes con el EVA, tales como: no visualiza habilitada la tarea; uno o más componentes no se visualizan; visualiza dos paralelos asignados del mismo componente; no visualiza anuncios, chats, foros o cuestionarios dentro de un determinado componente.",
+              "tiempo_respuesta": "3 días",
+              "nota": "Este servicio no requiere la presentación de requisitos y no aplica costo de aranceles."
+            }
+          ]
+        },
+        {
+          "nombre": "SERVICIOS-CARRERAS",
+          "servicios": [
+            {
+              "nombre": "Solicitar cambio de opción a titulación – UTE",
+              "descripcion": "Dirigido a estudiantes que requieran cambiarse de opción de carrera.",
+              "modalidad_nivel": "Distancia/Presencial – Grado/Posgrado/Tecnologías - todas las carreras o programas académicos.",
+              "periodos": [
+                {
+                  "nombre": "Periodo abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "Desde el 6 de marzo, hasta el 7 de mayo de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas de matrícula."
+            }
+          ]
+        },
+        {
+          "nombre": "SERVICIOS-CERTIFICACIONES",
+          "servicios": [
+            {
+              "nombre": "Revisa nuestro catálogo de certificados",
+              "manual": [
+                {
+                  "texto": "Catálogo de Certificados 2024",
+                  "url": "https://portales.utpl.edu.ec/sites/default/files/pdf/Manual de Certificados_2024_digital-1_1.pdf"
+                }
+              ]
+            },
+            {
+              "nombre": "Certificados de graduación",
+              "descripcion": "Dirigido a estudiantes egresados y graduados que requieren certificados por motivos como: notas de grado, copia de título, copia acta de grado, acta de refrendación, tema de tesis, desarrollo de tesis, disertación de tesis, incorporación, promedio general de grado, entre otros.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "2 días",
+              "nota": "Registrar el año de graduación. Si la solicitud de servicio es para copia de título, se debe adjuntar la copia correspondiente del documento."
+            },
+            {
+              "nombre": "Certificados académicos",
+              "descripcion": "Dirigido a estudiantes y egresados que requieren certificados de: duración de la carrera, esquema de evaluación,impedimentos de tercera matrícula, tipos de beca (económica y méritos), avance de carrera, culminación de malla, entre otros.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "12 días",
+              "costo": "10% del valor de los aranceles de matrícula",
+              "nota": "Este servicio no requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Certificados de normativa",
+              "descripcion": "Dirigido a estudiantes, egresados y titulados que requieren certificados de la normativa institucional como: estatuto UTPL, cambio de malla, normativa de carreras, entre otras.",
+              "tiempo_respuesta": "10 días",
+              "costo": "10% del valor de los aranceles de matrícula",
+              "nota": "Este servicio no requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Certificados de horarios o fechas",
+              "descripcion": "Dirigido a estudiantes y egresados que requieren certificados en donde conste el horario o fecha de ingreso de notas de internado rotativo; fechas de inicio y culminación de la carrera; y, fecha de evaluación presencial.",
+              "tiempo_respuesta": "10 días",
+              "costo": "10% del valor de los aranceles de matrícula",
+              "nota": "Este servicio no requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Certificados de asistencia",
+              "descripcion": "Dirigido a estudiantes que requieren certificados de asistencia a jornadas, seminarios y tutorías. (Aprobados como parte de la malla)",
+              "tiempo_respuesta": "3 días",
+              "nota": "Este servicio no requiere la presentación de requisitos y no aplica costo de aranceles."
+            },
+            {
+              "nombre": "Certificados de notas",
+              "descripcion": "Dirigido a estudiantes, egresados y titulados que requieren certificados de notas por componentes educativos por período, componentes aprobados con carga horaria, componentes niveles de inglés, promedio de notas de componentes, entre otros.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "10 días",
+              "costo": "10% del valor de los aranceles de matrícula",
+              "nota": "Este servicio no requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Certificados de crédito educativo",
+              "descripcion": "Dirigido a estudiantes que requieren certificados de crédito educativo, crédito educativo por costo ciclo, crédito educativo costo total, posgrados, o por materias reprobadas.",
+              "modalidad_nivel": ": Distancia/Presencial - Grado/Posgrado - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "10 días",
+              "nota": "Este servicio no requiere la presentación de requisitos y no aplica costo de aranceles."
+            },
+            {
+              "nombre": "Certificados de matrícula",
+              "descripcion": "Dirigido a estudiantes que requieren certificados de matrícula como: Matrícula más asistencia a clases (presencial), Matrícula Internado rotativo, Matrícula más componentes, Matrícula por período académico, No matrícula, entre otros.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "10 días",
+              "costo": "10% del valor de los aranceles de matrícula",
+              "nota": "Este servicio no requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Certificado para estudiantes con matrícula vigente",
+              "descripcion": "Dirigida a estudiantes con matrícula vigente, que requieren un certificado legalizado con una firma electrónica; Tipo de certificados que se emiten En caso de requerir el documento con la rúbrica del Secretario General, ingresar el servicio “Certificados de matrícula”, componente educativo por periodo y general de componentes según corresponda.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "3 días",
+              "nota": "Este servicio no requiere la presentación de requisitos y no aplica costo de aranceles."
+            }
+          ]
+        },
+        {
+          "nombre": "SERVICIOS-EVALUACIONES",
+          "servicios": [
+            {
+              "nombre": "Solicitar cuadernillos de preguntas no recibidos",
+              "descripcion": "Dirigido a estudiantes que hayan rendido una evaluación presencial en línea y que no recibieron sus cuadernillos.",
+              "tiempo_respuesta": "3 días",
+              "nota": "Este servicio no requiere la presentación de requisitos y no aplica costo de aranceles."
+            },
+            {
+              "nombre": "Solicitar nueva fecha de evaluaciones",
+              "descripcion": "Dirigido a estudiantes que por motivos de fuerza mayor o por eventos especiales no pueden presentarse a rendir evaluaciones en las fechas establecidas, y desean solicitar una nueva fecha de evaluación del primer parcial o evaluación final según el caso. Entre los casos considerados fortuitos, se encuentran: privados de libertad, fallecimientos del conyugue, accidentes, embarazos riesgosos entre otros. Entre los motivos considerados como eventos especiales se encuentran: jornadas laborales, cursos, seminarios, viajes al exterior etc.",
+              "modalidad_nivel": "Distancia/EN LINEA: Grado /Postgrado/ Tecnología – todas las carreras o programas.",
+              "tiempo_respuesta": "3 días laborables."
+            }
+          ]
+        },
+        {
+          "nombre": "SERVICIOS-FINANCIEROS",
+          "servicios": [
+            {
+              "nombre": "Solicitar facturación a empresas",
+              "descripcion": "Dirigido a estudiantes que solicitan que la factura sea emitida a empresas, quienes asumen los costos de matrícula.",
+              "tiempo_respuesta": "3 días laborales",
+              "requisitos": [
+                "Carta de la empresa solicitando se emita la factura a nombre de la misma, en virtud que financiará el estudio de la carrera en la UTPL.",
+                "Datos de la empresa: RUC Razón social, dirección, teléfono, correo electrónico.",
+                "Copia del depósito bancario."
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas de matrícula. No aplica costo de aranceles."
+            }
+          ]
+        },
+        {
+          "nombre": "SERVICIOS-GRADUACIÓN",
+          "servicios": [
+            {
+              "nombre": "Presentar propuesta de trabajo de titulación",
+              "descripcion": "Dirigido a estudiantes que solicitan la revisión de la propuesta del tema de trabajo de fin de titulación al director de carrera/programa.",
+              "tiempo_respuesta": "20 días",
+              "nota": "Este servicio no requiere la presentación de requisitos y no aplica costo de aranceles."
+            },
+            {
+              "nombre": "Enviar certificado de práctica preprofesionales-certificado de práctica forense",
+              "descripcion": "Dirigido a los postulantes y estudiantes de la carrera de Derecho en el cual debe cumplir con los siguientes requisitos para emisión y registro del título.",
+              "modalidad_nivel": "Distancia/Presencial- Grado-Derecho.",
+              "tiempo_respuesta": "3 días laborables."
+            },
+            {
+              "nombre": "Solicitar nueva emisión de especie de título",
+              "descripcion": "Dirigido a estudiantes graduados que solicitan la emisión de una nueva especie de título de la carrera o programa que cursaron, ya sea por pérdida u otros motivos personales del alumno. Requisitos:",
+              "modalidad_nivel": "Distancia/presencial-grado/posgrado/tecnología.",
+              "tiempo_respuesta": "22 días laborables.",
+              "costo": "$232 dólares."
+            },
+            {
+              "nombre": "Entrega de título sin asistencia a ceremonia de incorporación",
+              "descripcion": "Dirigido a estudiantes que se les imposibilite asistir al acto de incorporación.",
+              "modalidad_nivel": "Grado - Posgrado / Modalidad Abierta y a Distancia - Presencial"
+            }
+          ]
+        },
+        {
+          "nombre": "SERVICIOS-MATRÍCULA",
+          "servicios": [
+            {
+              "nombre": "Solicitar Reingreso",
+              "descripcion": "Dirigido a estudiantes que abandonaron sus estudios de 1 a 10 años. Y que deseen retomar sus estudios en la misma carrera. En caso que deseen retomar sus estudios en otra carrera se debe seleccionar el servicio ANÁLISIS CAMBIO DE PROGRAMA en la categoría RECONOCIMIENTO DE ESTUDIOS. También está dirigido para aquellos estudiantes que hayan abandonado sus estudios por más de 10 años. Podrán realizar su matrícula en la misma carrera. No debe registrar tercera reprobación.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/ todas las carreras o programas académicos",
+              "tiempo_respuesta": "5 días.",
+              "periodos": [
+                {
+                  "nombre": "Periodo abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "Modalidad: a distancia – en línea",
+                      "solicitud": "Desde el 19 de noviembre de 2025, hasta el 2 de abril de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad Presencial",
+                      "solicitud": "Desde el 6 de marzo, hasta el 1 de abril de 2026."
+                    }
+                  ]
+                }
+              ],
+              "manual": [
+                {
+                  "texto": "Solicitud reingreso / reinicio de estudios",
+                  "url": "https://www.youtube.com/watch?v=6SiiBYQCHtU"
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas de matrícula. No requiere la presentación de requisitos y no aplica costo de aranceles"
+            },
+            {
+              "nombre": "Solicitar aumento de créditos",
+              "descripcion": "Dirigido a estudiantes que solicitan a su carrera el aumento de créditos, superior a los permitidos. El estudiante debe justificar el motivo de su pedido.",
+              "imagen": "https://portales.utpl.edu.ec/sites/default/files/inline-images/SOLICITAR%20AUMENTO%20DE%20CR%C3%89DITOS.png",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado - Todas las carreras o programas académicos",
+              "periodos": [
+                {
+                  "nombre": "Periodo abril – junio 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "Modalidad a distancia",
+                      "solicitud": "Desde el 30 de enero, hasta el 27 de marzo de 2026."
+                    }
+                  ]
+                },
+                {
+                  "nombre": "Periodo abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "Modalidad a distancia",
+                      "solicitud": "Desde el 3 de marzo, hasta el 6 de abril de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas de matrícula. No requiere la presentación de requisitos y no aplica costo de aranceles."
+            },
+            {
+              "nombre": "Solicitar materia que no consta en la proyección",
+              "descripcion": "Dirigido a estudiantes que cursan materias de varios niveles y que, al momento de matricularse, no se les muestra las materias que desean tomar",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado/Competencias Específicas - Tecnología - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "5 días laborales",
+              "periodos": [
+                {
+                  "nombre": "Periodo abril – junio 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "Desde el 30 de enero, al 25 de marzo de 2026."
+                    }
+                  ]
+                },
+                {
+                  "nombre": "Periodo abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "Desde el 3 de marzo, a el 6 de abril de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas de matrícula. No requiere la presentación de requisitos y no aplica costo de aranceles."
+            },
+            {
+              "nombre": "Tomar componentes en otra modalidad",
+              "descripcion": "Dirigido a estudiantes que por diferentes razones desean inscribirse en un componente académico de su malla curricular en una Modalidad diferente a la que se encuentran matriculados.",
+              "imagen": "https://portales.utpl.edu.ec/sites/default/files/inline-images/TOMAR%20COMPONENTES%20EN%20OTRA%20MODALIDAD.png",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado/Competencias Específicas - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "5 días laborales",
+              "periodos": [
+                {
+                  "nombre": "Periodo abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "Desde el 6 de marzo, hasta el 1 de abril de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas de matrícula. No aplica costo de aranceles."
+            },
+            {
+              "nombre": "Solicitar edición de matrícula",
+              "descripcion": "Dirigido a estudiantes nuevos que necesitan realizar los siguientes trámites: También aplica para aquellos estudiantes de segundo ciclo en adelante que deseen eliminar un curso pagado.",
+              "imagen": "https://portales.utpl.edu.ec/sites/default/files/inline-images/SOLICITAR%20EDICION%20DE%20MATRICULA.png",
+              "modalidad_nivel": "Distancia/Presencial – Grado, Posgrado, Tecnologías - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "10 días laborales",
+              "periodos": [
+                {
+                  "nombre": "Periodo abril – junio 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "desde el 30 de enero, al 6 de abril de 2026."
+                    }
+                  ]
+                },
+                {
+                  "nombre": "Periodo abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "19 de noviembre de 2025, al 3 de abril de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas de matrícula."
+            },
+            {
+              "nombre": "Solicitar devolución de documentos",
+              "descripcion": "Dirigido a estudiantes que solicitan la devolución de sus documentos originales físicos: título de bachiller, acta de grado de bachiller o documentos de reconocimiento de estudio.",
+              "imagen": "https://portales.utpl.edu.ec/sites/default/files/inline-images/SOLICITAR%20DEVOLUCI%C3%93N%20DE%20DOCUMENTOS.png",
+              "modalidad_nivel": "presencial/distancia, grado/posgrado/tecnologías, todas la carreras o programas académicos.",
+              "tiempo_respuesta": "5 días laborales",
+              "costo": "10% del valor de matrícula",
+              "nota": "Este servicio no requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Solicitar emisión de carnet (en caso de pérdida)",
+              "descripcion": "Dirigido a estudiantes de modalidad presencial y modalidad a distancia, que requieran el carnet en físico para presentar y realizar las prácticas fuera de la universidad. Para uso interno lo pueden obtener descargando el aplicativo app móvil UTPL, registrar sus credenciales e ingresar a la opción de carnet digital (Código QR).",
+              "modalidad_nivel": "presencial/distancia, grado/posgrado/tecnologías, todas la carreras o programas académicos.",
+              "tiempo_respuesta": "15 días laborales",
+              "costo": "$ 15 dólares",
+              "nota": "Se requiere estar matriculado en el período académico vigente."
+            },
+            {
+              "nombre": "Solicitar retiro por caso fortuito o fuerza mayor",
+              "descripcion": "Dirigido a estudiantes que desean retirarse de uno o varios componentes por situaciones fortuitas o de fuerza mayor debidamente documentadas que impidan la culminación del período académico. Entre los motivos considerados como casos fortuitos se encuentran: cambio de centro de rehabilitación, privado de la libertad, fallecimiento de cónyuge, accidentes, embarazos riesgosos, enfermedad, entre otros. Aplica desde el inicio de actividades académica hasta un día antes del evento de recuperación.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado/Competencias Específicas",
+              "tiempo_respuesta": "10 días laborales",
+              "requisitos": [
+                "Formato de retiro por Caso Fortuito o Fuerza Mayor:",
+                "Factura de matrícula período vigente",
+                "Carta dirigida a Dirección Financiera argumentando el retiro e indicando los datos de la cuenta bancaria a la que requiere el reembolso. Si el reembolso se debe realizar a la cuenta de una tercera persona adjuntar copia de cédula del estudiante y del titular de la cuenta y copia de cartola o certificado de cuenta activa.",
+                "Justificativo que permita evidenciar el motivo que le impide continuar con los estudios. Los justificativos médicos y psicológicos deben ser avalados por el MSP o IESS"
+              ],
+              "requisitos_pestanas": [
+                {
+                  "pestaña": "GRADO / POSGRADO",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Formato de Retiro Caso Fortuito 202630.pdf"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "pestaña": "TECNOLOGÍAS",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Formato de Retiro Caso Fortuito 202630.pdf"
+                        },
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Retiro fortuito TEC-Trimestral 202625.pdf"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "periodos": [
+                {
+                  "nombre": "Periodo abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "Modalidad presencial",
+                      "solicitud": "desde el 22 de junio al 31 de julio de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad a distancia y en línea",
+                      "solicitud": "desde el 6 de abril al 28 de agosto de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad en línea",
+                      "solicitud": "desde el 6 de abril al 28 de agosto de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad en línea, híbrida y presencial",
+                      "solicitud": "desde el 6 de abril al 31 de julio de 2026."
+                    },
+                    {
+                      "modalidad": "Especialización en Medicina Familiar y Comunitaria",
+                      "solicitud": "desde el 13 de abril al 25 de septiembre de 2026."
+                    },
+                    {
+                      "modalidad": "Especializaciones: Imagenología y Anestesiología, Reanimación y Terapia del Dolor",
+                      "solicitud": "desde el 6 de abril al 25 de septiembre de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas establecidas en el calendario académico. No aplica costo de aranceles."
+            },
+            {
+              "nombre": "Solicitar retiro voluntario",
+              "descripcion": "Dirigido a estudiantes que cursan una carrera y requieran retirarse voluntariamente de una o varias asignaturas cursos o sus equivalentes en un período ordinario, contado a partir de la fecha de inicio de las actividades académicas. En caso de posgrado el retiro voluntario podrá realizarse siempre y cuando no se haya cumplido más del 30% de las horas del componente de aprendizaje en contacto con el docente, curso o su equivalente.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado/Competencias Específicas - Tecnología",
+              "tiempo_respuesta": "10 días laborales",
+              "requisitos": [
+                "Formato de retiro voluntario:",
+                "Factura de matrícula período vigente.",
+                "Si solicita retiro voluntario total con reembolso de valores debe adjuntar: Carta dirigida a Dirección Financiera argumentando el retiro e indicando los datos de la cuenta bancaria a la que requiere el reembolso. Si el reembolso se debe realizar a una tercera persona adjuntar copia de cédula del estudiante y del titular de la cuenta y copia de cartola o certificado de cuenta activa."
+              ],
+              "requisitos_pestanas": [
+                {
+                  "pestaña": "GRADO / POSGRADO",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Formato Retiro voluntario 202630.pdf"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "pestaña": "TECNOLOGIAS",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Formato Retiro voluntario 202630.pdf"
+                        },
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Retiro voluntario TEC-Trimestral 202625.pdf"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "periodos": [
+                {
+                  "nombre": "Periodo abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "Modalidad presencial",
+                      "solicitud": "desde el 23 de marzo al 21 de junio de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad a distancia y en línea",
+                      "solicitud": "desde el 6 de abril al 25 de junio de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad en línea",
+                      "solicitud": "desde el 6 de abril al 25 de junio de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad presencial, en línea, híbrida",
+                      "solicitud": "desde el 6 de abril al 23 de julio de 2026."
+                    },
+                    {
+                      "modalidad": "Especialización en Medicina Familiar y Comunitaria",
+                      "solicitud": "desde el 13 de abril al 25 de septiembre de 2026."
+                    },
+                    {
+                      "modalidad": "Especializaciones: Imagenología y Anestesiología, Reanimación y Terapia del Dolor",
+                      "solicitud": "desde el 6 de abril al 25 de septiembre de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas establecidas en el calendario académico. No aplica costo de aranceles."
+            },
+            {
+              "nombre": "Solicitar matrícula especial",
+              "descripcion": "Dirigido a estudiantes que solicitan matrícula en fechas especiales. El estudiante adjunta la documentación que sustente el justificativo dentro de las fechas establecidas por la universidad. Además, debe cancelar los valores definidos por la UTPL correspondientes a la matrícula especial.",
+              "tiempo_respuesta": "2 días laborales",
+              "requisitos": [
+                "Registrar el servicio y adjuntar el formato de matrícula especial y el justificativo por el cual solicita matrícula especial. Descargar aquí"
+              ],
+              "manual": [
+                {
+                  "texto": "Descargar aquí",
+                  "url": "https://portales.utpl.edu.ec/sites/default/files/2026-03/SOLICITUD DE MATRICULA ESPECIAL ABR_2026 AGO_2026.pdf"
+                }
+              ]
+            },
+            {
+              "nombre": "Cambio de centro definitivo a New York",
+              "descripcion": "Dirigido a estudiantes que solicitan cambio de centro definitivo a New York para que todas sus actividades académicas y administrativas puedas desarrollarse en el centro universitario solicitado.",
+              "tiempo_respuesta": "10 días laborales",
+              "costo": "Aplica una vez pagada la matrícula:",
+              "periodos": [
+                {
+                  "nombre": "Calendario octubre 2024 - febrero 2025",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "desde el 24 de mayo hasta el 6 de octubre de 2024.",
+                      "respuesta": "desde el 24 de mayo hasta el 9 de octubre de 2024."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas de matrícula. No requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Solicitar cambio de centro definitivo",
+              "descripcion": "Dirigido a estudiantes que solicitan cambio de centro definitivo para que todas sus actividades académicas y administrativas puedan desarrollarse en el centro universitario solicitado.",
+              "tiempo_respuesta": "Automático",
+              "periodos": [
+                {
+                  "nombre": "Periodo abril – junio 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "Desde el 30 de enero al 1 de abril de 2026."
+                    }
+                  ]
+                },
+                {
+                  "nombre": "Periodo abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "Desde el 19 de noviembre de 2025, al 6 de abril de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas de matrícula. No requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Solicitar segunda carrera",
+              "descripcion": "Dirigido a estudiantes que requieren cursar en el mismo período académico 2 carreras ya sea en Modalidad Presencial o Modalidad a Distancia.",
+              "imagen": "https://portales.utpl.edu.ec/sites/default/files/inline-images/SOLICITAR%20SEGUNDA%20CARRERA.png",
+              "tiempo_respuesta": "17 días laborales",
+              "periodos": [
+                {
+                  "nombre": "Calendario para matrícula del periodo octubre 2026 – febrero 2027.",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "desde el 17 de abril al 2 de octubre de 2026."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "Solicitar cambio de paralelo",
+              "descripcion": "Dirigido a estudiantes que desean solicitar cambio de paralelo por razones debidamente justificadas. La autorización de la solicitud dependerá de la carrera.",
+              "modalidad_nivel": "Presencial-Grado todas las carrera y programas académicos."
+            },
+            {
+              "nombre": "Solicitar emisión de carnet (Primera vez)",
+              "descripcion": "Dirigido a estudiantes de modalidad presencial y modalidad a distancia, que requieran el carnet en físico para presentar y realizar las prácticas fuera de la universidad. Para uso interno lo pueden obtener descargando el aplicativo app móvil UTPL, registrar sus credenciales e ingresar a la opción de carnet digital (Código QR). Se requiere estar matriculado en el período académico vigente.",
+              "modalidad_nivel": "presencial/distancia, grado/posgrado/tecnologías, todas la carreras o programas académicos.",
+              "tiempo_respuesta": "15 días laborales",
+              "nota": "Se requiere estar matriculado en el período académico vigente."
+            }
+          ]
+        },
+        {
+          "nombre": "SERVICIOS-RECONOCIMIENTO DE ESTUDIOS",
+          "servicios": [
+            {
+              "nombre": "🟡 Solicitar validación general de inglés.",
+              "descripcion": "Dirigido a estudiantes de la malla ECTS que desean validar sus conocimientos en el idioma inglés, para completar su plan académico.",
+              "modalidad_nivel": "Presencial/Distancia/En línea - Grado - Todas las carreras.",
+              "tiempo_respuesta": "De acuerdo a la planificación del evento, ver calendarios.",
+              "requisitos": [
+                "Cumplir con el prerrequisito del nivel solicitado."
+              ],
+              "costo": "$96 por nivel, (72 horas para pagar tras validar el servicio).",
+              "periodos": [
+                {
+                  "nombre": "Calendario",
+                  "modalidades": [
+                    {
+                      "modalidad": "Todas las modalidades, grado"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "🟡Solicitar legalización validación CCE-MP/MAD.",
+              "descripcion": "Dirigido a estudiantes que hayan aprobado la validación de conocimientos mediante el curso de competencias específicas y deseen registrar sus calificaciones en su expediente académico.",
+              "tiempo_respuesta": "3 días",
+              "costo": "$96 dólares por servicio.",
+              "importante": [
+                "Una vez realizado el pago por el servicio, la calificación se registrará automáticamente en su historia académica",
+                "Los estudiantes de la Modalidad Presencial que aprobaron el curso de competencias específicas CCE en ciclos anteriores deben rendir el examen de Validación General o, volver a matricularse en el CCE"
+              ]
+            },
+            {
+              "nombre": "🟡 Solicitar homologación por validación de conocimientos.",
+              "descripcion": "Dirigido a estudiantes que desean rendir un examen para demostrar sus conocimientos y aprobar una asignatura. Para hacerlo, es importante considerar lo siguiente: Se debe crear un servicio por cada asignatura a validar. A nivel de grado se pueden solicitar hasta 3 asignaturas por periodo académico distribuidas en los eventos planificados dependiendo la modalidad. Puede inscribirse hasta en 2 ocasiones para aprobar cada asignatura; en caso de no hacerlo, será necesario cursarla mediante matrícula regular. Aplica para estudiantes cuyos estudios superan los 10 años de aprobación en caso de requerirlo. La evaluación podrá aplicarse mediante una prueba que mida los resultados de aprendizaje o mediante una rúbrica que evidencie su cumplimiento. No aplica para validación de asignaturas de prácticum, Seminarios de Abogacía, Seminarios de Fin de Titulación y Jornadas Pedagógicas. Las evaluaciones se realizarán únicamente en las fechas establecidas.",
+              "modalidad_nivel": "Distancia/Presencial/En línea; Grado/Posgrado, Tecnologías.",
+              "tiempo_respuesta": "De acuerdo a la planificación del evento ver calendarios.",
+              "requisitos": [
+                "Cumplir prerrequisitos si la asignatura lo requiere.",
+                "No estar matriculado en la asignatura."
+              ],
+              "costo": "$96 por asignatura (72 horas para pagar tras validar el servicio).",
+              "periodos": [
+                {
+                  "nombre": "Calendario abril - agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "Modalidad presencial, grado y tecnologías (único evento)"
+                    },
+                    {
+                      "modalidad": "Modalidad a distancia, en línea; grado, tecnologías y posgrado"
+                    },
+                    {
+                      "modalidad": "Validación general Listening and Speaking, grado, modalidad a distancia y en línea."
+                    }
+                  ]
+                }
+              ],
+              "manual": [
+                {
+                  "texto": "Validación general Listening and Speaking, grado, modalidad a distancia y en línea.",
+                  "url": "https://portales.utpl.edu.ec/sites/default/files/2026-04/Calendario Validación Listening-Speaking_GR_EL_Estudiantes_202630.pdf"
+                }
+              ],
+              "nota": "Servicio disponible en las fechas establecidas en el calendario académico."
+            },
+            {
+              "nombre": "🟡 Solicitar análisis de validación de prácticas (gestión productiva/prácticum) MP.",
+              "descripcion": "Dirigido a estudiantes que solicitan la revisión y validación de la documentación sobre prácticas relacionadas a su carrera para validar la asignatura de Gestión Productiva/Prácticum. Debe adjuntar un informe del trabajo realizado evidenciando la adquisición de las competencias de la asignatura que solicita. Calendario para el periodo octubre 2026 – febrero 2027",
+              "modalidad_nivel": "Presencial/Grado- Todas las carreras.",
+              "tiempo_respuesta": "6 días.",
+              "costo": "Sin costo"
+            },
+            {
+              "nombre": "🟡 Solicitar registro de nota de validación de prácticas (gestión productiva/prácticum) MP.",
+              "descripcion": "Dirigido a estudiantes que cuentan con el informe y rúbrica emitidos por la carrera, al solicitar el servicio «Análisis para validación de Prácticum/Gestión Productiva MP», siempre que avale las competencias exigidas y hayan obtenido una calificación igual o superior a 7/10.",
+              "modalidad_nivel": "Presencial/Grado.",
+              "tiempo_respuesta": "3 días después de realizado el pago por el estudiante.",
+              "costo": "$96,00 dólares, por asignatura (72 horas para pagar tras validar el servicio).",
+              "periodos": [
+                {
+                  "nombre": "Calendario para el periodo octubre 2026 – febrero 2027",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "desde el 21 de abril al 5 de octubre de 2026."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "🟡Solicitar reconocimiento de prácticum por experiencia laboral MP/ MAD/TEC",
+              "descripcion": "Dirigido a estudiantes que soliciten el reconocimiento de su experiencia laboral para validar asignaturas de Prácticum, siempre que las actividades realizadas sean pertinentes y estén alineadas con los resultados de aprendizaje definidos para cada carrera.",
+              "modalidad_nivel": "Distancia/En línea/ Presencial -Nivel Grado/ Técnico Tecnológico.",
+              "tiempo_respuesta": "15 días.",
+              "requisitos": [
+                "Tener aprobado o validado el pre-requisito de la asignatura que se está solicitando en caso de tenerlo.",
+                "Adjuntar la documentación establecida de acuerdo a su modalidad y malla académica:"
+              ],
+              "requisitos_pestanas": [
+                {
+                  "pestaña": "DISTANCIA",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "titulo": "Estudiantes ECTS",
+                          "items": [
+                            {
+                              "texto": "Administración en Banca y Finanzas",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/ECTS/Administración en Banca y Finanzas- ECTS.pdf"
+                            },
+                            {
+                              "texto": "Administración en Gestión Pública",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/ECTS/Administración en Gestión Pública-ECTS.pdf"
+                            },
+                            {
+                              "texto": "Ciencias Humanas y Religiosas",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/ECTS/Ciencias Humanas y Religiosas-ECTS.pdf"
+                            },
+                            {
+                              "texto": "Comunicación Social",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/ECTS/Comunicación Social-ECTS.pdf"
+                            },
+                            {
+                              "texto": "Contabilidad y Auditoría",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/ECTS/Contabilidad y Auditoría- ECTS.pdf"
+                            },
+                            {
+                              "texto": "Educación Básica",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/ECTS/Educación Básica-ECTS.pdf"
+                            },
+                            {
+                              "texto": "Educación Infantil",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/ECTS/Educación Infantil - ECTS.pdf"
+                            },
+                            {
+                              "texto": "Lengua y Literatura",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/ECTS/Lengua y Literatura -ECTS.pdf"
+                            },
+                            {
+                              "texto": "Psicología",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/ECTS/Psicología - ECTS.pdf"
+                            }
+                          ]
+                        },
+                        {
+                          "titulo": "Estudiantes REDISEÑO",
+                          "items": [
+                            {
+                              "texto": "Administración de Empresas",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Administración de Empreas -RC.pdf"
+                            },
+                            {
+                              "texto": "Administración Pública",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Administración Pública-RC.pdf"
+                            },
+                            {
+                              "texto": "Agronegocios",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Agronegocios-RC.pdf"
+                            },
+                            {
+                              "texto": "Comunicación",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Comunicación-RC.pdf"
+                            },
+                            {
+                              "texto": "Contabilidad y Auditoría",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Contanilidad y Auditoría-RC.pdf"
+                            },
+                            {
+                              "texto": "Derecho",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Derecho-RC.pdf"
+                            },
+                            {
+                              "texto": "Economía",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-04/EconomíaRediseño.pdf"
+                            },
+                            {
+                              "texto": "Educación Básica",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Educación Básica-RC.pdf"
+                            },
+                            {
+                              "texto": "Educación Inicial",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Educación Inicial-RC.pdf"
+                            },
+                            {
+                              "texto": "Finanzas",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-04/Finanzas.pdf"
+                            },
+                            {
+                              "texto": "Gestión Ambiental",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2025-04/REDISE/Gestión Ambiental.pdf"
+                            },
+                            {
+                              "texto": "Gestión de Riesgos y Desastres",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Gestión de Riesgos y Desastres-RC.pdf"
+                            },
+                            {
+                              "texto": "Logística y Transporte",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Logística y Transporte-RC.pdf"
+                            },
+                            {
+                              "texto": "Pedagogía de la Lengua y la Literatura",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Pedagogía de la Lengua  la Literatura-RC.pdf"
+                            },
+                            {
+                              "texto": "Pedagogía de la Química y Biología",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Pedagogía de la Química y Biología-RC.pdf"
+                            },
+                            {
+                              "texto": "Pedagogía de las Matemáticas y la Física",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Pedagogía de las Matematicas y Física-RC.pdf"
+                            },
+                            {
+                              "texto": "Pedagogía de los Idiomas Nacionales y Extranjeros",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Ped IdiomasNacionales Extranjeros-RC.pdf"
+                            },
+                            {
+                              "texto": "Pedagogía de la religión",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Pedagogia de la Religion-RC.pdf"
+                            },
+                            {
+                              "texto": "Psicología",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Psicología-RC.pdf"
+                            },
+                            {
+                              "texto": "Psicopedagogía",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Psicopedagogía-RC.pdf"
+                            },
+                            {
+                              "texto": "Seguridad y Salud Ocupacional",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Seguridad_y_Salud_Ocupacional RC.pdf"
+                            },
+                            {
+                              "texto": "Tecnologías de Información",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Tecnologías de Información-RC Oct25-Feb26.pdf"
+                            },
+                            {
+                              "texto": "Turismo",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-04/Turismo-Rediseño.pdf"
+                            }
+                          ]
+                        },
+                        {
+                          "texto": "El componente solicitado tiene que cumplir con el pre-requisito (en caso de tenerlo)."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "pestaña": "PRESENCIAL",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "titulo": "Requisitos Académicos",
+                          "items": [
+                            {
+                              "texto": "Tener aprobado el pre o correquisito del prácticum correspondiente."
+                            },
+                            {
+                              "texto": "Presentar una memoria técnica sobre la actividad laboral que realizó el estudiante."
+                            },
+                            {
+                              "texto": "Cada carrera determinará los aspectos a considerar dentro de la memoria técnica."
+                            },
+                            {
+                              "texto": "Entrevista del coordinador de carrera o tutor del prácticum con el estudiante."
+                            }
+                          ]
+                        },
+                        {
+                          "titulo": "Las evidencias a ser presentadas serán",
+                          "items": [
+                            {
+                              "texto": "Certificado de aportes al IESS."
+                            },
+                            {
+                              "texto": "Copia del RUC de la empresa o entidad en la que labora."
+                            },
+                            {
+                              "texto": "Certificado laboral de la empresa o entidad."
+                            },
+                            {
+                              "texto": "Copia del nombramiento o contrato registrado."
+                            },
+                            {
+                              "texto": "Declaraciones de IVA o Impuesto a la Renta (para servicios profesionales o autónomos)."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "pestaña": "TECNOLOGÍAS",
+                  "contenido": [
+                    {
+                      "texto": "Programas:"
+                    },
+                    {
+                      "lista": [
+                        {
+                          "texto": "Transformación digital de empresas",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2024-02/Transformaci%C3%B3n%20digital%20de%20empresas.pdf"
+                        },
+                        {
+                          "texto": "Comunicación estratégica y marketing digital",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2024-02/Comunicaci%C3%B3n%20estrat%C3%A9gica%20y%20martketing%20digital.pdf"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "costo": "$96 dólares por asignatura (72 horas para pagar tras validar el servicio).",
+              "periodos": [
+                {
+                  "nombre": "Calendario para matrícula del periodo octubre 2026 – febrero 2027",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "desde el 13 de abril al 28 de septiembre de 2026."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "🟢 Homologación cert. internacional/otras IES/titulos en segunda lengua.",
+              "descripcion": "Dirigido a estudiantes de carreras nuevas o rediseñadas que cuenten con un certificado internacional, un certificado emitido por otra IES o un título académico obtenido en una lengua distinta a la materna, para acreditar el requisito de segunda lengua previo a su graduación. Se aceptarán certificados con una vigencia de hasta diez años, salvo aquellos que especifiquen un periodo de vigencia diferente. No aplica para estudiantes de la carrera de Pedagogía de los Idiomas Nacionales y extranjeros ya que no requieren cumplir con este requisito para graduación. Opciones: Certificados emitidos por IES nacionales o extranjeras reconocidas por el CES dde haber cursado una segunda lengua en el que se describa el tiempo de estudio y el nivel de suficiencia adquirido debidamente legalizado por la institución emisora. Carreras de Grado: B1 Carreras Técnicas o Tecnologías: A2",
+              "tiempo_respuesta": "6 días.",
+              "costo": "10% de la matricula.",
+              "manual": [
+                {
+                  "texto": "https://www.utpl.edu.ec/segunda-lengua#certificados",
+                  "url": "https://www.utpl.edu.ec/segunda-lengua#certificados"
+                }
+              ],
+              "importante": [
+                "Los documentos se deben adjuntar de forma digital, si el tamaño del archivo impide su carga directa, se recomienda subirlo a una plataforma en la nube (como Google Drive, OneDrive, entre otras) y compartir el enlace correspondiente.",
+                "Se aceptan certificados tengan una vigencia de hasta diez años, salvo aquellos que especifiquen su periodo de vigencia."
+              ]
+            },
+            {
+              "nombre": "🟢 Solicitar homologación de título extranjero.",
+              "descripcion": "Dirigido a personas que deseen obtener el reconocimiento de un título profesional o grado académico obtenido en el extranjero, siempre que la universidad cuente con una carrera o programa vigente y similar al cursado en el exterior al momento de la solicitud. Presentar en su centro universitario los siguientes documentos en español:",
+              "modalidad_nivel": "Distancia/En línea/Presencial – Grado/tecnologías – Carreras o programas.",
+              "tiempo_respuesta": "30 días",
+              "costo": "$1072,00 dólares"
+            },
+            {
+              "nombre": "🟢 Solicitar análisis de validación por ejercicio profesional o experiencia laboral.",
+              "descripcion": "Dirigido a las personas que soliciten el reconocimiento del ejercicio profesional o de la experiencia laboral. Este reconocimiento permite la homologación de determinadas asignaturas de la carrera.",
+              "modalidad_nivel": "Distancia/En línea /Presencial - Grado.",
+              "tiempo_respuesta": "15 días.",
+              "costo": "$35."
+            },
+            {
+              "nombre": "🟢 Solicitar registro de resultados de valid. por ejercicio profes. o exper. laboral.",
+              "modalidad_nivel": "En línea/Presencial - Grado.",
+              "tiempo_respuesta": "7 días",
+              "costo": "$35."
+            },
+            {
+              "nombre": "🟢 Solicitar reconocimiento de estudios externos (Grado y Posgrado).",
+              "descripcion": "Dirigido a estudiantes que desean formar parte de la UTPL y solicitan la homologación de asignaturas aprobadas o validadas en otras Instituciones de Educación Superior (universidades e institutos tecnológicos) para continuar sus estudios en la UTPL. La revisión se realiza individualmente por asignatura, a fin de comprobar que cumplan al menos el 80% de similitud en contenidos, profundidad y carga horaria, dando cumplimiento a lo indicado en el Reglamento de Régimen Académico.",
+              "modalidad_nivel": "Distancia/Presencial/En línea; Grado/Posgrado, Tecnologías - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "25 días.",
+              "requisitos": [
+                "Récord académico original emitido por la IES de origen que indique:Sistema de Calificación.Calificaciones obtenidas.Fecha y año de aprobación de cada asignatura.Valoración en créditos y equivalencia en horas asistidas por el docente, el práctico y autónomo de cada componente.Programa formativo y plan de contenidos de cada componente.",
+                "Sistema de Calificación.",
+                "Calificaciones obtenidas.",
+                "Fecha y año de aprobación de cada asignatura.",
+                "Valoración en créditos y equivalencia en horas asistidas por el docente, el práctico y autónomo de cada componente.",
+                "Programa formativo y plan de contenidos de cada componente.",
+                "Copia de cédula de identidad o pasaporte",
+                "Tanto el récord académico como el programa formativo y plan de contenidos deberán estar certificados por la institución de procedencia.",
+                "En el caso de estudios realizados en el exterior cuyos certificados estén en un idioma diferente al español, deberán presentarse la respectiva traducción legalizada o apostillada.",
+                "Los documentos deben ser escaneados y enviados de forma digital en el servicio. Si el tamaño del archivo supera el límite permitido de 5MB, puede optar por hacerlo mediante ONE DRIVE, GOOGLE DRIVE, debe adjuntar el link del sitio en el servicio.",
+                "Para la carrera de medicina presentar una certificación de no haber recibido ninguna sanción disciplinaria en la universidad o escuela politécnica de origen."
+              ],
+              "costo": "Sin costo",
+              "periodos": [
+                {
+                  "nombre": "Calendario para matrícula del periodo octubre 2026 – febrero 2027",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "desde el 13 de abril al 21 de septiembre de 2026."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "🔵 Solicitar registro de cumplimiento de segunda lengua.",
+              "descripcion": "Dirigido a estudiantes que han aprobado el requisito de segunda lengua a través del examen de ubicación de inglés o de academias externas con convenio UTPL, que pertenecen a las carreras nuevas y rediseñadas.",
+              "modalidad_nivel": "Distancia/Presencial/En línea – Grado/Tecnologías - Todas las carreras.",
+              "tiempo_respuesta": ": 5 días.",
+              "costo": ": 10% del arancel de matrícula.",
+              "nota": "Este servicio estará habilitado durante las fechas establecidas en el calendario académico."
+            },
+            {
+              "nombre": "🔵 Solicitar cambio de modalidad.",
+              "descripcion": "Dirigido a estudiantes que deseen realizar el cambio de modalidad de estudios, ya sea de presencial a distancia o viceversa.",
+              "modalidad_nivel": "Distancia/Presencial/En línea; Grado/Posgrado, Tecnologías - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "5 días.",
+              "periodos": [
+                {
+                  "nombre": "Calendario para matrícula de periodo abril - agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "hasta el 1 de abril de 2026"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "🔵 Solicitar cambio de carrera/ programa (Reconocimiento interno de estudios).",
+              "descripcion": "Dirigido a estudiantes de la UTPL que deseen cambiarse de carrera o programa académico y cuenten con estudios previos registrados en la institución. Este servicio permite gestionar el cambio, considerando la trayectoria académica del estudiante y el posible reconocimiento de asignaturas conforme a la normativa vigente.",
+              "modalidad_nivel": "Distancia/Presencial/En línea; Grado/Posgrado, Tecnologías - todas las carreras o programas académicos.",
+              "tiempo_respuesta": ": 8 días",
+              "costo": "Sin costo",
+              "periodos": [
+                {
+                  "nombre": "Calendario para matrícula del periodo octubre 2026 – febrero 2027",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "desde el 17 de abril al 2 de octubre de 2026."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "🔵 Solicitar examen de ubicación de inglés.",
+              "descripcion": "Dirigido a estudiantes de las carreras nuevas o rediseñadas que tengan dominio en el idioma inglés y soliciten rendir el examen de ubicación para cumplir con el requisito de la suficiencia de segunda lengua. Si al rendir el examen de ubicación el estudiante cumple con la nota requerida para la aprobación de nivel (B1, A2), según corresponda a su malla, debe registrar el servicio “Solicitar registro de cumplimiento de segunda lengua”. El estudiante tiene 3 intentos durante su vida estudiantil para rendir el examen.",
+              "modalidad_nivel": "Distancia/Presencial – Grado/Tecnologías/Posgrado - todas las carreras o programas académicos.",
+              "costo": "$10 dólares. No incluye registro de cumplimiento de requisito.",
+              "periodos": [
+                {
+                  "nombre": "Calendario abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "Todas las modalidades, grado y tecnologías."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "🔵 Solicitar actualización de estudio de reconocimiento.",
+              "descripcion": "Dirigido a estudiantes que realizaron un estudio de reconocimiento en los servicios de cambio de malla, cambio de modalidad, cambio de programa, y homologación externa que no hayan realizado su matrícula en el periodo académico que se realizó el estudio, y que desean matricularse en el periodo actual, el análisis debe ser actualizado a fin de comprobar la vigencia de las asignaturas y periodo académico de ingreso.",
+              "modalidad_nivel": "Distancia/En línea/Presencial – Grado y tecnologías- Todas las carreras o programas académicos.",
+              "tiempo_respuesta": "6 días.",
+              "costo": "Sin costo"
+            },
+            {
+              "nombre": "🔵 Solicitar cambio de grupo de créditos materias homologadas.",
+              "descripcion": "Dirigido a los estudiantes que tengan exceso de créditos en el grupo de asignaturas complementarias en estado homologado/reconocido/aprobado y soliciten cambiar al grupo de libre configuración.",
+              "modalidad_nivel": "Distancia/ En línea– Grado - Todas las carreras académicas.",
+              "tiempo_respuesta": "5 días.",
+              "costo": "Sin costo",
+              "nota": "Servicio habilitado continuamente, no requiere la presentación de requisitos y estará habilitado durante todo el periodo académico."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "NUEVO",
+      "total_categorias": 7,
+      "total_servicios": 37,
+      "categorias": [
+        {
+          "nombre": "QUEJAS Y RECLAMOS",
+          "servicios": [
+            {
+              "nombre": "Solicitar notas faltantes",
+              "descripcion": "Dirigido a estudiantes que verifican que las notas no han sido publicadas dentro del tiempo establecido en el calendario académico, o las notas que se visualizan en el Sistema Académico difieren de las obtenidas por el estudiante.",
+              "tiempo_respuesta": "6 días",
+              "requisitos": [
+                "Para actividades en línea (chat, foro, taller, etc.): Detallar el/los componentes, la actividad que no tiene nota y el paralelo al que pertenece.",
+                "Para evaluaciones presenciales (examen de grado, validación, inglés): Detallar el/los componentes y el código de presentación del examen."
+              ],
+              "periodos": [
+                {
+                  "nombre": "PERIODO OCTUBRE 2025 - FEBRERO 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "Grado y tecnología: modalidad a distancia y en línea."
+                    },
+                    {
+                      "modalidad": "Primer bimestre",
+                      "solicitud": "desde el 11 al 18 de diciembre de 2025.",
+                      "respuesta": "desde el 19 al 26 de diciembre de 2025."
+                    },
+                    {
+                      "modalidad": "Segundo bimestre",
+                      "solicitud": "desde el 5 al 12 de febrero de 2026.",
+                      "respuesta": "desde el 13 al 20 de marzo de 2026."
+                    },
+                    {
+                      "modalidad": "Recuperación",
+                      "solicitud": "desde el 5 al 12 de marzo de 2026.",
+                      "respuesta": "desde el 13 al 20 de marzo de 2026."
+                    }
+                  ]
+                },
+                {
+                  "nombre": "PERIODO ABRIL AGOSTO 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "Grado y tecnología: modalidad a distancia y en línea."
+                    },
+                    {
+                      "modalidad": "Primer bimestre",
+                      "solicitud": "desde el 11 al 18 de junio de 2026.",
+                      "respuesta": "desde el 19 al 26 de junio de 2026."
+                    },
+                    {
+                      "modalidad": "Segundo bimestre",
+                      "solicitud": "desde el 7 al 27 de agosto de 2026.",
+                      "respuesta": "desde el 28 de agosto al 4 de septiembre 2026."
+                    },
+                    {
+                      "modalidad": "Recuperación",
+                      "solicitud": "desde el 10 al 17 de septiembre de 2026.",
+                      "respuesta": "desde el 18 al 25 de septiembre de 2026."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "Solicitar recalificación de evaluaciones",
+              "descripcion": "Dirigida a estudiantes que desean solicitar recalificación de las evaluaciones presenciales bimestrales, o de actividades académicas de el Entorno Virtual de Aprendizaje. Este trámite debe contener el sustento respectivo en donde se evidencia la razón por la que solicita el trámite (contenidos evaluados) También aplica para aquellos estudiantes que rinden el examen complexivo por escrito. No procede la recalificación para evaluaciones de validación de conocimientos.",
+              "tiempo_respuesta": "6",
+              "requisitos": [
+                "Para evaluación presencial bimestral: oficio dirigido al director de carrera/programa en donde se indique el nombre del componente, bimestre y las preguntas a recalificar con la debida sustentación. Adjuntar el cuadernillo de preguntas.",
+                "Para la recalificación del examen complexivo, debe enviar el cuadernillo de preguntas y sustentar el pedido de recalificación.",
+                "Para las actividades académicas de CANVAS: oficio dirigido al director de carrera/programa en donde se indique la actividad a recalificar, bimestre, en donde contenga la sustentación para solicitar el trámite."
+              ],
+              "periodos": [
+                {
+                  "nombre": "PERIODO OCTUBRE 2025 - FEBRERO 2026.",
+                  "modalidades": [
+                    {
+                      "modalidad": "Grado y tecnología: modalidad a distancia y en línea."
+                    },
+                    {
+                      "modalidad": "Primer bimestre",
+                      "solicitud": "desde el 11 al 17 de diciembre de 2025.",
+                      "respuesta": "desde el 11 al 18 de diciembre de 2025."
+                    },
+                    {
+                      "modalidad": "Segundo bimestre",
+                      "solicitud": "desde el 5 al 11 de febrero de 2026.",
+                      "respuesta": "desde el 5 al 12 de febrero de 2026."
+                    },
+                    {
+                      "modalidad": "Recuperación",
+                      "solicitud": "desde el 5 al 11 de marzo de 2026.",
+                      "respuesta": "desde el 5 al 12 de marzo de 2026."
+                    }
+                  ]
+                },
+                {
+                  "nombre": "PERIODO ABRIL - AGOSTO 2026.",
+                  "modalidades": [
+                    {
+                      "modalidad": "Grado y tecnología: modalidad a distancia y en línea."
+                    },
+                    {
+                      "modalidad": "Primer bimestre",
+                      "solicitud": "desde el 11 al 17 de junio de 2026.",
+                      "respuesta": "desde el 11 al 18 de junio de 2026."
+                    },
+                    {
+                      "modalidad": "Segundo bimestre",
+                      "solicitud": "6 y 7 de agosto de 2026.",
+                      "respuesta": "desde el 6 al 27 de agosto de 2026."
+                    },
+                    {
+                      "modalidad": "Recuperación",
+                      "solicitud": "desde el 10 al 16 de septiembre de 2026.",
+                      "respuesta": "desde el 10 al 17 de septiembre de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio no aplica costo de aranceles."
+            },
+            {
+              "nombre": "Entorno Virtual de Aprendizaje",
+              "descripcion": "Dirigido a estudiantes que tienen inconvenientes con el EVA, tales como: no visualiza habilitada la tarea; uno o más componentes no se visualizan; visualiza dos paralelos asignados del mismo componente; no visualiza anuncios, chats, foros o cuestionarios dentro de un determinado componente.",
+              "tiempo_respuesta": "3 días",
+              "nota": "Este servicio no requiere la presentación de requisitos y no aplica costo de aranceles."
+            }
+          ]
+        },
+        {
+          "nombre": "SERVICIOS-CARRERAS",
+          "servicios": [
+            {
+              "nombre": "Cambio de grupo de créditos materias cursadas y aprobadas",
+              "descripcion": "Dirigido a estudiantes que solicitan que un componente académico aprobado de un área de cumplimiento pase a otra área. Este servicio no requiere la presentación de requisitos y no aplica costo de aranceles.",
+              "modalidad_nivel": "Distancia/Presencial – Grado - Todas las carreras o programas académicos.",
+              "nota": "Este servicio no requiere la presentación de requisitos y no aplica costo de aranceles."
+            }
+          ]
+        },
+        {
+          "nombre": "SERVICIOS-CERTIFICACIONES",
+          "servicios": [
+            {
+              "nombre": "Revisa nuestro catálogo de certificados",
+              "manual": [
+                {
+                  "texto": "Catálogo de Certificados 2024",
+                  "url": "https://portales.utpl.edu.ec/sites/default/files/pdf/Manual de Certificados_2024_digital-1_1.pdf"
+                }
+              ]
+            },
+            {
+              "nombre": "Certificados académicos",
+              "descripcion": "Dirigido a estudiantes y egresados que requieren certificados de: duración de la carrera, esquema de evaluación,impedimentos de tercera matrícula, tipos de beca (económica y méritos), avance de carrera, culminación de malla, entre otros.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "12 días",
+              "costo": "10% del valor de los aranceles de matrícula",
+              "nota": "Este servicio no requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Certificados de normativa",
+              "descripcion": "Dirigido a estudiantes, egresados y titulados que requieren certificados de la normativa institucional como: estatuto UTPL, cambio de malla, normativa de carreras, entre otras.",
+              "tiempo_respuesta": "10 días",
+              "costo": "10% del valor de los aranceles de matrícula",
+              "nota": "Este servicio no requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Certificados de horarios o fechas",
+              "descripcion": "Dirigido a estudiantes y egresados que requieren certificados en donde conste el horario o fecha de ingreso de notas de internado rotativo; fechas de inicio y culminación de la carrera; y, fecha de evaluación presencial.",
+              "tiempo_respuesta": "10 días",
+              "costo": "10% del valor de los aranceles de matrícula",
+              "nota": "Este servicio no requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Certificados de asistencia",
+              "descripcion": "Dirigido a estudiantes que requieren certificados de asistencia a jornadas, seminarios y tutorías. (Aprobados como parte de la malla)",
+              "tiempo_respuesta": "3 días",
+              "nota": "Este servicio no requiere la presentación de requisitos y no aplica costo de aranceles."
+            },
+            {
+              "nombre": "Certificados de notas",
+              "descripcion": "Dirigido a estudiantes, egresados y titulados que requieren certificados de notas por componentes educativos por período, componentes aprobados con carga horaria, componentes niveles de inglés, promedio de notas de componentes, entre otros.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "10 días",
+              "costo": "10% del valor de los aranceles de matrícula",
+              "nota": "Este servicio no requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Certificados de crédito educativo",
+              "descripcion": "Dirigido a estudiantes que requieren certificados de crédito educativo, crédito educativo por costo ciclo, crédito educativo costo total, posgrados, o por materias reprobadas.",
+              "modalidad_nivel": ": Distancia/Presencial - Grado/Posgrado - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "10 días",
+              "nota": "Este servicio no requiere la presentación de requisitos y no aplica costo de aranceles."
+            },
+            {
+              "nombre": "Certificados de matrícula",
+              "descripcion": "Dirigido a estudiantes que requieren certificados de matrícula como: Matrícula más asistencia a clases (presencial), Matrícula Internado rotativo, Matrícula más componentes, Matrícula por período académico, No matrícula, entre otros.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "10 días",
+              "costo": "10% del valor de los aranceles de matrícula",
+              "nota": "Este servicio no requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Certificado para estudiantes con matrícula vigente",
+              "descripcion": "Dirigida a estudiantes con matrícula vigente, que requieren un certificado legalizado con una firma electrónica; Tipo de certificados que se emiten En caso de requerir el documento con la rúbrica del Secretario General, ingresar el servicio “Certificados de matrícula”, componente educativo por periodo y general de componentes según corresponda.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "3 días",
+              "nota": "Este servicio no requiere la presentación de requisitos y no aplica costo de aranceles."
+            }
+          ]
+        },
+        {
+          "nombre": "SERVICIOS-EVALUACIONES",
+          "servicios": [
+            {
+              "nombre": "Solicitar cuadernillos de preguntas no recibidos",
+              "descripcion": "Dirigido a estudiantes que hayan rendido una evaluación presencial en línea y que no recibieron sus cuadernillos.",
+              "tiempo_respuesta": "3 días",
+              "nota": "Este servicio no requiere la presentación de requisitos y no aplica costo de aranceles."
+            },
+            {
+              "nombre": "Solicitar nueva fecha de evaluaciones",
+              "descripcion": "Dirigido a estudiantes que por motivos de fuerza mayor o por eventos especiales no pueden presentarse a rendir evaluaciones en las fechas establecidas, y desean solicitar una nueva fecha de evaluación del primer parcial o evaluación final según el caso. Entre los casos considerados fortuitos, se encuentran: privados de libertad, fallecimientos del conyugue, accidentes, embarazos riesgosos entre otros. Entre los motivos considerados como eventos especiales se encuentran: jornadas laborales, cursos, seminarios, viajes al exterior etc.",
+              "modalidad_nivel": "Distancia/EN LINEA: Grado /Postgrado/ Tecnología – todas las carreras o programas.",
+              "tiempo_respuesta": "3 días laborables."
+            }
+          ]
+        },
+        {
+          "nombre": "SERVICIOS-FINANCIEROS",
+          "servicios": [
+            {
+              "nombre": "Solicitar facturación a empresas",
+              "descripcion": "Dirigido a estudiantes que solicitan que la factura sea emitida a empresas, quienes asumen los costos de matrícula.",
+              "tiempo_respuesta": "3 días laborales",
+              "requisitos": [
+                "Carta de la empresa solicitando se emita la factura a nombre de la misma, en virtud que financiará el estudio de la carrera en la UTPL.",
+                "Datos de la empresa: RUC Razón social, dirección, teléfono, correo electrónico.",
+                "Copia del depósito bancario."
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas de matrícula. No aplica costo de aranceles."
+            }
+          ]
+        },
+        {
+          "nombre": "SERVICIOS-MATRÍCULA",
+          "servicios": [
+            {
+              "nombre": "Tomar componentes en otra modalidad",
+              "descripcion": "Dirigido a estudiantes que por diferentes razones desean inscribirse en un componente académico de su malla curricular en una Modalidad diferente a la que se encuentran matriculados.",
+              "imagen": "https://portales.utpl.edu.ec/sites/default/files/inline-images/TOMAR%20COMPONENTES%20EN%20OTRA%20MODALIDAD.png",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado/Competencias Específicas - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "5 días laborales",
+              "periodos": [
+                {
+                  "nombre": "Periodo abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "Desde el 6 de marzo, hasta el 1 de abril de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas de matrícula. No aplica costo de aranceles."
+            },
+            {
+              "nombre": "Solicitar edición de matrícula",
+              "descripcion": "Dirigido a estudiantes nuevos que necesitan realizar los siguientes trámites: También aplica para aquellos estudiantes de segundo ciclo en adelante que deseen eliminar un curso pagado.",
+              "imagen": "https://portales.utpl.edu.ec/sites/default/files/inline-images/SOLICITAR%20EDICION%20DE%20MATRICULA.png",
+              "modalidad_nivel": "Distancia/Presencial – Grado, Posgrado, Tecnologías - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "10 días laborales",
+              "periodos": [
+                {
+                  "nombre": "Periodo abril – junio 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "desde el 30 de enero, al 6 de abril de 2026."
+                    }
+                  ]
+                },
+                {
+                  "nombre": "Periodo abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "19 de noviembre de 2025, al 3 de abril de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas de matrícula."
+            },
+            {
+              "nombre": "Solicitar emisión de carnet (en caso de pérdida)",
+              "descripcion": "Dirigido a estudiantes de modalidad presencial y modalidad a distancia, que requieran el carnet en físico para presentar y realizar las prácticas fuera de la universidad. Para uso interno lo pueden obtener descargando el aplicativo app móvil UTPL, registrar sus credenciales e ingresar a la opción de carnet digital (Código QR).",
+              "modalidad_nivel": "presencial/distancia, grado/posgrado/tecnologías, todas la carreras o programas académicos.",
+              "tiempo_respuesta": "15 días laborales",
+              "costo": "$ 15 dólares",
+              "nota": "Se requiere estar matriculado en el período académico vigente."
+            },
+            {
+              "nombre": "Solicitar retiro por caso fortuito o fuerza mayor",
+              "descripcion": "Dirigido a estudiantes que desean retirarse de uno o varios componentes por situaciones fortuitas o de fuerza mayor debidamente documentadas que impidan la culminación del período académico. Entre los motivos considerados como casos fortuitos se encuentran: cambio de centro de rehabilitación, privado de la libertad, fallecimiento de cónyuge, accidentes, embarazos riesgosos, enfermedad, entre otros. Aplica desde el inicio de actividades académica hasta un día antes del evento de recuperación.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado/Competencias Específicas",
+              "tiempo_respuesta": "10 días laborales",
+              "requisitos": [
+                "Formato de retiro por Caso Fortuito o Fuerza Mayor:",
+                "Factura de matrícula período vigente",
+                "Carta dirigida a Dirección Financiera argumentando el retiro e indicando los datos de la cuenta bancaria a la que requiere el reembolso. Si el reembolso se debe realizar a la cuenta de una tercera persona adjuntar copia de cédula del estudiante y del titular de la cuenta y copia de cartola o certificado de cuenta activa.",
+                "Justificativo que permita evidenciar el motivo que le impide continuar con los estudios. Los justificativos médicos y psicológicos deben ser avalados por el MSP o IESS"
+              ],
+              "requisitos_pestanas": [
+                {
+                  "pestaña": "GRADO / POSGRADO",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Formato de Retiro Caso Fortuito 202630.pdf"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "pestaña": "TECNOLOGÍAS",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Formato de Retiro Caso Fortuito 202630.pdf"
+                        },
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Retiro fortuito TEC-Trimestral 202625.pdf"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "periodos": [
+                {
+                  "nombre": "Periodo abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "Modalidad presencial",
+                      "solicitud": "desde el 22 de junio al 31 de julio de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad a distancia y en línea",
+                      "solicitud": "desde el 6 de abril al 28 de agosto de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad en línea",
+                      "solicitud": "desde el 6 de abril al 28 de agosto de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad en línea, híbrida y presencial",
+                      "solicitud": "desde el 6 de abril al 31 de julio de 2026."
+                    },
+                    {
+                      "modalidad": "Especialización en Medicina Familiar y Comunitaria",
+                      "solicitud": "desde el 13 de abril al 25 de septiembre de 2026."
+                    },
+                    {
+                      "modalidad": "Especializaciones: Imagenología y Anestesiología, Reanimación y Terapia del Dolor",
+                      "solicitud": "desde el 6 de abril al 25 de septiembre de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas establecidas en el calendario académico. No aplica costo de aranceles."
+            },
+            {
+              "nombre": "Solicitar retiro voluntario",
+              "descripcion": "Dirigido a estudiantes que cursan una carrera y requieran retirarse voluntariamente de una o varias asignaturas cursos o sus equivalentes en un período ordinario, contado a partir de la fecha de inicio de las actividades académicas. En caso de posgrado el retiro voluntario podrá realizarse siempre y cuando no se haya cumplido más del 30% de las horas del componente de aprendizaje en contacto con el docente, curso o su equivalente.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado/Competencias Específicas - Tecnología",
+              "tiempo_respuesta": "10 días laborales",
+              "requisitos": [
+                "Formato de retiro voluntario:",
+                "Factura de matrícula período vigente.",
+                "Si solicita retiro voluntario total con reembolso de valores debe adjuntar: Carta dirigida a Dirección Financiera argumentando el retiro e indicando los datos de la cuenta bancaria a la que requiere el reembolso. Si el reembolso se debe realizar a una tercera persona adjuntar copia de cédula del estudiante y del titular de la cuenta y copia de cartola o certificado de cuenta activa."
+              ],
+              "requisitos_pestanas": [
+                {
+                  "pestaña": "GRADO / POSGRADO",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Formato Retiro voluntario 202630.pdf"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "pestaña": "TECNOLOGIAS",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Formato Retiro voluntario 202630.pdf"
+                        },
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Retiro voluntario TEC-Trimestral 202625.pdf"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "periodos": [
+                {
+                  "nombre": "Periodo abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "Modalidad presencial",
+                      "solicitud": "desde el 23 de marzo al 21 de junio de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad a distancia y en línea",
+                      "solicitud": "desde el 6 de abril al 25 de junio de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad en línea",
+                      "solicitud": "desde el 6 de abril al 25 de junio de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad presencial, en línea, híbrida",
+                      "solicitud": "desde el 6 de abril al 23 de julio de 2026."
+                    },
+                    {
+                      "modalidad": "Especialización en Medicina Familiar y Comunitaria",
+                      "solicitud": "desde el 13 de abril al 25 de septiembre de 2026."
+                    },
+                    {
+                      "modalidad": "Especializaciones: Imagenología y Anestesiología, Reanimación y Terapia del Dolor",
+                      "solicitud": "desde el 6 de abril al 25 de septiembre de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas establecidas en el calendario académico. No aplica costo de aranceles."
+            },
+            {
+              "nombre": "Solicitar matrícula especial",
+              "descripcion": "Dirigido a estudiantes que solicitan matrícula en fechas especiales. El estudiante adjunta la documentación que sustente el justificativo dentro de las fechas establecidas por la universidad. Además, debe cancelar los valores definidos por la UTPL correspondientes a la matrícula especial.",
+              "tiempo_respuesta": "2 días laborales",
+              "requisitos": [
+                "Registrar el servicio y adjuntar el formato de matrícula especial y el justificativo por el cual solicita matrícula especial. Descargar aquí"
+              ],
+              "manual": [
+                {
+                  "texto": "Descargar aquí",
+                  "url": "https://portales.utpl.edu.ec/sites/default/files/2026-03/SOLICITUD DE MATRICULA ESPECIAL ABR_2026 AGO_2026.pdf"
+                }
+              ]
+            },
+            {
+              "nombre": "Enviar requisitos de matrícula",
+              "descripcion": "Dirigido a estudiantes nuevos que requieran realizar el envío de los requisitos de matrícula.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/ Técnico-tecnológico - todas las carreras.",
+              "tiempo_respuesta": "4 días laborales",
+              "requisitos": [
+                "Carta de compromiso y autorización.Estudiantes mayores de edad: Aceptación de términos y condiciones de la Carta de compromiso y autorización.Estudiantes menores de edad: Descargar la plantilla de la Carta de compromiso y autorización, la cual debe ser firmada por su representante legal, y cargar en conjunto con la copia a color de la cédula del representante. (un solo archivo en formato pdf)",
+                "Estudiantes mayores de edad: Aceptación de términos y condiciones de la Carta de compromiso y autorización.",
+                "Estudiantes menores de edad: Descargar la plantilla de la Carta de compromiso y autorización, la cual debe ser firmada por su representante legal, y cargar en conjunto con la copia a color de la cédula del representante. (un solo archivo en formato pdf)",
+                "Copia a color del documento de identidad (cédula de ciudadanía o pasaporte para extranjeros).",
+                "Documento de bachiller o su equivalente. Verificar si el título se encuentra registrado en el sistema del Ministerio de Educación del Ecuador. Descarga aquí",
+                "En caso de que el título de bachiller no esté registrado; realizar lo siguiente:Bachiller ecuatoriano: debe enviar una copia certificada por la institución educativa que confirió el título, notario/a público del Ecuador, consulado ecuatoriano o notario público extranjero en caso de residir en el exterior.Bachiller extranjero: debe enviar una copia a color del reconocimiento u homologación del título de bachiller extranjero, emitido por el Ministerio de Educación del Ecuador, debidamente notariado.",
+                "Bachiller ecuatoriano: debe enviar una copia certificada por la institución educativa que confirió el título, notario/a público del Ecuador, consulado ecuatoriano o notario público extranjero en caso de residir en el exterior.",
+                "Bachiller extranjero: debe enviar una copia a color del reconocimiento u homologación del título de bachiller extranjero, emitido por el Ministerio de Educación del Ecuador, debidamente notariado.",
+                "En caso de acceder a matrícula especial, presentar la Solicitud de Matrícula Especial / abril - agosto 2026.",
+                "Fotografía a color tamaño carné actualizada."
+              ],
+              "periodos": [
+                {
+                  "nombre": "Periodo académico: abril 2026 - agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "Desde el 19 de noviembre 2025, hasta el 18 de mayo de 2026.",
+                      "respuesta": "Desde el 19 de noviembre 2025, hasta el 22 de mayo de 2026."
+                    }
+                  ]
+                }
+              ],
+              "manual": [
+                {
+                  "texto": "Descargar aquí",
+                  "url": "https://portales.utpl.edu.ec/sites/default/files/2025-10/MANUAL_CONSIDERA_ENVIO_REQUISI-MATRICULA.pdf"
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas de matrícula. No aplica costo de aranceles.",
+              "importante": "por el personal de Gestión Documental, en caso de encontrar inconsistencias, se solicitará nuevamente el envío de los documentos. El no realizar el proceso será causal de anulación de matrícula."
+            },
+            {
+              "nombre": "Cambio de centro definitivo a New York",
+              "descripcion": "Dirigido a estudiantes que solicitan cambio de centro definitivo a New York para que todas sus actividades académicas y administrativas puedas desarrollarse en el centro universitario solicitado.",
+              "tiempo_respuesta": "10 días laborales",
+              "costo": "Aplica una vez pagada la matrícula:",
+              "periodos": [
+                {
+                  "nombre": "Calendario octubre 2024 - febrero 2025",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "desde el 24 de mayo hasta el 6 de octubre de 2024.",
+                      "respuesta": "desde el 24 de mayo hasta el 9 de octubre de 2024."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas de matrícula. No requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Solicitar cambio de centro definitivo",
+              "descripcion": "Dirigido a estudiantes que solicitan cambio de centro definitivo para que todas sus actividades académicas y administrativas puedan desarrollarse en el centro universitario solicitado.",
+              "tiempo_respuesta": "Automático",
+              "periodos": [
+                {
+                  "nombre": "Periodo abril – junio 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "Desde el 30 de enero al 1 de abril de 2026."
+                    }
+                  ]
+                },
+                {
+                  "nombre": "Periodo abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "Desde el 19 de noviembre de 2025, al 6 de abril de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas de matrícula. No requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Solicitar segunda carrera",
+              "descripcion": "Dirigido a estudiantes que requieren cursar en el mismo período académico 2 carreras ya sea en Modalidad Presencial o Modalidad a Distancia.",
+              "imagen": "https://portales.utpl.edu.ec/sites/default/files/inline-images/SOLICITAR%20SEGUNDA%20CARRERA.png",
+              "tiempo_respuesta": "17 días laborales",
+              "periodos": [
+                {
+                  "nombre": "Calendario para matrícula del periodo octubre 2026 – febrero 2027.",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "desde el 17 de abril al 2 de octubre de 2026."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "Solicitar cambio de paralelo",
+              "descripcion": "Dirigido a estudiantes que desean solicitar cambio de paralelo por razones debidamente justificadas. La autorización de la solicitud dependerá de la carrera.",
+              "modalidad_nivel": "Presencial-Grado todas las carrera y programas académicos."
+            },
+            {
+              "nombre": "Solicitar emisión de carnet (Primera vez)",
+              "descripcion": "Dirigido a estudiantes de modalidad presencial y modalidad a distancia, que requieran el carnet en físico para presentar y realizar las prácticas fuera de la universidad. Para uso interno lo pueden obtener descargando el aplicativo app móvil UTPL, registrar sus credenciales e ingresar a la opción de carnet digital (Código QR). Se requiere estar matriculado en el período académico vigente.",
+              "modalidad_nivel": "presencial/distancia, grado/posgrado/tecnologías, todas la carreras o programas académicos.",
+              "tiempo_respuesta": "15 días laborales",
+              "nota": "Se requiere estar matriculado en el período académico vigente."
+            }
+          ]
+        },
+        {
+          "nombre": "SERVICIOS-RECONOCIMIENTO DE ESTUDIOS",
+          "servicios": [
+            {
+              "nombre": "🟡 Solicitar validación general de inglés.",
+              "descripcion": "Dirigido a estudiantes de la malla ECTS que desean validar sus conocimientos en el idioma inglés, para completar su plan académico.",
+              "modalidad_nivel": "Presencial/Distancia/En línea - Grado - Todas las carreras.",
+              "tiempo_respuesta": "De acuerdo a la planificación del evento, ver calendarios.",
+              "requisitos": [
+                "Cumplir con el prerrequisito del nivel solicitado."
+              ],
+              "costo": "$96 por nivel, (72 horas para pagar tras validar el servicio).",
+              "periodos": [
+                {
+                  "nombre": "Calendario",
+                  "modalidades": [
+                    {
+                      "modalidad": "Todas las modalidades, grado"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "🟡 Solicitar homologación por validación de conocimientos.",
+              "descripcion": "Dirigido a estudiantes que desean rendir un examen para demostrar sus conocimientos y aprobar una asignatura. Para hacerlo, es importante considerar lo siguiente: Se debe crear un servicio por cada asignatura a validar. A nivel de grado se pueden solicitar hasta 3 asignaturas por periodo académico distribuidas en los eventos planificados dependiendo la modalidad. Puede inscribirse hasta en 2 ocasiones para aprobar cada asignatura; en caso de no hacerlo, será necesario cursarla mediante matrícula regular. Aplica para estudiantes cuyos estudios superan los 10 años de aprobación en caso de requerirlo. La evaluación podrá aplicarse mediante una prueba que mida los resultados de aprendizaje o mediante una rúbrica que evidencie su cumplimiento. No aplica para validación de asignaturas de prácticum, Seminarios de Abogacía, Seminarios de Fin de Titulación y Jornadas Pedagógicas. Las evaluaciones se realizarán únicamente en las fechas establecidas.",
+              "modalidad_nivel": "Distancia/Presencial/En línea; Grado/Posgrado, Tecnologías.",
+              "tiempo_respuesta": "De acuerdo a la planificación del evento ver calendarios.",
+              "requisitos": [
+                "Cumplir prerrequisitos si la asignatura lo requiere.",
+                "No estar matriculado en la asignatura."
+              ],
+              "costo": "$96 por asignatura (72 horas para pagar tras validar el servicio).",
+              "periodos": [
+                {
+                  "nombre": "Calendario abril - agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "Modalidad presencial, grado y tecnologías (único evento)"
+                    },
+                    {
+                      "modalidad": "Modalidad a distancia, en línea; grado, tecnologías y posgrado"
+                    },
+                    {
+                      "modalidad": "Validación general Listening and Speaking, grado, modalidad a distancia y en línea."
+                    }
+                  ]
+                }
+              ],
+              "manual": [
+                {
+                  "texto": "Validación general Listening and Speaking, grado, modalidad a distancia y en línea.",
+                  "url": "https://portales.utpl.edu.ec/sites/default/files/2026-04/Calendario Validación Listening-Speaking_GR_EL_Estudiantes_202630.pdf"
+                }
+              ],
+              "nota": "Servicio disponible en las fechas establecidas en el calendario académico."
+            },
+            {
+              "nombre": "🟡 Solicitar análisis de validación de prácticas (gestión productiva/prácticum) MP.",
+              "descripcion": "Dirigido a estudiantes que solicitan la revisión y validación de la documentación sobre prácticas relacionadas a su carrera para validar la asignatura de Gestión Productiva/Prácticum. Debe adjuntar un informe del trabajo realizado evidenciando la adquisición de las competencias de la asignatura que solicita. Calendario para el periodo octubre 2026 – febrero 2027",
+              "modalidad_nivel": "Presencial/Grado- Todas las carreras.",
+              "tiempo_respuesta": "6 días.",
+              "costo": "Sin costo"
+            },
+            {
+              "nombre": "🟡Solicitar reconocimiento de prácticum por experiencia laboral MP/ MAD/TEC",
+              "descripcion": "Dirigido a estudiantes que soliciten el reconocimiento de su experiencia laboral para validar asignaturas de Prácticum, siempre que las actividades realizadas sean pertinentes y estén alineadas con los resultados de aprendizaje definidos para cada carrera.",
+              "modalidad_nivel": "Distancia/En línea/ Presencial -Nivel Grado/ Técnico Tecnológico.",
+              "tiempo_respuesta": "15 días.",
+              "requisitos": [
+                "Tener aprobado o validado el pre-requisito de la asignatura que se está solicitando en caso de tenerlo.",
+                "Adjuntar la documentación establecida de acuerdo a su modalidad y malla académica:"
+              ],
+              "requisitos_pestanas": [
+                {
+                  "pestaña": "DISTANCIA",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "titulo": "Estudiantes ECTS",
+                          "items": [
+                            {
+                              "texto": "Administración en Banca y Finanzas",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/ECTS/Administración en Banca y Finanzas- ECTS.pdf"
+                            },
+                            {
+                              "texto": "Administración en Gestión Pública",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/ECTS/Administración en Gestión Pública-ECTS.pdf"
+                            },
+                            {
+                              "texto": "Ciencias Humanas y Religiosas",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/ECTS/Ciencias Humanas y Religiosas-ECTS.pdf"
+                            },
+                            {
+                              "texto": "Comunicación Social",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/ECTS/Comunicación Social-ECTS.pdf"
+                            },
+                            {
+                              "texto": "Contabilidad y Auditoría",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/ECTS/Contabilidad y Auditoría- ECTS.pdf"
+                            },
+                            {
+                              "texto": "Educación Básica",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/ECTS/Educación Básica-ECTS.pdf"
+                            },
+                            {
+                              "texto": "Educación Infantil",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/ECTS/Educación Infantil - ECTS.pdf"
+                            },
+                            {
+                              "texto": "Lengua y Literatura",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/ECTS/Lengua y Literatura -ECTS.pdf"
+                            },
+                            {
+                              "texto": "Psicología",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/ECTS/Psicología - ECTS.pdf"
+                            }
+                          ]
+                        },
+                        {
+                          "titulo": "Estudiantes REDISEÑO",
+                          "items": [
+                            {
+                              "texto": "Administración de Empresas",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Administración de Empreas -RC.pdf"
+                            },
+                            {
+                              "texto": "Administración Pública",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Administración Pública-RC.pdf"
+                            },
+                            {
+                              "texto": "Agronegocios",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Agronegocios-RC.pdf"
+                            },
+                            {
+                              "texto": "Comunicación",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Comunicación-RC.pdf"
+                            },
+                            {
+                              "texto": "Contabilidad y Auditoría",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Contanilidad y Auditoría-RC.pdf"
+                            },
+                            {
+                              "texto": "Derecho",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Derecho-RC.pdf"
+                            },
+                            {
+                              "texto": "Economía",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-04/EconomíaRediseño.pdf"
+                            },
+                            {
+                              "texto": "Educación Básica",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Educación Básica-RC.pdf"
+                            },
+                            {
+                              "texto": "Educación Inicial",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Educación Inicial-RC.pdf"
+                            },
+                            {
+                              "texto": "Finanzas",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-04/Finanzas.pdf"
+                            },
+                            {
+                              "texto": "Gestión Ambiental",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2025-04/REDISE/Gestión Ambiental.pdf"
+                            },
+                            {
+                              "texto": "Gestión de Riesgos y Desastres",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Gestión de Riesgos y Desastres-RC.pdf"
+                            },
+                            {
+                              "texto": "Logística y Transporte",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Logística y Transporte-RC.pdf"
+                            },
+                            {
+                              "texto": "Pedagogía de la Lengua y la Literatura",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Pedagogía de la Lengua  la Literatura-RC.pdf"
+                            },
+                            {
+                              "texto": "Pedagogía de la Química y Biología",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Pedagogía de la Química y Biología-RC.pdf"
+                            },
+                            {
+                              "texto": "Pedagogía de las Matemáticas y la Física",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Pedagogía de las Matematicas y Física-RC.pdf"
+                            },
+                            {
+                              "texto": "Pedagogía de los Idiomas Nacionales y Extranjeros",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Ped IdiomasNacionales Extranjeros-RC.pdf"
+                            },
+                            {
+                              "texto": "Pedagogía de la religión",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Pedagogia de la Religion-RC.pdf"
+                            },
+                            {
+                              "texto": "Psicología",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Psicología-RC.pdf"
+                            },
+                            {
+                              "texto": "Psicopedagogía",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Psicopedagogía-RC.pdf"
+                            },
+                            {
+                              "texto": "Seguridad y Salud Ocupacional",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Seguridad_y_Salud_Ocupacional RC.pdf"
+                            },
+                            {
+                              "texto": "Tecnologías de Información",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-01/REDISE/Tecnologías de Información-RC Oct25-Feb26.pdf"
+                            },
+                            {
+                              "texto": "Turismo",
+                              "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-04/Turismo-Rediseño.pdf"
+                            }
+                          ]
+                        },
+                        {
+                          "texto": "El componente solicitado tiene que cumplir con el pre-requisito (en caso de tenerlo)."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "pestaña": "PRESENCIAL",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "titulo": "Requisitos Académicos",
+                          "items": [
+                            {
+                              "texto": "Tener aprobado el pre o correquisito del prácticum correspondiente."
+                            },
+                            {
+                              "texto": "Presentar una memoria técnica sobre la actividad laboral que realizó el estudiante."
+                            },
+                            {
+                              "texto": "Cada carrera determinará los aspectos a considerar dentro de la memoria técnica."
+                            },
+                            {
+                              "texto": "Entrevista del coordinador de carrera o tutor del prácticum con el estudiante."
+                            }
+                          ]
+                        },
+                        {
+                          "titulo": "Las evidencias a ser presentadas serán",
+                          "items": [
+                            {
+                              "texto": "Certificado de aportes al IESS."
+                            },
+                            {
+                              "texto": "Copia del RUC de la empresa o entidad en la que labora."
+                            },
+                            {
+                              "texto": "Certificado laboral de la empresa o entidad."
+                            },
+                            {
+                              "texto": "Copia del nombramiento o contrato registrado."
+                            },
+                            {
+                              "texto": "Declaraciones de IVA o Impuesto a la Renta (para servicios profesionales o autónomos)."
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "pestaña": "TECNOLOGÍAS",
+                  "contenido": [
+                    {
+                      "texto": "Programas:"
+                    },
+                    {
+                      "lista": [
+                        {
+                          "texto": "Transformación digital de empresas",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2024-02/Transformaci%C3%B3n%20digital%20de%20empresas.pdf"
+                        },
+                        {
+                          "texto": "Comunicación estratégica y marketing digital",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2024-02/Comunicaci%C3%B3n%20estrat%C3%A9gica%20y%20martketing%20digital.pdf"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "costo": "$96 dólares por asignatura (72 horas para pagar tras validar el servicio).",
+              "periodos": [
+                {
+                  "nombre": "Calendario para matrícula del periodo octubre 2026 – febrero 2027",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "desde el 13 de abril al 28 de septiembre de 2026."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "🟢 Homologación cert. internacional/otras IES/titulos en segunda lengua.",
+              "descripcion": "Dirigido a estudiantes de carreras nuevas o rediseñadas que cuenten con un certificado internacional, un certificado emitido por otra IES o un título académico obtenido en una lengua distinta a la materna, para acreditar el requisito de segunda lengua previo a su graduación. Se aceptarán certificados con una vigencia de hasta diez años, salvo aquellos que especifiquen un periodo de vigencia diferente. No aplica para estudiantes de la carrera de Pedagogía de los Idiomas Nacionales y extranjeros ya que no requieren cumplir con este requisito para graduación. Opciones: Certificados emitidos por IES nacionales o extranjeras reconocidas por el CES dde haber cursado una segunda lengua en el que se describa el tiempo de estudio y el nivel de suficiencia adquirido debidamente legalizado por la institución emisora. Carreras de Grado: B1 Carreras Técnicas o Tecnologías: A2",
+              "tiempo_respuesta": "6 días.",
+              "costo": "10% de la matricula.",
+              "manual": [
+                {
+                  "texto": "https://www.utpl.edu.ec/segunda-lengua#certificados",
+                  "url": "https://www.utpl.edu.ec/segunda-lengua#certificados"
+                }
+              ],
+              "importante": [
+                "Los documentos se deben adjuntar de forma digital, si el tamaño del archivo impide su carga directa, se recomienda subirlo a una plataforma en la nube (como Google Drive, OneDrive, entre otras) y compartir el enlace correspondiente.",
+                "Se aceptan certificados tengan una vigencia de hasta diez años, salvo aquellos que especifiquen su periodo de vigencia."
+              ]
+            },
+            {
+              "nombre": "🟢 Solicitar análisis de validación por ejercicio profesional o experiencia laboral.",
+              "descripcion": "Dirigido a las personas que soliciten el reconocimiento del ejercicio profesional o de la experiencia laboral. Este reconocimiento permite la homologación de determinadas asignaturas de la carrera.",
+              "modalidad_nivel": "Distancia/En línea /Presencial - Grado.",
+              "tiempo_respuesta": "15 días.",
+              "costo": "$35."
+            },
+            {
+              "nombre": "🟢 Solicitar reconocimiento de estudios externos (Grado y Posgrado).",
+              "descripcion": "Dirigido a estudiantes que desean formar parte de la UTPL y solicitan la homologación de asignaturas aprobadas o validadas en otras Instituciones de Educación Superior (universidades e institutos tecnológicos) para continuar sus estudios en la UTPL. La revisión se realiza individualmente por asignatura, a fin de comprobar que cumplan al menos el 80% de similitud en contenidos, profundidad y carga horaria, dando cumplimiento a lo indicado en el Reglamento de Régimen Académico.",
+              "modalidad_nivel": "Distancia/Presencial/En línea; Grado/Posgrado, Tecnologías - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "25 días.",
+              "requisitos": [
+                "Récord académico original emitido por la IES de origen que indique:Sistema de Calificación.Calificaciones obtenidas.Fecha y año de aprobación de cada asignatura.Valoración en créditos y equivalencia en horas asistidas por el docente, el práctico y autónomo de cada componente.Programa formativo y plan de contenidos de cada componente.",
+                "Sistema de Calificación.",
+                "Calificaciones obtenidas.",
+                "Fecha y año de aprobación de cada asignatura.",
+                "Valoración en créditos y equivalencia en horas asistidas por el docente, el práctico y autónomo de cada componente.",
+                "Programa formativo y plan de contenidos de cada componente.",
+                "Copia de cédula de identidad o pasaporte",
+                "Tanto el récord académico como el programa formativo y plan de contenidos deberán estar certificados por la institución de procedencia.",
+                "En el caso de estudios realizados en el exterior cuyos certificados estén en un idioma diferente al español, deberán presentarse la respectiva traducción legalizada o apostillada.",
+                "Los documentos deben ser escaneados y enviados de forma digital en el servicio. Si el tamaño del archivo supera el límite permitido de 5MB, puede optar por hacerlo mediante ONE DRIVE, GOOGLE DRIVE, debe adjuntar el link del sitio en el servicio.",
+                "Para la carrera de medicina presentar una certificación de no haber recibido ninguna sanción disciplinaria en la universidad o escuela politécnica de origen."
+              ],
+              "costo": "Sin costo",
+              "periodos": [
+                {
+                  "nombre": "Calendario para matrícula del periodo octubre 2026 – febrero 2027",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "desde el 13 de abril al 21 de septiembre de 2026."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "🔵 Solicitar registro de cumplimiento de segunda lengua.",
+              "descripcion": "Dirigido a estudiantes que han aprobado el requisito de segunda lengua a través del examen de ubicación de inglés o de academias externas con convenio UTPL, que pertenecen a las carreras nuevas y rediseñadas.",
+              "modalidad_nivel": "Distancia/Presencial/En línea – Grado/Tecnologías - Todas las carreras.",
+              "tiempo_respuesta": ": 5 días.",
+              "costo": ": 10% del arancel de matrícula.",
+              "nota": "Este servicio estará habilitado durante las fechas establecidas en el calendario académico."
+            },
+            {
+              "nombre": "🔵 Solicitar examen de ubicación de inglés.",
+              "descripcion": "Dirigido a estudiantes de las carreras nuevas o rediseñadas que tengan dominio en el idioma inglés y soliciten rendir el examen de ubicación para cumplir con el requisito de la suficiencia de segunda lengua. Si al rendir el examen de ubicación el estudiante cumple con la nota requerida para la aprobación de nivel (B1, A2), según corresponda a su malla, debe registrar el servicio “Solicitar registro de cumplimiento de segunda lengua”. El estudiante tiene 3 intentos durante su vida estudiantil para rendir el examen.",
+              "modalidad_nivel": "Distancia/Presencial – Grado/Tecnologías/Posgrado - todas las carreras o programas académicos.",
+              "costo": "$10 dólares. No incluye registro de cumplimiento de requisito.",
+              "periodos": [
+                {
+                  "nombre": "Calendario abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "Todas las modalidades, grado y tecnologías."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "POSTULANTE",
+      "total_categorias": 2,
+      "total_servicios": 6,
+      "categorias": [
+        {
+          "nombre": "SERVICIOS-CERTIFICACIONES",
+          "servicios": [
+            {
+              "nombre": "Revisa nuestro catálogo de certificados",
+              "manual": [
+                {
+                  "texto": "Catálogo de Certificados 2024",
+                  "url": "https://portales.utpl.edu.ec/sites/default/files/pdf/Manual de Certificados_2024_digital-1_1.pdf"
+                }
+              ]
+            },
+            {
+              "nombre": "Certificados de crédito educativo",
+              "descripcion": "Dirigido a estudiantes que requieren certificados de crédito educativo, crédito educativo por costo ciclo, crédito educativo costo total, posgrados, o por materias reprobadas.",
+              "modalidad_nivel": ": Distancia/Presencial - Grado/Posgrado - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "10 días",
+              "nota": "Este servicio no requiere la presentación de requisitos y no aplica costo de aranceles."
+            }
+          ]
+        },
+        {
+          "nombre": "SERVICIOS-MATRÍCULA",
+          "servicios": [
+            {
+              "nombre": "Solicitar edición de matrícula",
+              "descripcion": "Dirigido a estudiantes nuevos que necesitan realizar los siguientes trámites: También aplica para aquellos estudiantes de segundo ciclo en adelante que deseen eliminar un curso pagado.",
+              "imagen": "https://portales.utpl.edu.ec/sites/default/files/inline-images/SOLICITAR%20EDICION%20DE%20MATRICULA.png",
+              "modalidad_nivel": "Distancia/Presencial – Grado, Posgrado, Tecnologías - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "10 días laborales",
+              "periodos": [
+                {
+                  "nombre": "Periodo abril – junio 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "desde el 30 de enero, al 6 de abril de 2026."
+                    }
+                  ]
+                },
+                {
+                  "nombre": "Periodo abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "19 de noviembre de 2025, al 3 de abril de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas de matrícula."
+            },
+            {
+              "nombre": "Solicitar retiro por caso fortuito o fuerza mayor",
+              "descripcion": "Dirigido a estudiantes que desean retirarse de uno o varios componentes por situaciones fortuitas o de fuerza mayor debidamente documentadas que impidan la culminación del período académico. Entre los motivos considerados como casos fortuitos se encuentran: cambio de centro de rehabilitación, privado de la libertad, fallecimiento de cónyuge, accidentes, embarazos riesgosos, enfermedad, entre otros. Aplica desde el inicio de actividades académica hasta un día antes del evento de recuperación.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado/Competencias Específicas",
+              "tiempo_respuesta": "10 días laborales",
+              "requisitos": [
+                "Formato de retiro por Caso Fortuito o Fuerza Mayor:",
+                "Factura de matrícula período vigente",
+                "Carta dirigida a Dirección Financiera argumentando el retiro e indicando los datos de la cuenta bancaria a la que requiere el reembolso. Si el reembolso se debe realizar a la cuenta de una tercera persona adjuntar copia de cédula del estudiante y del titular de la cuenta y copia de cartola o certificado de cuenta activa.",
+                "Justificativo que permita evidenciar el motivo que le impide continuar con los estudios. Los justificativos médicos y psicológicos deben ser avalados por el MSP o IESS"
+              ],
+              "requisitos_pestanas": [
+                {
+                  "pestaña": "GRADO / POSGRADO",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Formato de Retiro Caso Fortuito 202630.pdf"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "pestaña": "TECNOLOGÍAS",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Formato de Retiro Caso Fortuito 202630.pdf"
+                        },
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Retiro fortuito TEC-Trimestral 202625.pdf"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "periodos": [
+                {
+                  "nombre": "Periodo abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "Modalidad presencial",
+                      "solicitud": "desde el 22 de junio al 31 de julio de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad a distancia y en línea",
+                      "solicitud": "desde el 6 de abril al 28 de agosto de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad en línea",
+                      "solicitud": "desde el 6 de abril al 28 de agosto de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad en línea, híbrida y presencial",
+                      "solicitud": "desde el 6 de abril al 31 de julio de 2026."
+                    },
+                    {
+                      "modalidad": "Especialización en Medicina Familiar y Comunitaria",
+                      "solicitud": "desde el 13 de abril al 25 de septiembre de 2026."
+                    },
+                    {
+                      "modalidad": "Especializaciones: Imagenología y Anestesiología, Reanimación y Terapia del Dolor",
+                      "solicitud": "desde el 6 de abril al 25 de septiembre de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas establecidas en el calendario académico. No aplica costo de aranceles."
+            },
+            {
+              "nombre": "Solicitar retiro voluntario",
+              "descripcion": "Dirigido a estudiantes que cursan una carrera y requieran retirarse voluntariamente de una o varias asignaturas cursos o sus equivalentes en un período ordinario, contado a partir de la fecha de inicio de las actividades académicas. En caso de posgrado el retiro voluntario podrá realizarse siempre y cuando no se haya cumplido más del 30% de las horas del componente de aprendizaje en contacto con el docente, curso o su equivalente.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado/Competencias Específicas - Tecnología",
+              "tiempo_respuesta": "10 días laborales",
+              "requisitos": [
+                "Formato de retiro voluntario:",
+                "Factura de matrícula período vigente.",
+                "Si solicita retiro voluntario total con reembolso de valores debe adjuntar: Carta dirigida a Dirección Financiera argumentando el retiro e indicando los datos de la cuenta bancaria a la que requiere el reembolso. Si el reembolso se debe realizar a una tercera persona adjuntar copia de cédula del estudiante y del titular de la cuenta y copia de cartola o certificado de cuenta activa."
+              ],
+              "requisitos_pestanas": [
+                {
+                  "pestaña": "GRADO / POSGRADO",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Formato Retiro voluntario 202630.pdf"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "pestaña": "TECNOLOGIAS",
+                  "contenido": [
+                    {
+                      "lista": [
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Formato Retiro voluntario 202630.pdf"
+                        },
+                        {
+                          "texto": "Descargue aquí",
+                          "pdf": "https://portales.utpl.edu.ec/sites/default/files/2026-03/Retiro voluntario TEC-Trimestral 202625.pdf"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "periodos": [
+                {
+                  "nombre": "Periodo abril – agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "Modalidad presencial",
+                      "solicitud": "desde el 23 de marzo al 21 de junio de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad a distancia y en línea",
+                      "solicitud": "desde el 6 de abril al 25 de junio de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad en línea",
+                      "solicitud": "desde el 6 de abril al 25 de junio de 2026."
+                    },
+                    {
+                      "modalidad": "Modalidad presencial, en línea, híbrida",
+                      "solicitud": "desde el 6 de abril al 23 de julio de 2026."
+                    },
+                    {
+                      "modalidad": "Especialización en Medicina Familiar y Comunitaria",
+                      "solicitud": "desde el 13 de abril al 25 de septiembre de 2026."
+                    },
+                    {
+                      "modalidad": "Especializaciones: Imagenología y Anestesiología, Reanimación y Terapia del Dolor",
+                      "solicitud": "desde el 6 de abril al 25 de septiembre de 2026."
+                    }
+                  ]
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas establecidas en el calendario académico. No aplica costo de aranceles."
+            },
+            {
+              "nombre": "Enviar requisitos de matrícula",
+              "descripcion": "Dirigido a estudiantes nuevos que requieran realizar el envío de los requisitos de matrícula.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/ Técnico-tecnológico - todas las carreras.",
+              "tiempo_respuesta": "4 días laborales",
+              "requisitos": [
+                "Carta de compromiso y autorización.Estudiantes mayores de edad: Aceptación de términos y condiciones de la Carta de compromiso y autorización.Estudiantes menores de edad: Descargar la plantilla de la Carta de compromiso y autorización, la cual debe ser firmada por su representante legal, y cargar en conjunto con la copia a color de la cédula del representante. (un solo archivo en formato pdf)",
+                "Estudiantes mayores de edad: Aceptación de términos y condiciones de la Carta de compromiso y autorización.",
+                "Estudiantes menores de edad: Descargar la plantilla de la Carta de compromiso y autorización, la cual debe ser firmada por su representante legal, y cargar en conjunto con la copia a color de la cédula del representante. (un solo archivo en formato pdf)",
+                "Copia a color del documento de identidad (cédula de ciudadanía o pasaporte para extranjeros).",
+                "Documento de bachiller o su equivalente. Verificar si el título se encuentra registrado en el sistema del Ministerio de Educación del Ecuador. Descarga aquí",
+                "En caso de que el título de bachiller no esté registrado; realizar lo siguiente:Bachiller ecuatoriano: debe enviar una copia certificada por la institución educativa que confirió el título, notario/a público del Ecuador, consulado ecuatoriano o notario público extranjero en caso de residir en el exterior.Bachiller extranjero: debe enviar una copia a color del reconocimiento u homologación del título de bachiller extranjero, emitido por el Ministerio de Educación del Ecuador, debidamente notariado.",
+                "Bachiller ecuatoriano: debe enviar una copia certificada por la institución educativa que confirió el título, notario/a público del Ecuador, consulado ecuatoriano o notario público extranjero en caso de residir en el exterior.",
+                "Bachiller extranjero: debe enviar una copia a color del reconocimiento u homologación del título de bachiller extranjero, emitido por el Ministerio de Educación del Ecuador, debidamente notariado.",
+                "En caso de acceder a matrícula especial, presentar la Solicitud de Matrícula Especial / abril - agosto 2026.",
+                "Fotografía a color tamaño carné actualizada."
+              ],
+              "periodos": [
+                {
+                  "nombre": "Periodo académico: abril 2026 - agosto 2026",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "Desde el 19 de noviembre 2025, hasta el 18 de mayo de 2026.",
+                      "respuesta": "Desde el 19 de noviembre 2025, hasta el 22 de mayo de 2026."
+                    }
+                  ]
+                }
+              ],
+              "manual": [
+                {
+                  "texto": "Descargar aquí",
+                  "url": "https://portales.utpl.edu.ec/sites/default/files/2025-10/MANUAL_CONSIDERA_ENVIO_REQUISI-MATRICULA.pdf"
+                }
+              ],
+              "nota": "Este servicio estará habilitado durante las fechas de matrícula. No aplica costo de aranceles.",
+              "importante": "por el personal de Gestión Documental, en caso de encontrar inconsistencias, se solicitará nuevamente el envío de los documentos. El no realizar el proceso será causal de anulación de matrícula."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "SIN_TIPO_EN_API",
+      "total_categorias": 2,
+      "total_servicios": 4,
+      "categorias": [
+        {
+          "nombre": "SERVICIOS-EVALUACIONES",
+          "servicios": [
+            {
+              "nombre": "Solicitar cambio de centro temporal y/o jornada de evaluación",
+              "descripcion": "Dirigido a estudiantes que requieren cambio de centro temporal y/o jornada de evaluación presencial para poder rendir las evaluaciones en el centro universitario y/o jornada de evaluación solicitada, de acuerdo a las fechas establecidas por la universidad.",
+              "tiempo_respuesta": "3 días",
+              "costo": "$25,00 cambios nacionales, 25 euros cambios internacionales (Roma y Madrid).",
+              "nota": "Este servicio aplicará cuando se retomen las evaluaciones de forma presencial y durante las fechas establecidas en el calendario académico. No requiere la presentación de requisitos."
+            },
+            {
+              "nombre": "Solicitar cambio de centro temporal a New York",
+              "descripcion": "Dirigido a estudiantes que requieren cambio de centro temporal y/o jornada de evaluación al Centro New York, con el fin de poder rendir las evaluaciones presenciales en dicho centro universitario, de acuerdo a las fechas establecidas por la Universidad.",
+              "tiempo_respuesta": "5 días",
+              "costo": "$ 50,00 por componente",
+              "nota": "Este servicio aplicará cuando se retomen las evaluaciones de forma presencial y durante las fechas establecidas en el calendario académico. No requiere la presentación de requisitos."
+            }
+          ]
+        },
+        {
+          "nombre": "SERVICIOS-RECONOCIMIENTO DE ESTUDIOS",
+          "servicios": [
+            {
+              "nombre": "Solicitar cambio de programa (Homologacion interna)",
+              "descripcion": "Dirigido a estudiantes que desean cambiarse de carrera y que solicitan se reconozcan sus materias aprobadas de la carrera de origen con equivalencias a la carrera de destino.",
+              "modalidad_nivel": "Distancia/Presencial - Grado/Posgrado -todas las carreras o programas académicos.",
+              "tiempo_respuesta": "14 días",
+              "periodos": [
+                {
+                  "nombre": "Calendario abril - agosto 2022",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": "del 9 de mayo al 5 de septiembre de 2022",
+                      "respuesta": "del 9 de mayo al 23 de septiembre de 2022"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nombre": "Solicitar reconocimiento de estudios externo | Grado y Posgrado",
+              "descripcion": "Dirigido a personas que desean formar parte de la UTPL; y que solicitan que sus materias aprobadas en otras Instituciones de Educación Superior (universidades e institutos tecnológicos) sean reconocidos para continuar sus estudios en esta universidad. Los documentos se analizarán en base al contenido, profundidad y carga horaria, si cumplen con los requerimientos institucionales. Este periodo académico el servicio tiene el 100% de descuento, para análisis y resultado. El informe emitido por el Área de Reconocimiento tiene la duración de un ciclo. Los documentos no deben ser entregados en físico, deberán ser escaneados y adjuntados en el servicio, si el peso excede el permitido debe ser cargado en ONE DRIVE, GOOGLE DRIVE, entre otros y compartir en link en el detalle del requerimiento del servicio.",
+              "modalidad_nivel": "Distancia/Presencial – Grado - todas las carreras o programas académicos.",
+              "tiempo_respuesta": "37 días laborales",
+              "requisitos": [
+                "Récord académico original emitido por la IES de origen que indique: Sistema de Calificación Calificaciones obtenidas Fecha y año de aprobación de cada componente Valoración en créditos y equivalencia en horas asistidas por el docente, el práctico y autónomo de cada componente Programa formativo y plan de contenidos de cada componente",
+                "Sistema de Calificación",
+                "Calificaciones obtenidas",
+                "Fecha y año de aprobación de cada componente",
+                "Valoración en créditos y equivalencia en horas asistidas por el docente, el práctico y autónomo de cada componente",
+                "Programa formativo y plan de contenidos de cada componente",
+                "Copia de cédula de identidad o pasaporte"
+              ],
+              "costo": "$36,00 dólares (en este periodo tiene un descuento del 100%, no aplica costo de aranceles)",
+              "periodos": [
+                {
+                  "nombre": "Calendario abril - agosto 2022",
+                  "modalidades": [
+                    {
+                      "modalidad": "General",
+                      "solicitud": ": del 3 de marzo al 26 de agosto de 2022",
+                      "respuesta": ": del 10 de marzo al 23 de septiembre de 2022"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "tipos_de_estudiante": {
+      "ALUMNI": "Egresados / graduados",
+      "CONTINUO": "Estudiantes actualmente matriculados",
+      "NUEVO": "Estudiantes recién matriculados",
+      "POSTULANTE": "Aspirantes",
+      "SIN_TIPO_EN_API": "El registro Drupal no asigna tipo; tratar como aplicable a todos los perfiles"
+    },
+    "esquema": {
+      "requisitos": "lista[str] de requisitos generales",
+      "requisitos_pestanas": "lista[{pestaña, contenido[]}] cuando el HTML usa pestañas (tabs)",
+      "periodos": "lista[{nombre, modalidades:[{modalidad, solicitud?, respuesta?}]}]",
+      "manual": "lista[{texto, url}] (PDFs/videos relacionados)"
+    },
+    "notas_parser": [
+      "El parser descarta filas Drupal 'disableblock' y encabezados 'SERVICIOS DE …' por carecer de contenido útil.",
+      "Cuando el HTML mezcla 'Tiempo de respuesta' y 'Costo' en un mismo bloque entre <hr>, se enrutan ambos campos analizando cada <p> con <strong>."
+    ]
+  }
+}
