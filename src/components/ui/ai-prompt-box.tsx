@@ -23,6 +23,8 @@ export function AIPromptBox({
   isLoading = false,
   placeholder = 'Escribe tu consulta',
 }: AIPromptBoxProps) {
+  const textareaId = React.useId()
+  const hintId = React.useId()
   const textareaRef = React.useRef<HTMLTextAreaElement>(null)
 
   React.useEffect(() => {
@@ -49,15 +51,22 @@ export function AIPromptBox({
             <span className="rounded-full border border-chalk bg-powder px-3 py-1 text-[11px] uppercase tracking-[0.08em] text-gravel">
               Texto
             </span>
-            <span className="text-xs text-slate">Enter envía · Shift+Enter salta línea</span>
+            <span id={hintId} className="text-xs text-slate">
+              Enter envía · Shift+Enter salta línea
+            </span>
           </div>
         </div>
 
+        <label htmlFor={textareaId} className="sr-only">
+          Pregunta por un trámite o servicio UTPL
+        </label>
         <textarea
+          id={textareaId}
           ref={textareaRef}
           value={value}
           rows={1}
           placeholder={placeholder}
+          aria-describedby={hintId}
           className="min-h-[44px] w-full resize-none border-0 bg-transparent px-1 py-2 text-[15px] leading-7 text-obsidian outline-none placeholder:text-slate"
           onChange={(event) => onValueChange(event.target.value)}
           onKeyDown={(event) => {
