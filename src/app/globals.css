@@ -52,4 +52,8 @@
   textarea {
     font: inherit;
   }
+
+  textarea {
+    scrollbar-width: thin;
+  }
 }
