@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --color-eggshell: #fdfcfc;
+  --color-powder: #f5f3f1;
+  --color-chalk: #e5e5e5;
+  --color-fog: #b1b0b0;
+  --color-gravel: #777169;
+  --color-slate: #a59f97;
+  --color-cinder: #57534a;
+  --color-obsidian: #000000;
+}
+
+@theme inline {
+  --color-eggshell: var(--color-eggshell);
+  --color-powder: var(--color-powder);
+  --color-chalk: var(--color-chalk);
+  --color-fog: var(--color-fog);
+  --color-gravel: var(--color-gravel);
+  --color-slate: var(--color-slate);
+  --color-cinder: var(--color-cinder);
+  --color-obsidian: var(--color-obsidian);
+  --font-display: var(--font-waldenburg);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    background: var(--color-eggshell);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--color-eggshell);
+    color: var(--color-obsidian);
+    font-family: var(--font-inter), sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  button,
+  input,
+  textarea {
+    font: inherit;
+  }
+}
