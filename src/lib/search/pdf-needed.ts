@@ -17,7 +17,7 @@ const PDF_TRIGGERS = [
 
 export function pdfNeeded(query: string): boolean {
   const q = normalizeText(query);
-  const tokens = new Set(q.split(/\s+/).filter(Boolean));
+  const tokens = new Set(q.match(/[a-z0-9]+/g) ?? []);
 
   return PDF_TRIGGERS.some((t) => {
     // Phrases should stay as substring matches; single words should be token-aware.

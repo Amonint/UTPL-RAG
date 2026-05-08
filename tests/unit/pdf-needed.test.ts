@@ -13,4 +13,10 @@ describe("pdfNeeded", () => {
   it("does not trigger on substrings for single-word triggers", () => {
     expect(pdfNeeded("manualidades")).toBe(false);
   });
+
+  it("triggers when a single-word trigger is adjacent to punctuation", () => {
+    expect(pdfNeeded("manual, por favor")).toBe(true);
+    expect(pdfNeeded("pdf?")).toBe(true);
+    expect(pdfNeeded("formato.")).toBe(true);
+  });
 });
