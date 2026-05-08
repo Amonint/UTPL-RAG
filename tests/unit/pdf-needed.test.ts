@@ -9,5 +9,8 @@ describe("pdfNeeded", () => {
   it("does not trigger for generic short queries", () => {
     expect(pdfNeeded("retiro voluntario")).toBe(false);
   });
-});
 
+  it("does not trigger on substrings for single-word triggers", () => {
+    expect(pdfNeeded("manualidades")).toBe(false);
+  });
+});

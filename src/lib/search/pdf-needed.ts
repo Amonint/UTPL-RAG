@@ -15,8 +15,13 @@ const PDF_TRIGGERS = [
   "requisitos detallados",
 ];
 
-export function pdfNeeded(query: string) {
+export function pdfNeeded(query: string): boolean {
   const q = normalizeText(query);
-  return PDF_TRIGGERS.some((t) => q.includes(t));
-}
+  const tokens = new Set(q.split(/\s+/).filter(Boolean));
 
+  return PDF_TRIGGERS.some((t) => {
+    // Phrases should stay as substring matches; single words should be token-aware.
+    if (t.includes(" ")) return q.includes(t);
+    return tokens.has(t);
+  });
+}
