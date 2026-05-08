@@ -75,7 +75,7 @@ describe('RagWorkbench search flow', () => {
     expect(parsedBody).toMatchObject({
       question: 'cual es el costo',
       selectedServiceId: 'servicios-matricula__solicitar-retiro-voluntario',
-      allowPdf: false,
+      allowPdf: true,
     })
   })
 })

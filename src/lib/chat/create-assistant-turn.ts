@@ -41,7 +41,7 @@ export function createAssistantTurn(input: RagResponsePayload): ChatTurn {
       id: `assistant-${crypto.randomUUID()}`,
       role: 'assistant',
       status: 'done',
-      content: 'Encontré varios servicios cercanos. Escribe el nombre exacto del trámite o elige uno de estos candidatos.',
+      content: 'Estos resultados se parecen a tu búsqueda. Elige uno para continuar.',
       serviceCandidates: input.serviceCandidates,
       usedSources: [],
       selectedService: null,

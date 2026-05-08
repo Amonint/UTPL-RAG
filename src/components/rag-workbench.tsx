@@ -9,7 +9,6 @@ import {
   type ChatTurn,
   type RagResponsePayload,
 } from '@/lib/chat/create-assistant-turn'
-import { pdfNeeded } from '@/lib/search/pdf-needed'
 import type { SearchResult } from '@/lib/types'
 
 import { ChatMessage } from './chat-message'
@@ -42,18 +41,16 @@ export function RagWorkbench() {
     }
 
     return selectedService.hasPdfs
-      ? 'Este servicio tiene PDF de apoyo. Si preguntas por formato/manual/anexo, usare PDF.'
-      : 'Este servicio no tiene PDF asociado. La respuesta se basa en informacion del JSON.'
+      ? '¿Alguna pregunta sobre este servicio?'
+      : '¿Qué te gustaría saber sobre este servicio?'
   }, [selectedService])
 
   function buildServiceSelectedTurn(result: SearchResult, source: 'live' | 'thread'): ChatTurn {
     const intro =
       source === 'live'
-        ? `Perfecto, seleccionaste **${result.serviceName}**.`
-        : `Listo, abrimos **${result.serviceName}** para continuar.`
-    const detail = result.snippet
-      ? `Descripcion: "${result.snippet}"`
-      : 'Descripcion: "Sin descripcion corta disponible en el indice."'
+        ? `Perfecto, seleccionaste ${result.serviceName}.`
+        : `Listo, abrimos ${result.serviceName} para continuar.`
+    const detail = result.snippet ? `Descripción: "${result.snippet}"` : null
 
     return {
       id: `assistant-${crypto.randomUUID()}`,
@@ -61,13 +58,13 @@ export function RagWorkbench() {
       status: 'done',
       content: [
         intro,
-        `Servicio: ${result.serviceName}`,
-        `Categoria: ${result.category}`,
-        detail,
         result.hasPdfs
-          ? 'Sugerencia: "Puedes pedir requisitos detallados, formato o manual para consultar PDF."'
-          : 'Sugerencia: "Haz tu pregunta y te respondo con la informacion estructurada del JSON."',
-      ].join('\n'),
+          ? '¿Alguna pregunta sobre este servicio?'
+          : '¿Qué te gustaría saber sobre este servicio?',
+        detail,
+      ]
+        .filter(Boolean)
+        .join('\n'),
       usedSources: [],
       serviceCandidates: [],
       selectedService: {
@@ -192,7 +189,7 @@ export function RagWorkbench() {
           body: JSON.stringify({
             question,
             selectedServiceId: selectedService.serviceId,
-            allowPdf: selectedService.hasPdfs && pdfNeeded(question),
+            allowPdf: selectedService.hasPdfs,
           }),
         })
 
@@ -315,7 +312,7 @@ export function RagWorkbench() {
           isLoading={loading}
           placeholder={
             selectedService
-              ? `Pregunta sobre ${selectedService.serviceName}...`
+              ? `Escribe tu pregunta sobre ${selectedService.serviceName}...`
               : 'Escribe para buscar servicios (ej. "matri", "retiro", "certificado")'
           }
         />
