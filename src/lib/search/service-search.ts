@@ -6,7 +6,7 @@ function pickSnippet(service: CanonicalServiceRecord) {
   const p = service.jsonPayload as any;
   const raw = (p?.descripcion ?? p?.nota ?? p?.modalidad_nivel ?? "") as string;
   const s = String(raw).trim();
-  return s ? s.slice(0, 180) : undefined;
+  return s || undefined;
 }
 
 export function searchServices(input: {

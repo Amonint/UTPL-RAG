@@ -10,7 +10,7 @@ describe('RagWorkbench', () => {
     vi.restoreAllMocks()
   })
 
-  it('submits a query with Enter and renders the assistant reply in the thread', async () => {
+  it('shows live suggestions while typing', async () => {
     const user = userEvent.setup()
 
     vi.stubGlobal(
@@ -55,7 +55,7 @@ describe('RagWorkbench', () => {
     render(<RagWorkbench />)
 
     const textbox = screen.getByRole('textbox')
-    await user.type(textbox, '¿Cómo solicito retiro voluntario?{enter}')
+    await user.type(textbox, 'retiro voluntario')
 
     await waitFor(() => {
       expect(screen.getByRole('button', { name: /solicitar retiro voluntario/i })).toBeTruthy()

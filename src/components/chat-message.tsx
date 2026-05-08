@@ -8,6 +8,28 @@ interface ChatMessageProps {
 
 export function ChatMessage({ turn, onSelectService }: ChatMessageProps) {
   const isUser = turn.role === 'user'
+  const contentLines = turn.content.split('\n').filter((line) => line.trim().length > 0)
+
+  function renderAssistantLine(line: string, index: number) {
+    const match = line.match(/^([A-Za-zÀ-ÿ\s]+):\s*(.+)$/)
+    if (!match) {
+      return (
+        <p key={`${turn.id}-line-${index}`} className="m-0 whitespace-pre-wrap text-[15px] leading-7">
+          {line}
+        </p>
+      )
+    }
+
+    const [, label, value] = match
+    const quoted = value.match(/^"([\s\S]+)"$/)
+
+    return (
+      <p key={`${turn.id}-line-${index}`} className="m-0 whitespace-pre-wrap text-[15px] leading-7">
+        <strong>{label}:</strong>{' '}
+        {quoted ? <em>"{quoted[1]}"</em> : value}
+      </p>
+    )
+  }
 
   return (
     <article className={cn('grid gap-2', isUser ? 'justify-items-end' : 'justify-items-start')}>
@@ -17,7 +39,11 @@ export function ChatMessage({ turn, onSelectService }: ChatMessageProps) {
           isUser ? 'bg-obsidian text-eggshell' : 'border border-chalk bg-white text-obsidian',
         )}
       >
-        <p className="m-0 whitespace-pre-wrap text-[15px] leading-7">{turn.content}</p>
+        {isUser ? (
+          <p className="m-0 whitespace-pre-wrap text-[15px] leading-7">{turn.content}</p>
+        ) : (
+          <div className="grid gap-1">{contentLines.map((line, index) => renderAssistantLine(line, index))}</div>
+        )}
 
         {turn.searchResults && turn.searchResults.length > 0 ? (
           <ul className="mt-4 grid gap-2 p-0">

@@ -55,14 +55,13 @@ describe('RagWorkbench search flow', () => {
 
     render(<RagWorkbench />)
 
-    const searchTextarea = screen.getByPlaceholderText('Escribe tu consulta')
+    const searchTextarea = screen.getByRole('textbox')
     await user.type(searchTextarea, 'retiro voluntario')
-    await user.keyboard('{Enter}')
 
     const resultButton = await screen.findByRole('button', { name: /solicitar retiro voluntario/i })
     await user.click(resultButton)
 
-    const followupTextarea = screen.getByPlaceholderText('Escribe tu consulta')
+    const followupTextarea = screen.getByRole('textbox')
     await user.type(followupTextarea, 'cual es el costo')
     await user.keyboard('{Enter}')
 
@@ -80,4 +79,3 @@ describe('RagWorkbench search flow', () => {
     })
   })
 })
-
