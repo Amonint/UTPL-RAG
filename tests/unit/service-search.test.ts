@@ -6,7 +6,7 @@ const services = [
     serviceId: "a",
     serviceName: "Solicitar edición de matrícula",
     category: "SERVICIOS",
-    studentTypes: ["X"],
+    studentTypes: ["CONTINUO"],
     jsonPayload: { descripcion: "..." },
     pdfRefs: [],
   },
@@ -14,7 +14,7 @@ const services = [
     serviceId: "b",
     serviceName: "Retiro voluntario",
     category: "SERVICIOS",
-    studentTypes: ["X"],
+    studentTypes: ["CONTINUO"],
     jsonPayload: { nota: "..." },
     pdfRefs: [{ label: "Formato", url: "x.pdf", localPath: "x.pdf", sourcePath: "0" }],
   },
@@ -30,5 +30,10 @@ describe("searchServices", () => {
     const res = searchServices({ query: "retiro", services, limit: 10 });
     expect(res[0]?.hasPdfs).toBe(true);
   });
-});
 
+  it("falls back to fuse for typos (accent-insensitive)", () => {
+    const res = searchServices({ query: "matricla", services, limit: 10 });
+    expect(res[0]?.serviceId).toBe("a");
+    expect(res[0]?.score).toBeLessThan(1);
+  });
+});

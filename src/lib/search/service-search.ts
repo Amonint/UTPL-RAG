@@ -14,6 +14,7 @@ export function searchServices(input: {
   services: CanonicalServiceRecord[];
   limit: number;
 }): SearchResult[] {
+  const limit = Math.max(0, Math.min(input.limit, input.services.length));
   const q = normalizeText(input.query);
   if (!q) return [];
 
@@ -39,7 +40,7 @@ export function searchServices(input: {
       // Deterministic tie-break to avoid flaky ordering.
       return a.serviceNameNorm.localeCompare(b.serviceNameNorm);
     })
-    .slice(0, input.limit)
+    .slice(0, limit)
     .map(({ s, score }) => ({
       serviceId: s.serviceId,
       serviceName: s.serviceName,
@@ -65,7 +66,7 @@ export function searchServices(input: {
 
   return fuse
     .search(q)
-    .slice(0, input.limit)
+    .slice(0, limit)
     .map((r) => ({
       serviceId: r.item.item.serviceId,
       serviceName: r.item.item.serviceName,
