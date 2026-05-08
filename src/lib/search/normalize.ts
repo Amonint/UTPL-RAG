@@ -1,4 +1,4 @@
-export function normalizeText(input: string) {
+export function normalizeText(input: string): string {
   return input
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
@@ -6,4 +6,3 @@ export function normalizeText(input: string) {
     .trim()
     .replace(/\s+/g, " ");
 }
-
