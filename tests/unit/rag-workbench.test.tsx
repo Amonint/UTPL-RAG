@@ -15,20 +15,40 @@ describe('RagWorkbench', () => {
 
     vi.stubGlobal(
       'fetch',
-      vi.fn().mockResolvedValue({
-        ok: true,
-        json: async () => ({
-          answer: 'Debes completar el formato de retiro voluntario.',
-          selectedService: {
-            serviceId: 'servicios-matricula__solicitar-retiro-voluntario',
-            serviceName: 'Solicitar retiro voluntario',
-            category: 'SERVICIOS-MATRÍCULA',
-            studentTypes: ['CONTINUO'],
-          },
-          usedSources: [],
-          needsDisambiguation: false,
-          serviceCandidates: [],
-        }),
+      vi.fn(async (input: RequestInfo | URL) => {
+        const url = String(input)
+        if (url.endsWith('/api/search-services')) {
+          return {
+            ok: true,
+            json: async () => ({
+              results: [
+                {
+                  serviceId: 'servicios-matricula__solicitar-retiro-voluntario',
+                  serviceName: 'Solicitar retiro voluntario',
+                  category: 'SERVICIOS-MATRÍCULA',
+                  score: 0.98,
+                  hasPdfs: true,
+                },
+              ],
+            }),
+          }
+        }
+
+        return {
+          ok: true,
+          json: async () => ({
+            answer: 'Debes completar el formato de retiro voluntario.',
+            selectedService: {
+              serviceId: 'servicios-matricula__solicitar-retiro-voluntario',
+              serviceName: 'Solicitar retiro voluntario',
+              category: 'SERVICIOS-MATRÍCULA',
+              studentTypes: ['CONTINUO'],
+            },
+            usedSources: [],
+            needsDisambiguation: false,
+            serviceCandidates: [],
+          }),
+        }
       }),
     )
 
@@ -38,7 +58,7 @@ describe('RagWorkbench', () => {
     await user.type(textbox, '¿Cómo solicito retiro voluntario?{enter}')
 
     await waitFor(() => {
-      expect(screen.getByText('Debes completar el formato de retiro voluntario.')).toBeTruthy()
+      expect(screen.getByRole('button', { name: /solicitar retiro voluntario/i })).toBeTruthy()
     })
   })
 })

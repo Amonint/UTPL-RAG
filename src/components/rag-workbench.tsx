@@ -4,30 +4,48 @@ import { useState } from 'react'
 
 import {
   createAssistantTurn,
+  createSearchResultsTurn,
   createErrorTurn,
   type ChatTurn,
   type RagResponsePayload,
 } from '@/lib/chat/create-assistant-turn'
+import { pdfNeeded } from '@/lib/search/pdf-needed'
+import type { SearchResult } from '@/lib/types'
 
 import { ChatMessage } from './chat-message'
-import { AIPromptBox } from './ui/ai-prompt-box'
+import { PromptBox } from './ui/chatgpt-prompt-input'
 
 interface RagResponse extends RagResponsePayload {}
 
-const welcomeTurn: ChatTurn = {
-  id: 'assistant-welcome',
-  role: 'assistant',
-  status: 'done',
-  content: 'Consulta cualquier trámite UTPL. El chat no guarda nada y se reinicia al refrescar.',
-  usedSources: [],
-  serviceCandidates: [],
-  selectedService: null,
-}
-
 export function RagWorkbench() {
-  const [messages, setMessages] = useState<ChatTurn[]>([welcomeTurn])
+  const [messages, setMessages] = useState<ChatTurn[]>([])
   const [draft, setDraft] = useState('')
   const [loading, setLoading] = useState(false)
+  const [selectedService, setSelectedService] = useState<{
+    serviceId: string
+    serviceName: string
+    hasPdfs: boolean
+  } | null>(null)
+  const isStartScreen = messages.length === 0 && !loading
+
+  function buildServiceSelectedTurn(result: SearchResult): ChatTurn {
+    return {
+      id: `assistant-${crypto.randomUUID()}`,
+      role: 'assistant',
+      status: 'done',
+      content: result.hasPdfs
+        ? `Servicio seleccionado: ${result.serviceName}. Este servicio tiene PDFs de apoyo. Te respondere con JSON y usare PDF solo cuando haga falta.`
+        : `Servicio seleccionado: ${result.serviceName}. Este servicio se respondera solo con informacion del JSON.`,
+      usedSources: [],
+      serviceCandidates: [],
+      selectedService: {
+        serviceId: result.serviceId,
+        serviceName: result.serviceName,
+        category: result.category,
+        studentTypes: [],
+      },
+    }
+  }
 
   async function handleSubmit() {
     const question = draft.trim()
@@ -58,34 +76,76 @@ export function RagWorkbench() {
     setMessages((current) => [...current, userTurn, loadingTurn])
 
     try {
-      const response = await fetch('/api/rag', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ question }),
-      })
+      if (!selectedService) {
+        const response = await fetch('/api/search-services', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ query: question, limit: 12 }),
+        })
+        const body = (await response.json()) as { results?: SearchResult[]; message?: string }
 
-      const body = (await response.json()) as RagResponse | { message: string }
+        if (!response.ok) {
+          setMessages((current) =>
+            current.map((turn) =>
+              turn.id === loadingTurn.id
+                ? createErrorTurn(
+                    body.message ??
+                      'No se pudo ejecutar la busqueda. Revisa artefactos o backend.',
+                  )
+                : turn,
+            ),
+          )
+          return
+        }
 
-      if (!response.ok) {
+        const results = Array.isArray(body.results) ? body.results : []
         setMessages((current) =>
           current.map((turn) =>
             turn.id === loadingTurn.id
-              ? createErrorTurn(
-                  'No se pudo completar la consulta. Revisa el backend o la clave de Gemini.',
-                )
+              ? results.length > 0
+                ? createSearchResultsTurn(results)
+                : createErrorTurn(
+                    'No encontre servicios relacionados. Prueba con otra palabra clave.',
+                  )
               : turn,
           ),
         )
-        return
-      }
+      } else {
+        const response = await fetch('/api/rag', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            question,
+            selectedServiceId: selectedService.serviceId,
+            allowPdf: selectedService.hasPdfs && pdfNeeded(question),
+          }),
+        })
 
-      setMessages((current) =>
-        current.map((turn) =>
-          turn.id === loadingTurn.id ? createAssistantTurn(body as RagResponse) : turn,
-        ),
-      )
+        const body = (await response.json()) as RagResponse | { message: string }
+
+        if (!response.ok) {
+          setMessages((current) =>
+            current.map((turn) =>
+              turn.id === loadingTurn.id
+                ? createErrorTurn(
+                    'No se pudo completar la consulta. Revisa el backend o la clave de Gemini.',
+                  )
+                : turn,
+            ),
+          )
+          return
+        }
+
+        setMessages((current) =>
+          current.map((turn) =>
+            turn.id === loadingTurn.id ? createAssistantTurn(body as RagResponse) : turn,
+          ),
+        )
+      }
     } catch {
       setMessages((current) =>
         current.map((turn) =>
@@ -99,37 +159,76 @@ export function RagWorkbench() {
     }
   }
 
+  function handleSelectService(serviceId: string) {
+    const result = messages
+      .flatMap((turn) => turn.searchResults ?? [])
+      .find((item) => item.serviceId === serviceId)
+
+    if (!result) {
+      return
+    }
+
+    setSelectedService({
+      serviceId: result.serviceId,
+      serviceName: result.serviceName,
+      hasPdfs: result.hasPdfs,
+    })
+    setMessages((current) => [...current, buildServiceSelectedTurn(result)])
+  }
+
   return (
-    <section className="grid min-h-[72vh] overflow-hidden rounded-[28px] border border-chalk bg-gradient-to-b from-white to-eggshell shadow-[0_0_0_0.5px_rgba(0,0,0,0.06)_inset]">
-      <header className="border-b border-chalk bg-[rgba(253,252,252,0.92)] px-5 py-5 md:px-6">
-        <div className="flex items-center gap-3">
-          <span className="rounded-full border border-chalk bg-obsidian px-3 py-1 text-[11px] uppercase tracking-[0.08em] text-eggshell">
-            24h
-          </span>
-          <div className="grid gap-1">
-            <h2 className="m-0 font-display text-2xl font-normal tracking-[-0.03em] text-obsidian">
-              Consulta libre
-            </h2>
-            <p className="m-0 text-sm text-gravel">Sin cuenta. Sin historial. Se reinicia al refrescar.</p>
+    <section className="grid min-h-[72vh] overflow-hidden rounded-[28px] bg-gradient-to-b from-white to-eggshell shadow-[0_0_0_0.5px_rgba(0,0,0,0.06)_inset]">
+      {isStartScreen ? (
+        <div
+          className="flex min-h-[420px] flex-col items-center justify-center gap-10 px-5 py-10 md:px-6"
+          aria-live="polite"
+        >
+          <p className="m-0 max-w-[22ch] text-center text-3xl font-semibold text-obsidian">
+            ¿En qué puedo ayudarte?
+          </p>
+          <div className="w-full max-w-xl">
+            <PromptBox
+              value={draft}
+              onValueChange={setDraft}
+              onSubmit={handleSubmit}
+              isLoading={loading}
+              placeholder="Escribe tu consulta"
+            />
           </div>
         </div>
-      </header>
+      ) : (
+        <div className="grid min-h-[420px] content-start gap-5 px-5 py-6 md:px-6" aria-live="polite">
+          {messages.map((turn) => (
+            <ChatMessage key={turn.id} turn={turn} onSelectService={handleSelectService} />
+          ))}
+        </div>
+      )}
 
-      <div className="grid min-h-[420px] content-start gap-5 px-5 py-6 md:px-6" aria-live="polite">
-        {messages.map((turn) => (
-          <ChatMessage key={turn.id} turn={turn} />
-        ))}
-      </div>
-
-      <div className="border-t border-chalk bg-[rgba(255,255,255,0.88)] px-5 py-5 md:px-6">
-        <AIPromptBox
-          value={draft}
-          onValueChange={setDraft}
-          onSubmit={handleSubmit}
-          isLoading={loading}
-          placeholder="Pregunta por un trámite o servicio UTPL"
-        />
-      </div>
+      {isStartScreen ? null : (
+        <div className="border-t border-chalk bg-[rgba(255,255,255,0.88)] px-5 py-5 md:px-6">
+          {selectedService ? (
+            <div className="mb-3 flex items-center justify-between rounded-2xl border border-chalk bg-white px-4 py-3 text-sm text-obsidian">
+              <span>
+                En contexto: <strong>{selectedService.serviceName}</strong>
+              </span>
+              <button
+                type="button"
+                onClick={() => setSelectedService(null)}
+                className="rounded-full border border-chalk px-3 py-1 text-xs uppercase tracking-[0.04em] text-gravel transition hover:bg-powder"
+              >
+                Volver a buscar
+              </button>
+            </div>
+          ) : null}
+          <PromptBox
+            value={draft}
+            onValueChange={setDraft}
+            onSubmit={handleSubmit}
+            isLoading={loading}
+            placeholder="Escribe tu consulta"
+          />
+        </div>
+      )}
     </section>
   )
 }

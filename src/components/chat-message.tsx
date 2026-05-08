@@ -3,22 +3,14 @@ import { cn } from '@/lib/utils'
 
 interface ChatMessageProps {
   turn: ChatTurn
+  onSelectService?: (serviceId: string) => void
 }
 
-export function ChatMessage({ turn }: ChatMessageProps) {
+export function ChatMessage({ turn, onSelectService }: ChatMessageProps) {
   const isUser = turn.role === 'user'
 
   return (
     <article className={cn('grid gap-2', isUser ? 'justify-items-end' : 'justify-items-start')}>
-      <div className="flex items-center gap-2">
-        <span className="text-[12px] uppercase tracking-[0.05em] text-gravel">{isUser ? 'Tú' : '24h'}</span>
-        {turn.selectedService?.serviceName ? (
-          <span className="rounded-full border border-chalk bg-white px-2.5 py-1 text-[11px] uppercase tracking-[0.05em] text-gravel">
-            {turn.selectedService.serviceName}
-          </span>
-        ) : null}
-      </div>
-
       <div
         className={cn(
           'w-full max-w-[720px] rounded-[20px] px-4 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.06)]',
@@ -26,6 +18,36 @@ export function ChatMessage({ turn }: ChatMessageProps) {
         )}
       >
         <p className="m-0 whitespace-pre-wrap text-[15px] leading-7">{turn.content}</p>
+
+        {turn.searchResults && turn.searchResults.length > 0 ? (
+          <ul className="mt-4 grid gap-2 p-0">
+            {turn.searchResults.map((result) => (
+              <li key={result.serviceId} className="list-none">
+                <button
+                  type="button"
+                  onClick={() => onSelectService?.(result.serviceId)}
+                  className="flex w-full flex-col items-start gap-2 rounded-2xl border border-chalk bg-powder px-4 py-3 text-left text-sm text-obsidian transition hover:bg-white"
+                >
+                  <div className="flex w-full items-center justify-between gap-3">
+                    <span className="font-medium">{result.serviceName}</span>
+                    <span className="rounded-full border border-chalk px-2 py-1 text-[11px] uppercase tracking-[0.05em] text-gravel">
+                      {Math.round(result.score * 100)}%
+                    </span>
+                  </div>
+                  <span className="text-xs uppercase tracking-[0.05em] text-gravel">
+                    {result.category}
+                  </span>
+                  {result.snippet ? (
+                    <span className="text-xs leading-5 text-cinder">{result.snippet}</span>
+                  ) : null}
+                  <span className="rounded-full border border-chalk bg-white px-2 py-1 text-[11px] text-gravel">
+                    {result.hasPdfs ? 'Tiene PDF' : 'Solo JSON'}
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        ) : null}
 
         {turn.serviceCandidates && turn.serviceCandidates.length > 0 ? (
           <ul className="mt-4 grid gap-2 p-0">
