@@ -7,7 +7,7 @@ import {
   MODALITIES,
   CATEGORY_COLORS,
   colorForCategory,
-} from "@/data/academic-calendar-events";
+} from "@/data/calendar-events-active";
 import { filterAcademicEventsFromTodayEcuador } from "@/lib/ecuador-calendar";
 
 function formatDate(dateStr: string) {

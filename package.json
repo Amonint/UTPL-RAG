@@ -11,7 +11,12 @@
     "test:watch": "vitest",
     "ingest": "tsx scripts/build-artifacts.ts",
     "validate:calendar-pdfs": "tsx scripts/validate-calendar-from-pdfs.ts",
-    "extract:calendar-vision": "tsx scripts/extract-events-from-pdfs-vision.ts"
+    "extract:calendar-vision": "tsx scripts/extract-events-from-pdfs-vision.ts",
+    "extract:doop-textract": "tsx scripts/textract-doop-pdfs.ts",
+    "bundle:extraccion-utpl-v1": "tsx scripts/bundle-extraccion-utpl-v1.ts",
+    "extraccion:utpl-v1": "npm run extract:doop-textract && npm run bundle:extraccion-utpl-v1",
+    "process:textract-calendar": "tsx scripts/process-textract-raw-to-calendar.ts",
+    "calendar:emit-from-textract": "tsx scripts/emit-calendar-from-textract-candidates.ts"
   },
   "dependencies": {
     "@google-cloud/storage": "^7.19.0",
@@ -22,10 +27,12 @@
     "@radix-ui/react-label": "^2.1.8",
     "@radix-ui/react-popover": "^1.1.15",
     "@radix-ui/react-select": "^2.2.6",
+    "@radix-ui/react-separator": "^1.1.8",
     "@radix-ui/react-slot": "^1.2.4",
     "@radix-ui/react-tooltip": "^1.2.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
     "framer-motion": "^12.23.12",
     "fuse.js": "^7.1.0",
     "lucide-react": "^0.539.0",
@@ -39,6 +46,8 @@
     "zod": "^4.1.5"
   },
   "devDependencies": {
+    "@aws-sdk/client-s3": "^3.787.0",
+    "@aws-sdk/client-textract": "^3.787.0",
     "@tailwindcss/postcss": "^4.1.12",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
