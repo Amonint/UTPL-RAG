@@ -7,7 +7,7 @@ const { generateGroundedAnswerMock } = vi.hoisted(() => ({
   ),
 }))
 
-vi.mock('@/lib/data/load-artifacts', () => ({
+vi.mock('@/lib/data', () => ({
   loadArtifacts: async () => ({
     services: [
       {

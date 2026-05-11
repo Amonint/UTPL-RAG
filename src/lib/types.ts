@@ -12,6 +12,15 @@ export interface PdfRef {
   sourcePath: string
 }
 
+export interface PdfFacet {
+  facetId: string
+  pestana: string
+  titulo: string
+  itemTexto: string
+  pdfRefs: PdfRef[]
+  pdfCount: number
+}
+
 export interface CanonicalServiceRecord {
   serviceId: string
   serviceName: string

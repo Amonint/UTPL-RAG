@@ -1,4 +1,4 @@
-import { loadArtifacts } from '@/lib/data/load-artifacts'
+import { loadArtifacts } from '@/lib/data'
 import {
   generateGroundedAnswer,
   generateGroundedAnswerWithNativePdfs,
