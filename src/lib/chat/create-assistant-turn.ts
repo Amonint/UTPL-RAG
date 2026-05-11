@@ -1,30 +1,28 @@
 import type { RetrievalChunk } from '@/lib/ingest/chunking'
+import type { CanonicalServiceRecord, SearchResult } from '@/lib/types'
+
+/** Metadatos del servicio en el hilo (ficha JSON y PDFs alineados con `CanonicalServiceRecord`). */
+export type SelectedServiceMeta = Pick<
+  CanonicalServiceRecord,
+  'serviceId' | 'serviceName' | 'category' | 'studentTypes' | 'jsonPayload' | 'pdfRefs'
+> & {
+  hasPdfs?: boolean
+  snippet?: string
+}
 
 export interface ChatTurn {
   id: string
   role: 'assistant' | 'user'
   content: string
   status?: 'loading' | 'done' | 'error'
-  selectedService?: {
-    serviceId: string
-    serviceName: string
-    category: string
-    studentTypes: string[]
-  } | null
+  selectedService?: SelectedServiceMeta | null
   usedSources?: RetrievalChunk[]
   serviceCandidates?: Array<{
     serviceId: string
     serviceName: string
     score: number
   }>
-  searchResults?: Array<{
-    serviceId: string
-    serviceName: string
-    category: string
-    score: number
-    hasPdfs: boolean
-    snippet?: string
-  }>
+  searchResults?: SearchResult[]
 }
 
 export interface RagResponsePayload {
@@ -71,9 +69,7 @@ export function createErrorTurn(message: string): ChatTurn {
   }
 }
 
-export function createSearchResultsTurn(
-  results: NonNullable<ChatTurn['searchResults']>,
-): ChatTurn {
+export function createSearchResultsTurn(results: SearchResult[]): ChatTurn {
   return {
     id: `assistant-${crypto.randomUUID()}`,
     role: 'assistant',

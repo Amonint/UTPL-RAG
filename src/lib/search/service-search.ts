@@ -48,6 +48,9 @@ export function searchServices(input: {
       score,
       hasPdfs: Boolean(s.pdfRefs?.length),
       snippet: pickSnippet(s),
+      studentTypes: s.studentTypes,
+      pdfRefs: s.pdfRefs ?? [],
+      jsonPayload: s.jsonPayload,
     }));
   if (boosted.length) return boosted;
 
@@ -67,12 +70,18 @@ export function searchServices(input: {
   return fuse
     .search(q)
     .slice(0, limit)
-    .map((r) => ({
-      serviceId: r.item.item.serviceId,
-      serviceName: r.item.item.serviceName,
-      category: r.item.item.category,
-      score: 1 - (r.score ?? 1),
-      hasPdfs: Boolean(r.item.item.pdfRefs?.length),
-      snippet: pickSnippet(r.item.item),
-    }));
+    .map((r) => {
+      const s = r.item.item
+      return {
+        serviceId: s.serviceId,
+        serviceName: s.serviceName,
+        category: s.category,
+        score: 1 - (r.score ?? 1),
+        hasPdfs: Boolean(s.pdfRefs?.length),
+        snippet: pickSnippet(s),
+        studentTypes: s.studentTypes,
+        pdfRefs: s.pdfRefs ?? [],
+        jsonPayload: s.jsonPayload,
+      }
+    });
 }

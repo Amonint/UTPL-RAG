@@ -69,7 +69,7 @@ export default function AcademicCalendar() {
       <div style={s.filters}>
         <input
           type="text"
-          placeholder="🔍  Buscar actividad, categoría o modalidad…"
+          placeholder="Buscar actividad, categoría o modalidad…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           style={s.input}
@@ -132,7 +132,7 @@ export default function AcademicCalendar() {
                     ? formatDate(event.start)
                     : `${formatDate(event.start)} → ${formatDate(event.end)}`}
                 </p>
-                <p style={s.meta}>📋 {event.modality}</p>
+                <p style={s.meta}>{event.modality}</p>
               </div>
             </article>
           ))

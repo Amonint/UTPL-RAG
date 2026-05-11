@@ -33,6 +33,7 @@ export function RagWorkbench() {
   } | null>(null)
   const isStartScreen = messages.length === 0 && !loading && !hasStartedTyping
   const shouldDockComposer = hasStartedTyping || messages.length > 0
+  const composerDockTop = shouldDockComposer && draft.trim().length > 0
   const canShowLiveResults = !selectedService && draft.trim().length >= 2
 
   const conversationHint = useMemo(() => {
@@ -71,7 +72,11 @@ export function RagWorkbench() {
         serviceId: result.serviceId,
         serviceName: result.serviceName,
         category: result.category,
-        studentTypes: [],
+        studentTypes: result.studentTypes ?? [],
+        pdfRefs: result.pdfRefs ?? [],
+        jsonPayload: result.jsonPayload ?? {},
+        hasPdfs: result.hasPdfs,
+        snippet: result.snippet,
       },
     }
   }
@@ -116,13 +121,14 @@ export function RagWorkbench() {
 
   function handleDraftChange(next: string) {
     setDraft(next)
-    if (!hasStartedTyping && next.trim().length > 0) {
-      if (!dockTimerRef.current) {
-        dockTimerRef.current = setTimeout(() => {
-          setHasStartedTyping(true)
-          dockTimerRef.current = null
-        }, 280)
-      }
+    if (next.trim().length === 0) {
+      return
+    }
+    if (!hasStartedTyping && !dockTimerRef.current) {
+      dockTimerRef.current = setTimeout(() => {
+        setHasStartedTyping(true)
+        dockTimerRef.current = null
+      }, 280)
     }
   }
 
@@ -335,7 +341,11 @@ export function RagWorkbench() {
         </div>
       ) : (
         <div
-          className="grid min-h-[420px] content-start gap-5 px-5 pb-48 pt-6 md:px-6"
+          className={
+            composerDockTop
+              ? 'grid min-h-[420px] content-start gap-5 px-5 pb-8 pt-[min(580px,calc(100vh-8rem))] md:px-6'
+              : 'grid min-h-[420px] content-start gap-5 px-5 pb-48 pt-6 md:px-6'
+          }
           aria-live="polite"
         >
           {messages.map((turn) => (
@@ -345,7 +355,13 @@ export function RagWorkbench() {
       )}
 
       {shouldDockComposer ? (
-        <div className="fixed inset-x-0 bottom-0 z-30 px-4 pb-4">
+        <div
+          className={
+            composerDockTop
+              ? 'fixed inset-x-0 top-0 z-30 px-4 pb-2 pt-[max(0.75rem,env(safe-area-inset-top))]'
+              : 'fixed inset-x-0 bottom-0 z-30 px-4 pb-4'
+          }
+        >
           <div className="mx-auto w-[min(calc(100%-20px),960px)] rounded-[24px] border border-chalk bg-[rgba(253,252,252,0.95)] p-4 shadow-[0_16px_40px_rgba(0,0,0,0.14)] backdrop-blur">
             {selectedService ? (
               <div className="mb-3 flex items-center justify-between gap-2 rounded-2xl border border-chalk bg-white px-4 py-3 text-sm text-obsidian">

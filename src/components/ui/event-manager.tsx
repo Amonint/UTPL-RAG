@@ -61,6 +61,49 @@ function eventOverlapsDay(event: Event, day: Date): boolean {
   return startStr <= dayStr && dayStr <= endStr
 }
 
+/** Un evento de varios días solo se lista el primer día de cada tramo continuo dentro de la grilla (evita repetir el mismo acto en todas las celdas). */
+function eventStartsVisibleRunOnDay(event: Event, day: Date, dayIndex: number, gridDays: Date[]): boolean {
+  if (!eventOverlapsDay(event, day)) return false
+  if (dayIndex === 0) return true
+  return !eventOverlapsDay(event, gridDays[dayIndex - 1]!)
+}
+
+/** Rango típico UTPL: 00:00 del día inicio → 23:59:59 del día fin (sin hora concreta de actividad). */
+function isDayBasedAcademicBlock(start: Date, end: Date): boolean {
+  if (start.getHours() !== 0 || start.getMinutes() !== 0 || start.getSeconds() !== 0) return false
+  if (end.getHours() !== 23 || end.getMinutes() !== 59) return false
+  return true
+}
+
+function formatEventScheduleForDialog(ev: Event): string {
+  const { startTime: a, endTime: b } = ev
+  const sameLocalDay = toLocalYmd(a) === toLocalYmd(b)
+  const block = isDayBasedAcademicBlock(a, b)
+
+  if (block && sameLocalDay) {
+    return `${a.toLocaleDateString("es-EC", { dateStyle: "long" })} · Todo el día`
+  }
+  if (block && !sameLocalDay) {
+    return `${a.toLocaleDateString("es-EC", { dateStyle: "long" })} — ${b.toLocaleDateString("es-EC", { dateStyle: "long" })} · Todo el día`
+  }
+  return `${a.toLocaleString("es-EC", { dateStyle: "medium", timeStyle: "short" })} — ${b.toLocaleString("es-EC", { dateStyle: "medium", timeStyle: "short" })}`
+}
+
+/** Una línea corta para listas: solo fechas de vigencia. */
+function formatEventDateRangeCompact(ev: Event): string {
+  const { startTime: a, endTime: b } = ev
+  if (toLocalYmd(a) === toLocalYmd(b)) return a.toLocaleDateString("es-EC", { dateStyle: "medium" })
+  return `${a.toLocaleDateString("es-EC", { dateStyle: "medium" })} — ${b.toLocaleDateString("es-EC", { dateStyle: "medium" })}`
+}
+
+function formatModalityForDialog(ev: Event): string {
+  const m = ev.description?.trim() ?? ""
+  if (!m || m === "Todas") {
+    return "Todas las modalidades de estudio (presencial, en línea, posgrado, etc.), según el calendario oficial."
+  }
+  return m
+}
+
 export function EventManager({
   events: initialEvents = [],
   readOnly = false,
@@ -215,30 +258,39 @@ export function EventManager({
       )}
 
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="max-w-md max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-md max-h-[90vh] overflow-y-auto sm:max-w-lg">
           <DialogHeader>
-            <DialogTitle>{selectedEvent?.title}</DialogTitle>
-            <DialogDescription>
-              {selectedEvent?.category}
-              {selectedEvent?.description ? ` · ${selectedEvent.description}` : ""}
+            <DialogTitle className="pr-6 text-base leading-snug sm:text-lg">{selectedEvent?.title}</DialogTitle>
+            <DialogDescription className="text-left text-pretty">
+              Origen: calendario académico publicado por la UTPL (cronograma de plazos y actividades del periodo). Las
+              fechas no son una cita personal: indican en qué días aplica cada ítem en el calendario institucional.
             </DialogDescription>
           </DialogHeader>
           {selectedEvent ? (
-            <div className="space-y-2 text-sm">
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <Clock className="h-4 w-4" />
-                <span>
-                  {selectedEvent.startTime.toLocaleString("es-EC", {
-                    dateStyle: "medium",
-                    timeStyle: "short",
-                  })}{" "}
-                  —{" "}
-                  {selectedEvent.endTime.toLocaleString("es-EC", {
-                    dateStyle: "medium",
-                    timeStyle: "short",
-                  })}
-                </span>
-              </div>
+            <div className="space-y-4 text-sm">
+              <dl className="grid gap-3">
+                <div className="space-y-1">
+                  <dt className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Categoría</dt>
+                  <dd className="text-foreground">{selectedEvent.category?.trim() || "—"}</dd>
+                </div>
+                <div className="space-y-1">
+                  <dt className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                    <Clock className="h-3.5 w-3.5" aria-hidden />
+                    Vigencia en el calendario
+                  </dt>
+                  <dd className="text-foreground">{formatEventScheduleForDialog(selectedEvent)}</dd>
+                  <dd className="text-xs leading-relaxed text-muted-foreground">
+                    Es el rango de días en que la universidad marca el trámite o la actividad como vigente en el
+                    cronograma; suele contar como día completo en cada fecha, no como hora de clase concreta.
+                  </dd>
+                </div>
+                <div className="space-y-1">
+                  <dt className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                    Modalidad (a quién aplica)
+                  </dt>
+                  <dd className="text-foreground">{formatModalityForDialog(selectedEvent)}</dd>
+                </div>
+              </dl>
               {selectedEvent.tags && selectedEvent.tags.length > 0 ? (
                 <div className="flex flex-wrap gap-1">
                   {selectedEvent.tags.map((tag) => (
@@ -318,7 +370,8 @@ function MonthView({
     cur.setDate(cur.getDate() + 1)
   }
 
-  const getEventsForDay = (date: Date) => events.filter((event) => eventOverlapsDay(event, date))
+  const getEventsForDay = (date: Date, dayIndex: number) =>
+    events.filter((event) => eventStartsVisibleRunOnDay(event, date, dayIndex, days))
 
   const weekdayLabels = ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"]
 
@@ -333,7 +386,7 @@ function MonthView({
       </div>
       <div className="grid grid-cols-7">
         {days.map((day, index) => {
-          const dayEvents = getEventsForDay(day)
+          const dayEvents = getEventsForDay(day, index)
           const isCurrentMonth = day.getMonth() === currentDate.getMonth()
           const isToday = toLocalYmd(day) === toLocalYmd(new Date())
 
@@ -401,7 +454,7 @@ function ListView({
                 <span className="min-w-0 flex-1">
                   <span className="font-medium">{event.title}</span>
                   <span className="block text-xs text-muted-foreground">
-                    {event.startTime.toLocaleDateString("es-EC")} — {event.category}
+                    {event.category ?? "—"} · Vigencia: {formatEventDateRangeCompact(event)}
                   </span>
                 </span>
               </button>

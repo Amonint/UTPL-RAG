@@ -37,4 +37,7 @@ export type SearchResult = {
   score: number // 0..1
   hasPdfs: boolean
   snippet?: string
+  studentTypes?: StudentType[]
+  pdfRefs?: PdfRef[]
+  jsonPayload?: Record<string, unknown>
 }
