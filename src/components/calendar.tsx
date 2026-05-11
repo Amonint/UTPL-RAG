@@ -8,6 +8,7 @@ import {
   CATEGORY_COLORS,
   colorForCategory,
 } from "@/data/academic-calendar-events";
+import { filterAcademicEventsFromTodayEcuador } from "@/lib/ecuador-calendar";
 
 function formatDate(dateStr: string) {
   return new Intl.DateTimeFormat("es-EC", {
@@ -21,12 +22,17 @@ export default function AcademicCalendar() {
   const [selectedModality, setModality]     = useState("Todas");
   const [selectedCategory, setCategory]     = useState("Todas");
 
+  const upcoming = useMemo(
+    () => filterAcademicEventsFromTodayEcuador(EVENTS),
+    [],
+  );
+
   const categories = useMemo(() => {
-    return ["Todas", ...new Set(EVENTS.map((e) => e.category))];
-  }, []);
+    return ["Todas", ...new Set(upcoming.map((e) => e.category))];
+  }, [upcoming]);
 
   const filtered = useMemo(() => {
-    return [...EVENTS]
+    return [...upcoming]
       .filter(({ title, category, modality }) => {
         const q  = query.toLowerCase();
         const mq = selectedModality === "Todas" || modality.includes(selectedModality) || modality === "Todas";
@@ -35,7 +41,7 @@ export default function AcademicCalendar() {
         return mq && cq && tq;
       })
       .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
-  }, [query, selectedModality, selectedCategory]);
+  }, [query, selectedModality, selectedCategory, upcoming]);
 
   return (
     <section style={s.wrapper}>
@@ -43,7 +49,7 @@ export default function AcademicCalendar() {
       <div style={s.header}>
         <div>
           <h2 style={s.title}>Calendario Académico UTPL</h2>
-          <p style={s.subtitle}>Todas las modalidades · 2025–2027</p>
+          <p style={s.subtitle}>Todas las modalidades · desde hoy (Ecuador)</p>
         </div>
         <span style={s.pill}>{filtered.length} eventos</span>
       </div>
