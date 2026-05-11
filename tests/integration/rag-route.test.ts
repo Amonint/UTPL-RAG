@@ -97,7 +97,7 @@ describe('HomePage', () => {
     const tree = HomePage()
     const serialized = JSON.stringify(tree)
 
-    expect(serialized).toContain('Chat UTPL')
+    expect(serialized).toContain('UTPL service-linked RAG')
   })
 })
 

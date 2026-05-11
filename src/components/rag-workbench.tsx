@@ -12,7 +12,7 @@ import {
 import type { SearchResult } from '@/lib/types'
 
 import { ChatMessage } from './chat-message'
-import { PromptBox } from './ui/chatgpt-prompt-input'
+import { AIPromptBox } from './ui/ai-prompt-box'
 
 interface RagResponse extends RagResponsePayload {}
 
@@ -305,7 +305,7 @@ export function RagWorkbench() {
           </div>
         ) : null}
 
-        <PromptBox
+        <AIPromptBox
           value={draft}
           onValueChange={handleDraftChange}
           onSubmit={handleSubmit}
