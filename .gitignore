@@ -5,3 +5,5 @@ dist/
 .env
 .env.local
 .DS_Store
+data/derived/textract-raw/*.json
+data/derived/EXTRACION UTPL VERSION 1.json

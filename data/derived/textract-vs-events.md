@@ -1,0 +1,303 @@
+# Textract vs calendario académico (EVENTS)
+
+Generado: 2026-05-11T22:27:01.484Z
+
+## Resumen
+
+| Métrica | Valor |
+|---------|-------|
+| Archivos JSON Textract | 51 |
+| Filas candidatas (tabla o línea con fechas) | 2441 |
+| Candidatos emparejados con un evento | 590 |
+| Candidatos con fechas sin match claro (huecos) | 1851 |
+| Eventos sin ningún candidato emparejado | 203 |
+
+## Candidatos sin match (revisar)
+
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (table_row) — 2026-02-16 … 2026-02-17 — Carnaval | 16/02/2026 | 17/02/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (table_row) — 2026-05-01 … 2026-05-03 — Día del Trabajo | 01/05/2026 | 03/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (table_row) — 2026-05-24 … 2026-05-24 — Batalla de Pichincha | 24/05/2026 | 24/05/2026 | Se traslada al 25 de mayo
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-03-09 … 2026-03-09 — 09/03/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-05-08 … 2026-05-08 — 08/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-06-13 … 2026-06-13 — 13/06/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-06-14 … 2026-06-14 — 14/06/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-06-24 … 2026-06-24 — 24/06/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-06-24 … 2026-06-24 — 24/06/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-06-01 … 2026-06-01 — 01/06/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-07-03 … 2026-07-03 — 03/07/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-08-01 … 2026-08-01 — 01/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-08-02 … 2026-08-02 — 02/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-08-19 … 2026-08-19 — 19/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-08-19 … 2026-08-19 — 19/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-02-16 … 2026-02-16 — 16/02/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-02-17 … 2026-02-17 — 17/02/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-04-03 … 2026-04-03 — 03/04/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-04-05 … 2026-04-05 — 05/04/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-05-01 … 2026-05-01 — 01/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-05-03 … 2026-05-03 — 03/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-05-24 … 2026-05-24 — 24/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-05-24 … 2026-05-24 — 24/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-08-10 … 2026-08-10 — 10/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-08-10 … 2026-08-10 — 10/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-08-11 … 2026-08-11 — 11/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-08-20 … 2026-08-20 — 20/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-10-09 … 2026-10-09 — 09/10/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación general_GR-PS-TEC_D-EL_Estudiantes_202630.pdf** (line) — 2026-10-11 … 2026-10-11 — 11/10/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (table_row) — 2026-02-16 … 2026-02-17 — Carnaval | 16/02/2026 | 17/02/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (table_row) — 2026-05-01 … 2026-05-03 — Día del Trabajo | 01/05/2026 | 03/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (table_row) — 2026-05-24 … 2026-05-24 — Batalla de Pichincha | 24/05/2026 | 24/05/2026 | Se traslada al 25 de mayo
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-03-02 … 2026-03-02 — 02/03/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-03-31 … 2026-03-31 — 31/03/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-04-13 … 2026-04-13 — 13/04/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-06-07 … 2026-06-07 — 07/06/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-08-11 … 2026-08-11 — 11/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-08-25 … 2026-08-25 — 25/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-07-24 … 2026-07-24 — 24/07/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-07-28 … 2026-07-28 — 28/07/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-08-29 … 2026-08-29 — 29/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-09-01 … 2026-09-01 — 01/09/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-02-16 … 2026-02-16 — 16/02/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-02-17 … 2026-02-17 — 17/02/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-04-03 … 2026-04-03 — 03/04/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-04-05 … 2026-04-05 — 05/04/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-05-01 … 2026-05-01 — 01/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-05-03 … 2026-05-03 — 03/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-05-24 … 2026-05-24 — 24/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-05-24 … 2026-05-24 — 24/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-08-10 … 2026-08-10 — 10/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-08-10 … 2026-08-10 — 10/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-08-11 … 2026-08-11 — 11/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-08-20 … 2026-08-20 — 20/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-10-09 … 2026-10-09 — 09/10/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-10-11 … 2026-10-11 — 11/10/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (table_row) — 2026-02-16 … 2026-02-17 — Carnaval | 16/02/2026 | 17/02/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (table_row) — 2026-05-01 … 2026-05-03 — Día del Trabajo | 01/05/2026 | 03/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (table_row) — 2026-05-24 … 2026-05-24 — Batalla de Pichincha | 24/05/2026 | 24/05/2026 | Se traslada al 25 de mayo
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-05-29 … 2026-05-29 — 29/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-06-02 … 2026-06-02 — 02/06/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-07-24 … 2026-07-24 — 24/07/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-07-28 … 2026-07-28 — 28/07/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-09-19 … 2026-09-19 — 19/09/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-09-22 … 2026-09-22 — 22/09/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-02-16 … 2026-02-16 — 16/02/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-02-17 … 2026-02-17 — 17/02/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-04-03 … 2026-04-03 — 03/04/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-04-05 … 2026-04-05 — 05/04/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-05-01 … 2026-05-01 — 01/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-05-03 … 2026-05-03 — 03/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-05-24 … 2026-05-24 — 24/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-05-24 … 2026-05-24 — 24/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-08-10 … 2026-08-10 — 10/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-08-10 … 2026-08-10 — 10/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-08-11 … 2026-08-11 — 11/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-08-20 … 2026-08-20 — 20/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-10-09 … 2026-10-09 — 09/10/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Validación conocimientos de Inglés_GR-PS_D-EL-P_Docentes_202630.pdf** (line) — 2026-10-11 … 2026-10-11 — 11/10/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (table_row) — 2026-04-02 … 2026-04-06 — 04 | 2026 | 2/4/2026 I 6/4/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (table_row) — 2026-04-03 … 2026-04-05 — LMMJVSD | 3/4/2026 I 5/4/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (table_row) — 2026-04-06 … 2026-05-31 — 6 | 7 | 8 9 | 10 11 12 | 6/4/2026 I 31/5/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (table_row) — 2026-04-06 … 2026-04-06 — 20 | 21 | 22 23 | 24 25 26 | 6/4/2026 I 6/4/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2025-11-19 … 2026-04-01 — 19/11/2025 I 1/4/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-02-12 … 2026-04-01 — 12/2/2026 I 1/4/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-02-16 … 2026-02-17 — 16/2/2026 I 17/2/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-04-02 … 2026-04-06 — 2/4/2026 I 6/4/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-04-03 … 2026-04-05 — 3/4/2026 I 5/4/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-04-06 … 2026-05-31 — 6/4/2026 I 31/5/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-04-06 … 2026-04-06 — 6/4/2026 I 6/4/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-04-06 … 2026-08-28 — 6/4/2026 I 28/8/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-04-06 … 2026-06-25 — 6/4/2026 I 25/6/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-05-01 … 2026-05-03 — 1/5/2026 3/5/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-05-25 … 2026-05-25 — 25/5/2026 | 25/5/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-05-29 … 2026-06-02 — 29/5/2026 I 2/6/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-06-01 … 2026-07-26 — 1/6/2026 I 26/7/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-06-10 … 2026-06-10 — 10/6/2026 10/6/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-06-11 … 2026-06-17 — 11/6/2026 I 17/6/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-06-11 … 2026-06-18 — 11/6/2026 I 18/6/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-07-06 … 2026-07-20 — 6/7/2026 | 20/7/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-07-24 … 2026-07-28 — 24/7/2026 28/7/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-08-05 … 2026-08-05 — 5/8/2026 5/8/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-08-06 … 2026-08-07 — 6/8/2026 I 7/8/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-08-06 … 2026-08-27 — 6/8/2026 27/8/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-08-10 … 2026-08-10 — 10/8/2026 I 10/8/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-08-11 … 2026-08-20 — 11/8/2026 20/8/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-08-24 … 2026-08-26 — 24/8/2026 I 26/8/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-08-28 … 2026-08-28 — 28/8/2026 I 28/8/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-08-29 … 2026-09-01 — 29/8/2026 | 1/9/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-09-09 … 2026-09-09 — 9/9/2026 I 9/9/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-09-09 … 2026-09-09 — 9/9/2026 9/9/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-09-10 … 2026-09-16 — 10/9/2026 16/9/2026
+- **doop/RV_ Publicación calendarios_ estudiantes abril - agosto 2026 2/Calendario académico_TEC_EL_Estudiantes_202630.pdf** (line) — 2026-09-10 … 2026-09-17 — 10/9/2026 I 17/9/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (table_row) — 2026-02-16 … 2026-02-17 — Carnaval | 16/02/2026 | 17/02/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (table_row) — 2026-05-01 … 2026-05-03 — Día del Trabajo | 01/05/2026 | 03/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (table_row) — 2026-05-24 … 2026-05-24 — Batalla de Pichincha | 24/05/2026 | 24/05/2026 | Se traslada al 25 de mayo
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-02-25 … 2026-02-25 — 25/02/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-03-31 … 2026-03-31 — 31/03/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-04-01 … 2026-04-01 — 01/04/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-07-31 … 2026-07-31 — 31/07/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-07-01 … 2026-07-01 — 01/07/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-07-20 … 2026-07-20 — 20/07/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-02-16 … 2026-02-16 — 16/02/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-02-17 … 2026-02-17 — 17/02/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-04-03 … 2026-04-03 — 03/04/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-04-05 … 2026-04-05 — 05/04/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-05-01 … 2026-05-01 — 01/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-05-03 … 2026-05-03 — 03/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-05-24 … 2026-05-24 — 24/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-05-24 … 2026-05-24 — 24/05/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-08-10 … 2026-08-10 — 10/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-08-10 … 2026-08-10 — 10/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-08-11 … 2026-08-11 — 11/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-08-20 … 2026-08-20 — 20/08/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-10-09 … 2026-10-09 — 09/10/2026
+- **doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Calendario Suficiencia de Inglés Int. Externas_GR-PS_D-EL-P_Estudiantes_202630.pdf** (line) — 2026-10-11 … 2026-10-11 — 11/10/2026
+- **doop/RV_ Publicación de calendarios_ UTE-UIC-UT periodo abril - agosto 2026 2/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf** (table_row) — 2026-09-01 … 2026-09-08 — Calificación de evaluaciones del segundo bimestre de actualización de conocimientos | Docentes | 27/07/26 | 04/08/26 | 01/09/2026 | 08/09/2026 | 27/07/26 | 04/0…
+- **doop/RV_ Publicación de calendarios_ UTE-UIC-UT periodo abril - agosto 2026 2/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf** (table_row) — 2026-03-18 … 2026-03-18 — REVISADO POR: | Mgtr. Willy Duval Quezada ESPECIALISTA OPERATIVO DE EVALUACIÓN DEL APRENDIZAJE | 18/03/2026
+- **doop/RV_ Publicación de calendarios_ UTE-UIC-UT periodo abril - agosto 2026 2/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf** (table_row) — 2026-03-18 … 2026-03-18 — REVISADO POR: | Ing. Susana Paute ESPECIALISTA DE PROSPECTIVA Y CURRÍCULO | 18/03/2026
+- **doop/RV_ Publicación de calendarios_ UTE-UIC-UT periodo abril - agosto 2026 2/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf** (table_row) — 2026-03-18 … 2026-03-18 — REVISADO POR: | Mgtr. Blanca Lucía Chimbo ESPECIALISTA DE PROSPECTIVA Y CURRÍCULO | 18/03/2026
+- **doop/RV_ Publicación de calendarios_ UTE-UIC-UT periodo abril - agosto 2026 2/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf** (table_row) — 2026-03-18 … 2026-03-18 — REVISADO POR: | Mgtr. Diana Margoth Coronel ANALISTA DE POSGRADOS | 18/03/2026
+- **doop/RV_ Publicación de calendarios_ UTE-UIC-UT periodo abril - agosto 2026 2/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf** (line) — 2026-09-01 … 2026-09-01 — 01/09/2026
+- **doop/RV_ Publicación de calendarios_ UTE-UIC-UT periodo abril - agosto 2026 2/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf** (line) — 2026-09-08 … 2026-09-08 — 08/09/2026
+- **doop/RV_ Publicación de calendarios_ UTE-UIC-UT periodo abril - agosto 2026 2/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf** (line) — 2026-09-08 … 2026-09-08 — 08/09/2026
+- **doop/RV_ Publicación de calendarios_ UTE-UIC-UT periodo abril - agosto 2026 2/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf** (line) — 2026-03-18 … 2026-03-18 — 18/03/2026
+- **doop/RV_ Publicación de calendarios_ UTE-UIC-UT periodo abril - agosto 2026 2/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf** (line) — 2026-03-18 … 2026-03-18 — 18/03/2026
+- **doop/RV_ Publicación de calendarios_ UTE-UIC-UT periodo abril - agosto 2026 2/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf** (line) — 2026-03-18 … 2026-03-18 — 18/03/2026
+- **doop/RV_ Publicación de calendarios_ UTE-UIC-UT periodo abril - agosto 2026 2/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf** (line) — 2026-03-18 … 2026-03-18 — 18/03/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (table_row) — 2026-04-06 … 2026-04-06 — Inicio de actividades académicas | 06/04/2026 | 06/04/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (table_row) — 2026-02-16 … 2026-02-17 — Carnaval | 16/02/2026 | 17/02/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (table_row) — 2026-05-01 … 2026-05-03 — Día del Trabajo | 01/05/2026 | 03/05/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (table_row) — 2026-05-24 … 2026-05-24 — Batalla de Pichincha | 24/05/2026 | 24/05/2026 | Se traslada al 25 de mayo
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-03-30 … 2026-03-30 — 30/03/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-04-05 … 2026-04-05 — 05/04/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-04-06 … 2026-04-06 — 06/04/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-05-31 … 2026-05-31 — 31/05/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-04-06 … 2026-04-06 — 06/04/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-04-06 … 2026-04-06 — 06/04/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-06-15 … 2026-06-15 — 15/06/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-08-09 … 2026-08-09 — 09/08/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-05-04 … 2026-05-04 — 04/05/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-06-07 … 2026-06-07 — 07/06/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-06-08 … 2026-06-08 — 08/06/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-06-14 … 2026-06-14 — 14/06/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-07-13 … 2026-07-13 — 13/07/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-08-30 … 2026-08-30 — 30/08/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-08-31 … 2026-08-31 — 31/08/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-09-06 … 2026-09-06 — 06/09/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-05-11 … 2026-05-11 — 11/05/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-05-25 … 2026-05-25 — 25/05/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-07-27 … 2026-07-27 — 27/07/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-08-03 … 2026-08-03 — 03/08/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-06-01 … 2026-06-01 — 01/06/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-06-05 … 2026-06-05 — 05/06/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-06-08 … 2026-06-08 — 08/06/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-06-12 … 2026-06-12 — 12/06/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-08-24 … 2026-08-24 — 24/08/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-08-28 … 2026-08-28 — 28/08/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-08-31 … 2026-08-31 — 31/08/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-09-04 … 2026-09-04 — 04/09/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-06-08 … 2026-06-08 — 08/06/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-06-15 … 2026-06-15 — 15/06/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-06-15 … 2026-06-15 — 15/06/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-06-22 … 2026-06-22 — 22/06/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-06-15 … 2026-06-15 — 15/06/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-06-19 … 2026-06-19 — 19/06/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-08-31 … 2026-08-31 — 31/08/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-09-07 … 2026-09-07 — 07/09/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-09-07 … 2026-09-07 — 07/09/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-09-14 … 2026-09-14 — 14/09/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-09-07 … 2026-09-07 — 07/09/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-09-11 … 2026-09-11 — 11/09/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-02-16 … 2026-02-16 — 16/02/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-02-17 … 2026-02-17 — 17/02/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-04-03 … 2026-04-03 — 03/04/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-04-05 … 2026-04-05 — 05/04/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-05-01 … 2026-05-01 — 01/05/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-05-03 … 2026-05-03 — 03/05/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-05-24 … 2026-05-24 — 24/05/2026
+- **doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Calendario académico modular_GR_EL_Docentes_202630.pdf** (line) — 2026-05-24 … 2026-05-24 — 24/05/2026
+
+_…y 1651 más (ver JSON)._
+
+## Eventos sin candidato emparejado (primeros 80)
+
+- **#1** 2026-01-20–2026-02-10 [GR P] — Reserva de cupo para estudiantes nuevos
+- **#2** 2026-02-16–2026-02-17 [Todas] — Feriado: Carnaval
+- **#3** 2026-03-06–2026-04-01 [GR P] — Matrículas ordinarias
+- **#6** 2026-03-30–2026-05-31 [POS EL-HI / POS P] — Desarrollo de la introducción a estudios de posgrado
+- **#9** 2026-04-06–2026-04-06 [GR P / GR D-EL / TEC EL] — Inicio del ciclo académico
+- **#10** 2026-04-06–2026-04-06 [GR P] — Jornadas de presentación y servicios estudiantiles
+- **#12** 2026-04-06–2026-06-21 [GR P] — Retiro voluntario de asignaturas
+- **#14** 2026-04-06–2026-07-23 [POS EL-HI / POS P] — Retiro voluntario de asignaturas
+- **#16** 2026-06-22–2026-07-31 [GR P] — Retiro de asignaturas por caso fortuito
+- **#17** 2026-04-06–2026-07-31 [POS EL-HI / POS P] — Retiro de asignaturas por caso fortuito
+- **#18** 2026-05-01–2026-05-03 [Todas] — Feriado: Día del Trabajo
+- **#19** 2026-05-25–2026-05-25 [Todas] — Feriado: Batalla de Pichincha
+- **#20** 2026-05-30–2026-05-30 [GR P] — Fin de actividades académicas del primer bimestre
+- **#22** 2026-06-01–2026-06-01 [GR P] — Inicio de actividades académicas del segundo bimestre
+- **#24** 2026-06-05–2026-06-05 [GR P] — Publicación de notas del primer bimestre
+- **#27** 2026-06-10–2026-06-16 [POS EL-HI] — Solicitar recalificaciones del primer bimestre
+- **#29** 2026-06-10–2026-06-17 [POS EL-HI] — Respuesta a recalificaciones del primer bimestre
+- **#32** 2026-07-25–2026-07-25 [GR P] — Fin de actividades académicas del segundo bimestre
+- **#33** 2026-07-28–2026-07-28 [GR P] — Publicación de notas del segundo bimestre (incluye prácticum)
+- **#34** 2026-07-29–2026-08-01 [GR P] — Semana de tutoría para recuperación
+- **#35** 2026-07-30–2026-08-06 [POS P] — Ingreso de notas manuales a Gradebook
+- **#38** 2026-08-05–2026-08-07 [POS EL-HI] — Solicitar recalificaciones del segundo bimestre
+- **#39** 2026-08-03–2026-08-06 [GR P] — Evaluación de recuperación
+- **#40** 2026-08-08–2026-08-08 [GR P] — Publicación de notas de la evaluación de recuperación
+- **#44** 2026-08-05–2026-08-25 [POS EL-HI] — Respuesta a recalificaciones del segundo bimestre
+- **#45** 2026-08-06–2026-08-27 [POS EL-HI / POS P] — Tutorías de recuperación primer y segundo bimestre
+- **#46** 2026-08-24–2026-08-26 [GR D-EL / TEC EL] — Solicitar recalificaciones del segundo bimestre (2da ventana)
+- **#47** 2026-08-28–2026-09-01 [GR D-EL / TEC EL] — Fin de tutorías
+- **#48** 2026-08-28–2026-09-02 [POS EL-HI / POS P] — Evaluación de recuperación
+- **#49** 2026-08-29–2026-08-29 [GR D-EL / TEC EL] — Evaluación de recuperación
+- **#50** 2026-08-31–2026-09-06 [POS P] — Ingreso de notas evaluación de recuperación manuales a Gradebook
+- **#53** 2026-09-09–2026-09-09 [GR D-EL / TEC EL] — Publicación de notas de PRACTICUM
+- **#55** 2026-09-09–2026-09-16 [POS EL-HI] — Solicitudes recalificación de evaluaciones de recuperación
+- **#56** 2025-12-01–2025-12-23 [PS P] — Plan de Comunicación – Doctorado Química
+- **#57** 2026-01-05–2026-01-16 [PS P] — Socialización del Plan de Comunicación – Doctorado Química
+- **#58** 2026-02-02–2026-04-30 [PS P] — Proceso de promoción y atracción de postulantes
+- **#59** 2026-03-02–2026-09-15 [PS P] — Postulación en línea – Doctorado en Química
+- **#60** 2026-03-02–2026-09-16 [PS P] — Preselección – Doctorado en Química
+- **#61** 2026-03-02–2026-09-17 [PS P] — Pago del derecho de admisión – Doctorado en Química
+- **#62** 2026-03-02–2026-09-15 [PS P] — Calificación de documentos de postulación
+- **#63** 2026-01-05–2026-02-13 [PS P] — Planificación del examen de admisión
+- **#64** 2026-07-01–2026-07-06 [PS P] — Reporte de alumnos para Centro de Evaluaciones
+- **#65** 2026-07-18–2026-07-18 [PS P] — Examen de admisión escrito – Sesión 1
+- **#66** 2026-07-20–2026-07-23 [PS P] — Examen de admisión oral – Sesión 1
+- **#67** 2026-07-20–2026-07-20 [PS P] — Entrega resultados examen escrito al Comité Doctoral – S1
+- **#68** 2026-07-24–2026-07-24 [PS P] — Publicación de resultados de admisión – Sesión 1
+- **#69** 2026-07-24–2026-07-29 [PS P] — Impugnaciones – Sesión 1
+- **#70** 2026-07-31–2026-07-31 [PS P] — Respuesta a impugnaciones – Sesión 1
+- **#71** 2026-08-03–2026-08-05 [PS P] — Postulación a becas / notificación autofinanciados – S1
+- **#72** 2026-08-06–2026-09-09 [PS P] — Matrículas ordinarias Doctorado Química – Sesión 1
+- **#73** 2026-08-22–2026-08-22 [PS P] — Examen de admisión escrito – Sesión 2
+- **#74** 2026-08-24–2026-08-27 [PS P] — Examen de admisión oral – Sesión 2
+- **#75** 2026-08-28–2026-08-28 [PS P] — Publicación de resultados de admisión – Sesión 2
+- **#76** 2026-08-28–2026-09-02 [PS P] — Impugnaciones – Sesión 2
+- **#77** 2026-09-04–2026-09-04 [PS P] — Respuesta a impugnaciones – Sesión 2
+- **#78** 2026-09-07–2026-09-09 [PS P] — Postulación a becas / notificación autofinanciados – S2
+- **#79** 2026-09-10–2026-09-28 [PS P] — Matrículas ordinarias Doctorado Química – Sesión 2
+- **#80** 2026-09-19–2026-09-19 [PS P] — Examen de admisión escrito – Sesión 3
+- **#81** 2026-09-21–2026-09-22 [PS P] — Examen de admisión oral – Sesión 3
+- **#82** 2026-09-23–2026-09-23 [PS P] — Publicación de resultados de admisión – Sesión 3
+- **#83** 2026-09-23–2026-09-25 [PS P] — Impugnaciones – Sesión 3
+- **#84** 2026-09-28–2026-09-28 [PS P] — Respuesta a impugnaciones – Sesión 3
+- **#85** 2026-09-29–2026-09-29 [PS P] — Postulación a becas con estipendio – Sesión 3
+- **#86** 2026-09-30–2026-10-12 [PS P] — Matrículas ordinarias Doctorado Química – Sesión 3
+- **#87** 2026-10-13–2026-10-27 [PS P] — Matrículas extraordinarias Doctorado Química (nueva cohorte)
+- **#88** 2026-08-06–2026-10-27 [PS P] — Matrículas ordinarias/extraordinarias – Doctorado Química año 2+
+- **#89** 2026-10-01–2026-10-28 [PS P] — Clases propedéutico – Doctorado Química
+- **#90** 2026-10-29–2026-10-29 [PS P] — Inicio actividades académicas – Doctorado Química, primer año
+- **#91** 2026-10-01–2026-10-01 [PS P] — Inicio actividades académicas – Doctorado Química, año 2+
+- **#93** 2026-11-02–2026-11-02 [Todas] — Feriado: Día de los Difuntos
+- **#95** 2026-11-20–2026-11-20 [Todas] — Feriado: Independencia de Loja
+- **#96** 2026-12-07–2026-12-07 [Todas] — Feriado: Fundación de Loja
+- **#97** 2026-12-25–2026-12-25 [Todas] — Feriado: Navidad
+- **#98** 2026-12-26–2026-12-31 [Todas] — Vacaciones Institucionales fin de año
+- **#101** 2027-03-26–2027-03-26 [Todas] — Feriado: Viernes Santo 2027
+- **#102** 2027-04-30–2027-04-30 [Todas] — Feriado: Día del Trabajo 2027
+- **#103** 2027-05-24–2027-05-24 [Todas] — Feriado: Batalla de Pichincha 2027
+- **#104** 2027-08-10–2027-08-10 [Todas] — Feriado: Primer Grito de la Independencia 2027
+- **#105** 2027-08-09–2027-08-19 [Todas] — Vacaciones Institucionales 2027
+- **#109** 2026-04-06–2026-04-10 [Internado Rotativo GR P] — Envío de listados de cursos a Canvas
+
+_…y 123 más (ver JSON)._

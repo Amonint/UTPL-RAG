@@ -51,7 +51,8 @@ export function createAssistantTurn(input: RagResponsePayload): ChatTurn {
     role: 'assistant',
     status: 'done',
     content: input.answer ?? 'No encontré una respuesta para esa consulta.',
-    selectedService: input.selectedService,
+    /** No adjuntar ficha del servicio: evita duplicar modalidad/requisitos bajo cada respuesta. */
+    selectedService: null,
     usedSources: input.usedSources,
     serviceCandidates: [],
   }
@@ -69,12 +70,16 @@ export function createErrorTurn(message: string): ChatTurn {
   }
 }
 
-export function createSearchResultsTurn(results: SearchResult[]): ChatTurn {
+export function createSearchResultsTurn(results: SearchResult[], query?: string): ChatTurn {
+  const q = query?.trim()
+  const content = q
+    ? `Servicios relacionados con «${q}». Elige uno para continuar.`
+    : 'Servicios relacionados con tu búsqueda. Elige uno para continuar.'
   return {
     id: `assistant-${crypto.randomUUID()}`,
     role: 'assistant',
     status: 'done',
-    content: 'Resultados de busqueda',
+    content,
     searchResults: results,
     usedSources: [],
     serviceCandidates: [],

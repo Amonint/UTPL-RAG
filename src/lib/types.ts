@@ -10,6 +10,8 @@ export interface PdfRef {
   url: string
   localPath: string
   sourcePath: string
+  /** Pestaña de `requisitos_pestanas` (p. ej. GRADO / POSGRADO), si aplica. */
+  pestana?: string
 }
 
 export interface PdfFacet {
@@ -34,9 +36,12 @@ export type SearchResult = {
   serviceId: string
   serviceName: string
   category: string
-  score: number // 0..1
+  /** Relevancia interna (0..1) para ordenar; no mostrar como % al usuario. */
+  score: number
   hasPdfs: boolean
   snippet?: string
+  /** Pistas breves según capa/campo donde coincidió la búsqueda. */
+  matchHints?: string[]
   studentTypes?: StudentType[]
   pdfRefs?: PdfRef[]
   jsonPayload?: Record<string, unknown>

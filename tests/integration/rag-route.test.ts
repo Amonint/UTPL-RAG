@@ -1,10 +1,11 @@
+/** @vitest-environment jsdom */
+import { render } from '@testing-library/react'
+import * as React from 'react'
 import { describe, expect, it, vi } from 'vitest'
 import goldenQueries from '../fixtures/golden-queries.json'
 
-const { generateGroundedAnswerMock } = vi.hoisted(() => ({
-  generateGroundedAnswerMock: vi.fn(
-    async () => 'La información disponible corresponde a retiro voluntario.',
-  ),
+const { generateServiceAnswerWithGeminiMock } = vi.hoisted(() => ({
+  generateServiceAnswerWithGeminiMock: vi.fn(async () => 'La información disponible corresponde al PDF de retiro voluntario.'),
 }))
 
 vi.mock('@/lib/data', () => ({
@@ -18,43 +19,43 @@ vi.mock('@/lib/data', () => ({
         jsonPayload: { descripcion: 'Trámite de retiro voluntario' },
         pdfRefs: [],
       },
-    ],
-    chunks: [
       {
-        chunkId: 'servicios-matricula__solicitar-retiro-voluntario::json',
-        serviceId: 'servicios-matricula__solicitar-retiro-voluntario',
-        sourceKind: 'json',
-        text: 'Servicio: Solicitar retiro voluntario',
-        metadata: {},
-      },
-      {
-        chunkId: 'servicios-matricula__solicitar-retiro-voluntario::manual.pdf::1',
-        serviceId: 'servicios-matricula__solicitar-retiro-voluntario',
-        sourceKind: 'pdf',
-        text: 'Manual de retiro voluntario',
-        metadata: {},
+        serviceId: 'servicios-matricula__tramite-con-pdf',
+        serviceName: 'Trámite con PDF',
+        category: 'SERVICIOS-MATRÍCULA',
+        studentTypes: ['CONTINUO'],
+        jsonPayload: { descripcion: 'Tiene PDF' },
+        pdfRefs: [
+          {
+            label: 'Formato retiro',
+            url: 'https://portales.utpl.edu.ec/sites/default/files/ejemplo.pdf',
+            localPath: 'data/pdfs/mock.pdf',
+            sourcePath: 'manual.0',
+          },
+        ],
       },
     ],
+    chunks: [],
   }),
 }))
 
-vi.mock('@/lib/rag/generate-answer', () => ({
-  generateGroundedAnswer: generateGroundedAnswerMock,
+vi.mock('@/lib/rag/gemini-service-qa', () => ({
+  generateServiceAnswerWithGemini: generateServiceAnswerWithGeminiMock,
 }))
 
 import { POST } from '@/app/api/rag/route'
 import HomePage from '@/app/page'
 
 describe('POST /api/rag', () => {
-  it('returns a JSON-only answer when selectedServiceId is provided with allowPdf false', async () => {
-    generateGroundedAnswerMock.mockClear()
+  it('rechaza servicios sin PDFs', async () => {
+    generateServiceAnswerWithGeminiMock.mockClear()
 
     const request = new Request('http://localhost/api/rag', {
       method: 'POST',
       body: JSON.stringify({
         question: 'Necesito informacion del tramite',
         selectedServiceId: 'servicios-matricula__solicitar-retiro-voluntario',
-        allowPdf: false,
+        selectedPdfIds: ['manual.0'],
       }),
       headers: { 'Content-Type': 'application/json' },
     })
@@ -62,22 +63,20 @@ describe('POST /api/rag', () => {
     const response = await POST(request)
     const body = await response.json()
 
-    expect(response.status).toBe(200)
-    expect(generateGroundedAnswerMock).not.toHaveBeenCalled()
-    expect(body.usedSources).toHaveLength(1)
-    expect(body.usedSources[0]?.sourceKind).toBe('json')
-    expect(body.answer).toContain('Servicio: Solicitar retiro voluntario')
+    expect(response.status).toBe(422)
+    expect(generateServiceAnswerWithGeminiMock).not.toHaveBeenCalled()
+    expect(typeof body.message).toBe('string')
   })
 
-  it('returns an answer with selected service and evidence', async () => {
-    generateGroundedAnswerMock.mockClear()
+  it('llama a Gemini cuando hay PDFs y selectedPdfIds válidos', async () => {
+    generateServiceAnswerWithGeminiMock.mockClear()
 
     const request = new Request('http://localhost/api/rag', {
       method: 'POST',
       body: JSON.stringify({
-        question: '¿Cómo solicito retiro voluntario?',
-        selectedServiceId: 'servicios-matricula__solicitar-retiro-voluntario',
-        allowPdf: true,
+        question: '¿Qué requisitos hay?',
+        selectedServiceId: 'servicios-matricula__tramite-con-pdf',
+        selectedPdfIds: ['manual.0'],
       }),
       headers: { 'Content-Type': 'application/json' },
     })
@@ -86,18 +85,19 @@ describe('POST /api/rag', () => {
     const body = await response.json()
 
     expect(response.status).toBe(200)
-    expect(body.selectedService.serviceId).toBe('servicios-matricula__solicitar-retiro-voluntario')
-    expect(generateGroundedAnswerMock).toHaveBeenCalledTimes(1)
+    expect(body.selectedService.serviceId).toBe('servicios-matricula__tramite-con-pdf')
+    expect(generateServiceAnswerWithGeminiMock).toHaveBeenCalledTimes(1)
     expect(body.usedSources.some((item: { sourceKind: string }) => item.sourceKind === 'pdf')).toBe(true)
+    expect(body.answer).toContain('PDF de retiro voluntario')
   })
 })
 
 describe('HomePage', () => {
-  it('renders the minimal chat shell for UTPL questions', () => {
-    const tree = HomePage()
-    const serialized = JSON.stringify(tree)
-
-    expect(serialized).toContain('UTPL service-linked RAG')
+  it('renderiza el contenedor principal del chat', () => {
+    const { container } = render(React.createElement(HomePage))
+    const main = container.querySelector('main')
+    expect(main).toBeTruthy()
+    expect(main?.className).toContain('mx-auto')
   })
 })
 

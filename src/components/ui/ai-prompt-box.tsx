@@ -14,18 +14,44 @@ interface AIPromptBoxProps {
   onSubmit: () => void
   isLoading?: boolean
   placeholder?: string
+  /** Si es true, no se puede escribir ni enviar (p. ej. sin PDFs o falta elegir documentos). */
+  disabled?: boolean
+  /** Texto breve bajo la caja cuando está deshabilitada. */
+  disabledHint?: string
 }
 
-export function AIPromptBox({
-  value,
-  onValueChange,
-  onSubmit,
-  isLoading = false,
-  placeholder = 'Escribe tu consulta',
-}: AIPromptBoxProps) {
+function mergeRefs<T>(...refs: Array<React.Ref<T> | undefined>) {
+  return (node: T | null) => {
+    for (const ref of refs) {
+      if (!ref) continue
+      if (typeof ref === 'function') {
+        ref(node)
+      } else {
+        ;(ref as React.MutableRefObject<T | null>).current = node
+      }
+    }
+  }
+}
+
+export const AIPromptBox = React.forwardRef<HTMLTextAreaElement, AIPromptBoxProps>(function AIPromptBox(
+  {
+    value,
+    onValueChange,
+    onSubmit,
+    isLoading = false,
+    placeholder = 'Escribe tu consulta',
+    disabled = false,
+    disabledHint,
+  },
+  forwardedRef,
+) {
   const textareaId = React.useId()
   const hintId = React.useId()
-  const textareaRef = React.useRef<HTMLTextAreaElement>(null)
+  const textareaRef = React.useRef<HTMLTextAreaElement | null>(null)
+  const setTextareaRef = React.useMemo(
+    () => mergeRefs(textareaRef, forwardedRef),
+    [forwardedRef],
+  )
 
   React.useEffect(() => {
     const node = textareaRef.current
@@ -38,23 +64,18 @@ export function AIPromptBox({
     node.style.height = `${Math.min(node.scrollHeight, 160)}px`
   }, [value])
 
-  const canSubmit = value.trim().length > 0 && !isLoading
+  const canSubmit = value.trim().length > 0 && !isLoading && !disabled
 
   return (
     <TooltipPrimitive.Provider>
       <motion.div
         layout
-        className="rounded-[28px] border border-chalk bg-white px-4 py-3 shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
+        className="rounded-2xl border border-chalk bg-white px-4 py-3 shadow-[0_12px_40px_rgba(0,0,0,0.08)]"
       >
         <div className="mb-3 flex items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <span className="rounded-full border border-chalk bg-powder px-3 py-1 text-[11px] uppercase tracking-[0.08em] text-gravel">
-              Texto
-            </span>
-            <span id={hintId} className="text-xs text-slate">
-              Enter envía · Shift+Enter salta línea
-            </span>
-          </div>
+          <span id={hintId} className="text-xs text-slate">
+            Enter envía · Shift+Enter salta línea
+          </span>
         </div>
 
         <label htmlFor={textareaId} className="sr-only">
@@ -62,12 +83,17 @@ export function AIPromptBox({
         </label>
         <textarea
           id={textareaId}
-          ref={textareaRef}
+          ref={setTextareaRef}
           value={value}
           rows={1}
           placeholder={placeholder}
           aria-describedby={hintId}
-          className="min-h-[44px] w-full resize-none border-0 bg-transparent px-1 py-2 text-[15px] leading-7 text-obsidian outline-none placeholder:text-slate"
+          disabled={disabled}
+          readOnly={disabled}
+          className={cn(
+            'min-h-[44px] w-full resize-none border-0 bg-transparent px-1 py-2 text-[15px] leading-7 text-obsidian outline-none placeholder:text-slate',
+            disabled && 'cursor-not-allowed opacity-60',
+          )}
           onChange={(event) => onValueChange(event.target.value)}
           onKeyDown={(event) => {
             if (event.key === 'Enter' && !event.shiftKey) {
@@ -79,6 +105,12 @@ export function AIPromptBox({
             }
           }}
         />
+
+        {disabled && disabledHint ? (
+          <p className="m-0 mt-2 text-xs text-gravel" role="status">
+            {disabledHint}
+          </p>
+        ) : null}
 
         <div className="mt-3 flex items-center justify-end">
           <TooltipPrimitive.Root>
@@ -109,4 +141,6 @@ export function AIPromptBox({
       </motion.div>
     </TooltipPrimitive.Provider>
   )
-}
+})
+
+AIPromptBox.displayName = 'AIPromptBox'

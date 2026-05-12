@@ -19,4 +19,24 @@ describe('createAssistantTurn', () => {
     expect(turn.content).toContain('Estos resultados se parecen a tu búsqueda')
     expect(turn.serviceCandidates).toHaveLength(2)
   })
+
+  it('no adjunta selectedService en respuestas con answer (evita duplicar ficha en UI)', () => {
+    const turn = createAssistantTurn({
+      answer: 'Solo el texto de la respuesta.',
+      needsDisambiguation: false,
+      selectedService: {
+        serviceId: 'x',
+        serviceName: 'Servicio X',
+        category: 'CAT',
+        studentTypes: [],
+        jsonPayload: { descripcion: 'foo' },
+        pdfRefs: [],
+      },
+      usedSources: [],
+      serviceCandidates: [],
+    })
+
+    expect(turn.selectedService).toBeNull()
+    expect(turn.content).toBe('Solo el texto de la respuesta.')
+  })
 })

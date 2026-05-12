@@ -91,9 +91,10 @@
   --color-slate: #a59f97;
   --color-cinder: #57534a;
   --color-obsidian: #000000;
-  --font-display: var(--font-waldenburg);
-  --font-body: var(--font-inter);
-  --font-mono: var(--font-geist-mono);
+  --font-body: var(--font-inter-tight);
+  --font-display: var(--font-inter-tight);
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
 }
 
 @layer base {
@@ -110,8 +111,19 @@
     min-height: 100vh;
     background: var(--color-eggshell);
     color: var(--color-obsidian);
-    font-family: var(--font-inter), sans-serif;
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+    font-weight: 400;
     text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+    font-weight: 400;
   }
 
   a {

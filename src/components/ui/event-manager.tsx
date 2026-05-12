@@ -209,7 +209,7 @@ export function EventManager({
           placeholder="Buscar actividades…"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full"
+          className="w-full border-chalk/55 shadow-none dark:border-white/10"
         />
       </div>
 
@@ -376,10 +376,13 @@ function MonthView({
   const weekdayLabels = ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"]
 
   return (
-    <Card className="overflow-hidden">
-      <div className="grid grid-cols-7 border-b">
+    <Card className="overflow-hidden border-chalk/65 bg-eggshell shadow-sm dark:border-white/10 dark:bg-zinc-950/80 dark:shadow-none">
+      <div className="grid grid-cols-7 border-b border-chalk/55 dark:border-white/[0.08]">
         {weekdayLabels.map((day) => (
-          <div key={day} className="border-r p-2 text-center text-xs font-medium capitalize last:border-r-0 sm:text-sm">
+          <div
+            key={day}
+            className="border-r border-chalk/45 p-2 text-center text-xs font-medium capitalize text-muted-foreground last:border-r-0 sm:text-sm dark:border-white/[0.06]"
+          >
             {day}
           </div>
         ))}
@@ -394,8 +397,8 @@ function MonthView({
             <div
               key={index}
               className={cn(
-                "min-h-20 border-b border-r p-1 last:border-r-0 sm:min-h-24 sm:p-2",
-                !isCurrentMonth && "bg-muted/30",
+                "min-h-20 border-b border-r border-chalk/45 p-1 last:border-r-0 sm:min-h-24 sm:p-2 dark:border-white/[0.06]",
+                !isCurrentMonth && "bg-chalk/25 dark:bg-white/[0.04]",
               )}
             >
               <div

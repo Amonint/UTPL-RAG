@@ -1,5 +1,8 @@
+import { FileText } from 'lucide-react'
+
 import type { ChatTurn, SelectedServiceMeta } from '@/lib/chat/create-assistant-turn'
 import type { PdfRef } from '@/lib/types'
+import { collectPayloadLinkUrls, ServicePayloadProse } from '@/components/service-payload-prose'
 import { cn } from '@/lib/utils'
 
 interface ChatMessageProps {
@@ -7,109 +10,74 @@ interface ChatMessageProps {
   onSelectService?: (serviceId: string) => void
 }
 
-const JSON_FIELD_LABELS: Record<string, string> = {
-  descripcion: 'Descripción',
-  nota: 'Nota',
-  requisitos: 'Requisitos',
-  costo: 'Costo',
-  tiempo_respuesta: 'Tiempo de respuesta',
-  modalidad_nivel: 'Modalidad / nivel',
-  titulo: 'Título',
-  nombre: 'Nombre',
-  enlace: 'Enlace',
-  url: 'URL',
-}
-
-function humanizeJsonKey(key: string): string {
-  return JSON_FIELD_LABELS[key] ?? key.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
-}
-
-function formatJsonValue(value: unknown): string {
-  if (value === null || value === undefined) return ''
-  if (typeof value === 'string') return value
-  if (typeof value === 'number' || typeof value === 'boolean') return String(value)
-  try {
-    return JSON.stringify(value, null, 2)
-  } catch {
-    return String(value)
-  }
-}
-
 function SelectedServiceDetails({ meta }: { meta: SelectedServiceMeta }) {
   const pdfs: PdfRef[] = meta.pdfRefs ?? []
   const payload = meta.jsonPayload ?? {}
-  const entries = Object.entries(payload).filter(([, v]) => {
-    if (v === null || v === undefined) return false
-    if (typeof v === 'string' && v.trim() === '') return false
-    return true
-  })
   const types = meta.studentTypes ?? []
 
-  if (pdfs.length === 0 && entries.length === 0 && types.length === 0) {
+  const inlinedUrls = collectPayloadLinkUrls(payload)
+  const prose = <ServicePayloadProse payload={payload} />
+
+  const extraPdfs = pdfs.filter((ref) => {
+    const href = ref.url?.trim()
+    if (!href) return false
+    return !inlinedUrls.has(href)
+  })
+
+  const hasProse = Object.keys(payload).some((k) => {
+    if (k.startsWith('_') || k === 'nombre' || k === 'descripcion') return false
+    const v = payload[k]
+    if (v === null || v === undefined) return false
+    if (typeof v === 'string' && v.trim() === '') return false
+    if (Array.isArray(v) && v.length === 0) return false
+    return true
+  })
+
+  if (!hasProse && types.length === 0 && extraPdfs.length === 0) {
     return null
   }
 
   return (
-    <div className="mt-4 grid gap-4 border-t border-chalk pt-4">
+    <div className="mt-4 space-y-4 border-t border-chalk pt-4 text-[15px] leading-7 text-obsidian">
       {types.length > 0 ? (
         <div className="grid gap-1">
-          <p className="m-0 text-xs font-medium uppercase tracking-[0.05em] text-gravel">Tipos de estudiante</p>
-          <p className="m-0 text-sm text-obsidian">{types.join(', ')}</p>
+          <p className="m-0">
+            <strong>Tipos de estudiante</strong>
+          </p>
+          <p className="m-0">{types.join(', ')}</p>
         </div>
       ) : null}
 
-      {entries.length > 0 ? (
-        <div className="grid gap-2">
-          <p className="m-0 text-xs font-medium uppercase tracking-[0.05em] text-gravel">Datos del servicio (JSON)</p>
-          <dl className="m-0 grid gap-2">
-            {entries.map(([key, value]) => (
-              <div key={key} className="grid gap-0.5 rounded-xl border border-chalk bg-powder/60 px-3 py-2">
-                <dt className="text-xs font-medium text-gravel">{humanizeJsonKey(key)}</dt>
-                <dd className="m-0 text-sm leading-6 text-obsidian">
-                  <span className="whitespace-pre-wrap break-words">{formatJsonValue(value)}</span>
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      ) : null}
+      {prose}
 
-      {pdfs.length > 0 ? (
+      {extraPdfs.length > 0 ? (
         <div className="grid gap-2">
-          <p className="m-0 text-xs font-medium uppercase tracking-[0.05em] text-gravel">Documentos PDF</p>
-          <ul className="m-0 grid gap-2 p-0">
-            {pdfs.map((ref) => {
+          <p className="m-0">
+            <strong>Documentos PDF</strong>
+          </p>
+          <ul className="m-0 list-none space-y-2 p-0">
+            {extraPdfs.map((ref) => {
               const href = ref.url?.trim()
               if (!href) return null
               return (
-                <li key={`${ref.url}-${ref.label ?? 'pdf'}`} className="list-none">
+                <li key={`${ref.url}-${ref.label ?? 'pdf'}`}>
                   <a
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl border border-chalk bg-white px-3 py-2 text-sm font-medium text-primary underline-offset-4 transition hover:bg-powder hover:underline"
+                    className="inline-flex items-center gap-1.5 font-medium text-primary underline underline-offset-2 hover:text-primary/90"
                   >
+                    <FileText className="size-4 shrink-0 opacity-80" aria-hidden />
                     {ref.label?.trim() || 'Abrir PDF'}
                   </a>
                   {ref.sourcePath ? (
-                    <span className="mt-1 block pl-1 font-mono text-[11px] text-gravel">{ref.sourcePath}</span>
+                    <span className="mt-0.5 block pl-6 font-mono text-[11px] text-gravel">{ref.sourcePath}</span>
                   ) : null}
                 </li>
               )
             })}
           </ul>
         </div>
-      ) : null}
-
-      {Object.keys(payload).length > 0 ? (
-        <details className="rounded-xl border border-chalk bg-powder/40 px-3 py-2">
-          <summary className="cursor-pointer text-xs font-medium uppercase tracking-[0.05em] text-gravel">
-            JSON completo (referencia)
-          </summary>
-          <pre className="mt-2 max-h-[240px] overflow-auto whitespace-pre-wrap break-words rounded-lg bg-white p-3 font-mono text-[11px] leading-relaxed text-cinder">
-            {JSON.stringify(payload, null, 2)}
-          </pre>
-        </details>
       ) : null}
     </div>
   )
@@ -146,7 +114,7 @@ export function ChatMessage({ turn, onSelectService }: ChatMessageProps) {
     <article className={cn('grid gap-2', isUser ? 'justify-items-end' : 'justify-items-start')}>
       <div
         className={cn(
-          'w-full max-w-[720px] rounded-[20px] px-4 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.06)]',
+          'w-full max-w-[720px] rounded-xl px-4 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.06)]',
           isUser ? 'bg-obsidian text-eggshell' : 'border border-chalk bg-white text-obsidian',
         )}
       >
@@ -165,19 +133,22 @@ export function ChatMessage({ turn, onSelectService }: ChatMessageProps) {
                 <button
                   type="button"
                   onClick={() => onSelectService?.(result.serviceId)}
-                  className="flex w-full flex-col items-start gap-2 rounded-2xl border border-chalk bg-powder px-4 py-3 text-left text-sm text-obsidian transition hover:bg-white"
+                  className="flex w-full flex-col items-start gap-2 rounded-xl border border-chalk bg-powder px-4 py-3 text-left text-sm text-obsidian transition hover:bg-white"
                 >
-                  <div className="flex w-full items-center justify-between gap-3">
-                    <span className="font-medium">{result.serviceName}</span>
-                    <span className="rounded-full border border-chalk px-2 py-1 text-[11px] uppercase tracking-[0.05em] text-gravel">
-                      {Math.round(result.score * 100)}%
-                    </span>
+                  <div className="flex w-full items-start justify-between gap-3">
+                    <span className="min-w-0 flex-1 font-medium">{result.serviceName}</span>
                   </div>
                   <span className="text-xs uppercase tracking-[0.05em] text-gravel">{result.category}</span>
+                  {result.matchHints && result.matchHints.length > 0 ? (
+                    <ul className="m-0 list-none space-y-1 p-0">
+                      {result.matchHints.map((hint, i) => (
+                        <li key={i} className="text-[11px] leading-snug text-gravel">
+                          {hint}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
                   {result.snippet ? <span className="text-xs leading-5 text-cinder">{result.snippet}</span> : null}
-                  <span className="rounded-full border border-chalk bg-white px-2 py-1 text-[11px] text-gravel">
-                    {result.hasPdfs ? 'Tiene PDF' : 'Solo JSON'}
-                  </span>
                   {result.pdfRefs && result.pdfRefs.length > 0 ? (
                     <ul className="m-0 w-full space-y-1 p-0 pl-1">
                       {result.pdfRefs.map((ref) =>
@@ -208,7 +179,7 @@ export function ChatMessage({ turn, onSelectService }: ChatMessageProps) {
             {turn.serviceCandidates.map((candidate) => (
               <li
                 key={candidate.serviceId}
-                className="flex list-none items-center justify-between rounded-2xl border border-chalk bg-powder px-4 py-3 text-sm text-obsidian"
+                className="flex list-none items-center justify-between rounded-xl border border-chalk bg-powder px-4 py-3 text-sm text-obsidian"
               >
                 <span>{candidate.serviceName}</span>
                 <span className="rounded-full border border-chalk px-2 py-1 text-[11px] uppercase tracking-[0.05em] text-gravel">
@@ -224,7 +195,7 @@ export function ChatMessage({ turn, onSelectService }: ChatMessageProps) {
             <summary className="cursor-pointer text-sm text-gravel">Fuentes {turn.usedSources.length}</summary>
             <div className="grid gap-3">
               {turn.usedSources.map((source) => (
-                <article key={source.chunkId} className="grid gap-2 rounded-2xl border border-chalk bg-powder px-4 py-3">
+                <article key={source.chunkId} className="grid gap-2 rounded-xl border border-chalk bg-powder px-4 py-3">
                   <div className="flex items-center justify-between gap-3">
                     <span className="rounded-full border border-chalk bg-white px-2 py-1 text-[11px] uppercase tracking-[0.05em] text-gravel">
                       {source.sourceKind.toUpperCase()}

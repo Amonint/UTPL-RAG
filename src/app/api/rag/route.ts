@@ -1,16 +1,11 @@
 import { loadArtifacts } from '@/lib/data'
-import {
-  generateGroundedAnswer,
-  generateGroundedAnswerWithNativePdfs,
-} from '@/lib/rag/generate-answer'
-import { filterPdfRefsWithLocalFiles, buildNativePdfUsedSources } from '@/lib/rag/native-pdf-sources'
-import { derivePdfFacetsFromPayload, filterPdfRefsByFacetIds } from '@/lib/rag/pdf-facets'
-import { verifyAnswerSupport } from '@/lib/rag/verify-answer'
+import { generateServiceAnswerWithGemini } from '@/lib/rag/gemini-service-qa'
+import { buildNativePdfUsedSources } from '@/lib/rag/native-pdf-sources'
+import type { RetrievalChunk } from '@/lib/ingest/chunking'
 import { routeCandidates } from '@/lib/retrieval/candidate-router'
-import { rankEvidenceForService } from '@/lib/retrieval/evidence-retriever'
-import type { CanonicalServiceRecord } from '@/lib/types'
+import type { CanonicalServiceRecord, PdfRef } from '@/lib/types'
 
-function buildJsonOnlyAnswer(service: CanonicalServiceRecord) {
+function buildJsonSummary(service: CanonicalServiceRecord): string {
   const payload = service.jsonPayload as Record<string, unknown>
   const sections = [
     `Servicio: ${service.serviceName}`,
@@ -24,29 +19,48 @@ function buildJsonOnlyAnswer(service: CanonicalServiceRecord) {
   return sections.join('\n')
 }
 
+function resolveSelectedPdfRefs(
+  service: CanonicalServiceRecord,
+  selectedPdfIds: string[],
+): PdfRef[] | null {
+  const byPath = new Map(service.pdfRefs.map((r) => [r.sourcePath, r]))
+  const out: PdfRef[] = []
+  const seenUrl = new Set<string>()
+  for (const id of selectedPdfIds) {
+    const ref = byPath.get(id)
+    if (!ref) return null
+    if (seenUrl.has(ref.url)) continue
+    seenUrl.add(ref.url)
+    out.push(ref)
+  }
+  return out
+}
+
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as {
       question?: string
       selectedServiceId?: string
+      selectedPdfIds?: string[]
+      /** @deprecated Ignorado; la selección va en selectedPdfIds. */
       allowPdf?: boolean
+      /** @deprecated Ignorado. */
       selectedFacetIds?: string[]
     }
     const question = body.question?.trim()
+    const selectedPdfIds = Array.isArray(body.selectedPdfIds)
+      ? body.selectedPdfIds.filter((value): value is string => typeof value === 'string')
+      : []
 
     if (!question) {
       return Response.json({ message: 'Missing question' }, { status: 400 })
     }
 
-    const { services, chunks } = await loadArtifacts()
+    const { services } = await loadArtifacts()
     const selectedServiceId = body.selectedServiceId
     const explicitService = selectedServiceId
       ? services.find((item) => item.serviceId === selectedServiceId) ?? null
       : null
-    const allowPdf = body.allowPdf ?? false
-    const selectedFacetIds = Array.isArray(body.selectedFacetIds)
-      ? body.selectedFacetIds.filter((value): value is string => typeof value === 'string')
-      : []
 
     if (selectedServiceId && !explicitService) {
       return Response.json({ message: 'Selected service not found' }, { status: 404 })
@@ -81,96 +95,55 @@ export async function POST(request: Request) {
       return Response.json({ message: 'Selected service not found' }, { status: 404 })
     }
 
-    const jsonEvidence = rankEvidenceForService({
-      query: question,
-      serviceId: resolvedServiceId,
-      chunks,
-      allowPdf: false,
-    })
-
-    const verification = verifyAnswerSupport({
-      answer: '',
-      selectedServiceId: resolvedServiceId,
-      evidence: jsonEvidence,
-    })
-
-    if (!verification.ok) {
-      return Response.json({ message: verification.reason }, { status: 422 })
-    }
-
-    const jsonChunk = jsonEvidence[0]
-
-    if (!jsonChunk) {
-      return Response.json({ message: 'missing same-service evidence' }, { status: 422 })
-    }
-
-    const localPdfRefs = filterPdfRefsWithLocalFiles(selectedService.pdfRefs ?? [])
-    const pdfFacets = derivePdfFacetsFromPayload(selectedService.jsonPayload, localPdfRefs)
-    const hasFacetOptions = pdfFacets.length > 0
-
-    if (allowPdf && hasFacetOptions && selectedFacetIds.length === 0) {
+    const pdfCount = selectedService.pdfRefs?.length ?? 0
+    if (pdfCount === 0) {
       return Response.json(
         {
           message:
-            'Selecciona modalidad/carrera antes de consultar para limitar los PDFs del servicio.',
-          requiresFacetSelection: true,
-          availableFacets: pdfFacets.map((item) => ({
-            facetId: item.facetId,
-            pestana: item.pestana,
-            titulo: item.titulo,
-            itemTexto: item.itemTexto,
-            pdfCount: item.pdfCount,
-          })),
+            'Este trámite no tiene PDFs en el catálogo; no se puede consultar con documentos asistidos.',
         },
         { status: 422 },
       )
     }
 
-    const filteredPdfRefs =
-      allowPdf && hasFacetOptions
-        ? filterPdfRefsByFacetIds(localPdfRefs, selectedFacetIds, pdfFacets)
-        : localPdfRefs
+    if (selectedPdfIds.length === 0) {
+      return Response.json(
+        { message: 'Indica al menos un PDF (selectedPdfIds) para este trámite.' },
+        { status: 422 },
+      )
+    }
+
+    const selectedRefs = resolveSelectedPdfRefs(selectedService, selectedPdfIds)
+    if (selectedRefs === null) {
+      return Response.json(
+        { message: 'Algún identificador de PDF no corresponde a este servicio.' },
+        { status: 400 },
+      )
+    }
+
+    const jsonChunk: RetrievalChunk = {
+      chunkId: `${resolvedServiceId}::json`,
+      serviceId: resolvedServiceId,
+      sourceKind: 'json',
+      text: buildJsonSummary(selectedService),
+      metadata: { kind: 'service-json' },
+    }
 
     let answer: string
-    let usedSources: typeof jsonEvidence
-    let warning: string | null = null
 
-    if (allowPdf && filteredPdfRefs.length > 0) {
-      try {
-        answer = await generateGroundedAnswerWithNativePdfs({
-          question,
-          jsonChunk,
-          pdfRefs: filteredPdfRefs,
-        })
-        usedSources = buildNativePdfUsedSources(resolvedServiceId, jsonEvidence, filteredPdfRefs)
-      } catch (reason) {
-        console.error('RAG native PDF generation failed, returning JSON fallback', reason)
-        answer = buildJsonOnlyAnswer(selectedService)
-        usedSources = jsonEvidence
-        warning =
-          'No se pudo usar PDFs para responder en este momento. Se devolvio informacion base del servicio.'
-      }
-    } else if (allowPdf) {
-      try {
-        const fallbackEvidence = rankEvidenceForService({
-          query: question,
-          serviceId: resolvedServiceId,
-          chunks,
-          allowPdf: true,
-        })
-        answer = await generateGroundedAnswer(question, fallbackEvidence)
-        usedSources = fallbackEvidence
-      } catch (reason) {
-        console.error('RAG text generation failed, returning JSON fallback', reason)
-        answer = buildJsonOnlyAnswer(selectedService)
-        usedSources = jsonEvidence
-        warning =
-          'No se pudo generar respuesta con IA en este momento. Se devolvio informacion base del servicio.'
-      }
-    } else {
-      answer = buildJsonOnlyAnswer(selectedService)
-      usedSources = jsonEvidence
+    try {
+      answer = await generateServiceAnswerWithGemini({
+        question,
+        service: selectedService,
+        pdfRefs: selectedRefs,
+      })
+    } catch (reason) {
+      console.error('Gemini service QA failed', reason)
+      const msg = reason instanceof Error ? reason.message : 'Error al generar la respuesta.'
+      return Response.json({ message: msg }, { status: 502 })
     }
+
+    const usedSources = buildNativePdfUsedSources(resolvedServiceId, [jsonChunk], selectedRefs)
 
     return Response.json({
       answer,
@@ -179,7 +152,6 @@ export async function POST(request: Request) {
       citations: [],
       usedSources,
       needsDisambiguation,
-      warning,
     })
   } catch (reason) {
     const message = reason instanceof Error ? reason.message : 'Unexpected error'

@@ -24,22 +24,23 @@ function modalityOptions(rows: AcademicCalendarEventRecord[]): string[] {
 
 export const MODALITIES = modalityOptions(EVENTS) as unknown as readonly string[]
 
+/** Paleta corporativa UTPL: azules institucionales, acentos dorados y neutros. */
 export const CATEGORY_COLORS = {
-  Matrículas: '#2563eb',
-  Académico: '#059669',
-  Trámite: '#d97706',
-  Evaluación: '#7c3aed',
-  Notas: '#dc2626',
-  Recuperación: '#0891b2',
-  Feriado: '#4b5563',
-  Vacaciones: '#0f766e',
-  'Doctorado Química': '#be185d',
-  CCE: '#9333ea',
-  Modular: '#0369a1',
-  Inglés: '#0d9488',
-  'Val. General': '#64748b',
-  Titulación: '#c026d3',
-  'UIC/UTE': '#ea580c',
+  Matrículas: '#003978',
+  Académico: '#1e4a7a',
+  Trámite: '#c9a227',
+  Evaluación: '#2d5f8d',
+  Notas: '#b8860b',
+  Recuperación: '#4a6fa5',
+  Feriado: '#64748b',
+  Vacaciones: '#0d4f6e',
+  'Doctorado Química': '#003978',
+  CCE: '#d4a012',
+  Modular: '#1a5080',
+  Inglés: '#3d6e9f',
+  'Val. General': '#94a3b8',
+  Titulación: '#e5b80c',
+  'UIC/UTE': '#2563ab',
 } as const
 
 export function colorForCategory(category: string): string {

@@ -10,6 +10,9 @@ import {
 } from "@/data/calendar-events-active";
 import { filterAcademicEventsFromTodayEcuador } from "@/lib/ecuador-calendar";
 
+const UTPL_NAVY = "#003978";
+const UTPL_GOLD = "#c9a227";
+
 function formatDate(dateStr: string) {
   return new Intl.DateTimeFormat("es-EC", {
     day: "2-digit", month: "short", year: "numeric",
@@ -59,6 +62,7 @@ export default function AcademicCalendar() {
           href="/calendario"
           target="_blank"
           rel="noopener noreferrer"
+          className="transition-colors duration-150 hover:bg-[#003978] hover:text-white"
           style={s.dayGridToggle}
         >
           Calendario
@@ -84,120 +88,151 @@ export default function AcademicCalendar() {
 
       {/* Leyenda de categorías */}
       <div style={s.legend}>
-        {Object.entries(CATEGORY_COLORS).map(([cat, color]) => (
-          <button
-            key={cat}
-            onClick={() => setCategory(selectedCategory === cat ? "Todas" : cat)}
-            style={{
-              ...s.legendItem,
-              outline: selectedCategory === cat ? `2px solid ${color}` : "none",
-            }}
-          >
-            <span style={{ ...s.dot, background: color }} />
-            {cat}
-          </button>
-        ))}
+        {Object.entries(CATEGORY_COLORS).map(([cat, color]) => {
+          const active = selectedCategory === cat;
+          return (
+            <button
+              key={cat}
+              type="button"
+              onClick={() => setCategory(active ? "Todas" : cat)}
+              style={{
+                ...s.legendItem,
+                border: active ? `1px solid ${UTPL_NAVY}` : `1px solid ${UTPL_NAVY}33`,
+                background: active ? "#ffffff" : "#fafbfc",
+                boxShadow: active ? `inset 3px 0 0 ${UTPL_GOLD}` : "none",
+              }}
+            >
+              <span style={{ ...s.dot, background: color }} />
+              {cat}
+            </button>
+          );
+        })}
       </div>
 
       {/* Lista de eventos */}
       <div style={s.list}>
         {filtered.length === 0 ? (
-          <p style={{ color: "#94a3b8", textAlign: "center", padding: 40 }}>
+          <p style={{ color: `${UTPL_NAVY}99`, textAlign: "center", padding: "48px 24px", fontSize: 14 }}>
             No se encontraron eventos con los filtros aplicados.
           </p>
         ) : (
-          filtered.map((event) => (
-            <article key={event.id} style={s.card}>
-              <span
+          filtered.map((event, i) => {
+            const catColor = colorForCategory(event.category)
+            return (
+              <article
+                key={event.id}
                 style={{
-                  ...s.colorBar,
-                  background: colorForCategory(event.category),
+                  ...s.card,
+                  background: i % 2 === 0 ? "#ffffff" : "#f7f9fc",
                 }}
-              />
-              <div style={s.cardBody}>
-                <div style={s.cardTop}>
-                  <h3 style={s.cardTitle}>{event.title}</h3>
-                  <span
-                    style={{
-                      ...s.badge,
-                      background: `${colorForCategory(event.category)}18`,
-                      color: colorForCategory(event.category),
-                    }}
-                  >
-                    {event.category}
-                  </span>
+              >
+                <span
+                  style={{
+                    ...s.colorBar,
+                    background: catColor,
+                  }}
+                />
+                <div style={s.cardBody}>
+                  <div style={s.cardTop}>
+                    <h3 style={s.cardTitle}>{event.title}</h3>
+                    <span
+                      style={{
+                        ...s.badge,
+                        background: `${catColor}14`,
+                        color: catColor,
+                        borderColor: `${catColor}33`,
+                      }}
+                    >
+                      {event.category}
+                    </span>
+                  </div>
+                  <p style={s.date}>
+                    {event.start === event.end
+                      ? formatDate(event.start)
+                      : `${formatDate(event.start)} → ${formatDate(event.end)}`}
+                  </p>
+                  <p style={s.meta}>{event.modality}</p>
                 </div>
-                <p style={s.date}>
-                  {event.start === event.end
-                    ? formatDate(event.start)
-                    : `${formatDate(event.start)} → ${formatDate(event.end)}`}
-                </p>
-                <p style={s.meta}>{event.modality}</p>
-              </div>
-            </article>
-          ))
+              </article>
+            )
+          })
         )}
       </div>
     </section>
   );
 }
 
-// ─── ESTILOS ─────────────────────────────────────────────────────────────────
+// ─── ESTILOS (UTPL: azul, blanco, acentos dorados) ────────────────────────────
 const s = {
   wrapper: {
     maxWidth: 1100,
     margin: "0 auto",
-    padding: 24,
-    fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif",
+    padding: "28px 24px 36px",
+    fontFamily: "var(--font-body), Inter, ui-sans-serif, system-ui, sans-serif",
     color: "#0f172a",
+    background: "#ffffff",
   },
   header: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "flex-start",
-    marginBottom: 20,
+    marginBottom: 24,
+    paddingBottom: 20,
+    borderBottom: `1px solid ${UTPL_NAVY}18`,
     flexWrap: "wrap" as const,
-    gap: 12,
+    gap: 14,
   },
-  title: { margin: 0, fontSize: 28, fontWeight: 700 },
-  subtitle: { margin: "4px 0 0", color: "#64748b", fontSize: 15 },
+  title: { margin: 0, fontSize: 22, fontWeight: 600, color: UTPL_NAVY, letterSpacing: "-0.02em" },
+  subtitle: { margin: "6px 0 0", color: "#64748b", fontSize: 14, fontWeight: 400 },
   pill: {
-    background: "#f1f5f9",
-    color: "#475569",
-    padding: "6px 14px",
-    borderRadius: 999,
-    fontSize: 14,
+    background: `linear-gradient(135deg, ${UTPL_NAVY} 0%, #0d4d8c 100%)`,
+    color: "#ffffff",
+    padding: "6px 12px",
+    borderRadius: 4,
+    fontSize: 12,
     fontWeight: 600,
+    letterSpacing: "0.04em",
+    textTransform: "uppercase" as const,
     alignSelf: "center",
   },
   filters: {
     display: "grid",
     gridTemplateColumns: "2fr 1fr 1fr",
-    gap: 12,
-    marginBottom: 14,
+    gap: 10,
+    marginBottom: 16,
   },
   input: {
-    padding: "12px 14px",
-    borderRadius: 12,
-    border: "1px solid #cbd5e1",
+    padding: "11px 14px",
+    borderRadius: 4,
+    border: `1px solid ${UTPL_NAVY}26`,
     fontSize: 14,
     outline: "none",
     width: "100%",
     boxSizing: "border-box" as const,
+    background: "#ffffff",
+    minHeight: 44,
   },
   select: {
-    padding: "12px 14px",
-    borderRadius: 12,
-    border: "1px solid #cbd5e1",
+    padding: "11px 2.75rem 11px 14px",
+    borderRadius: 4,
+    border: `1px solid ${UTPL_NAVY}26`,
     fontSize: 14,
-    background: "white",
+    background: "#ffffff",
     cursor: "pointer",
+    color: "#0f172a",
+    boxSizing: "border-box" as const,
+    width: "100%",
+    minHeight: 44,
   },
   legend: {
     display: "flex",
     flexWrap: "wrap" as const,
     gap: 8,
-    marginBottom: 20,
+    marginBottom: 22,
+    padding: "14px 16px",
+    borderRadius: 4,
+    background: "#ffffff",
+    border: `1px solid ${UTPL_NAVY}14`,
   },
   legendItem: {
     display: "flex",
@@ -205,11 +240,13 @@ const s = {
     gap: 6,
     padding: "5px 12px",
     borderRadius: 999,
-    border: "1px solid #e2e8f0",
-    background: "white",
+    border: `1px solid ${UTPL_NAVY}33`,
+    background: "#fafbfc",
     fontSize: 13,
+    fontWeight: 500,
     cursor: "pointer",
     fontFamily: "inherit",
+    color: "#334155",
   },
   dot: {
     width: 10,
@@ -217,16 +254,15 @@ const s = {
     borderRadius: "50%",
     flexShrink: 0,
   },
-  list: { display: "grid", gap: 10 },
+  list: { display: "grid", gap: 8 },
   card: {
     display: "flex",
-    background: "#ffffff",
-    border: "1px solid #e2e8f0",
-    borderRadius: 14,
+    border: `1px solid ${UTPL_NAVY}14`,
+    borderRadius: 4,
     overflow: "hidden",
-    boxShadow: "0 1px 3px rgba(15,23,42,0.05)",
+    boxShadow: "none",
   },
-  colorBar: { width: 5, flexShrink: 0 },
+  colorBar: { width: 4, flexShrink: 0 },
   cardBody: { flex: 1, padding: "14px 16px" },
   cardTop: {
     display: "flex",
@@ -235,33 +271,34 @@ const s = {
     gap: 12,
     flexWrap: "wrap" as const,
   },
-  cardTitle: { margin: 0, fontSize: 15, fontWeight: 600, flex: 1 },
+  cardTitle: { margin: 0, fontSize: 15, fontWeight: 600, flex: 1, color: "#0f172a" },
   badge: {
-    fontSize: 12,
+    fontSize: 11,
     padding: "4px 10px",
-    borderRadius: 999,
+    borderRadius: 4,
     fontWeight: 600,
     whiteSpace: "nowrap",
+    border: "1px solid transparent",
   },
-  date: { margin: "8px 0 4px", fontWeight: 600, fontSize: 14, color: "#1e293b" },
+  date: { margin: "8px 0 4px", fontWeight: 600, fontSize: 13, color: UTPL_NAVY },
   meta: { margin: 0, color: "#64748b", fontSize: 13 },
   dayGridToolbar: {
     display: "flex",
     flexWrap: "wrap" as const,
     alignItems: "center" as const,
     gap: 10,
-    marginBottom: 16,
+    marginBottom: 18,
   },
   dayGridToggle: {
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
-    padding: "10px 16px",
-    borderRadius: 12,
-    border: "1px solid #cbd5e1",
-    background: "#1e293b",
-    color: "#fff",
-    fontSize: 14,
+    padding: "9px 16px",
+    borderRadius: 4,
+    border: `1px solid ${UTPL_NAVY}`,
+    background: "#ffffff",
+    color: UTPL_NAVY,
+    fontSize: 13,
     fontWeight: 600,
     cursor: "pointer",
     fontFamily: "inherit",

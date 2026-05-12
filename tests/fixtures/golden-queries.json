@@ -1,0 +1,7 @@
+[
+  { "kind": "no-pdf" },
+  { "kind": "single-pdf" },
+  { "kind": "multi-pdf" },
+  { "kind": "ambiguous" },
+  { "kind": "student-type-sensitive" }
+]

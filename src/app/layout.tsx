@@ -1,12 +1,15 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import { Inter } from 'next/font/google'
+import { Inter_Tight } from 'next/font/google'
+
+import { SiteNavbar } from '@/components/site-navbar'
 
 import './globals.css'
 
-const inter = Inter({
+const interTight = Inter_Tight({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-inter-tight',
+  weight: ['400', '500', '600'],
   display: 'swap',
 })
 
@@ -17,8 +20,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="es" className={inter.variable}>
-      <body className={`${inter.className} min-h-screen antialiased`}>{children}</body>
+    <html lang="es" className={interTight.variable}>
+      <body className="min-h-screen antialiased">
+        <SiteNavbar />
+        {children}
+      </body>
     </html>
   )
 }
