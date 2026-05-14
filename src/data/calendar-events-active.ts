@@ -1,11 +1,11 @@
 /**
- * Dataset activo del calendario: solo filas generadas desde Textract
- * (`npm run calendar:emit-from-textract`). El listado manual vive en
- * `academic-calendar-events.ts` pero el UI del calendario no lo usa.
+ * Dataset activo del calendario: solo eventos de alta confianza extraidos
+ * desde `data/derived/utpl-events-2026-high-confidence.json` y copiados a
+ * `src/data/calendar-events-high-confidence.json`.
  */
 import type { AcademicCalendarEventRecord } from './academic-calendar-events'
 
-import events from './calendar-events-active.json'
+import events from './calendar-events-high-confidence.json'
 
 export const EVENTS = events as AcademicCalendarEventRecord[]
 
@@ -29,11 +29,14 @@ export const CATEGORY_COLORS = {
   Matrículas: '#003978',
   Académico: '#1e4a7a',
   Trámite: '#c9a227',
+  Administrativo: '#c9a227',
   Evaluación: '#2d5f8d',
+  Docente: '#1e4a7a',
   Notas: '#b8860b',
   Recuperación: '#4a6fa5',
   Feriado: '#64748b',
   Vacaciones: '#0d4f6e',
+  Otro: '#334155',
   'Doctorado Química': '#003978',
   CCE: '#d4a012',
   Modular: '#1a5080',

@@ -20,11 +20,13 @@ const OUT_JSON = path.join(REPO, 'src', 'data', 'calendar-events-active.json')
 type Candidate = {
   sourceRelative: string
   rawText: string
+  title?: string
   inferredStart: string | null
   inferredEnd: string | null
 }
 
 function candidateTitle(c: Candidate): string {
+  if (c.title?.trim()) return c.title.replace(/\s+/g, ' ').slice(0, 400)
   const first = c.rawText.split('|')[0]?.trim() ?? c.rawText.trim()
   return first.replace(/\s+/g, ' ').slice(0, 400)
 }

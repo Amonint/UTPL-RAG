@@ -30,6 +30,6 @@ export function mapUtplRecordsToManagerEvents(
     endTime: new Date(`${r.end}T23:59:59.999`),
     color: CATEGORY_TO_COLOR[r.category] ?? 'blue',
     category: r.category,
-    tags: r.modality === 'Todas' ? [] : [r.modality],
+    tags: r.modality === 'Todas' || r.modality === 'No especificada' ? [] : [r.modality],
   }))
 }

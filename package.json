@@ -12,11 +12,20 @@
     "ingest": "tsx scripts/build-artifacts.ts",
     "validate:calendar-pdfs": "tsx scripts/validate-calendar-from-pdfs.ts",
     "extract:calendar-vision": "tsx scripts/extract-events-from-pdfs-vision.ts",
-    "extract:doop-textract": "tsx scripts/textract-doop-pdfs.ts",
+    "extract:doop-textract": "tsx --env-file-if-exists=.env scripts/textract-doop-pdfs.ts",
     "bundle:extraccion-utpl-v1": "tsx scripts/bundle-extraccion-utpl-v1.ts",
     "extraccion:utpl-v1": "npm run extract:doop-textract && npm run bundle:extraccion-utpl-v1",
+    "extraccion:utpl-v1:force": "npm run extract:doop-textract -- --force && npm run bundle:extraccion-utpl-v1 && npm run process:textract-calendar",
     "process:textract-calendar": "tsx scripts/process-textract-raw-to-calendar.ts",
-    "calendar:emit-from-textract": "tsx scripts/emit-calendar-from-textract-candidates.ts"
+    "inspect:textract-blocks": "tsx scripts/inspect-textract-blocks.ts",
+    "calendar:emit-from-textract": "tsx scripts/emit-calendar-from-textract-candidates.ts",
+    "list:doop-duplicates-from-textract": "tsx scripts/list-doop-duplicate-pdfs-from-textract.ts",
+    "list:doop-duplicates-from-textract:audit": "tsx scripts/list-doop-duplicate-pdfs-from-textract.ts --audit-json",
+    "dedupe:pdf-content": "tsx scripts/pdf-content-dedupe.ts",
+    "dedupe:pdf-content:doop": "tsx scripts/pdf-content-dedupe.ts --root=doop --textract-manifest=data/derived/textract-raw/manifest.json --out=data/derived/pdf-content-dedupe.json",
+    "extract:utpl-events-json": "tsx --env-file-if-exists=.env scripts/extract-utpl-events-json.ts",
+    "calendar:build-high-confidence": "tsx scripts/build-calendar-events-high-confidence.ts",
+    "pdf:build-catalog": "tsx scripts/build-doop-pdf-catalog.ts"
   },
   "dependencies": {
     "@google-cloud/storage": "^7.19.0",

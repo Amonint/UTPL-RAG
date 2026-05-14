@@ -1,0 +1,1769 @@
+{
+  "version": 1,
+  "generatedAt": "2026-05-13T01:08:03.089Z",
+  "summary": {
+    "pdfBytesCriterion": "duplicate_manifest_entries_share_same_sha256",
+    "manifestPath": "data/derived/textract-raw/manifest.json",
+    "manifestUpdatedAt": "2026-05-12T15:21:11.748Z",
+    "totalManifestEntries": 150,
+    "uniquePdfSha256Count": 80,
+    "duplicatePdfSha256Groups": 32,
+    "manifestEntriesInDuplicatePdfGroups": 102,
+    "redundantPdfCopiesIfKeepOnePerPdfHash": 70,
+    "uniqueTextractContentValues": 150,
+    "textractExtractionsRedundantSameBlocks": 0
+  },
+  "textractContent": {
+    "source": "sha256_utf8_of_json_stringify_blocks_array",
+    "textractRawDir": "data/derived/textract-raw",
+    "jsonsReadOk": 150,
+    "jsonsMissingOrInvalid": 0,
+    "uniqueTextractBlockFingerprints": 150,
+    "redundantTextractRunsSameBlockContent": 0,
+    "samePdfSha256DifferentTextractFingerprints": [
+      {
+        "manifestPdfSha256": "fbffe2af38853792054ab7d6bd3fd31d498b7619de15849098eb4970b9194fd9",
+        "distinctBlockFingerprints": [
+          "51c6f6b9d71b9d9cb548a69a14484bea34e46da785b2b199709769bcf3446923",
+          "22821c747721df1fd459f998b5f434fb4c592f3178da1cbdf8d5ff676eff097f"
+        ],
+        "outJsonPerFingerprint": {
+          "51c6f6b9d71b9d9cb548a69a14484bea34e46da785b2b199709769bcf3446923": [
+            "fbffe2af_doop_OneDrive_1_12-5-2026_Cronograma_Acade_mico_regular-CCE_TEC_EL_I_ntegro_202625.json"
+          ],
+          "22821c747721df1fd459f998b5f434fb4c592f3178da1cbdf8d5ff676eff097f": [
+            "fbffe2af_doop_OneDrive_2_12-5-2026_Cronograma_Acade_mico_regular-CCE_TEC_EL_I_ntegro_202650.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "714162353d896cfe45f6161039f8fb7316b1e7f8e1a5a6e50df924f134da0647",
+        "distinctBlockFingerprints": [
+          "87ae8f5c8e95403cef2a6fffa35893d6ebe9a7cc696dcf9f515f9ebb898e4196",
+          "e75439085e642bc72af71639639100b49d4a6cb16d898a52a48f802055b11084",
+          "dead50666c34f3650aa793bfd35c6190eeaf4ba065bc9c8ea3dc8dc88873c78b",
+          "91901601e2fbadd4804205f5a517b90dbeca7c4937d8e10e5be1d48553c106a8",
+          "4bff59d6e279712e992fb01d2282042fc6d9de16e12e46a1b215cf9468043b16",
+          "e52c10a7427cb1b19cd18f2f6c49da239aefb3a2bd3bb9926d85f6a43866d83e",
+          "cbaa403d48ec1d3854eb4c3e79ae0ed28722b8076af4ea8475d20751ff453d0d",
+          "abbb585faef938a8c78cab7134ecd738d8554d09957a5fbec5250a58192b91e2",
+          "0169dfe4dbe5c398c7a7c28b233f26dc3103a2a17b0e7f6a1ce70de0968902e4",
+          "b3b2bc4315c0537adb175026efcd933794ab3d62d63d5620681848a851b2d931",
+          "d96f7058cc76949b3a664e35d087e8c29eedcd431e5820d29558c8e52d0dbbf2",
+          "e6a2cc46cf6f73e8956162e24de6f0abf827605e1dd95eb957603b534c74de0e",
+          "3c2039809d1494c23d85410a47d889ea2e5e0bd71ef3ebeb496bb10efe53ed99"
+        ],
+        "outJsonPerFingerprint": {
+          "87ae8f5c8e95403cef2a6fffa35893d6ebe9a7cc696dcf9f515f9ebb898e4196": [
+            "71416235_doop_OneDrive_1_12-5-2026_Cronograma_Ubicacio_n-Suficiencia-Validacio_n_conocimientos_de_Ingle_s_GR-TEC-PS_D-El-P_I_nteg.json"
+          ],
+          "e75439085e642bc72af71639639100b49d4a6cb16d898a52a48f802055b11084": [
+            "71416235_doop_OneDrive_2_12-5-2026_Cronograma_Ubicacio_n-Suficiencia-Validacio_n_conocimientos_de_Ingle_s_GR-TEC-PS_D-El-P_I_nteg.json"
+          ],
+          "dead50666c34f3650aa793bfd35c6190eeaf4ba065bc9c8ea3dc8dc88873c78b": [
+            "71416235_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Ubicacio_n-Suficiencia-Validacio_.json"
+          ],
+          "91901601e2fbadd4804205f5a517b90dbeca7c4937d8e10e5be1d48553c106a8": [
+            "71416235_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Ubicacio_n-Suficiencia-Validacio_n_conocimie.json"
+          ],
+          "4bff59d6e279712e992fb01d2282042fc6d9de16e12e46a1b215cf9468043b16": [
+            "71416235_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Cronograma_Ubicacio_n-Suficiencia-Validacio_n_conocimientos_de_Ingle_s_G.json"
+          ],
+          "e52c10a7427cb1b19cd18f2f6c49da239aefb3a2bd3bb9926d85f6a43866d83e": [
+            "71416235_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Ubicacio_n-Suficiencia-Valida.json"
+          ],
+          "cbaa403d48ec1d3854eb4c3e79ae0ed28722b8076af4ea8475d20751ff453d0d": [
+            "71416235_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Cronograma_Ubicacio_n-Suficiencia-Valid.json"
+          ],
+          "abbb585faef938a8c78cab7134ecd738d8554d09957a5fbec5250a58192b91e2": [
+            "71416235_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Ubicacio_n-Suficiencia-Validacio_.json"
+          ],
+          "0169dfe4dbe5c398c7a7c28b233f26dc3103a2a17b0e7f6a1ce70de0968902e4": [
+            "71416235_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Ubicacio_n-Suficiencia-Validacio_n_conocimie.json"
+          ],
+          "b3b2bc4315c0537adb175026efcd933794ab3d62d63d5620681848a851b2d931": [
+            "71416235_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Cronograma_Ubicacio_n-Suficiencia-Validacio_n_conocimientos_de_Ingle_s_G.json"
+          ],
+          "d96f7058cc76949b3a664e35d087e8c29eedcd431e5820d29558c8e52d0dbbf2": [
+            "71416235_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Ubicacio_n-Suficiencia-Valida.json"
+          ],
+          "e6a2cc46cf6f73e8956162e24de6f0abf827605e1dd95eb957603b534c74de0e": [
+            "71416235_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Cronograma_Ubicacio_n-Suficiencia-Valid.json"
+          ],
+          "3c2039809d1494c23d85410a47d889ea2e5e0bd71ef3ebeb496bb10efe53ed99": [
+            "71416235_doop_RV_Publicacio_n_calendarios_validacio_n_general_validacio_n_de_ingle_s_abril_-_agosto_2026_2_Cronograma_Ubicaci_n-S.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "767a5816aa3728f9ae2ec91888d3ca493c6d515a04950c28610558618ea6e6ae",
+        "distinctBlockFingerprints": [
+          "6b3129fb2df816f66fa7c538b2a3a7436fa234a48ee09feb5c22cf71cd144b40",
+          "6e3a425e734b0039e7ff220490eda3006ce529d60ed5b00251bb6096de90c667"
+        ],
+        "outJsonPerFingerprint": {
+          "6b3129fb2df816f66fa7c538b2a3a7436fa234a48ee09feb5c22cf71cd144b40": [
+            "767a5816_doop_OneDrive_1_12-5-2026_Cronograma_Elaboracio_n_material_educativo_TEC_EL_I_ntegro.json"
+          ],
+          "6e3a425e734b0039e7ff220490eda3006ce529d60ed5b00251bb6096de90c667": [
+            "767a5816_doop_OneDrive_2_12-5-2026_Cronograma_Elaboracio_n_material_educativo_TEC_EL_I_ntegro.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "484e5c579666daf0930ed1a0af5270377ce8e74bd2087a54b1a48f8261d3c7b5",
+        "distinctBlockFingerprints": [
+          "f40c4d0507b10d3ed702c9175d0727acfa2f210e177f3a77a9bc1e6ed596bf08",
+          "951294c725a24237bc02b6501dc541ef4bb3e4ca5f09e826971419f23997f83d",
+          "0f0c905d6d98a138e6a91cdbb3ca02d65dca5795804cb434f0b09abb6c38fe2a",
+          "ceeaf3eae07d15194c012f939a8a840b7a6e2012c868bcd550a9c64e5081909a",
+          "d5a1e95803cd762aac4a5d035ceff18cf180d7db04e729cadd79befb273e8b2f"
+        ],
+        "outJsonPerFingerprint": {
+          "f40c4d0507b10d3ed702c9175d0727acfa2f210e177f3a77a9bc1e6ed596bf08": [
+            "484e5c57_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_acade_mico_modular_GR-TEC_EL-P_I_.json"
+          ],
+          "951294c725a24237bc02b6501dc541ef4bb3e4ca5f09e826971419f23997f83d": [
+            "484e5c57_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Cronograma_acade_mico_modular_GR-TEC_EL.json"
+          ],
+          "0f0c905d6d98a138e6a91cdbb3ca02d65dca5795804cb434f0b09abb6c38fe2a": [
+            "484e5c57_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_acade_mico_modular_GR-TEC_EL-P_I_.json"
+          ],
+          "ceeaf3eae07d15194c012f939a8a840b7a6e2012c868bcd550a9c64e5081909a": [
+            "484e5c57_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Cronograma_acade_mico_modular_GR-TEC_EL.json"
+          ],
+          "d5a1e95803cd762aac4a5d035ceff18cf180d7db04e729cadd79befb273e8b2f": [
+            "484e5c57_doop_RV_Publicacio_n_calendarios_grado_modalidad_en_li_nea_abril_-_agosto_2026_Cronograma_acad_mico_modular_GR-TEC_EL-P_.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "dc23d185ab9ef63df81538759a8e1a6a0f5ed48f3f5b21784981b2abbfee0e49",
+        "distinctBlockFingerprints": [
+          "2a094de34a186f37fce5f1298cb797aa90c323885dcd3a364c88ab0dd8f28839",
+          "266398d855b0fffe1fd2e8f21be644f5c7658ce684daf405b2597a1d6d7565e8",
+          "8b91679f82b8139e165c544d4f242899927be7672bbb47f8edd83f0758850a36",
+          "5a60ce45c17374e4e9b49080f9b9463be57b6419784ddd8596402dde3bf212ed"
+        ],
+        "outJsonPerFingerprint": {
+          "2a094de34a186f37fce5f1298cb797aa90c323885dcd3a364c88ab0dd8f28839": [
+            "dc23d185_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Acade_mico_regular-CCE_GR-TEC_D-E.json"
+          ],
+          "266398d855b0fffe1fd2e8f21be644f5c7658ce684daf405b2597a1d6d7565e8": [
+            "dc23d185_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Acade_mico_regular-CCE_GR-TEC.json"
+          ],
+          "8b91679f82b8139e165c544d4f242899927be7672bbb47f8edd83f0758850a36": [
+            "dc23d185_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Acade_mico_regular-CCE_GR-TEC_D-E.json"
+          ],
+          "5a60ce45c17374e4e9b49080f9b9463be57b6419784ddd8596402dde3bf212ed": [
+            "dc23d185_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Acade_mico_regular-CCE_GR-TEC.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "eee1c735ea4b9a4725d3a7b45546c4316b424bef1a1c62c2478ab9c4c3212818",
+        "distinctBlockFingerprints": [
+          "19094f99c687e772290577eb6a74349754c7afbc3ad41760baa0cbbc4d27f9d0",
+          "34b1b50d1619f0df675802d79ab09736d78ab7156f6852f858d34bed8bd26c9f",
+          "f22f9b3572c8e72840eec86cf26a631141ad99fe9bf4bec0733b5f4f7ba9805c",
+          "ca784dc5a292481d6f3366258ebfa52da1a1704f2ded14ee29a5eb264499add7",
+          "df60663444adc95f09fcdd70738f1e86f61171ddd7025d9e013992eefb650101",
+          "d63e65a3fab302bc18b28c2b1b16f3c51e9d3b2d660d84c33a6f17f00845a100",
+          "fa60ea92ee526fda33e98163c43cffcb0e1e76a11af1e86c2e969fb5f4f32161",
+          "864b389658f31027caa8ff788b7221729872b0b1e09a53b308bae7fa6d7d92df",
+          "a17185b5677998fa71e478aa94246a08d82691f81d8f06348614dcc3d90722a4"
+        ],
+        "outJsonPerFingerprint": {
+          "19094f99c687e772290577eb6a74349754c7afbc3ad41760baa0cbbc4d27f9d0": [
+            "eee1c735_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Unidad_Integracio_n_Curricular_GR.json"
+          ],
+          "34b1b50d1619f0df675802d79ab09736d78ab7156f6852f858d34bed8bd26c9f": [
+            "eee1c735_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Unidad_Integracio_n_Curricular_GR-PS-TEC_D-E.json"
+          ],
+          "f22f9b3572c8e72840eec86cf26a631141ad99fe9bf4bec0733b5f4f7ba9805c": [
+            "eee1c735_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Cronograma_Unidad_Integracio_n_Curricular_GR-PS-TEC_D-EL-P_I_ntegro_2026.json"
+          ],
+          "ca784dc5a292481d6f3366258ebfa52da1a1704f2ded14ee29a5eb264499add7": [
+            "eee1c735_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Unidad_Integracio_n_Curricula.json"
+          ],
+          "df60663444adc95f09fcdd70738f1e86f61171ddd7025d9e013992eefb650101": [
+            "eee1c735_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Unidad_Integracio_n_Curricular_GR.json"
+          ],
+          "d63e65a3fab302bc18b28c2b1b16f3c51e9d3b2d660d84c33a6f17f00845a100": [
+            "eee1c735_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Unidad_Integracio_n_Curricular_GR-PS-TEC_D-E.json"
+          ],
+          "fa60ea92ee526fda33e98163c43cffcb0e1e76a11af1e86c2e969fb5f4f32161": [
+            "eee1c735_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Cronograma_Unidad_Integracio_n_Curricular_GR-PS-TEC_D-EL-P_I_ntegro_2026.json"
+          ],
+          "864b389658f31027caa8ff788b7221729872b0b1e09a53b308bae7fa6d7d92df": [
+            "eee1c735_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Unidad_Integracio_n_Curricula.json"
+          ],
+          "a17185b5677998fa71e478aa94246a08d82691f81d8f06348614dcc3d90722a4": [
+            "eee1c735_doop_RV_Publicacio_n_de_calendarios_UTE-UIC-UT_periodo_abril_-_agosto_2026_2_Cronograma_Unidad_Integraci_n_Curricular_GR.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "18b209296a738dfe92cf959d218e7894b1c8b4eddc7f722cd95ac38c4a112a5e",
+        "distinctBlockFingerprints": [
+          "6f756718516aabe9021743634f46f41d5ddefc16813b20b756ed1620616d2124",
+          "dca207191dde080b4015f985bfe89bc6a7612e6ff3be7eec822555cfaabc36e2",
+          "ffb1a19857458ac74bde57a9157048d89f37f6addccc28b40e00a086040e65f7",
+          "668da9629b6fc80fe15369c5613f34ae07c0a65d9afed6fc5f7c25ce7cb2ef50",
+          "3f0b1660123af7b7f14347d9fafe19678a966e7560e5b22dfb396d44e4432dde",
+          "93b7a908cfb7da3866ab094ca7629bc6cbe14244c5a2a791c5a4c45c9a65ad5a",
+          "43f794e432a21922d5cf33d4b5ec56228ba15add7fc9600e33b4f881784be7c3"
+        ],
+        "outJsonPerFingerprint": {
+          "6f756718516aabe9021743634f46f41d5ddefc16813b20b756ed1620616d2124": [
+            "18b20929_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Unidad_Titulacio_n_Especial_GR-PS.json"
+          ],
+          "dca207191dde080b4015f985bfe89bc6a7612e6ff3be7eec822555cfaabc36e2": [
+            "18b20929_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Unidad_Titulacio_n_Especial_GR-PS_D-P_I_nteg.json"
+          ],
+          "ffb1a19857458ac74bde57a9157048d89f37f6addccc28b40e00a086040e65f7": [
+            "18b20929_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Cronograma_Unidad_Titulacio_n_Especial_GR-PS_D-P_I_ntegro_202630.json"
+          ],
+          "668da9629b6fc80fe15369c5613f34ae07c0a65d9afed6fc5f7c25ce7cb2ef50": [
+            "18b20929_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Unidad_Titulacio_n_Especial_GR-PS.json"
+          ],
+          "3f0b1660123af7b7f14347d9fafe19678a966e7560e5b22dfb396d44e4432dde": [
+            "18b20929_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Unidad_Titulacio_n_Especial_GR-PS_D-P_I_nteg.json"
+          ],
+          "93b7a908cfb7da3866ab094ca7629bc6cbe14244c5a2a791c5a4c45c9a65ad5a": [
+            "18b20929_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Cronograma_Unidad_Titulacio_n_Especial_GR-PS_D-P_I_ntegro_202630.json"
+          ],
+          "43f794e432a21922d5cf33d4b5ec56228ba15add7fc9600e33b4f881784be7c3": [
+            "18b20929_doop_RV_Publicacio_n_de_calendarios_UTE-UIC-UT_periodo_abril_-_agosto_2026_2_Cronograma_Unidad_Titulaci_n_Especial_GR-PS.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "882543dbe81055bab12932d31f7aa53a932dadb831acc6eb5e3c27391c0e132d",
+        "distinctBlockFingerprints": [
+          "aa39eeef7bb86a25a0f884e86b6b139c6f14ef94353b5dd1224788d01ca7e436",
+          "81ae6fffcd0d325113b5ed5d4032f05d751431a7347a103b7eeaf080cde6bcec",
+          "dc56a52b18ab61ce518c96583e779ca421db35289e7ded1c24bdcdac76de278f",
+          "583aa89e4d5e72d9fb3afbb1711ff43cf27e696577b57e6910b972c0fc8c23e5",
+          "d4f03c5d81917fcdbde0f4401f3955756184dabb21606dfa45d0f43819bf4555",
+          "6a83b606cf554aec43bfb4d24765a9d064b9598a067fe467fd04a8d46434e309",
+          "ab5bb5bb46de73572abd0101195758143750ec47b6c197722c914cee0d38107a",
+          "aeaff963cbd44a6295ec1fcd484937d931594ed117c8f4b7803956b19d065a92",
+          "859bec09d2803465f674eedb0ec058b01be6aab799840203c02ca89e98d4fad6",
+          "9bc44e75a137516a1758985d47ce1113c0d661a791dea722b997f43cef5f2bf9",
+          "9d20ecec3ecb52ca3202304480fd019655ba6b17b7d844049d9a91fadf91733a"
+        ],
+        "outJsonPerFingerprint": {
+          "aa39eeef7bb86a25a0f884e86b6b139c6f14ef94353b5dd1224788d01ca7e436": [
+            "882543db_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Validacio_n_general_GR-PS-TEC_D-E.json"
+          ],
+          "81ae6fffcd0d325113b5ed5d4032f05d751431a7347a103b7eeaf080cde6bcec": [
+            "882543db_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Validacio_n_general_GR-PS-TEC_D-EL-P_I_ntegr.json"
+          ],
+          "dc56a52b18ab61ce518c96583e779ca421db35289e7ded1c24bdcdac76de278f": [
+            "882543db_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Cronograma_Validacio_n_general_GR-PS-TEC_D-EL-P_I_ntegro_202630.json"
+          ],
+          "583aa89e4d5e72d9fb3afbb1711ff43cf27e696577b57e6910b972c0fc8c23e5": [
+            "882543db_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Validacio_n_general_GR-PS-TEC.json"
+          ],
+          "d4f03c5d81917fcdbde0f4401f3955756184dabb21606dfa45d0f43819bf4555": [
+            "882543db_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Cronograma_Validacio_n_general_GR-PS-TE.json"
+          ],
+          "6a83b606cf554aec43bfb4d24765a9d064b9598a067fe467fd04a8d46434e309": [
+            "882543db_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Validacio_n_general_GR-PS-TEC_D-E.json"
+          ],
+          "ab5bb5bb46de73572abd0101195758143750ec47b6c197722c914cee0d38107a": [
+            "882543db_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Validacio_n_general_GR-PS-TEC_D-EL-P_I_ntegr.json"
+          ],
+          "aeaff963cbd44a6295ec1fcd484937d931594ed117c8f4b7803956b19d065a92": [
+            "882543db_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Cronograma_Validacio_n_general_GR-PS-TEC_D-EL-P_I_ntegro_202630.json"
+          ],
+          "859bec09d2803465f674eedb0ec058b01be6aab799840203c02ca89e98d4fad6": [
+            "882543db_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Validacio_n_general_GR-PS-TEC.json"
+          ],
+          "9bc44e75a137516a1758985d47ce1113c0d661a791dea722b997f43cef5f2bf9": [
+            "882543db_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Cronograma_Validacio_n_general_GR-PS-TE.json"
+          ],
+          "9d20ecec3ecb52ca3202304480fd019655ba6b17b7d844049d9a91fadf91733a": [
+            "882543db_doop_RV_Publicacio_n_calendarios_validacio_n_general_validacio_n_de_ingle_s_abril_-_agosto_2026_2_Cronograma_Validaci_n_.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "d4f69b891255d2f59b8707b9b809b388943ccac7e374ec92fe6698c8adfa6e30",
+        "distinctBlockFingerprints": [
+          "7d907e3bea4f59043fa49d1023ca8515fd4e62b3b5c96e94ecb65ea36051bae9",
+          "e00d782a63861a7ef5c846b9befa3b520acf5a4acd43cb35fa49a6fde875c4db"
+        ],
+        "outJsonPerFingerprint": {
+          "7d907e3bea4f59043fa49d1023ca8515fd4e62b3b5c96e94ecb65ea36051bae9": [
+            "d4f69b89_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Matri_culas_Curso_Competencias_Especi_ficas_.json"
+          ],
+          "e00d782a63861a7ef5c846b9befa3b520acf5a4acd43cb35fa49a6fde875c4db": [
+            "d4f69b89_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Matri_culas_Curso_Competencias_Especi_ficas_.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "3a2bb2a3b7cb10f5c46c2669c59a82917d773fd5dd555b0e216f25594310f401",
+        "distinctBlockFingerprints": [
+          "1559ae5d7e511cb9fc522201252c826e88b9135e77c12c13f78011aa198a0f5d",
+          "b51eeb6f97e715765073f9e93bfacc008c4cb975ef5e8de6d7926f91fa9aec2b"
+        ],
+        "outJsonPerFingerprint": {
+          "1559ae5d7e511cb9fc522201252c826e88b9135e77c12c13f78011aa198a0f5d": [
+            "3a2bb2a3_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Matri_culas_Unidad_Titulacio_n_Especial_UTE_.json"
+          ],
+          "b51eeb6f97e715765073f9e93bfacc008c4cb975ef5e8de6d7926f91fa9aec2b": [
+            "3a2bb2a3_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Matri_culas_Unidad_Titulacio_n_Especial_UTE_.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "76d833226d3d6e229f607227f32b6df13ad3ce6333024c5af6761896ebfd0184",
+        "distinctBlockFingerprints": [
+          "ac160a6b1a2b507be3e804408358a2943b33fd1c037e151004548cd245289ef4",
+          "ab869c9399043530c25086ef30c37f7dc3241e3a2e4dc064d3b6f102c444128b"
+        ],
+        "outJsonPerFingerprint": {
+          "ac160a6b1a2b507be3e804408358a2943b33fd1c037e151004548cd245289ef4": [
+            "76d83322_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Ma_triculas_GR_D-EL_ABR-AGO_2026.json"
+          ],
+          "ab869c9399043530c25086ef30c37f7dc3241e3a2e4dc064d3b6f102c444128b": [
+            "76d83322_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Ma_triculas_GR_D-EL_ABR-AGO_2026.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "5ef78a323a869abe2c96e1f0c4aa4495489de3909761d1c82b39c350fc6eab86",
+        "distinctBlockFingerprints": [
+          "7d1b35bcf3e4896ef6fd764c2125e49006fb0b9d28f53f77d57037aeaaac222d",
+          "78e94f9c306ccc7f443d7d474200e63629f1ef655ed2c8424a9489e2d5b488c3"
+        ],
+        "outJsonPerFingerprint": {
+          "7d1b35bcf3e4896ef6fd764c2125e49006fb0b9d28f53f77d57037aeaaac222d": [
+            "5ef78a32_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Alcance_matri_cula_GR_MP_ABR-AGO_2026.json"
+          ],
+          "78e94f9c306ccc7f443d7d474200e63629f1ef655ed2c8424a9489e2d5b488c3": [
+            "5ef78a32_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Alcance_matri_cula_GR_MP_ABR-AGO_2026.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "44c9ac7f7366cb99627a162e15b898183826e952503333c8693584bdd05cc6dc",
+        "distinctBlockFingerprints": [
+          "fa9f22cf4091edb69d02cd2eb1bc6e8e4c26d48c20de7dc29c85a254a9ac5fe8",
+          "691f46f77fd7d67f6001ada49d3d447a049942e38a6d65968151f7e2d299bc2c",
+          "276b4ac56bdc2a4e263f0879c5bd27dcb9a2f91fa36467450d8c9783b214aa13"
+        ],
+        "outJsonPerFingerprint": {
+          "fa9f22cf4091edb69d02cd2eb1bc6e8e4c26d48c20de7dc29c85a254a9ac5fe8": [
+            "44c9ac7f_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_acade_mico_internado_rotativo_GR_P_I_ntegro_.json"
+          ],
+          "691f46f77fd7d67f6001ada49d3d447a049942e38a6d65968151f7e2d299bc2c": [
+            "44c9ac7f_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_acade_mico_internado_rotativo_GR_P_I_ntegro_.json"
+          ],
+          "276b4ac56bdc2a4e263f0879c5bd27dcb9a2f91fa36467450d8c9783b214aa13": [
+            "44c9ac7f_doop_RV_Publicacio_n_calendarios_Calendario_interno_rotativo_medicina_mayo_2026_-_abril_2027_2_Cronograma_acad_mico_inte.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "cb6ca08ae03ff5fb2381640017b2b79fff6d2e5454dc8a77c8e89f7a7ea95b7b",
+        "distinctBlockFingerprints": [
+          "ba1376f0d97347c66f4e9b19bd8eb9d4806c70af43ef8d5e34bf03f08341943e",
+          "35bee6ac780bf8353c3ee842e6785bea8fe5f4d37be834b05e266ca18f992da6"
+        ],
+        "outJsonPerFingerprint": {
+          "ba1376f0d97347c66f4e9b19bd8eb9d4806c70af43ef8d5e34bf03f08341943e": [
+            "cb6ca08a_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Acade_mico_regular-CCE_GR_P_I_ntegro_ABR-AGO.json"
+          ],
+          "35bee6ac780bf8353c3ee842e6785bea8fe5f4d37be834b05e266ca18f992da6": [
+            "cb6ca08a_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Acade_mico_regular-CCE_GR_P_I_ntegro_ABR-AGO.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "7615cf1330379c5997b9e30f7e0ba7ded4bd7dbea07ba4f4b1d0f389f97d8a20",
+        "distinctBlockFingerprints": [
+          "250a3cf2cce265e45d9e4aa04f5e5e0bf0d2a30d879139c7543f929f27fd6c51",
+          "c0597a7f1262d664202ad531906d2818972f930ede5f9682bcaa25a357628ede"
+        ],
+        "outJsonPerFingerprint": {
+          "250a3cf2cce265e45d9e4aa04f5e5e0bf0d2a30d879139c7543f929f27fd6c51": [
+            "7615cf13_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Matri_culas_Curso_Competencias_Especi_ficas_CCE_GR_P_AB.json"
+          ],
+          "c0597a7f1262d664202ad531906d2818972f930ede5f9682bcaa25a357628ede": [
+            "7615cf13_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Matri_culas_Curso_Competencias_Especi_ficas_CCE_GR_P_AB.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "53860cfdf04d715c462cd739a59c20e0188ff5b658f97aeaabfcc72d343c902a",
+        "distinctBlockFingerprints": [
+          "4b30341b693a25ac9fca2e9b2d8244c9235cd88e3ab594c0a40fdefe6040fc02",
+          "164cc958e035b6093b66ae67247e9f090f191d4b2f192a47f4db861bc3fd9cc6"
+        ],
+        "outJsonPerFingerprint": {
+          "4b30341b693a25ac9fca2e9b2d8244c9235cd88e3ab594c0a40fdefe6040fc02": [
+            "53860cfd_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Matri_culas_Unidad_Titulacio_n_Especial_UTE_GR_P_ABR-AG.json"
+          ],
+          "164cc958e035b6093b66ae67247e9f090f191d4b2f192a47f4db861bc3fd9cc6": [
+            "53860cfd_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Matri_culas_Unidad_Titulacio_n_Especial_UTE_GR_P_ABR-AG.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "6232b5beb0b7e94b367be49a3d9cf149433095b56ba7245358be9cab03b76680",
+        "distinctBlockFingerprints": [
+          "02c5ad0f7a46c208817db6238780820884c3fc58fd2f0c2d803301c302e5af94",
+          "dc6f3733c76313c0e2128b8fb58f8d8981f51d10b4f0babac1ab0ad1b5b3bb4b"
+        ],
+        "outJsonPerFingerprint": {
+          "02c5ad0f7a46c208817db6238780820884c3fc58fd2f0c2d803301c302e5af94": [
+            "6232b5be_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Matri_culas_GR_P_ABR-AGO_2026.json"
+          ],
+          "dc6f3733c76313c0e2128b8fb58f8d8981f51d10b4f0babac1ab0ad1b5b3bb4b": [
+            "6232b5be_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Matri_culas_GR_P_ABR-AGO_2026.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "d529b41e3fb3276e761d92409077ac8373cdb480fb3537fa702773bbe701613b",
+        "distinctBlockFingerprints": [
+          "45f174f286e0400794d656ade2efc6938ac01587bccd3b3bc9429ad30c0ef2f1",
+          "d5087b823fc4ae48d2999079983ece96dfbaf7fea9e9f674491f15f52bbdde9a"
+        ],
+        "outJsonPerFingerprint": {
+          "45f174f286e0400794d656ade2efc6938ac01587bccd3b3bc9429ad30c0ef2f1": [
+            "d529b41e_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Admisiones_Especializacio_n_Anestesiologi_a_y_Imagenologi_a_Posgrados_P_.json"
+          ],
+          "d5087b823fc4ae48d2999079983ece96dfbaf7fea9e9f674491f15f52bbdde9a": [
+            "d529b41e_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Admisiones_Especializacio_n_Anestesiologi_a_y_Imagenologi_a_Posgrados_P_.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "9f0477d1d5ff9dc4fa75d7ea70d0dffb7546f872ddf4fca3875eba07419401f1",
+        "distinctBlockFingerprints": [
+          "4746dd2ad35e9b6fecb1ebe5bae6581db797cbdc1d7c4f28b4bcf03c744f12c8",
+          "f81dcc21aad18bb52207a32466d8358559c1702805da476f252ee629b2f10a2f"
+        ],
+        "outJsonPerFingerprint": {
+          "4746dd2ad35e9b6fecb1ebe5bae6581db797cbdc1d7c4f28b4bcf03c744f12c8": [
+            "9f0477d1_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Admisiones_Posgrados_D-El-P_ABR-AGO_2026.json"
+          ],
+          "f81dcc21aad18bb52207a32466d8358559c1702805da476f252ee629b2f10a2f": [
+            "9f0477d1_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Admisiones_Posgrados_D-El-P_ABR-AGO_2026.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "2bfae6cacb42d49f86dd47f13bacc5227a882f264efe9e8fed3f000f348de2c2",
+        "distinctBlockFingerprints": [
+          "70b6a95c631f6d2d30cdea44e1e9b343081f3678bc1b2603e24ae6cebea9954c",
+          "51903507cbd737e3eb2008f54023bb2c80f390a17f267e27a3ca1f7c740f82b3"
+        ],
+        "outJsonPerFingerprint": {
+          "70b6a95c631f6d2d30cdea44e1e9b343081f3678bc1b2603e24ae6cebea9954c": [
+            "2bfae6ca_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Cronograma_Acade_mico_PS_P-El-HI_I_ntegro_202630.json"
+          ],
+          "51903507cbd737e3eb2008f54023bb2c80f390a17f267e27a3ca1f7c740f82b3": [
+            "2bfae6ca_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Cronograma_Acade_mico_PS_P-El-HI_I_ntegro_202630.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "193bc80e046075dfd63a3dea98477e453634a435bbc42e98438bb9fafa9e2798",
+        "distinctBlockFingerprints": [
+          "e8bb2a1fb1d5a32f15f43fca1219c1f29d203872fe9644210b4bf3d104eac261",
+          "e5e2443aa1ad9087a6746a2a3815d16dc24d0b73640c05901f319c15d41e4952"
+        ],
+        "outJsonPerFingerprint": {
+          "e8bb2a1fb1d5a32f15f43fca1219c1f29d203872fe9644210b4bf3d104eac261": [
+            "193bc80e_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Matri_culas_Unidad_Titulacio_n_Especial_UTE_Posgrados_D-El-P-H_ABR-AGO_2.json"
+          ],
+          "e5e2443aa1ad9087a6746a2a3815d16dc24d0b73640c05901f319c15d41e4952": [
+            "193bc80e_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Matri_culas_Unidad_Titulacio_n_Especial_UTE_Posgrados_D-El-P-H_ABR-AGO_2.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "48a7d3c7737658752f7e639324914f9aa95ab9b06c720365234bd33476459dad",
+        "distinctBlockFingerprints": [
+          "5df571a2534d5edb427e8ddee9b76b41c584f8844ca2f5ce61d2910538717547",
+          "79d13c2ddd5190ad64cd5824c6e0e79b8cedd365f6fbbfad762852ca5c22cbe1"
+        ],
+        "outJsonPerFingerprint": {
+          "5df571a2534d5edb427e8ddee9b76b41c584f8844ca2f5ce61d2910538717547": [
+            "48a7d3c7_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Matri_culas_Posgrados_D-El-P-H_ABR-AGO_2026.json"
+          ],
+          "79d13c2ddd5190ad64cd5824c6e0e79b8cedd365f6fbbfad762852ca5c22cbe1": [
+            "48a7d3c7_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Matri_culas_Posgrados_D-El-P-H_ABR-AGO_2026.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "c49d027ec226a8d6e865a956ccdce8e94809379a2141207e9dd6826100dbf854",
+        "distinctBlockFingerprints": [
+          "e8695742d46bc18484d44ccf46c206403b6b65e96c62781d9a4fab11c5926e8f",
+          "3c87b4f32837059ac697124087d7e5554b5465d2275dd6e7d2cf70a410034494"
+        ],
+        "outJsonPerFingerprint": {
+          "e8695742d46bc18484d44ccf46c206403b6b65e96c62781d9a4fab11c5926e8f": [
+            "c49d027e_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Matri_culas_PS_P-EL_ABR-AGO_2026.json"
+          ],
+          "3c87b4f32837059ac697124087d7e5554b5465d2275dd6e7d2cf70a410034494": [
+            "c49d027e_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Matri_culas_PS_P-EL_ABR-AGO_2026.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "c3bb844f26966a5977ed705946a99230a014f6e0539b8ecac01c11dfa80c4fe0",
+        "distinctBlockFingerprints": [
+          "078a0a827d347544342e4a38860ddc6fe0167d9a9e048b0d6a84c49151de2927",
+          "567e4337d715e89e20cd6d594ae00edaa2b606e129870a88e6f6e03b2a98cbd6"
+        ],
+        "outJsonPerFingerprint": {
+          "078a0a827d347544342e4a38860ddc6fe0167d9a9e048b0d6a84c49151de2927": [
+            "c3bb844f_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Elaboracio_n_materiales_TEC_E.json"
+          ],
+          "567e4337d715e89e20cd6d594ae00edaa2b606e129870a88e6f6e03b2a98cbd6": [
+            "c3bb844f_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Elaboracio_n_materiales_TEC_E.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "246f0acb168619fa2e087edcab9947ecc9b5dcb26ba55c138e61f072a2602091",
+        "distinctBlockFingerprints": [
+          "d3995ac6487fef8b6f635ce6d45ed2649e30a4241d2fca2dae7c236e0e53046b",
+          "c8bbfda427625924bd2fb1dbed4306e44b44af2b807f0ad26eab52de0b50229a"
+        ],
+        "outJsonPerFingerprint": {
+          "d3995ac6487fef8b6f635ce6d45ed2649e30a4241d2fca2dae7c236e0e53046b": [
+            "246f0acb_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Inscripciones_C_Competencias_especi_fica.json"
+          ],
+          "c8bbfda427625924bd2fb1dbed4306e44b44af2b807f0ad26eab52de0b50229a": [
+            "246f0acb_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Inscripciones_C_Competencias_especi_fica.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "4ccdf05a8b72e694f0e5068c4aa3357f6c0c8411978ef2ac2dd25cbedbefca61",
+        "distinctBlockFingerprints": [
+          "f0696d7034b12390b9e1da4ab441764d58eb8ad22f5089a6353809ee01ab53c7",
+          "ad7e5f71673b5a3b4a1f868232a628f36ad5110294cc6008de91c1ce817f4641"
+        ],
+        "outJsonPerFingerprint": {
+          "f0696d7034b12390b9e1da4ab441764d58eb8ad22f5089a6353809ee01ab53c7": [
+            "4ccdf05a_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Matri_culas_TEC_EL_ABR-AGO_2026.json"
+          ],
+          "ad7e5f71673b5a3b4a1f868232a628f36ad5110294cc6008de91c1ce817f4641": [
+            "4ccdf05a_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Matri_culas_TEC_EL_ABR-AGO_2026.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "640db6302a473d36749635d016dd7a4e3040755b0873dfe8c103181e743c1d0f",
+        "distinctBlockFingerprints": [
+          "869c712b424c251a449da95e623fcad0b3ec7c33e9a11c04a120379f756c00e2",
+          "2d625daafdea782be4f20a68706dc7f634eab5e40f2e0f082021ab7561a49b90"
+        ],
+        "outJsonPerFingerprint": {
+          "869c712b424c251a449da95e623fcad0b3ec7c33e9a11c04a120379f756c00e2": [
+            "640db630_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Alcance_matri_cula_TEC_MP_ABR-AGO_2026.json"
+          ],
+          "2d625daafdea782be4f20a68706dc7f634eab5e40f2e0f082021ab7561a49b90": [
+            "640db630_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Alcance_matri_cula_TEC_MP_ABR-AGO_2026.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "c906332a3e6eed4cd08a2753da2192fd23647a542c9ca54fa2545650ad084fa3",
+        "distinctBlockFingerprints": [
+          "c767091573745486222b55a39b0413521e3b8a142aca7de7c1902d5511161733",
+          "c1ecb5d07ca626e46909e28b34a3bb1905d0f44522396812d5f371c354f26406"
+        ],
+        "outJsonPerFingerprint": {
+          "c767091573745486222b55a39b0413521e3b8a142aca7de7c1902d5511161733": [
+            "c906332a_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Matri_culas_TEC_P_ABR-AGO_2026.json"
+          ],
+          "c1ecb5d07ca626e46909e28b34a3bb1905d0f44522396812d5f371c354f26406": [
+            "c906332a_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Matri_culas_TEC_P_ABR-AGO_2026.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "7aeb2602e6263eef47fbf470698f9fd58623113cdd29a001d6c7994b0aa5b29f",
+        "distinctBlockFingerprints": [
+          "c7f1bf1d2ef0ed6f7aeb8bf99b941e45fddbc0693be72b01e16f2a77da06a6e4",
+          "1812c827b2b639093e243928fd549bd6b0cace624d0a4c43c15834e7a7056b09"
+        ],
+        "outJsonPerFingerprint": {
+          "c7f1bf1d2ef0ed6f7aeb8bf99b941e45fddbc0693be72b01e16f2a77da06a6e4": [
+            "7aeb2602_doop_OneDrive_3_12-5-2026_Tra_mites_y_servicios_Cronograma_Servicios_de_matri_cula_GR_PS_TEC_P_D_EL_ABR-AGO_2026.json"
+          ],
+          "1812c827b2b639093e243928fd549bd6b0cace624d0a4c43c15834e7a7056b09": [
+            "7aeb2602_doop_OneDrive_4_12-5-2026_Tra_mites_y_servicios_Cronograma_Servicios_de_matri_cula_GR_PS_TEC_P_D_EL_ABR-AGO_2026.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "76484ad70c9939280886172414e2a50d176cb665e284ca31d6aa8c2d204d8422",
+        "distinctBlockFingerprints": [
+          "94be6deb7eda5b79da812622f03cbb3d2722f195459f9e1dde5b1707440c32f8",
+          "19f6c86f56ce8dd00478de0a69d24e720cbc106efcc1323b17a81065a6db1d5d"
+        ],
+        "outJsonPerFingerprint": {
+          "94be6deb7eda5b79da812622f03cbb3d2722f195459f9e1dde5b1707440c32f8": [
+            "76484ad7_doop_OneDrive_3_12-5-2026_Tra_mites_y_servicios_Cronograma_Servicios_de_reconocimiento_GR_PS_TEC_D_EL_ABR-AGO_2026.json"
+          ],
+          "19f6c86f56ce8dd00478de0a69d24e720cbc106efcc1323b17a81065a6db1d5d": [
+            "76484ad7_doop_OneDrive_4_12-5-2026_Tra_mites_y_servicios_Cronograma_Servicios_de_reconocimiento_GR_PS_TEC_D_EL_ABR-AGO_2026.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "15dc5ffbf3e107c8e4445b0bc55951799d9d711743609ee5ac688a0e73a8e550",
+        "distinctBlockFingerprints": [
+          "50e03fb0b516dbbb93a1f4e6897e872b477ef8c80a97538d00acf9f15d147054",
+          "332c7e4ea04db2207e8b620bda96e5079264f655fe4dd6f13765037fc79348f4"
+        ],
+        "outJsonPerFingerprint": {
+          "50e03fb0b516dbbb93a1f4e6897e872b477ef8c80a97538d00acf9f15d147054": [
+            "15dc5ffb_doop_OneDrive_5_12-5-2026_Admisiones_Doctorado_en_Qui_mica_PS_P_OCT_2026_-_AGO_2027.json"
+          ],
+          "332c7e4ea04db2207e8b620bda96e5079264f655fe4dd6f13765037fc79348f4": [
+            "15dc5ffb_doop_RV_Publicacio_n_calendarios_Calendario_interno_rotativo_medicina_mayo_2026_-_abril_2027_2_Admisiones_Doctorado_en_Q.json"
+          ]
+        }
+      },
+      {
+        "manifestPdfSha256": "8fafc9c84c4ce62f6dd9b9af330022e3b154f7e9749a2a3faf14c09a12738aaa",
+        "distinctBlockFingerprints": [
+          "caec60e26386efa8bdfc0276d3ce8f2728980ba786070ba09c419d3020470cd2",
+          "1fafda1a1965171ab2cbe1ec89ce059594734b6edf0dbdec038b2b3788380cb1"
+        ],
+        "outJsonPerFingerprint": {
+          "caec60e26386efa8bdfc0276d3ce8f2728980ba786070ba09c419d3020470cd2": [
+            "8fafc9c8_doop_OneDrive_5_12-5-2026_Tra_mites_y_servicios_Servicios_Reconocimiento_de_Estudios_GRA-POS-TEC_MP-MEL_202690.json"
+          ],
+          "1fafda1a1965171ab2cbe1ec89ce059594734b6edf0dbdec038b2b3788380cb1": [
+            "8fafc9c8_doop_RV_Publicacio_n_de_calendarios_UTE-UIC-UT_periodo_abril_-_agosto_2026_2_Servicios_Reconocimiento_de_Estudios_GRA-PO.json"
+          ]
+        }
+      }
+    ],
+    "sameTextractFingerprintDifferentPdfSha256": []
+  },
+  "duplicateGroups": [
+    {
+      "sha256": "714162353d896cfe45f6161039f8fb7316b1e7f8e1a5a6e50df924f134da0647",
+      "bytes": 911862,
+      "count": 13,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_1_12-5-2026/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202625-202630-202650.pdf",
+          "outJson": "71416235_doop_OneDrive_1_12-5-2026_Cronograma_Ubicacio_n-Suficiencia-Validacio_n_conocimientos_de_Ingle_s_GR-TEC-PS_D-El-P_I_nteg.json",
+          "blockCount": 2106,
+          "finishedAt": "2026-05-12T14:50:21.935Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_2_12-5-2026/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202625-202630-202650.pdf",
+          "outJson": "71416235_doop_OneDrive_2_12-5-2026_Cronograma_Ubicacio_n-Suficiencia-Validacio_n_conocimientos_de_Ingle_s_GR-TEC-PS_D-El-P_I_nteg.json",
+          "blockCount": 2106,
+          "finishedAt": "2026-05-12T14:51:05.785Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202630.pdf",
+          "outJson": "71416235_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Ubicacio_n-Suficiencia-Validacio_.json",
+          "blockCount": 2106,
+          "finishedAt": "2026-05-12T14:52:15.883Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202630.pdf",
+          "outJson": "71416235_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Ubicacio_n-Suficiencia-Validacio_n_conocimie.json",
+          "blockCount": 2106,
+          "finishedAt": "2026-05-12T14:54:10.467Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202630.pdf",
+          "outJson": "71416235_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Cronograma_Ubicacio_n-Suficiencia-Validacio_n_conocimientos_de_Ingle_s_G.json",
+          "blockCount": 2106,
+          "finishedAt": "2026-05-12T14:56:56.168Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202630.pdf",
+          "outJson": "71416235_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Ubicacio_n-Suficiencia-Valida.json",
+          "blockCount": 2106,
+          "finishedAt": "2026-05-12T14:58:52.593Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202625-202630-202650.pdf",
+          "outJson": "71416235_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Cronograma_Ubicacio_n-Suficiencia-Valid.json",
+          "blockCount": 2106,
+          "finishedAt": "2026-05-12T15:00:28.158Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202630.pdf",
+          "outJson": "71416235_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Ubicacio_n-Suficiencia-Validacio_.json",
+          "blockCount": 2106,
+          "finishedAt": "2026-05-12T15:02:04.584Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202630.pdf",
+          "outJson": "71416235_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Ubicacio_n-Suficiencia-Validacio_n_conocimie.json",
+          "blockCount": 2106,
+          "finishedAt": "2026-05-12T15:04:01.690Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202630.pdf",
+          "outJson": "71416235_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Cronograma_Ubicacio_n-Suficiencia-Validacio_n_conocimientos_de_Ingle_s_G.json",
+          "blockCount": 2106,
+          "finishedAt": "2026-05-12T15:07:05.013Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202630.pdf",
+          "outJson": "71416235_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Ubicacio_n-Suficiencia-Valida.json",
+          "blockCount": 2106,
+          "finishedAt": "2026-05-12T15:09:00.366Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202625-202630-202650.pdf",
+          "outJson": "71416235_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Cronograma_Ubicacio_n-Suficiencia-Valid.json",
+          "blockCount": 2106,
+          "finishedAt": "2026-05-12T15:10:34.019Z"
+        },
+        {
+          "relativePath": "doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202630.pdf",
+          "outJson": "71416235_doop_RV_Publicacio_n_calendarios_validacio_n_general_validacio_n_de_ingle_s_abril_-_agosto_2026_2_Cronograma_Ubicaci_n-S.json",
+          "blockCount": 2106,
+          "finishedAt": "2026-05-12T15:17:40.064Z"
+        }
+      ]
+    },
+    {
+      "sha256": "882543dbe81055bab12932d31f7aa53a932dadb831acc6eb5e3c27391c0e132d",
+      "bytes": 883651,
+      "count": 11,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "882543db_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Validacio_n_general_GR-PS-TEC_D-E.json",
+          "blockCount": 2044,
+          "finishedAt": "2026-05-12T14:53:11.954Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "882543db_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Validacio_n_general_GR-PS-TEC_D-EL-P_I_ntegr.json",
+          "blockCount": 2044,
+          "finishedAt": "2026-05-12T14:55:17.928Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "882543db_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Cronograma_Validacio_n_general_GR-PS-TEC_D-EL-P_I_ntegro_202630.json",
+          "blockCount": 2044,
+          "finishedAt": "2026-05-12T14:57:57.470Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "882543db_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Validacio_n_general_GR-PS-TEC.json",
+          "blockCount": 2044,
+          "finishedAt": "2026-05-12T14:59:31.632Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "882543db_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Cronograma_Validacio_n_general_GR-PS-TE.json",
+          "blockCount": 2044,
+          "finishedAt": "2026-05-12T15:00:41.918Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "882543db_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Validacio_n_general_GR-PS-TEC_D-E.json",
+          "blockCount": 2044,
+          "finishedAt": "2026-05-12T15:03:00.404Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "882543db_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Validacio_n_general_GR-PS-TEC_D-EL-P_I_ntegr.json",
+          "blockCount": 2044,
+          "finishedAt": "2026-05-12T15:05:02.828Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "882543db_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Cronograma_Validacio_n_general_GR-PS-TEC_D-EL-P_I_ntegro_202630.json",
+          "blockCount": 2044,
+          "finishedAt": "2026-05-12T15:08:07.550Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "882543db_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Validacio_n_general_GR-PS-TEC.json",
+          "blockCount": 2044,
+          "finishedAt": "2026-05-12T15:09:34.669Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "882543db_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Cronograma_Validacio_n_general_GR-PS-TE.json",
+          "blockCount": 2044,
+          "finishedAt": "2026-05-12T15:10:46.160Z"
+        },
+        {
+          "relativePath": "doop/RV_ Publicación calendarios_ validación general, validación de inglés abril - agosto 2026 2/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "882543db_doop_RV_Publicacio_n_calendarios_validacio_n_general_validacio_n_de_ingle_s_abril_-_agosto_2026_2_Cronograma_Validaci_n_.json",
+          "blockCount": 2044,
+          "finishedAt": "2026-05-12T15:17:53.058Z"
+        }
+      ]
+    },
+    {
+      "sha256": "eee1c735ea4b9a4725d3a7b45546c4316b424bef1a1c62c2478ab9c4c3212818",
+      "bytes": 3198758,
+      "count": 9,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Unidad Integración Curricular_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "eee1c735_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Unidad_Integracio_n_Curricular_GR.json",
+          "blockCount": 5423,
+          "finishedAt": "2026-05-12T14:52:37.270Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma Unidad Integración Curricular_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "eee1c735_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Unidad_Integracio_n_Curricular_GR-PS-TEC_D-E.json",
+          "blockCount": 5423,
+          "finishedAt": "2026-05-12T14:54:30.589Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Cronograma Unidad Integración Curricular_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "eee1c735_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Cronograma_Unidad_Integracio_n_Curricular_GR-PS-TEC_D-EL-P_I_ntegro_2026.json",
+          "blockCount": 5423,
+          "finishedAt": "2026-05-12T14:57:17.599Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma Unidad Integración Curricular_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "eee1c735_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Unidad_Integracio_n_Curricula.json",
+          "blockCount": 5423,
+          "finishedAt": "2026-05-12T14:59:17.882Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Unidad Integración Curricular_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "eee1c735_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Unidad_Integracio_n_Curricular_GR.json",
+          "blockCount": 5423,
+          "finishedAt": "2026-05-12T15:02:24.847Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma Unidad Integración Curricular_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "eee1c735_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Unidad_Integracio_n_Curricular_GR-PS-TEC_D-E.json",
+          "blockCount": 5423,
+          "finishedAt": "2026-05-12T15:04:24.176Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Cronograma Unidad Integración Curricular_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "eee1c735_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Cronograma_Unidad_Integracio_n_Curricular_GR-PS-TEC_D-EL-P_I_ntegro_2026.json",
+          "blockCount": 5423,
+          "finishedAt": "2026-05-12T15:07:32.775Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma Unidad Integración Curricular_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "eee1c735_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Unidad_Integracio_n_Curricula.json",
+          "blockCount": 5423,
+          "finishedAt": "2026-05-12T15:09:21.551Z"
+        },
+        {
+          "relativePath": "doop/RV_ Publicación de calendarios_ UTE-UIC-UT periodo abril - agosto 2026 2/Cronograma Unidad Integración Curricular_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+          "outJson": "eee1c735_doop_RV_Publicacio_n_de_calendarios_UTE-UIC-UT_periodo_abril_-_agosto_2026_2_Cronograma_Unidad_Integraci_n_Curricular_GR.json",
+          "blockCount": 5423,
+          "finishedAt": "2026-05-12T15:20:33.999Z"
+        }
+      ]
+    },
+    {
+      "sha256": "18b209296a738dfe92cf959d218e7894b1c8b4eddc7f722cd95ac38c4a112a5e",
+      "bytes": 3933378,
+      "count": 7,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf",
+          "outJson": "18b20929_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Unidad_Titulacio_n_Especial_GR-PS.json",
+          "blockCount": 6537,
+          "finishedAt": "2026-05-12T14:52:58.365Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf",
+          "outJson": "18b20929_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Unidad_Titulacio_n_Especial_GR-PS_D-P_I_nteg.json",
+          "blockCount": 6537,
+          "finishedAt": "2026-05-12T14:55:05.645Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf",
+          "outJson": "18b20929_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Cronograma_Unidad_Titulacio_n_Especial_GR-PS_D-P_I_ntegro_202630.json",
+          "blockCount": 6537,
+          "finishedAt": "2026-05-12T14:57:44.746Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf",
+          "outJson": "18b20929_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Unidad_Titulacio_n_Especial_GR-PS.json",
+          "blockCount": 6537,
+          "finishedAt": "2026-05-12T15:02:47.502Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf",
+          "outJson": "18b20929_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Unidad_Titulacio_n_Especial_GR-PS_D-P_I_nteg.json",
+          "blockCount": 6537,
+          "finishedAt": "2026-05-12T15:04:48.806Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf",
+          "outJson": "18b20929_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Cronograma_Unidad_Titulacio_n_Especial_GR-PS_D-P_I_ntegro_202630.json",
+          "blockCount": 6537,
+          "finishedAt": "2026-05-12T15:07:54.395Z"
+        },
+        {
+          "relativePath": "doop/RV_ Publicación de calendarios_ UTE-UIC-UT periodo abril - agosto 2026 2/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf",
+          "outJson": "18b20929_doop_RV_Publicacio_n_de_calendarios_UTE-UIC-UT_periodo_abril_-_agosto_2026_2_Cronograma_Unidad_Titulaci_n_Especial_GR-PS.json",
+          "blockCount": 6537,
+          "finishedAt": "2026-05-12T15:20:59.779Z"
+        }
+      ]
+    },
+    {
+      "sha256": "484e5c579666daf0930ed1a0af5270377ce8e74bd2087a54b1a48f8261d3c7b5",
+      "bytes": 1137061,
+      "count": 5,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma académico modular_GR-TEC_EL-P_Íntegro_202630.pdf",
+          "outJson": "484e5c57_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_acade_mico_modular_GR-TEC_EL-P_I_.json",
+          "blockCount": 2128,
+          "finishedAt": "2026-05-12T14:53:25.071Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Cronograma académico modular_GR-TEC_EL-P_Íntegro_202630.pdf",
+          "outJson": "484e5c57_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Cronograma_acade_mico_modular_GR-TEC_EL.json",
+          "blockCount": 2128,
+          "finishedAt": "2026-05-12T15:00:55.551Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma académico modular_GR-TEC_EL-P_Íntegro_202630.pdf",
+          "outJson": "484e5c57_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_acade_mico_modular_GR-TEC_EL-P_I_.json",
+          "blockCount": 2128,
+          "finishedAt": "2026-05-12T15:03:13.579Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Cronograma académico modular_GR-TEC_EL-P_Íntegro_202630.pdf",
+          "outJson": "484e5c57_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Cronograma_acade_mico_modular_GR-TEC_EL.json",
+          "blockCount": 2128,
+          "finishedAt": "2026-05-12T15:11:03.402Z"
+        },
+        {
+          "relativePath": "doop/RV_ Publicación calendarios_ grado, modalidad en línea, abril - agosto 2026/Cronograma académico modular_GR-TEC_EL-P_Íntegro_202630.pdf",
+          "outJson": "484e5c57_doop_RV_Publicacio_n_calendarios_grado_modalidad_en_li_nea_abril_-_agosto_2026_Cronograma_acad_mico_modular_GR-TEC_EL-P_.json",
+          "blockCount": 2128,
+          "finishedAt": "2026-05-12T15:15:32.407Z"
+        }
+      ]
+    },
+    {
+      "sha256": "dc23d185ab9ef63df81538759a8e1a6a0f5ed48f3f5b21784981b2abbfee0e49",
+      "bytes": 2367315,
+      "count": 4,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Académico_regular-CCE__GR-TEC__D-EL__Íntegro__202630.pdf",
+          "outJson": "dc23d185_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Acade_mico_regular-CCE_GR-TEC_D-E.json",
+          "blockCount": 5950,
+          "finishedAt": "2026-05-12T14:52:02.451Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma Académico_regular-CCE__GR-TEC__D-EL__Íntegro__202630.pdf",
+          "outJson": "dc23d185_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Acade_mico_regular-CCE_GR-TEC.json",
+          "blockCount": 5950,
+          "finishedAt": "2026-05-12T14:58:39.847Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Académico_regular-CCE__GR-TEC__D-EL__Íntegro__202630.pdf",
+          "outJson": "dc23d185_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Cronograma_Acade_mico_regular-CCE_GR-TEC_D-E.json",
+          "blockCount": 5950,
+          "finishedAt": "2026-05-12T15:01:51.464Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma Académico_regular-CCE__GR-TEC__D-EL__Íntegro__202630.pdf",
+          "outJson": "dc23d185_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Acade_mico_regular-CCE_GR-TEC.json",
+          "blockCount": 5950,
+          "finishedAt": "2026-05-12T15:08:45.865Z"
+        }
+      ]
+    },
+    {
+      "sha256": "44c9ac7f7366cb99627a162e15b898183826e952503333c8693584bdd05cc6dc",
+      "bytes": 495976,
+      "count": 3,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma académico internado rotativo GR__P__Íntegro__202640.pdf",
+          "outJson": "44c9ac7f_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_acade_mico_internado_rotativo_GR_P_I_ntegro_.json",
+          "blockCount": 883,
+          "finishedAt": "2026-05-12T14:55:29.361Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma académico internado rotativo GR__P__Íntegro__202640.pdf",
+          "outJson": "44c9ac7f_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_acade_mico_internado_rotativo_GR_P_I_ntegro_.json",
+          "blockCount": 883,
+          "finishedAt": "2026-05-12T15:05:14.599Z"
+        },
+        {
+          "relativePath": "doop/RV_ Publicación calendarios_ Calendario interno rotativo medicina mayo 2026 - abril 2027 2/Cronograma académico internado rotativo GR__P__Íntegro__202640.pdf",
+          "outJson": "44c9ac7f_doop_RV_Publicacio_n_calendarios_Calendario_interno_rotativo_medicina_mayo_2026_-_abril_2027_2_Cronograma_acad_mico_inte.json",
+          "blockCount": 883,
+          "finishedAt": "2026-05-12T15:12:52.813Z"
+        }
+      ]
+    },
+    {
+      "sha256": "15dc5ffbf3e107c8e4445b0bc55951799d9d711743609ee5ac688a0e73a8e550",
+      "bytes": 857737,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_5_12-5-2026/Admisiones Doctorado en Química_PS_P__OCT_2026 - AGO_2027.pdf",
+          "outJson": "15dc5ffb_doop_OneDrive_5_12-5-2026_Admisiones_Doctorado_en_Qui_mica_PS_P_OCT_2026_-_AGO_2027.json",
+          "blockCount": 1616,
+          "finishedAt": "2026-05-12T15:11:50.465Z"
+        },
+        {
+          "relativePath": "doop/RV_ Publicación calendarios_ Calendario interno rotativo medicina mayo 2026 - abril 2027 2/Admisiones Doctorado en Química_PS_P__OCT_2026 - AGO_2027.pdf",
+          "outJson": "15dc5ffb_doop_RV_Publicacio_n_calendarios_Calendario_interno_rotativo_medicina_mayo_2026_-_abril_2027_2_Admisiones_Doctorado_en_Q.json",
+          "blockCount": 1616,
+          "finishedAt": "2026-05-12T15:12:25.078Z"
+        }
+      ]
+    },
+    {
+      "sha256": "193bc80e046075dfd63a3dea98477e453634a435bbc42e98438bb9fafa9e2798",
+      "bytes": 120668,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Matrículas Unidad Titulación Especial (UTE)_Posgrados_D-El-P-H__ABR-AGO_2026.pdf",
+          "outJson": "193bc80e_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Matri_culas_Unidad_Titulacio_n_Especial_UTE_Posgrados_D-El-P-H_ABR-AGO_2.json",
+          "blockCount": 114,
+          "finishedAt": "2026-05-12T14:58:03.583Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Matrículas Unidad Titulación Especial (UTE)_Posgrados_D-El-P-H__ABR-AGO_2026.pdf",
+          "outJson": "193bc80e_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Matri_culas_Unidad_Titulacio_n_Especial_UTE_Posgrados_D-El-P-H_ABR-AGO_2.json",
+          "blockCount": 114,
+          "finishedAt": "2026-05-12T15:08:13.406Z"
+        }
+      ]
+    },
+    {
+      "sha256": "246f0acb168619fa2e087edcab9947ecc9b5dcb26ba55c138e61f072a2602091",
+      "bytes": 169147,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Inscripciones C Competencias específicas_TEC_EL__ABR-AGO_2026.pdf",
+          "outJson": "246f0acb_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Inscripciones_C_Competencias_especi_fica.json",
+          "blockCount": 112,
+          "finishedAt": "2026-05-12T14:59:53.277Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Inscripciones C Competencias específicas_TEC_EL__ABR-AGO_2026.pdf",
+          "outJson": "246f0acb_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Inscripciones_C_Competencias_especi_fica.json",
+          "blockCount": 112,
+          "finishedAt": "2026-05-12T15:09:52.569Z"
+        }
+      ]
+    },
+    {
+      "sha256": "2bfae6cacb42d49f86dd47f13bacc5227a882f264efe9e8fed3f000f348de2c2",
+      "bytes": 236609,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Cronograma Académico_PS_P-El-HI_Íntegro_202630.pdf",
+          "outJson": "2bfae6ca_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Cronograma_Acade_mico_PS_P-El-HI_I_ntegro_202630.json",
+          "blockCount": 3510,
+          "finishedAt": "2026-05-12T14:56:42.953Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Cronograma Académico_PS_P-El-HI_Íntegro_202630.pdf",
+          "outJson": "2bfae6ca_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Cronograma_Acade_mico_PS_P-El-HI_I_ntegro_202630.json",
+          "blockCount": 3510,
+          "finishedAt": "2026-05-12T15:06:52.029Z"
+        }
+      ]
+    },
+    {
+      "sha256": "3a2bb2a3b7cb10f5c46c2669c59a82917d773fd5dd555b0e216f25594310f401",
+      "bytes": 127321,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Matrículas Unidad Titulación Especial (UTE)_GR_D-El__ABR-AGO_2026.pdf",
+          "outJson": "3a2bb2a3_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Matri_culas_Unidad_Titulacio_n_Especial_UTE_.json",
+          "blockCount": 127,
+          "finishedAt": "2026-05-12T14:53:41.018Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Matrículas Unidad Titulación Especial (UTE)_GR_D-El__ABR-AGO_2026.pdf",
+          "outJson": "3a2bb2a3_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Matri_culas_Unidad_Titulacio_n_Especial_UTE_.json",
+          "blockCount": 127,
+          "finishedAt": "2026-05-12T15:03:30.466Z"
+        }
+      ]
+    },
+    {
+      "sha256": "48a7d3c7737658752f7e639324914f9aa95ab9b06c720365234bd33476459dad",
+      "bytes": 143025,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Matrículas_Posgrados_D-El-P-H__ABR-AGO_2026.pdf",
+          "outJson": "48a7d3c7_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Matri_culas_Posgrados_D-El-P-H_ABR-AGO_2026.json",
+          "blockCount": 153,
+          "finishedAt": "2026-05-12T14:58:20.128Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Matrículas_Posgrados_D-El-P-H__ABR-AGO_2026.pdf",
+          "outJson": "48a7d3c7_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Matri_culas_Posgrados_D-El-P-H_ABR-AGO_2026.json",
+          "blockCount": 153,
+          "finishedAt": "2026-05-12T15:08:25.396Z"
+        }
+      ]
+    },
+    {
+      "sha256": "4ccdf05a8b72e694f0e5068c4aa3357f6c0c8411978ef2ac2dd25cbedbefca61",
+      "bytes": 130565,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Matrículas_TEC_EL__ABR-AGO_2026.pdf",
+          "outJson": "4ccdf05a_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Matri_culas_TEC_EL_ABR-AGO_2026.json",
+          "blockCount": 139,
+          "finishedAt": "2026-05-12T15:00:03.666Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Matrículas_TEC_EL__ABR-AGO_2026.pdf",
+          "outJson": "4ccdf05a_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Matri_culas_TEC_EL_ABR-AGO_2026.json",
+          "blockCount": 139,
+          "finishedAt": "2026-05-12T15:10:02.633Z"
+        }
+      ]
+    },
+    {
+      "sha256": "53860cfdf04d715c462cd739a59c20e0188ff5b658f97aeaabfcc72d343c902a",
+      "bytes": 117172,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Matrículas Unidad Titulación Especial (UTE)_GR_P__ABR-AGO_2026.pdf",
+          "outJson": "53860cfd_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Matri_culas_Unidad_Titulacio_n_Especial_UTE_GR_P_ABR-AG.json",
+          "blockCount": 102,
+          "finishedAt": "2026-05-12T14:55:54.061Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Matrículas Unidad Titulación Especial (UTE)_GR_P__ABR-AGO_2026.pdf",
+          "outJson": "53860cfd_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Matri_culas_Unidad_Titulacio_n_Especial_UTE_GR_P_ABR-AG.json",
+          "blockCount": 102,
+          "finishedAt": "2026-05-12T15:05:49.164Z"
+        }
+      ]
+    },
+    {
+      "sha256": "5ef78a323a869abe2c96e1f0c4aa4495489de3909761d1c82b39c350fc6eab86",
+      "bytes": 154196,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Alcance matrícula GR_MP_ABR-AGO_2026.pdf",
+          "outJson": "5ef78a32_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Alcance_matri_cula_GR_MP_ABR-AGO_2026.json",
+          "blockCount": 233,
+          "finishedAt": "2026-05-12T14:53:57.377Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Alcance matrícula GR_MP_ABR-AGO_2026.pdf",
+          "outJson": "5ef78a32_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Alcance_matri_cula_GR_MP_ABR-AGO_2026.json",
+          "blockCount": 233,
+          "finishedAt": "2026-05-12T15:03:46.904Z"
+        }
+      ]
+    },
+    {
+      "sha256": "6232b5beb0b7e94b367be49a3d9cf149433095b56ba7245358be9cab03b76680",
+      "bytes": 329309,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Matrículas_GR_P__ABR-AGO_2026.pdf",
+          "outJson": "6232b5be_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Matri_culas_GR_P_ABR-AGO_2026.json",
+          "blockCount": 459,
+          "finishedAt": "2026-05-12T14:56:04.877Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Matrículas_GR_P__ABR-AGO_2026.pdf",
+          "outJson": "6232b5be_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Matri_culas_GR_P_ABR-AGO_2026.json",
+          "blockCount": 459,
+          "finishedAt": "2026-05-12T15:05:59.867Z"
+        }
+      ]
+    },
+    {
+      "sha256": "640db6302a473d36749635d016dd7a4e3040755b0873dfe8c103181e743c1d0f",
+      "bytes": 1643144,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Alcance matrícula TEC_MP_ABR-AGO_2026.pdf",
+          "outJson": "640db630_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Alcance_matri_cula_TEC_MP_ABR-AGO_2026.json",
+          "blockCount": 1232,
+          "finishedAt": "2026-05-12T15:00:16.176Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Alcance matrícula TEC_MP_ABR-AGO_2026.pdf",
+          "outJson": "640db630_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Alcance_matri_cula_TEC_MP_ABR-AGO_2026.json",
+          "blockCount": 1232,
+          "finishedAt": "2026-05-12T15:10:21.052Z"
+        }
+      ]
+    },
+    {
+      "sha256": "7615cf1330379c5997b9e30f7e0ba7ded4bd7dbea07ba4f4b1d0f389f97d8a20",
+      "bytes": 114328,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Matrículas Curso Competencias Específicas (CCE)_GR_P__ABR-AGO_2026.pdf",
+          "outJson": "7615cf13_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Matri_culas_Curso_Competencias_Especi_ficas_CCE_GR_P_AB.json",
+          "blockCount": 110,
+          "finishedAt": "2026-05-12T14:55:48.635Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Matrículas Curso Competencias Específicas (CCE)_GR_P__ABR-AGO_2026.pdf",
+          "outJson": "7615cf13_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Matri_culas_Curso_Competencias_Especi_ficas_CCE_GR_P_AB.json",
+          "blockCount": 110,
+          "finishedAt": "2026-05-12T15:05:38.317Z"
+        }
+      ]
+    },
+    {
+      "sha256": "76484ad70c9939280886172414e2a50d176cb665e284ca31d6aa8c2d204d8422",
+      "bytes": 189257,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Trámites y servicios/Cronograma_Servicios de reconocimiento_GR, PS, TEC_D, EL__ABR-AGO_2026.pdf",
+          "outJson": "76484ad7_doop_OneDrive_3_12-5-2026_Tra_mites_y_servicios_Cronograma_Servicios_de_reconocimiento_GR_PS_TEC_D_EL_ABR-AGO_2026.json",
+          "blockCount": 934,
+          "finishedAt": "2026-05-12T15:01:30.758Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Trámites y servicios/Cronograma_Servicios de reconocimiento_GR, PS, TEC_D, EL__ABR-AGO_2026.pdf",
+          "outJson": "76484ad7_doop_OneDrive_4_12-5-2026_Tra_mites_y_servicios_Cronograma_Servicios_de_reconocimiento_GR_PS_TEC_D_EL_ABR-AGO_2026.json",
+          "blockCount": 934,
+          "finishedAt": "2026-05-12T15:11:38.712Z"
+        }
+      ]
+    },
+    {
+      "sha256": "767a5816aa3728f9ae2ec91888d3ca493c6d515a04950c28610558618ea6e6ae",
+      "bytes": 584656,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_1_12-5-2026/Cronograma_Elaboración material educativo_TEC_EL_Íntegro.pdf",
+          "outJson": "767a5816_doop_OneDrive_1_12-5-2026_Cronograma_Elaboracio_n_material_educativo_TEC_EL_I_ntegro.json",
+          "blockCount": 1145,
+          "finishedAt": "2026-05-12T14:50:34.361Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_2_12-5-2026/Cronograma_Elaboración material educativo_TEC_EL_Íntegro.pdf",
+          "outJson": "767a5816_doop_OneDrive_2_12-5-2026_Cronograma_Elaboracio_n_material_educativo_TEC_EL_I_ntegro.json",
+          "blockCount": 1145,
+          "finishedAt": "2026-05-12T14:51:19.081Z"
+        }
+      ]
+    },
+    {
+      "sha256": "76d833226d3d6e229f607227f32b6df13ad3ce6333024c5af6761896ebfd0184",
+      "bytes": 173741,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Mátriculas_GR_D-EL__ABR-AGO_2026.pdf",
+          "outJson": "76d83322_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Ma_triculas_GR_D-EL_ABR-AGO_2026.json",
+          "blockCount": 204,
+          "finishedAt": "2026-05-12T14:53:47.562Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Mátriculas_GR_D-EL__ABR-AGO_2026.pdf",
+          "outJson": "76d83322_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Ma_triculas_GR_D-EL_ABR-AGO_2026.json",
+          "blockCount": 204,
+          "finishedAt": "2026-05-12T15:03:36.724Z"
+        }
+      ]
+    },
+    {
+      "sha256": "7aeb2602e6263eef47fbf470698f9fd58623113cdd29a001d6c7994b0aa5b29f",
+      "bytes": 152976,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Trámites y servicios/Cronograma_Servicios de matrícula_GR, PS, TEC_P, D, EL__ABR-AGO_2026.pdf",
+          "outJson": "7aeb2602_doop_OneDrive_3_12-5-2026_Tra_mites_y_servicios_Cronograma_Servicios_de_matri_cula_GR_PS_TEC_P_D_EL_ABR-AGO_2026.json",
+          "blockCount": 1270,
+          "finishedAt": "2026-05-12T15:01:19.652Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Trámites y servicios/Cronograma_Servicios de matrícula_GR, PS, TEC_P, D, EL__ABR-AGO_2026.pdf",
+          "outJson": "7aeb2602_doop_OneDrive_4_12-5-2026_Tra_mites_y_servicios_Cronograma_Servicios_de_matri_cula_GR_PS_TEC_P_D_EL_ABR-AGO_2026.json",
+          "blockCount": 1270,
+          "finishedAt": "2026-05-12T15:11:27.457Z"
+        }
+      ]
+    },
+    {
+      "sha256": "8fafc9c84c4ce62f6dd9b9af330022e3b154f7e9749a2a3faf14c09a12738aaa",
+      "bytes": 202877,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_5_12-5-2026/Trámites y servicios/Servicios Reconocimiento de Estudios_GRA-POS-TEC_MP-MEL__202690.pdf",
+          "outJson": "8fafc9c8_doop_OneDrive_5_12-5-2026_Tra_mites_y_servicios_Servicios_Reconocimiento_de_Estudios_GRA-POS-TEC_MP-MEL_202690.json",
+          "blockCount": 931,
+          "finishedAt": "2026-05-12T15:12:12.629Z"
+        },
+        {
+          "relativePath": "doop/RV_ Publicación de calendarios_ UTE-UIC-UT periodo abril - agosto 2026 2/Servicios Reconocimiento de Estudios_GRA-POS-TEC_MP-MEL__202690 (1).pdf",
+          "outJson": "8fafc9c8_doop_RV_Publicacio_n_de_calendarios_UTE-UIC-UT_periodo_abril_-_agosto_2026_2_Servicios_Reconocimiento_de_Estudios_GRA-PO.json",
+          "blockCount": 931,
+          "finishedAt": "2026-05-12T15:21:11.743Z"
+        }
+      ]
+    },
+    {
+      "sha256": "9f0477d1d5ff9dc4fa75d7ea70d0dffb7546f872ddf4fca3875eba07419401f1",
+      "bytes": 588138,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Admisiones_Posgrados_D-El-P__ABR-AGO_2026.pdf",
+          "outJson": "9f0477d1_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Admisiones_Posgrados_D-El-P_ABR-AGO_2026.json",
+          "blockCount": 935,
+          "finishedAt": "2026-05-12T14:56:29.176Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Admisiones_Posgrados_D-El-P__ABR-AGO_2026.pdf",
+          "outJson": "9f0477d1_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Admisiones_Posgrados_D-El-P_ABR-AGO_2026.json",
+          "blockCount": 935,
+          "finishedAt": "2026-05-12T15:06:37.447Z"
+        }
+      ]
+    },
+    {
+      "sha256": "c3bb844f26966a5977ed705946a99230a014f6e0539b8ecac01c11dfa80c4fe0",
+      "bytes": 401953,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma_Elaboración materiales_TEC_EL__ABR-AGO_2026.pdf",
+          "outJson": "c3bb844f_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Elaboracio_n_materiales_TEC_E.json",
+          "blockCount": 677,
+          "finishedAt": "2026-05-12T14:59:43.072Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma_Elaboración materiales_TEC_EL__ABR-AGO_2026.pdf",
+          "outJson": "c3bb844f_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_en_li_nea_Cronograma_Elaboracio_n_materiales_TEC_E.json",
+          "blockCount": 677,
+          "finishedAt": "2026-05-12T15:09:45.824Z"
+        }
+      ]
+    },
+    {
+      "sha256": "c49d027ec226a8d6e865a956ccdce8e94809379a2141207e9dd6826100dbf854",
+      "bytes": 267441,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Matrículas_PS_P-EL__ABR-AGO_2026.pdf",
+          "outJson": "c49d027e_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Matri_culas_PS_P-EL_ABR-AGO_2026.json",
+          "blockCount": 267,
+          "finishedAt": "2026-05-12T14:58:13.641Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Matrículas_PS_P-EL__ABR-AGO_2026.pdf",
+          "outJson": "c49d027e_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Matri_culas_PS_P-EL_ABR-AGO_2026.json",
+          "blockCount": 267,
+          "finishedAt": "2026-05-12T15:08:19.940Z"
+        }
+      ]
+    },
+    {
+      "sha256": "c906332a3e6eed4cd08a2753da2192fd23647a542c9ca54fa2545650ad084fa3",
+      "bytes": 1768490,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Matrículas_TEC_P_ABR-AGO_2026.pdf",
+          "outJson": "c906332a_doop_OneDrive_3_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Matri_culas_TEC_P_ABR-AGO_2026.json",
+          "blockCount": 1360,
+          "finishedAt": "2026-05-12T15:01:08.112Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Matrículas_TEC_P_ABR-AGO_2026.pdf",
+          "outJson": "c906332a_doop_OneDrive_4_12-5-2026_Cronogramas_te_cnico_tecnolo_gico_Modalidad_presencial_Matri_culas_TEC_P_ABR-AGO_2026.json",
+          "blockCount": 1360,
+          "finishedAt": "2026-05-12T15:11:16.486Z"
+        }
+      ]
+    },
+    {
+      "sha256": "cb6ca08ae03ff5fb2381640017b2b79fff6d2e5454dc8a77c8e89f7a7ea95b7b",
+      "bytes": 1942808,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma_Académico regular-CCE_GR_P_Íntegro_ABR-AGO_2026.pdf",
+          "outJson": "cb6ca08a_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Acade_mico_regular-CCE_GR_P_I_ntegro_ABR-AGO.json",
+          "blockCount": 2156,
+          "finishedAt": "2026-05-12T14:55:42.572Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma_Académico regular-CCE_GR_P_Íntegro_ABR-AGO_2026.pdf",
+          "outJson": "cb6ca08a_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_presencial_Cronograma_Acade_mico_regular-CCE_GR_P_I_ntegro_ABR-AGO.json",
+          "blockCount": 2156,
+          "finishedAt": "2026-05-12T15:05:28.204Z"
+        }
+      ]
+    },
+    {
+      "sha256": "d4f69b891255d2f59b8707b9b809b388943ccac7e374ec92fe6698c8adfa6e30",
+      "bytes": 125788,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Matrículas Curso Competencias Específicas_GR_D-El__ABR-AGO_2026.pdf",
+          "outJson": "d4f69b89_doop_OneDrive_3_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Matri_culas_Curso_Competencias_Especi_ficas_.json",
+          "blockCount": 124,
+          "finishedAt": "2026-05-12T14:53:31.505Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Matrículas Curso Competencias Específicas_GR_D-El__ABR-AGO_2026.pdf",
+          "outJson": "d4f69b89_doop_OneDrive_4_12-5-2026_Cronogramas_grado_Modalidad_a_distancia_en_li_nea_Matri_culas_Curso_Competencias_Especi_ficas_.json",
+          "blockCount": 124,
+          "finishedAt": "2026-05-12T15:03:23.894Z"
+        }
+      ]
+    },
+    {
+      "sha256": "d529b41e3fb3276e761d92409077ac8373cdb480fb3537fa702773bbe701613b",
+      "bytes": 1036537,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Admisiones_Especialización Anestesiología y Imagenología_Posgrados_P__ABR-AGO_2026.pdf",
+          "outJson": "d529b41e_doop_OneDrive_3_12-5-2026_Cronogramas_posgrados_Admisiones_Especializacio_n_Anestesiologi_a_y_Imagenologi_a_Posgrados_P_.json",
+          "blockCount": 1842,
+          "finishedAt": "2026-05-12T14:56:16.917Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Admisiones_Especialización Anestesiología y Imagenología_Posgrados_P__ABR-AGO_2026.pdf",
+          "outJson": "d529b41e_doop_OneDrive_4_12-5-2026_Cronogramas_posgrados_Admisiones_Especializacio_n_Anestesiologi_a_y_Imagenologi_a_Posgrados_P_.json",
+          "blockCount": 1842,
+          "finishedAt": "2026-05-12T15:06:20.904Z"
+        }
+      ]
+    },
+    {
+      "sha256": "fbffe2af38853792054ab7d6bd3fd31d498b7619de15849098eb4970b9194fd9",
+      "bytes": 750603,
+      "count": 2,
+      "entries": [
+        {
+          "relativePath": "doop/OneDrive_1_12-5-2026/Cronograma Académico_regular-CCE_TEC_EL_Íntegro_202625.pdf",
+          "outJson": "fbffe2af_doop_OneDrive_1_12-5-2026_Cronograma_Acade_mico_regular-CCE_TEC_EL_I_ntegro_202625.json",
+          "blockCount": 1647,
+          "finishedAt": "2026-05-12T14:50:08.999Z"
+        },
+        {
+          "relativePath": "doop/OneDrive_2_12-5-2026/Cronograma Académico_regular-CCE_TEC_EL_Íntegro_202650.pdf",
+          "outJson": "fbffe2af_doop_OneDrive_2_12-5-2026_Cronograma_Acade_mico_regular-CCE_TEC_EL_I_ntegro_202650.json",
+          "blockCount": 1647,
+          "finishedAt": "2026-05-12T14:50:52.012Z"
+        }
+      ]
+    }
+  ],
+  "optionalBasenameDuplicates": [
+    {
+      "basename": "Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+      "count": 10,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+        "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+        "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+        "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+        "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Cronograma Validación general_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf"
+      ]
+    },
+    {
+      "basename": "Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202630.pdf",
+      "count": 8,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202630.pdf",
+        "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202630.pdf",
+        "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202630.pdf",
+        "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202630.pdf"
+      ]
+    },
+    {
+      "basename": "Cronograma Unidad Integración Curricular_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+      "count": 8,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Unidad Integración Curricular_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+        "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma Unidad Integración Curricular_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+        "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Cronograma Unidad Integración Curricular_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+        "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma Unidad Integración Curricular_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Unidad Integración Curricular_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma Unidad Integración Curricular_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Cronograma Unidad Integración Curricular_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma Unidad Integración Curricular_GR-PS-TEC_D-EL-P_Íntegro_202630.pdf"
+      ]
+    },
+    {
+      "basename": "Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf",
+      "count": 6,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf",
+        "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf",
+        "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Cronograma Unidad Titulación Especial_GR-PS_D-P_Íntegro_202630.pdf"
+      ]
+    },
+    {
+      "basename": "Cronograma académico modular_GR-TEC_EL-P_Íntegro_202630.pdf",
+      "count": 4,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma académico modular_GR-TEC_EL-P_Íntegro_202630.pdf",
+        "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Cronograma académico modular_GR-TEC_EL-P_Íntegro_202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma académico modular_GR-TEC_EL-P_Íntegro_202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Cronograma académico modular_GR-TEC_EL-P_Íntegro_202630.pdf"
+      ]
+    },
+    {
+      "basename": "Cronograma Académico_regular-CCE__GR-TEC__D-EL__Íntegro__202630.pdf",
+      "count": 4,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Académico_regular-CCE__GR-TEC__D-EL__Íntegro__202630.pdf",
+        "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma Académico_regular-CCE__GR-TEC__D-EL__Íntegro__202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Cronograma Académico_regular-CCE__GR-TEC__D-EL__Íntegro__202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma Académico_regular-CCE__GR-TEC__D-EL__Íntegro__202630.pdf"
+      ]
+    },
+    {
+      "basename": "Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202625-202630-202650.pdf",
+      "count": 4,
+      "relativePaths": [
+        "doop/OneDrive_1_12-5-2026/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202625-202630-202650.pdf",
+        "doop/OneDrive_2_12-5-2026/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202625-202630-202650.pdf",
+        "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202625-202630-202650.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Cronograma Ubicación-Suficiencia-Validación conocimientos de Inglés_GR-TEC-PS_D-El-P_Íntegro_202625-202630-202650.pdf"
+      ]
+    },
+    {
+      "basename": "Admisiones_Especialización Anestesiología y Imagenología_Posgrados_P__ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Admisiones_Especialización Anestesiología y Imagenología_Posgrados_P__ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Admisiones_Especialización Anestesiología y Imagenología_Posgrados_P__ABR-AGO_2026.pdf"
+      ]
+    },
+    {
+      "basename": "Admisiones_Posgrados_D-El-P__ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Admisiones_Posgrados_D-El-P__ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Admisiones_Posgrados_D-El-P__ABR-AGO_2026.pdf"
+      ]
+    },
+    {
+      "basename": "Alcance matrícula GR_MP_ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Alcance matrícula GR_MP_ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Alcance matrícula GR_MP_ABR-AGO_2026.pdf"
+      ]
+    },
+    {
+      "basename": "Alcance matrícula TEC_MP_ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Alcance matrícula TEC_MP_ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Alcance matrícula TEC_MP_ABR-AGO_2026.pdf"
+      ]
+    },
+    {
+      "basename": "Cronograma académico internado rotativo GR__P__Íntegro__202640.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma académico internado rotativo GR__P__Íntegro__202640.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma académico internado rotativo GR__P__Íntegro__202640.pdf"
+      ]
+    },
+    {
+      "basename": "Cronograma Académico_PS_P-El-HI_Íntegro_202630.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Cronograma Académico_PS_P-El-HI_Íntegro_202630.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Cronograma Académico_PS_P-El-HI_Íntegro_202630.pdf"
+      ]
+    },
+    {
+      "basename": "Cronograma_Académico regular-CCE_GR_P_Íntegro_ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma_Académico regular-CCE_GR_P_Íntegro_ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Cronograma_Académico regular-CCE_GR_P_Íntegro_ABR-AGO_2026.pdf"
+      ]
+    },
+    {
+      "basename": "Cronograma_Elaboración material educativo_TEC_EL_Íntegro.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_1_12-5-2026/Cronograma_Elaboración material educativo_TEC_EL_Íntegro.pdf",
+        "doop/OneDrive_2_12-5-2026/Cronograma_Elaboración material educativo_TEC_EL_Íntegro.pdf"
+      ]
+    },
+    {
+      "basename": "Cronograma_Elaboración materiales_TEC_EL__ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma_Elaboración materiales_TEC_EL__ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Cronograma_Elaboración materiales_TEC_EL__ABR-AGO_2026.pdf"
+      ]
+    },
+    {
+      "basename": "Cronograma_Servicios de matrícula_GR, PS, TEC_P, D, EL__ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Trámites y servicios/Cronograma_Servicios de matrícula_GR, PS, TEC_P, D, EL__ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Trámites y servicios/Cronograma_Servicios de matrícula_GR, PS, TEC_P, D, EL__ABR-AGO_2026.pdf"
+      ]
+    },
+    {
+      "basename": "Cronograma_Servicios de reconocimiento_GR, PS, TEC_D, EL__ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Trámites y servicios/Cronograma_Servicios de reconocimiento_GR, PS, TEC_D, EL__ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Trámites y servicios/Cronograma_Servicios de reconocimiento_GR, PS, TEC_D, EL__ABR-AGO_2026.pdf"
+      ]
+    },
+    {
+      "basename": "Inscripciones C Competencias específicas_TEC_EL__ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Inscripciones C Competencias específicas_TEC_EL__ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Inscripciones C Competencias específicas_TEC_EL__ABR-AGO_2026.pdf"
+      ]
+    },
+    {
+      "basename": "Matrículas Curso Competencias Específicas (CCE)_GR_P__ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Matrículas Curso Competencias Específicas (CCE)_GR_P__ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Matrículas Curso Competencias Específicas (CCE)_GR_P__ABR-AGO_2026.pdf"
+      ]
+    },
+    {
+      "basename": "Matrículas Curso Competencias Específicas_GR_D-El__ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Matrículas Curso Competencias Específicas_GR_D-El__ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Matrículas Curso Competencias Específicas_GR_D-El__ABR-AGO_2026.pdf"
+      ]
+    },
+    {
+      "basename": "Matrículas Unidad Titulación Especial (UTE)_GR_D-El__ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Matrículas Unidad Titulación Especial (UTE)_GR_D-El__ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Matrículas Unidad Titulación Especial (UTE)_GR_D-El__ABR-AGO_2026.pdf"
+      ]
+    },
+    {
+      "basename": "Matrículas Unidad Titulación Especial (UTE)_GR_P__ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Matrículas Unidad Titulación Especial (UTE)_GR_P__ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Matrículas Unidad Titulación Especial (UTE)_GR_P__ABR-AGO_2026.pdf"
+      ]
+    },
+    {
+      "basename": "Matrículas Unidad Titulación Especial (UTE)_Posgrados_D-El-P-H__ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Matrículas Unidad Titulación Especial (UTE)_Posgrados_D-El-P-H__ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Matrículas Unidad Titulación Especial (UTE)_Posgrados_D-El-P-H__ABR-AGO_2026.pdf"
+      ]
+    },
+    {
+      "basename": "Mátriculas_GR_D-EL__ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Mátriculas_GR_D-EL__ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad a distancia, en línea/Mátriculas_GR_D-EL__ABR-AGO_2026.pdf"
+      ]
+    },
+    {
+      "basename": "Matrículas_GR_P__ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas grado/Modalidad presencial/Matrículas_GR_P__ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas grado/Modalidad presencial/Matrículas_GR_P__ABR-AGO_2026.pdf"
+      ]
+    },
+    {
+      "basename": "Matrículas_Posgrados_D-El-P-H__ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Matrículas_Posgrados_D-El-P-H__ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Matrículas_Posgrados_D-El-P-H__ABR-AGO_2026.pdf"
+      ]
+    },
+    {
+      "basename": "Matrículas_PS_P-EL__ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas posgrados/Matrículas_PS_P-EL__ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas posgrados/Matrículas_PS_P-EL__ABR-AGO_2026.pdf"
+      ]
+    },
+    {
+      "basename": "Matrículas_TEC_EL__ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Matrículas_TEC_EL__ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad en línea/Matrículas_TEC_EL__ABR-AGO_2026.pdf"
+      ]
+    },
+    {
+      "basename": "Matrículas_TEC_P_ABR-AGO_2026.pdf",
+      "count": 2,
+      "relativePaths": [
+        "doop/OneDrive_3_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Matrículas_TEC_P_ABR-AGO_2026.pdf",
+        "doop/OneDrive_4_12-5-2026/Cronogramas técnico tecnológico/Modalidad presencial/Matrículas_TEC_P_ABR-AGO_2026.pdf"
+      ]
+    }
+  ]
+}

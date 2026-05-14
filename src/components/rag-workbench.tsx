@@ -18,6 +18,23 @@ import { ChatMessage } from './chat-message'
 import { AIPromptBox } from './ui/ai-prompt-box'
 
 type RagResponse = RagResponsePayload
+type PdfSearchResult = {
+  pdfId: string
+  name: string
+  canonicalPath: string
+  sourceFolders: string[]
+  hierarchy: {
+    sourceFolder: string
+    grupo: string
+    subgrupo: string
+    modalidad: string
+    nivel: string
+    tipo: string
+    periodo: string
+    rol: string
+  }
+  score: number
+}
 
 /** Columna búsqueda inicial: ~20% más ancha que `max-w-xl` (36rem → 43.2rem). */
 const SEARCH_COLUMN_MAX = 'max-w-[43.2rem]'
@@ -28,6 +45,7 @@ export function RagWorkbench() {
   const [loading, setLoading] = useState(false)
   const [searching, setSearching] = useState(false)
   const [liveResults, setLiveResults] = useState<SearchResult[]>([])
+  const [livePdfResults, setLivePdfResults] = useState<PdfSearchResult[]>([])
   const promptTextareaRef = useRef<HTMLTextAreaElement | null>(null)
   const threadScrollRef = useRef<HTMLDivElement | null>(null)
   const dockedComposerRef = useRef<HTMLDivElement | null>(null)
@@ -163,6 +181,7 @@ export function RagWorkbench() {
     const query = draft.trim()
     if (query.length < 2) {
       setLiveResults([])
+      setLivePdfResults([])
       setSearching(false)
       return
     }
@@ -170,21 +189,37 @@ export function RagWorkbench() {
     const timer = setTimeout(async () => {
       setSearching(true)
       try {
-        const response = await fetch('/api/search-services', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ query, limit: 8 }),
-        })
+        const [svcResponse, pdfResponse] = await Promise.all([
+          fetch('/api/search-services', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query, limit: 8 }),
+          }),
+          fetch('/api/search-pdfs', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query, limit: 10 }),
+          }),
+        ])
 
-        const body = (await response.json()) as { results?: SearchResult[] }
-        if (!response.ok) {
+        const svcBody = (await svcResponse.json()) as { results?: SearchResult[] }
+        const pdfBody = (await pdfResponse.json()) as { results?: PdfSearchResult[] }
+
+        if (!svcResponse.ok) {
           setLiveResults([])
+        } else {
+          setLiveResults(Array.isArray(svcBody.results) ? svcBody.results : [])
+        }
+
+        if (!pdfResponse.ok) {
+          setLivePdfResults([])
           return
         }
 
-        setLiveResults(Array.isArray(body.results) ? body.results : [])
+        setLivePdfResults(Array.isArray(pdfBody.results) ? pdfBody.results : [])
       } catch {
         setLiveResults([])
+        setLivePdfResults([])
       } finally {
         setSearching(false)
       }
@@ -230,14 +265,27 @@ export function RagWorkbench() {
     try {
       if (!selectedService) {
         const results = liveResults
+        const pdfResults = livePdfResults
         setDraft('')
         setLiveResults([])
+        setLivePdfResults([])
 
         setMessages((current) =>
           current.map((turn) =>
             turn.id === loadingTurn.id
               ? results.length > 0
                 ? createSearchResultsTurn(results, question)
+                : pdfResults.length > 0
+                  ? {
+                      id: `assistant-${crypto.randomUUID()}`,
+                      role: 'assistant' as const,
+                      status: 'done' as const,
+                      content:
+                        'No encontré servicios exactos, pero sí PDFs relacionados. Usa la lista de sugerencias para abrir el documento correcto por modalidad.',
+                      usedSources: [],
+                      serviceCandidates: [],
+                      selectedService: null,
+                    }
                 : createErrorTurn(
                     'No encontre servicios relacionados. Prueba con otra palabra clave.',
                   )
@@ -301,6 +349,7 @@ export function RagWorkbench() {
     })
     setDraft('')
     setLiveResults([])
+    setLivePdfResults([])
     setMessages((current) => [...current, buildServiceSelectedTurn(result, source)])
   }
 
@@ -335,40 +384,78 @@ export function RagWorkbench() {
         <p className="mb-2 mt-0 px-2 text-xs uppercase tracking-[0.05em] text-gravel">
           {searching ? 'Buscando...' : 'Sugerencias'}
         </p>
-        {liveResults.length === 0 && !searching ? (
+        {liveResults.length === 0 && livePdfResults.length === 0 && !searching ? (
           <p className="m-0 px-2 py-2 text-sm text-gravel">Sin coincidencias para "{draft.trim()}".</p>
         ) : (
-          <ul className="m-0 grid gap-1 p-0">
-            {liveResults.map((result) => (
-              <li key={result.serviceId} className="list-none">
-                <button
-                  type="button"
-                  onClick={() => activateService(result, 'live')}
-                  className="w-full rounded-lg border border-transparent px-3 py-2 text-left transition hover:border-chalk hover:bg-powder"
-                >
-                  <p className="m-0 text-sm font-medium text-obsidian">{result.serviceName}</p>
-                  <p className="m-0 text-xs uppercase tracking-[0.04em] text-gravel">
-                    {result.category}
-                    {result.pdfRefs && result.pdfRefs.length > 0
-                      ? ` · ${result.pdfRefs.length} documento${result.pdfRefs.length === 1 ? '' : 's'}`
-                      : null}
-                  </p>
-                  {result.snippet ? (
-                    <p className="m-0 mt-1 text-xs italic text-cinder">"{result.snippet}"</p>
-                  ) : null}
-                  {result.matchHints && result.matchHints.length > 0 ? (
-                    <ul className="m-0 mt-1 list-none space-y-0.5 p-0">
-                      {result.matchHints.map((hint, i) => (
-                        <li key={i} className="text-[11px] leading-snug text-gravel">
-                          {hint}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : null}
-                </button>
-              </li>
-            ))}
-          </ul>
+          <div className="grid gap-3">
+            {liveResults.length > 0 ? (
+              <div>
+                <p className="m-0 mb-1.5 px-2 text-[11px] font-medium uppercase tracking-[0.05em] text-gravel">
+                  Servicios
+                </p>
+                <ul className="m-0 grid gap-1 p-0">
+                  {liveResults.map((result) => (
+                    <li key={result.serviceId} className="list-none">
+                      <button
+                        type="button"
+                        onClick={() => activateService(result, 'live')}
+                        className="w-full rounded-lg border border-transparent px-3 py-2 text-left transition hover:border-chalk hover:bg-powder"
+                      >
+                        <p className="m-0 text-sm font-medium text-obsidian">{result.serviceName}</p>
+                        <p className="m-0 text-xs uppercase tracking-[0.04em] text-gravel">
+                          {result.category}
+                          {result.pdfRefs && result.pdfRefs.length > 0
+                            ? ` · ${result.pdfRefs.length} documento${result.pdfRefs.length === 1 ? '' : 's'}`
+                            : null}
+                        </p>
+                        {result.snippet ? (
+                          <p className="m-0 mt-1 text-xs italic text-cinder">"{result.snippet}"</p>
+                        ) : null}
+                        {result.matchHints && result.matchHints.length > 0 ? (
+                          <ul className="m-0 mt-1 list-none space-y-0.5 p-0">
+                            {result.matchHints.map((hint, i) => (
+                              <li key={i} className="text-[11px] leading-snug text-gravel">
+                                {hint}
+                              </li>
+                            ))}
+                          </ul>
+                        ) : null}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
+            {livePdfResults.length > 0 ? (
+              <div>
+                <p className="m-0 mb-1.5 px-2 text-[11px] font-medium uppercase tracking-[0.05em] text-gravel">
+                  PDFs del calendario
+                </p>
+                <ul className="m-0 grid gap-1 p-0">
+                  {livePdfResults.map((pdf) => (
+                    <li key={pdf.pdfId} className="list-none">
+                      <button
+                        type="button"
+                        onClick={() =>
+                          window.open(`/api/pdf-file?path=${encodeURIComponent(pdf.canonicalPath)}`, '_blank')
+                        }
+                        className="w-full rounded-lg border border-transparent px-3 py-2 text-left transition hover:border-chalk hover:bg-powder"
+                      >
+                        <p className="m-0 text-sm font-medium text-obsidian">{pdf.name}</p>
+                        <p className="m-0 text-xs text-gravel">
+                          {pdf.hierarchy.nivel} · {pdf.hierarchy.modalidad} · {pdf.hierarchy.tipo}
+                        </p>
+                        <p className="m-0 text-[11px] text-gravel">
+                          {pdf.hierarchy.grupo} / {pdf.hierarchy.subgrupo} · {pdf.hierarchy.periodo} · {pdf.hierarchy.rol}
+                        </p>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </div>
         )}
       </div>
     )
@@ -396,6 +483,7 @@ export function RagWorkbench() {
                 setMessages([])
                 setDraft('')
                 setLiveResults([])
+                setLivePdfResults([])
                 setLoading(false)
                 requestAnimationFrame(() => {
                   requestAnimationFrame(() => {

@@ -54,6 +54,20 @@ function toLocalYmd(d: Date): string {
   return `${y}-${m}-${day}`
 }
 
+function parseYmdToDayNumber(ymd: string): number {
+  const [y, m, d] = ymd.split("-").map((x) => parseInt(x, 10))
+  if (!y || !m || !d) return NaN
+  return Math.floor(Date.UTC(y, m - 1, d) / 86_400_000)
+}
+
+function isExpiringWithinDays(event: Event, days: number): boolean {
+  const today = parseYmdToDayNumber(toLocalYmd(new Date()))
+  const end = parseYmdToDayNumber(toLocalYmd(event.endTime))
+  if (Number.isNaN(today) || Number.isNaN(end)) return false
+  const delta = end - today
+  return delta >= 0 && delta <= days
+}
+
 function eventOverlapsDay(event: Event, day: Date): boolean {
   const dayStr = toLocalYmd(day)
   const startStr = toLocalYmd(event.startTime)
@@ -98,9 +112,8 @@ function formatEventDateRangeCompact(ev: Event): string {
 
 function formatModalityForDialog(ev: Event): string {
   const m = ev.description?.trim() ?? ""
-  if (!m || m === "Todas") {
-    return "Todas las modalidades de estudio (presencial, en línea, posgrado, etc.), según el calendario oficial."
-  }
+  if (!m || m === "No especificada") return "No especificada en la fuente de alta confianza."
+  if (m === "Todas") return "Todas (expresado explícitamente en la fuente)."
   return m
 }
 
@@ -119,6 +132,8 @@ export function EventManager({
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCategories, setSelectedCategories] = useState<string[]>([])
+  const [expiringOnly, setExpiringOnly] = useState(false)
+  const [selectedDayPanel, setSelectedDayPanel] = useState<{ day: Date; events: Event[] } | null>(null)
 
   const filteredEvents = useMemo(() => {
     return events.filter((event) => {
@@ -134,9 +149,18 @@ export function EventManager({
       if (selectedCategories.length > 0 && event.category && !selectedCategories.includes(event.category)) {
         return false
       }
+      if (expiringOnly && !isExpiringWithinDays(event, 3)) return false
       return true
     })
-  }, [events, searchQuery, selectedCategories])
+  }, [events, searchQuery, selectedCategories, expiringOnly])
+
+  const expiringEvents = useMemo(
+    () =>
+      [...filteredEvents]
+        .filter((event) => isExpiringWithinDays(event, 3))
+        .sort((a, b) => a.endTime.getTime() - b.endTime.getTime() || a.startTime.getTime() - b.startTime.getTime()),
+    [filteredEvents],
+  )
 
   const navigateDate = useCallback(
     (direction: "prev" | "next") => {
@@ -237,20 +261,54 @@ export function EventManager({
               {cat}
             </Button>
           ))}
+          <Button
+            variant={expiringOnly ? "secondary" : "outline"}
+            size="sm"
+            onClick={() => setExpiringOnly((v) => !v)}
+            title="Muestra solo eventos cuya fecha fin vence dentro de 3 días"
+          >
+            Por vencer (3 días)
+          </Button>
         </div>
       ) : null}
 
       {view === "month" && (
-        <MonthView
-          currentDate={currentDate}
-          events={filteredEvents}
-          readOnly={readOnly}
-          onEventClick={(event) => {
-            setSelectedEvent(event)
-            setIsDialogOpen(true)
-          }}
-          getColorClasses={getColorClasses}
-        />
+        <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_320px]">
+          <MonthView
+            currentDate={currentDate}
+            events={filteredEvents}
+            readOnly={readOnly}
+            onEventClick={(event) => {
+              setSelectedEvent(event)
+              setIsDialogOpen(true)
+            }}
+            onOverflowClick={(day, dayEvents) => {
+              setSelectedDayPanel({ day, events: dayEvents })
+            }}
+            getColorClasses={getColorClasses}
+          />
+          {selectedDayPanel ? (
+            <DayEventsPanel
+              day={selectedDayPanel.day}
+              events={selectedDayPanel.events}
+              onClear={() => setSelectedDayPanel(null)}
+              onEventClick={(event) => {
+                setSelectedEvent(event)
+                setIsDialogOpen(true)
+              }}
+              getColorClasses={getColorClasses}
+            />
+          ) : (
+            <ExpiringEventsPanel
+              events={expiringEvents}
+              onEventClick={(event) => {
+                setSelectedEvent(event)
+                setIsDialogOpen(true)
+              }}
+              getColorClasses={getColorClasses}
+            />
+          )}
+        </div>
       )}
 
       {view === "list" && !readOnly && (
@@ -319,6 +377,51 @@ export function EventManager({
   )
 }
 
+function ExpiringEventsPanel({
+  events,
+  onEventClick,
+  getColorClasses,
+}: {
+  events: Event[]
+  onEventClick: (event: Event) => void
+  getColorClasses: (c: string) => { bg: string; text: string }
+}) {
+  return (
+    <Card className="h-fit border-chalk/65 bg-eggshell p-3 shadow-sm dark:border-white/10 dark:bg-zinc-950/80">
+      <div className="mb-3 flex items-center justify-between gap-2">
+        <h3 className="text-sm font-semibold">Por vencer (3 días)</h3>
+        <Badge variant="secondary">{events.length}</Badge>
+      </div>
+      {events.length === 0 ? (
+        <p className="text-xs text-muted-foreground">No hay eventos por vencer en los próximos 3 días.</p>
+      ) : (
+        <ul className="space-y-2">
+          {events.slice(0, 12).map((event) => {
+            const cc = getColorClasses(event.color)
+            return (
+              <li key={event.id}>
+                <button
+                  type="button"
+                  onClick={() => onEventClick(event)}
+                  className="flex w-full items-start gap-2 rounded border border-chalk/55 bg-background p-2 text-left hover:bg-muted/40 dark:border-white/[0.08]"
+                >
+                  <span className={cn("mt-1 h-2 w-2 shrink-0 rounded-full", cc.bg)} />
+                  <span className="min-w-0">
+                    <span className="line-clamp-2 text-xs font-medium">{event.title}</span>
+                    <span className="block text-[11px] text-muted-foreground">
+                      Fin: {event.endTime.toLocaleDateString("es-EC", { dateStyle: "medium" })}
+                    </span>
+                  </span>
+                </button>
+              </li>
+            )
+          })}
+        </ul>
+      )}
+    </Card>
+  )
+}
+
 function EventChip({
   event,
   readOnly,
@@ -346,17 +449,75 @@ function EventChip({
   )
 }
 
+function DayEventsPanel({
+  day,
+  events,
+  onClear,
+  onEventClick,
+  getColorClasses,
+}: {
+  day: Date
+  events: Event[]
+  onClear: () => void
+  onEventClick: (event: Event) => void
+  getColorClasses: (c: string) => { bg: string; text: string }
+}) {
+  const label = day.toLocaleDateString("es-EC", { dateStyle: "full" })
+  const sorted = [...events].sort((a, b) => a.startTime.getTime() - b.startTime.getTime())
+  return (
+    <Card className="h-fit border-chalk/65 bg-eggshell p-3 shadow-sm dark:border-white/10 dark:bg-zinc-950/80">
+      <div className="mb-3 flex items-center justify-between gap-2">
+        <div>
+          <h3 className="text-sm font-semibold">Eventos del día</h3>
+          <p className="text-xs text-muted-foreground capitalize">{label}</p>
+        </div>
+        <Button variant="outline" size="sm" onClick={onClear}>
+          Volver
+        </Button>
+      </div>
+      {sorted.length === 0 ? (
+        <p className="text-xs text-muted-foreground">No hay eventos para este día.</p>
+      ) : (
+        <ul className="space-y-2">
+          {sorted.map((event) => {
+            const cc = getColorClasses(event.color)
+            return (
+              <li key={`${event.id}-${toLocalYmd(day)}`}>
+                <button
+                  type="button"
+                  onClick={() => onEventClick(event)}
+                  className="flex w-full items-start gap-2 rounded border border-chalk/55 bg-background p-2 text-left hover:bg-muted/40 dark:border-white/[0.08]"
+                >
+                  <span className={cn("mt-1 h-2 w-2 shrink-0 rounded-full", cc.bg)} />
+                  <span className="min-w-0">
+                    <span className="line-clamp-2 text-xs font-medium">{event.title}</span>
+                    <span className="block text-[11px] text-muted-foreground">
+                      Vigencia: {formatEventDateRangeCompact(event)}
+                    </span>
+                  </span>
+                </button>
+              </li>
+            )
+          })}
+        </ul>
+      )}
+    </Card>
+  )
+}
+
 function MonthView({
   currentDate,
   events,
   readOnly,
   onEventClick,
+  onOverflowClick,
   getColorClasses,
 }: {
   currentDate: Date
   events: Event[]
   readOnly: boolean
   onEventClick: (event: Event) => void
+  onOverflowClick: (day: Date, events: Event[]) => void
   getColorClasses: (c: string) => { bg: string; text: string }
 }) {
   const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1)
@@ -420,7 +581,14 @@ function MonthView({
                   />
                 ))}
                 {dayEvents.length > 4 ? (
-                  <div className="text-[10px] text-muted-foreground sm:text-xs">+{dayEvents.length - 4} más</div>
+                  <button
+                    type="button"
+                    className="text-left text-[10px] text-primary underline-offset-2 hover:underline sm:text-xs"
+                    onClick={() => onOverflowClick(day, dayEvents)}
+                    title="Ver todos los eventos de este día"
+                  >
+                    +{dayEvents.length - 4} más
+                  </button>
                 ) : null}
               </div>
             </div>

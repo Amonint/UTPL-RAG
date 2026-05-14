@@ -8,7 +8,7 @@ import {
   CATEGORY_COLORS,
   colorForCategory,
 } from "@/data/calendar-events-active";
-import { filterAcademicEventsFromTodayEcuador } from "@/lib/ecuador-calendar";
+import { filterAcademicEventsFromTodayEcuador, getEcuadorTodayYmd } from "@/lib/ecuador-calendar";
 
 const UTPL_NAVY = "#003978";
 const UTPL_GOLD = "#c9a227";
@@ -19,15 +19,34 @@ function formatDate(dateStr: string) {
   }).format(new Date(dateStr + "T00:00:00"));
 }
 
+function parseYmdToDayNumber(ymd: string): number {
+  const [y, m, d] = ymd.split("-").map((x) => parseInt(x, 10));
+  if (!y || !m || !d) return Number.NaN;
+  return Math.floor(Date.UTC(y, m - 1, d) / 86400000);
+}
+
+function isExpiringInThreeDays(endYmd: string, todayYmd: string): boolean {
+  const today = parseYmdToDayNumber(todayYmd);
+  const end = parseYmdToDayNumber(endYmd);
+  if (Number.isNaN(today) || Number.isNaN(end)) return false;
+  const delta = end - today;
+  return delta >= 0 && delta <= 3;
+}
+
 // ─── COMPONENTE ───────────────────────────────────────────────────────────────
 export default function AcademicCalendar() {
   const [query, setQuery]                   = useState("");
   const [selectedModality, setModality]     = useState("Todas");
   const [selectedCategory, setCategory]     = useState("Todas");
+  const [expiringOnly, setExpiringOnly]     = useState(false);
+  const todayYmd                            = useMemo(() => getEcuadorTodayYmd(), []);
 
   const upcoming = useMemo(
-    () => filterAcademicEventsFromTodayEcuador(EVENTS),
-    [],
+    () =>
+      filterAcademicEventsFromTodayEcuador(EVENTS).filter((event) => {
+        return parseYmdToDayNumber(event.start) >= parseYmdToDayNumber(todayYmd);
+      }),
+    [todayYmd],
   );
 
   const categories = useMemo(() => {
@@ -36,15 +55,22 @@ export default function AcademicCalendar() {
 
   const filtered = useMemo(() => {
     return [...upcoming]
-      .filter(({ title, category, modality }) => {
+      .filter(({ title, category, modality, end }) => {
         const q  = query.toLowerCase();
         const mq = selectedModality === "Todas" || modality.includes(selectedModality) || modality === "Todas";
         const cq = selectedCategory === "Todas" || category === selectedCategory;
         const tq = title.toLowerCase().includes(q) || category.toLowerCase().includes(q) || modality.toLowerCase().includes(q);
-        return mq && cq && tq;
+        const eq = !expiringOnly || isExpiringInThreeDays(end, todayYmd);
+        return mq && cq && tq && eq;
       })
       .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
-  }, [query, selectedModality, selectedCategory, upcoming]);
+  }, [query, selectedModality, selectedCategory, expiringOnly, upcoming, todayYmd]);
+
+  const expiringSoon = useMemo(() => {
+    return [...filtered]
+      .filter((e) => isExpiringInThreeDays(e.end, todayYmd))
+      .sort((a, b) => new Date(a.end).getTime() - new Date(b.end).getTime());
+  }, [filtered, todayYmd]);
 
   return (
     <section style={s.wrapper}>
@@ -52,7 +78,7 @@ export default function AcademicCalendar() {
       <div style={s.header}>
         <div>
           <h2 style={s.title}>Calendario Académico UTPL</h2>
-          <p style={s.subtitle}>Todas las modalidades · desde hoy (Ecuador)</p>
+          <p style={s.subtitle}>Solo eventos High Confidence · desde hoy (Ecuador)</p>
         </div>
         <span style={s.pill}>{filtered.length} eventos</span>
       </div>
@@ -88,6 +114,20 @@ export default function AcademicCalendar() {
 
       {/* Leyenda de categorías */}
       <div style={s.legend}>
+        <button
+          type="button"
+          onClick={() => setExpiringOnly((v) => !v)}
+          style={{
+            ...s.legendItem,
+            border: expiringOnly ? `1px solid ${UTPL_NAVY}` : `1px solid ${UTPL_NAVY}33`,
+            background: expiringOnly ? "#ffffff" : "#fafbfc",
+            boxShadow: expiringOnly ? `inset 3px 0 0 ${UTPL_GOLD}` : "none",
+          }}
+          title="Muestra solo eventos cuya fecha fin vence en los próximos 3 días"
+        >
+          <span style={{ ...s.dot, background: "#ef4444" }} />
+          Por vencer (3 días)
+        </button>
         {Object.entries(CATEGORY_COLORS).map(([cat, color]) => {
           const active = selectedCategory === cat;
           return (
@@ -109,54 +149,74 @@ export default function AcademicCalendar() {
         })}
       </div>
 
-      {/* Lista de eventos */}
-      <div style={s.list}>
-        {filtered.length === 0 ? (
-          <p style={{ color: `${UTPL_NAVY}99`, textAlign: "center", padding: "48px 24px", fontSize: 14 }}>
-            No se encontraron eventos con los filtros aplicados.
-          </p>
-        ) : (
-          filtered.map((event, i) => {
-            const catColor = colorForCategory(event.category)
-            return (
-              <article
-                key={event.id}
-                style={{
-                  ...s.card,
-                  background: i % 2 === 0 ? "#ffffff" : "#f7f9fc",
-                }}
-              >
-                <span
+      <div style={s.contentGrid}>
+        {/* Lista de eventos */}
+        <div style={s.list}>
+          {filtered.length === 0 ? (
+            <p style={{ color: `${UTPL_NAVY}99`, textAlign: "center", padding: "48px 24px", fontSize: 14 }}>
+              No se encontraron eventos con los filtros aplicados.
+            </p>
+          ) : (
+            filtered.map((event, i) => {
+              const catColor = colorForCategory(event.category)
+              return (
+                <article
+                  key={event.id}
                   style={{
-                    ...s.colorBar,
-                    background: catColor,
+                    ...s.card,
+                    background: i % 2 === 0 ? "#ffffff" : "#f7f9fc",
                   }}
-                />
-                <div style={s.cardBody}>
-                  <div style={s.cardTop}>
-                    <h3 style={s.cardTitle}>{event.title}</h3>
-                    <span
-                      style={{
-                        ...s.badge,
-                        background: `${catColor}14`,
-                        color: catColor,
-                        borderColor: `${catColor}33`,
-                      }}
-                    >
-                      {event.category}
-                    </span>
+                >
+                  <span
+                    style={{
+                      ...s.colorBar,
+                      background: catColor,
+                    }}
+                  />
+                  <div style={s.cardBody}>
+                    <div style={s.cardTop}>
+                      <h3 style={s.cardTitle}>{event.title}</h3>
+                      <span
+                        style={{
+                          ...s.badge,
+                          background: `${catColor}14`,
+                          color: catColor,
+                          borderColor: `${catColor}33`,
+                        }}
+                      >
+                        {event.category}
+                      </span>
+                    </div>
+                    <p style={s.date}>
+                      {event.start === event.end
+                        ? formatDate(event.start)
+                        : `${formatDate(event.start)} → ${formatDate(event.end)}`}
+                    </p>
+                    <p style={s.meta}>{event.modality}</p>
                   </div>
-                  <p style={s.date}>
-                    {event.start === event.end
-                      ? formatDate(event.start)
-                      : `${formatDate(event.start)} → ${formatDate(event.end)}`}
-                  </p>
-                  <p style={s.meta}>{event.modality}</p>
-                </div>
-              </article>
-            )
-          })
-        )}
+                </article>
+              )
+            })
+          )}
+        </div>
+        <aside style={s.sidePanel}>
+          <div style={s.sideHeader}>
+            <h3 style={s.sideTitle}>Por vencer (3 días)</h3>
+            <span style={s.sideCount}>{expiringSoon.length}</span>
+          </div>
+          {expiringSoon.length === 0 ? (
+            <p style={s.sideEmpty}>No hay eventos por vencer en los próximos 3 días.</p>
+          ) : (
+            <ul style={s.sideList}>
+              {expiringSoon.slice(0, 12).map((event) => (
+                <li key={`exp-${event.id}`} style={s.sideItem}>
+                  <p style={s.sideItemTitle}>{event.title}</p>
+                  <p style={s.sideItemDate}>Fin: {formatDate(event.end)}</p>
+                </li>
+              ))}
+            </ul>
+          )}
+        </aside>
       </div>
     </section>
   );
@@ -254,7 +314,49 @@ const s = {
     borderRadius: "50%",
     flexShrink: 0,
   },
-  list: { display: "grid", gap: 8 },
+  contentGrid: {
+    display: "flex",
+    flexWrap: "wrap" as const,
+    gap: 16,
+    alignItems: "start",
+  },
+  list: { display: "grid", gap: 8, flex: 1, minWidth: 0 },
+  sidePanel: {
+    border: `1px solid ${UTPL_NAVY}14`,
+    borderRadius: 4,
+    padding: "12px",
+    background: "#ffffff",
+    position: "sticky" as const,
+    top: 12,
+    width: 320,
+    maxWidth: "100%",
+    flexShrink: 0,
+  },
+  sideHeader: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: 10,
+  },
+  sideTitle: { margin: 0, fontSize: 14, fontWeight: 700, color: UTPL_NAVY },
+  sideCount: {
+    fontSize: 12,
+    borderRadius: 999,
+    padding: "2px 8px",
+    background: `${UTPL_NAVY}14`,
+    color: UTPL_NAVY,
+    fontWeight: 700,
+  },
+  sideEmpty: { margin: 0, fontSize: 12, color: "#64748b" },
+  sideList: { listStyle: "none", margin: 0, padding: 0, display: "grid", gap: 8 },
+  sideItem: {
+    border: `1px solid ${UTPL_NAVY}14`,
+    borderRadius: 4,
+    padding: "8px",
+    background: "#f8fafc",
+  },
+  sideItemTitle: { margin: 0, fontSize: 12, fontWeight: 600, color: "#0f172a" },
+  sideItemDate: { margin: "4px 0 0", fontSize: 11, color: "#475569" },
   card: {
     display: "flex",
     border: `1px solid ${UTPL_NAVY}14`,

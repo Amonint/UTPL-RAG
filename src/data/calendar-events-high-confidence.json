@@ -1,0 +1,5338 @@
+[
+  {
+    "id": 1,
+    "title": "Inscripción y pago para la Validación general (las solicitudes caducan cada 72 horas)",
+    "start": "2026-03-09",
+    "end": "2026-05-08",
+    "category": "Matrículas",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 2,
+    "title": "Evaluación de validación general",
+    "start": "2026-06-13",
+    "end": "2026-06-14",
+    "category": "Evaluación",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 3,
+    "title": "Publicación de resultados y cierre de servicio de validación general",
+    "start": "2026-06-24",
+    "end": "2026-06-24",
+    "category": "Administrativo",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 4,
+    "title": "Inscripción y pago para la Validación general (las solicitudes caducan cada 72 horas)",
+    "start": "2026-06-01",
+    "end": "2026-07-03",
+    "category": "Matrículas",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 5,
+    "title": "Evaluación de validación general",
+    "start": "2026-08-01",
+    "end": "2026-08-02",
+    "category": "Evaluación",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 6,
+    "title": "Publicación de resultados y cierre de servicio de validación general",
+    "start": "2026-08-19",
+    "end": "2026-08-19",
+    "category": "Administrativo",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 7,
+    "title": "Carnaval",
+    "start": "2026-02-16",
+    "end": "2026-02-17",
+    "category": "Feriado",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 8,
+    "title": "Viernes Santo",
+    "start": "2026-04-03",
+    "end": "2026-04-05",
+    "category": "Feriado",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 9,
+    "title": "Día del Trabajo",
+    "start": "2026-05-01",
+    "end": "2026-05-03",
+    "category": "Feriado",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 10,
+    "title": "Batalla de Pichincha",
+    "start": "2026-05-24",
+    "end": "2026-05-24",
+    "category": "Feriado",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 11,
+    "title": "Primer Grito de la Independencia",
+    "start": "2026-08-10",
+    "end": "2026-08-10",
+    "category": "Feriado",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 12,
+    "title": "Vacaciones Institucionales",
+    "start": "2026-08-11",
+    "end": "2026-08-20",
+    "category": "Feriado",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 13,
+    "title": "Independencia de Guayaquil",
+    "start": "2026-10-09",
+    "end": "2026-10-11",
+    "category": "Feriado",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 14,
+    "title": "Inscripción al curso de la institución externa",
+    "start": "2026-03-02",
+    "end": "2026-03-31",
+    "category": "Matrículas",
+    "modality": "PS D-EL-P · Estudiantes"
+  },
+  {
+    "id": 15,
+    "title": "Duración del curso de la institución externa",
+    "start": "2026-04-13",
+    "end": "2026-06-07",
+    "category": "Académico",
+    "modality": "PS D-EL-P · Estudiantes"
+  },
+  {
+    "id": 16,
+    "title": "Refuerzo académico a los estudiantes que no aprobaron en la primera oportunidad",
+    "start": "2026-08-11",
+    "end": "2026-08-25",
+    "category": "Otro",
+    "modality": "PS D-EL-P · Estudiantes"
+  },
+  {
+    "id": 17,
+    "title": "Examen de validación de conocimiento de inglés",
+    "start": "2026-07-24",
+    "end": "2026-07-28",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P · Estudiantes"
+  },
+  {
+    "id": 18,
+    "title": "Segunda oportunidad del examen de validación de conocimientos de inglés",
+    "start": "2026-08-29",
+    "end": "2026-09-01",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P · Estudiantes"
+  },
+  {
+    "id": 19,
+    "title": "Examen de validación de conocimiento de inglés",
+    "start": "2026-05-29",
+    "end": "2026-06-02",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P · Docentes"
+  },
+  {
+    "id": 20,
+    "title": "Examen de validación de conocimiento de inglés",
+    "start": "2026-07-24",
+    "end": "2026-07-28",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P · Docentes"
+  },
+  {
+    "id": 21,
+    "title": "Examen de validación de conocimiento de inglés",
+    "start": "2026-09-19",
+    "end": "2026-09-22",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P · Docentes"
+  },
+  {
+    "id": 22,
+    "title": "Inscripción al curso de la institución externa",
+    "start": "2026-02-25",
+    "end": "2026-03-31",
+    "category": "Matrículas",
+    "modality": "PS D-EL-P · Estudiantes"
+  },
+  {
+    "id": 23,
+    "title": "Duración del curso de la institución externa",
+    "start": "2026-04-01",
+    "end": "2026-07-31",
+    "category": "Académico",
+    "modality": "PS D-EL-P · Estudiantes"
+  },
+  {
+    "id": 24,
+    "title": "Exámenes de segunda lengua",
+    "start": "2026-07-01",
+    "end": "2026-07-20",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P · Estudiantes"
+  },
+  {
+    "id": 25,
+    "title": "Socialización del Plan de Comunicación",
+    "start": "2026-01-05",
+    "end": "2026-01-16",
+    "category": "Otro",
+    "modality": "PS P"
+  },
+  {
+    "id": 26,
+    "title": "Proceso de promoción y atracción dirigida a postulantes con agendas aprobadas (Reformado)",
+    "start": "2026-02-02",
+    "end": "2026-04-30",
+    "category": "Otro",
+    "modality": "PS P"
+  },
+  {
+    "id": 27,
+    "title": "Postulación en línea",
+    "start": "2026-03-02",
+    "end": "2026-09-15",
+    "category": "Otro",
+    "modality": "PS P"
+  },
+  {
+    "id": 28,
+    "title": "Preselección",
+    "start": "2026-03-02",
+    "end": "2026-09-16",
+    "category": "Otro",
+    "modality": "PS P"
+  },
+  {
+    "id": 29,
+    "title": "Pago del derecho de admisión",
+    "start": "2026-03-02",
+    "end": "2026-09-17",
+    "category": "Otro",
+    "modality": "PS P"
+  },
+  {
+    "id": 30,
+    "title": "Calificación de documentos de postulación",
+    "start": "2026-03-02",
+    "end": "2026-09-15",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 31,
+    "title": "Planificación del examen de admisión",
+    "start": "2026-01-05",
+    "end": "2026-02-13",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 32,
+    "title": "Reporte de alumnos para el Centro de Evaluaciones (creación de usuarios de los 3 eventos por motivo de vacaciones)",
+    "start": "2026-07-01",
+    "end": "2026-07-06",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 33,
+    "title": "Eventos de examen de admisión escrito (Sesión escrita 1)¹",
+    "start": "2026-07-18",
+    "end": "2026-07-18",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 34,
+    "title": "Eventos de examen de admisión oral (Sesión oral 1)²",
+    "start": "2026-07-20",
+    "end": "2026-07-23",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 35,
+    "title": "Entrega de resultados del examen escrito a Comité Doctoral (Sesión escrita 1)³",
+    "start": "2026-07-20",
+    "end": "2026-07-20",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 36,
+    "title": "Eventos de examen de admisión escrito (Sesión escrita 2)⁴",
+    "start": "2026-08-22",
+    "end": "2026-08-22",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 37,
+    "title": "Eventos de examen de admisión oral (Sesión oral 2)⁵",
+    "start": "2026-08-24",
+    "end": "2026-08-27",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 38,
+    "title": "Entrega de resultados del examen escrito a Comité Doctoral (Sesión escrita 2)⁶",
+    "start": "2026-08-24",
+    "end": "2026-08-24",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 39,
+    "title": "Sesiones de examen de admisión escrito (Sesión escrita 3)",
+    "start": "2026-09-19",
+    "end": "2026-09-19",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 40,
+    "title": "Sesión de examen de admisión oral (Sesión oral 3)",
+    "start": "2026-09-21",
+    "end": "2026-09-22",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 41,
+    "title": "Entrega de resultados del examen escrito a Comité Doctoral (Sesión escrita 3)",
+    "start": "2026-09-21",
+    "end": "2026-09-21",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 42,
+    "title": "Postulación a becas y notificación de resultados para postulantes con beca doctoral y estipendio (apertura del sistema)",
+    "start": "2026-09-29",
+    "end": "2026-09-29",
+    "category": "Administrativo",
+    "modality": "PS P"
+  },
+  {
+    "id": 43,
+    "title": "Matrículas extraordinarias y legalización doctorandos nueva cohorte",
+    "start": "2026-10-13",
+    "end": "2026-10-27",
+    "category": "Matrículas",
+    "modality": "PS P"
+  },
+  {
+    "id": 44,
+    "title": "Matrículas ordinarias y legalización año 2 en adelante",
+    "start": "2026-08-06",
+    "end": "2026-10-12",
+    "category": "Matrículas",
+    "modality": "PS P"
+  },
+  {
+    "id": 45,
+    "title": "Matrículas extraordinarias y legalización año 2 en adelante",
+    "start": "2026-10-13",
+    "end": "2026-10-27",
+    "category": "Matrículas",
+    "modality": "PS P"
+  },
+  {
+    "id": 46,
+    "title": "Clases - propedéutico",
+    "start": "2026-10-01",
+    "end": "2026-10-28",
+    "category": "Académico",
+    "modality": "PS P"
+  },
+  {
+    "id": 47,
+    "title": "Socialización del Plan de Comunicación",
+    "start": "2026-01-05",
+    "end": "2026-01-16",
+    "category": "Otro",
+    "modality": "PS P"
+  },
+  {
+    "id": 48,
+    "title": "Proceso de promoción y atracción dirigida a postulantes con agendas aprobadas (Reformado)",
+    "start": "2026-02-02",
+    "end": "2026-04-30",
+    "category": "Otro",
+    "modality": "PS P"
+  },
+  {
+    "id": 49,
+    "title": "Postulación en línea",
+    "start": "2026-03-02",
+    "end": "2026-09-15",
+    "category": "Otro",
+    "modality": "PS P"
+  },
+  {
+    "id": 50,
+    "title": "Preselección",
+    "start": "2026-03-02",
+    "end": "2026-09-16",
+    "category": "Otro",
+    "modality": "PS P"
+  },
+  {
+    "id": 51,
+    "title": "Pago del derecho de admisión",
+    "start": "2026-03-02",
+    "end": "2026-09-17",
+    "category": "Otro",
+    "modality": "PS P"
+  },
+  {
+    "id": 52,
+    "title": "Calificación de documentos de postulación",
+    "start": "2026-03-02",
+    "end": "2026-09-15",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 53,
+    "title": "Planificación del examen de admisión",
+    "start": "2026-01-05",
+    "end": "2026-02-13",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 54,
+    "title": "Reporte de alumnos para el Centro de Evaluaciones (creación de usuarios de los 3 eventos por motivo de vacaciones)",
+    "start": "2026-07-01",
+    "end": "2026-07-06",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 55,
+    "title": "Eventos de examen de admisión escrito (Sesión escrita 1)¹",
+    "start": "2026-07-18",
+    "end": "2026-07-18",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 56,
+    "title": "Eventos de examen de admisión oral (Sesión oral 1)²",
+    "start": "2026-07-20",
+    "end": "2026-07-23",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 57,
+    "title": "Entrega de resultados del examen escrito a Comité Doctoral (Sesión escrita 1)³",
+    "start": "2026-07-20",
+    "end": "2026-07-20",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 58,
+    "title": "Eventos de examen de admisión escrito (Sesión escrita 2)⁴",
+    "start": "2026-08-22",
+    "end": "2026-08-22",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 59,
+    "title": "Eventos de examen de admisión oral (Sesión oral 2)⁵",
+    "start": "2026-08-24",
+    "end": "2026-08-27",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 60,
+    "title": "Entrega de resultados del examen escrito a Comité Doctoral (Sesión escrita 2)⁶",
+    "start": "2026-08-24",
+    "end": "2026-08-24",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 61,
+    "title": "Sesiones de examen de admisión escrito (Sesión escrita 3)",
+    "start": "2026-09-19",
+    "end": "2026-09-19",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 62,
+    "title": "Sesión de examen de admisión oral (Sesión oral 3)",
+    "start": "2026-09-21",
+    "end": "2026-09-22",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 63,
+    "title": "Entrega de resultados del examen escrito a Comité Doctoral (Sesión escrita 3)",
+    "start": "2026-09-21",
+    "end": "2026-09-21",
+    "category": "Evaluación",
+    "modality": "PS P"
+  },
+  {
+    "id": 64,
+    "title": "Postulación a becas y notificación de resultados para postulantes con beca doctoral y estipendio (apertura del sistema)",
+    "start": "2026-09-29",
+    "end": "2026-09-29",
+    "category": "Administrativo",
+    "modality": "PS P"
+  },
+  {
+    "id": 65,
+    "title": "Matrículas extraordinarias y legalización doctorandos nueva cohorte",
+    "start": "2026-10-13",
+    "end": "2026-10-27",
+    "category": "Matrículas",
+    "modality": "PS P"
+  },
+  {
+    "id": 66,
+    "title": "Matrículas ordinarias y legalización año 2 en adelante",
+    "start": "2026-08-06",
+    "end": "2026-10-12",
+    "category": "Matrículas",
+    "modality": "PS P"
+  },
+  {
+    "id": 67,
+    "title": "Matrículas extraordinarias y legalización año 2 en adelante",
+    "start": "2026-10-13",
+    "end": "2026-10-27",
+    "category": "Matrículas",
+    "modality": "PS P"
+  },
+  {
+    "id": 68,
+    "title": "Clases - propedéutico",
+    "start": "2026-10-01",
+    "end": "2026-10-28",
+    "category": "Académico",
+    "modality": "PS P"
+  },
+  {
+    "id": 69,
+    "title": "Semana cero",
+    "start": "2026-03-30",
+    "end": "2026-04-05",
+    "category": "Otro",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 70,
+    "title": "Actividades académicas del primer módulo (8 semanas)",
+    "start": "2026-04-06",
+    "end": "2026-05-31",
+    "category": "Otro",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 71,
+    "title": "Inicio de actividades académicas",
+    "start": "2026-04-06",
+    "end": "2026-04-06",
+    "category": "Académico",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 72,
+    "title": "Actividades académicas del segundo módulo (8 semanas)",
+    "start": "2026-06-15",
+    "end": "2026-08-09",
+    "category": "Otro",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 73,
+    "title": "Calificación de actividades de fin móodulo en el EVA módulo I",
+    "start": "2026-05-04",
+    "end": "2026-06-07",
+    "category": "Evaluación",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 74,
+    "title": "Calificación de actividades de recuperación en el EVA módulo I",
+    "start": "2026-06-08",
+    "end": "2026-06-14",
+    "category": "Evaluación",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 75,
+    "title": "Calificación de actividades de fin módulo en el EVA módulo Il",
+    "start": "2026-07-13",
+    "end": "2026-08-30",
+    "category": "Evaluación",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 76,
+    "title": "Calificación de actividades de recuperación en el EVA módulo Il",
+    "start": "2026-08-31",
+    "end": "2026-09-06",
+    "category": "Evaluación",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 77,
+    "title": "Autoevaluación al docente Módulo I",
+    "start": "2026-05-11",
+    "end": "2026-05-25",
+    "category": "Evaluación",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 78,
+    "title": "Autoevaluación al docente Módulo II",
+    "start": "2026-07-27",
+    "end": "2026-08-03",
+    "category": "Evaluación",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 79,
+    "title": "Evaluación en EVA del módulo I (semana 9)",
+    "start": "2026-06-01",
+    "end": "2026-06-05",
+    "category": "Evaluación",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 80,
+    "title": "Evaluación en EVA de recuperación del módulo I (semana 10)",
+    "start": "2026-06-08",
+    "end": "2026-06-12",
+    "category": "Evaluación",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 81,
+    "title": "Evaluación en EVA del módulo Il (semana 9)",
+    "start": "2026-08-24",
+    "end": "2026-08-28",
+    "category": "Evaluación",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 82,
+    "title": "Evaluación en EVA de recuperación del módulo Il (semana 10)",
+    "start": "2026-08-31",
+    "end": "2026-09-04",
+    "category": "Evaluación",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 83,
+    "title": "Respuesta a recalificaciones del módulo I",
+    "start": "2026-06-08",
+    "end": "2026-06-15",
+    "category": "Evaluación",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 84,
+    "title": "Respuesta a recalificaciones de recuperación del módulo I",
+    "start": "2026-06-15",
+    "end": "2026-06-22",
+    "category": "Evaluación",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 85,
+    "title": "Solicitar recalificaciones de recuperación del módulo I",
+    "start": "2026-06-15",
+    "end": "2026-06-19",
+    "category": "Evaluación",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 86,
+    "title": "Respuesta a recalificaciones del módulo II",
+    "start": "2026-08-31",
+    "end": "2026-09-07",
+    "category": "Evaluación",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 87,
+    "title": "Respuesta a recalificaciones de recuperación del módulo Il",
+    "start": "2026-09-07",
+    "end": "2026-09-14",
+    "category": "Evaluación",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 88,
+    "title": "Solicitar recalificaciones de recuperación del módulo II",
+    "start": "2026-09-07",
+    "end": "2026-09-11",
+    "category": "Evaluación",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 89,
+    "title": "Docente entrega al Centro de Evaluaciones las pruebas de validación general",
+    "start": "2026-06-25",
+    "end": "2026-07-02",
+    "category": "Evaluación",
+    "modality": "TEC / MP · Docentes"
+  },
+  {
+    "id": 90,
+    "title": "Docente entrega al Centro de Evaluaciones las pruebas de validación general",
+    "start": "2026-07-03",
+    "end": "2026-07-10",
+    "category": "Evaluación",
+    "modality": "TEC / MP · Docentes"
+  },
+  {
+    "id": 91,
+    "title": "Examen de validación general.",
+    "start": "2026-07-18",
+    "end": "2026-07-19",
+    "category": "Evaluación",
+    "modality": "TEC / MP · Docentes"
+  },
+  {
+    "id": 92,
+    "title": "Calificación de las pruebas de validación",
+    "start": "2026-07-22",
+    "end": "2026-07-29",
+    "category": "Evaluación",
+    "modality": "TEC / MP · Docentes"
+  },
+  {
+    "id": 93,
+    "title": "Entrega al Centro de Evaluaciones las calificaciones de validación de acuerdo a formato compartido",
+    "start": "2026-07-30",
+    "end": "2026-07-30",
+    "category": "Evaluación",
+    "modality": "TEC / MP · Docentes"
+  },
+  {
+    "id": 94,
+    "title": "Actualización o ingreso de bancos de preguntas en el EVA REDISEÑO y ECTS",
+    "start": "2025-12-18",
+    "end": "2026-01-21",
+    "category": "Otro",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 95,
+    "title": "Validación y aprobación de metacursos reestructurados REDISEÑO y ECTS",
+    "start": "2026-02-02",
+    "end": "2026-02-18",
+    "category": "Académico",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 96,
+    "title": "Validación y aprobación metacursos nuevos REDISEÑO y ECTS",
+    "start": "2026-02-23",
+    "end": "2026-03-11",
+    "category": "Académico",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 97,
+    "title": "Actualización del banco de preguntas en el sistema Siette primer bimestre.",
+    "start": "2026-03-23",
+    "end": "2026-04-10",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 98,
+    "title": "Ingresar información en el formulario de configuración y validación de preguntas para la evaluación en el sistema siete correspondiente al primer bimestre.",
+    "start": "2026-03-23",
+    "end": "2026-04-17",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 99,
+    "title": "Actualización del banco de preguntas en el sistema Siette segundo bimestre.",
+    "start": "2026-05-11",
+    "end": "2026-05-28",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 100,
+    "title": "Ingresar información en el formulario de configuración y validación de preguntas para la evaluación en el sistema siete correspondiente al segundo bimestre.",
+    "start": "2026-05-11",
+    "end": "2026-06-05",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 101,
+    "title": "Actualización del banco de preguntas en el sistema Siette evaluación de recuperación.",
+    "start": "2026-07-01",
+    "end": "2026-07-16",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 102,
+    "title": "Ingresar información en el formulario de configuración y validación de preguntas para la evaluación en el sistema siete correspondiente a recuperación",
+    "start": "2026-07-01",
+    "end": "2026-07-20",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 103,
+    "title": "Semana cero",
+    "start": "2026-03-30",
+    "end": "2026-04-04",
+    "category": "Otro",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 104,
+    "title": "Actividades académicas del primer bimestre.",
+    "start": "2026-04-06",
+    "end": "2026-05-31",
+    "category": "Otro",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 105,
+    "title": "Inicio de actividades académicas",
+    "start": "2026-04-06",
+    "end": "2026-04-06",
+    "category": "Académico",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 106,
+    "title": "Actividades académicas del segundo bimestre.",
+    "start": "2026-06-01",
+    "end": "2026-07-26",
+    "category": "Otro",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 107,
+    "title": "Fin de tutorías",
+    "start": "2026-08-28",
+    "end": "2026-08-28",
+    "category": "Docente",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 108,
+    "title": "Calificación en el EVA de actividades académicas del primer bimestre",
+    "start": "2026-05-04",
+    "end": "2026-06-03",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 109,
+    "title": "Calificación de evaluaciones en línea y registro de notas del primer bimestre.",
+    "start": "2026-06-03",
+    "end": "2026-06-09",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 110,
+    "title": "Calificación en el EVA de actividades académicas del segundo bimestre",
+    "start": "2026-06-15",
+    "end": "2026-07-29",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 111,
+    "title": "Calificación de actividades en EVA de PRACTICUM y registro de notas",
+    "start": "2026-07-24",
+    "end": "2026-09-08",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 112,
+    "title": "Calificación de evaluaciones en línea y registro de notas del segundo bimestre.",
+    "start": "2026-07-29",
+    "end": "2026-08-04",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 113,
+    "title": "Calificación de evaluaciones en línea y registro de notas de la evaluación de recuperación.",
+    "start": "2026-09-02",
+    "end": "2026-09-08",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 114,
+    "title": "Calificación de evaluaciones en línea de recuperación receptadas en nueva fecha",
+    "start": "2026-09-21",
+    "end": "2026-09-24",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 115,
+    "title": "Reunión de recepción de la primera evaluación.",
+    "start": "2026-05-27",
+    "end": "2026-05-28",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 116,
+    "title": "Reunión de recepción de la segunda evaluación.",
+    "start": "2026-07-22",
+    "end": "2026-07-23",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 117,
+    "title": "Reunión de recepción de la evaluación de recuperación.",
+    "start": "2026-08-26",
+    "end": "2026-08-27",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 118,
+    "title": "Primera evaluación.",
+    "start": "2026-05-29",
+    "end": "2026-06-02",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 119,
+    "title": "Segunda evaluación.",
+    "start": "2026-07-24",
+    "end": "2026-07-28",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 120,
+    "title": "Evaluación de recuperación",
+    "start": "2026-08-29",
+    "end": "2026-09-01",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 121,
+    "title": "Respuesta a recalificaciones del primer bimestre.",
+    "start": "2026-06-11",
+    "end": "2026-06-18",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 122,
+    "title": "Respuesta a recalificaciones del segundo bimestre.",
+    "start": "2026-08-06",
+    "end": "2026-08-27",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 123,
+    "title": "Respuesta a recalificaciones de la evaluación de recuperación.",
+    "start": "2026-09-10",
+    "end": "2026-09-17",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 124,
+    "title": "Autoevaluación al docente",
+    "start": "2026-07-06",
+    "end": "2026-07-20",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 125,
+    "title": "Docentes entregan al Centro de Evaluaciones los exámenes para validación general V1 y V2",
+    "start": "2026-06-03",
+    "end": "2026-06-08",
+    "category": "Evaluación",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 126,
+    "title": "Evaluación de validación general",
+    "start": "2026-06-13",
+    "end": "2026-06-14",
+    "category": "Evaluación",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 127,
+    "title": "Calificación de validaciones tradicionales",
+    "start": "2026-06-16",
+    "end": "2026-06-22",
+    "category": "Evaluación",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 128,
+    "title": "Entrega a Centro de evaluaciones reporte con calificaciones tradicionales",
+    "start": "2026-06-23",
+    "end": "2026-06-23",
+    "category": "Evaluación",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 129,
+    "title": "Evaluación de validación general",
+    "start": "2026-08-01",
+    "end": "2026-08-02",
+    "category": "Evaluación",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 130,
+    "title": "Calificación de validaciones tradicionales",
+    "start": "2026-08-04",
+    "end": "2026-08-07",
+    "category": "Evaluación",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 131,
+    "title": "Entrega a Centro de evaluaciones reporte con calificaciones tradicionales",
+    "start": "2026-08-07",
+    "end": "2026-08-07",
+    "category": "Evaluación",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 132,
+    "title": "Inscripción para el examen de ubicación/suficiencia (caducan en 72 horas)",
+    "start": "2026-03-02",
+    "end": "2026-04-15",
+    "category": "Matrículas",
+    "modality": "PS D-EL-P / TEC · Estudiantes"
+  },
+  {
+    "id": 133,
+    "title": "Examen de ubicación/suficiencia",
+    "start": "2026-05-29",
+    "end": "2026-06-02",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P / TEC · Estudiantes"
+  },
+  {
+    "id": 134,
+    "title": "Inscripción para el examen de ubicación/suficiencia (caducan en 72 horas)",
+    "start": "2026-04-23",
+    "end": "2026-06-17",
+    "category": "Matrículas",
+    "modality": "PS D-EL-P / TEC · Estudiantes"
+  },
+  {
+    "id": 135,
+    "title": "Examen de ubicación/suficiencia",
+    "start": "2026-07-24",
+    "end": "2026-07-28",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P / TEC · Estudiantes"
+  },
+  {
+    "id": 136,
+    "title": "Inscripción para el examen de ubicación/suficiencia (caducan en 72 horas)",
+    "start": "2026-06-25",
+    "end": "2026-08-27",
+    "category": "Matrículas",
+    "modality": "PS D-EL-P / TEC · Estudiantes"
+  },
+  {
+    "id": 137,
+    "title": "Examen de ubicación/suficiencia",
+    "start": "2026-09-19",
+    "end": "2026-09-22",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P / TEC · Estudiantes"
+  },
+  {
+    "id": 138,
+    "title": "Actualización del banco de preguntas en el sistema siette del curso de actualización de conocimiento",
+    "start": "2026-03-23",
+    "end": "2026-04-10",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 139,
+    "title": "Entrega de matriz de validación para el sistema Siette para las evaluaciones de actualización de conocimiento",
+    "start": "2026-03-23",
+    "end": "2026-04-17",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 140,
+    "title": "Elaboración de reactivos para examen complexivo (V1) y examen complexivo de gracia (V2)",
+    "start": "2026-06-01",
+    "end": "2026-06-15",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 141,
+    "title": "Ingreso de banco de preguntas al sistema de evaluaciones (SIETTE) para examen complexivo (V1) y examen complexivo de gracia (V2)",
+    "start": "2026-06-16",
+    "end": "2026-06-19",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 142,
+    "title": "Actualización del banco de preguntas en el sistema siette del curso de actualización de conocimiento de recuperación",
+    "start": "2026-07-01",
+    "end": "2026-07-16",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 143,
+    "title": "Entrega de matriz de validación para el sistema Siette para las evaluaciones de actualización de conocimiento de recuperación",
+    "start": "2026-07-01",
+    "end": "2026-07-20",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 144,
+    "title": "Fecha fin para elaboración de plan académico docente del curso de actualización de conocimiento",
+    "start": "2026-03-23",
+    "end": "2026-03-23",
+    "category": "Docente",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 145,
+    "title": "Ingreso de la información en el EVA (del curso completo) de acuerdo a plan académico docente del curso de actualización de conocimiento",
+    "start": "2026-03-26",
+    "end": "2026-03-30",
+    "category": "Docente",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 146,
+    "title": "Actividades para el curso preparatorio del examen complexivo",
+    "start": "2026-04-06",
+    "end": "2026-08-28",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 147,
+    "title": "Actividades para el curso de actualización de conocimientos",
+    "start": "2026-06-01",
+    "end": "2026-08-28",
+    "category": "Académico",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 148,
+    "title": "Exposición de TT de alumnos en prórrogas Periodos 1 y 2",
+    "start": "2026-07-06",
+    "end": "2026-07-31",
+    "category": "Otro",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 149,
+    "title": "Examen Complexivo oral y Trabajo de Titulación ECTS",
+    "start": "2026-09-08",
+    "end": "2026-09-10",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 150,
+    "title": "Examen Complexivo oral y Trabajo de Titulación de Gracia ECTS",
+    "start": "2026-09-28",
+    "end": "2026-09-30",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 151,
+    "title": "Reunión de recepción evaluación de actualización de conocimientos.",
+    "start": "2026-07-22",
+    "end": "2026-07-23",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 152,
+    "title": "Reunión de recepción de la evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-08-26",
+    "end": "2026-08-27",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 153,
+    "title": "Capacitación al personal que evaluará el examen complexivo parte escrita",
+    "start": "2026-09-03",
+    "end": "2026-09-03",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 154,
+    "title": "Capacitación al personal que aplicará el examen complexivo de gracia parte escrita.",
+    "start": "2026-09-24",
+    "end": "2026-09-24",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 155,
+    "title": "Evaluación de actualización de conocimientos.",
+    "start": "2026-07-30",
+    "end": "2026-07-31",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 156,
+    "title": "Evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-08-29",
+    "end": "2026-08-30",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 157,
+    "title": "Examen Complexivo escrito masivo ECTS",
+    "start": "2026-09-05",
+    "end": "2026-09-07",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 158,
+    "title": "Examen Complexivo escrito de gracia masivo ECTS",
+    "start": "2026-09-26",
+    "end": "2026-09-27",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 159,
+    "title": "Registro de notas (actividades en línea y exámenes) del curso de actualización de conocimientos",
+    "start": "2026-08-04",
+    "end": "2026-09-08",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 160,
+    "title": "Registro de notas (actividades en línea y exámenes) del segundo bimestre de actualización de conocimientos",
+    "start": "2026-08-04",
+    "end": "2026-09-08",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 161,
+    "title": "Calificación de evaluaciones de actualización de conocimientos",
+    "start": "2026-09-01",
+    "end": "2026-09-08",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 162,
+    "title": "Calificación de evaluaciones del segundo bimestre de actualización de conocimientos",
+    "start": "2026-09-01",
+    "end": "2026-09-08",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 163,
+    "title": "Calificación e ingreso de notas de las evaluaciones de recuperación de actualización de conocimientos",
+    "start": "2026-09-01",
+    "end": "2026-09-08",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 164,
+    "title": "Respuesta a recalificaciones del curso de actualización de conocimientos.",
+    "start": "2026-08-06",
+    "end": "2026-08-21",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 165,
+    "title": "Respuesta a recalificaciones de la evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-09-10",
+    "end": "2026-09-17",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 166,
+    "title": "Respuesta a recalificación del examen complexivo escrito (entregar informe de notas en la secretaría de carrera)",
+    "start": "2026-09-16",
+    "end": "2026-09-23",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 167,
+    "title": "Respuesta a recalificación del examen complexivo de gracia (entregar informe de notas en la secretaría de carrera) no publicar en el calendario",
+    "start": "2026-10-06",
+    "end": "2026-10-13",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 168,
+    "title": "Prueba objetiva estandarizada del examen complexivo todos los programas",
+    "start": "2026-08-01",
+    "end": "2026-08-03",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P-H · Docentes"
+  },
+  {
+    "id": 169,
+    "title": "Recuperación de la prueba objetiva estandarizada del examen complexivo todos los programas",
+    "start": "2026-09-05",
+    "end": "2026-09-07",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P-H · Docentes"
+  },
+  {
+    "id": 170,
+    "title": "Exposición oral - todos los programas",
+    "start": "2026-08-24",
+    "end": "2026-08-28",
+    "category": "Otro",
+    "modality": "PS D-EL-P-H · Docentes"
+  },
+  {
+    "id": 171,
+    "title": "Exposición oral - todos los programas.",
+    "start": "2026-08-31",
+    "end": "2026-09-04",
+    "category": "Otro",
+    "modality": "PS D-EL-P-H · Docentes"
+  },
+  {
+    "id": 172,
+    "title": "Recuperación de la exposición oral todos los programas",
+    "start": "2026-09-21",
+    "end": "2026-09-25",
+    "category": "Otro",
+    "modality": "PS D-EL-P-H · Docentes"
+  },
+  {
+    "id": 173,
+    "title": "Registro de notas en el libro de calificaciones del EVA y del sistema gradebook",
+    "start": "2026-09-07",
+    "end": "2026-09-11",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P-H · Docentes"
+  },
+  {
+    "id": 174,
+    "title": "Recuperación Registro de notas de recuperación en el libro de calificaciones del EVA y del sistema gradebook",
+    "start": "2026-09-28",
+    "end": "2026-10-02",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P-H · Docentes"
+  },
+  {
+    "id": 175,
+    "title": "Matrículas ordinarias",
+    "start": "2026-03-06",
+    "end": "2026-03-22",
+    "category": "Matrículas",
+    "modality": "GR P · Estudiantes / Íntegro"
+  },
+  {
+    "id": 176,
+    "title": "Matrículas extraordinarias",
+    "start": "2026-03-23",
+    "end": "2026-04-06",
+    "category": "Matrículas",
+    "modality": "GR P · Estudiantes / Íntegro"
+  },
+  {
+    "id": 177,
+    "title": "Inicio y fin del periodo académico del internado",
+    "start": "2026-05-01",
+    "end": "2027-04-30",
+    "category": "Otro",
+    "modality": "GR P · Estudiantes / Docentes / Íntegro"
+  },
+  {
+    "id": 178,
+    "title": "Notificar a los docentes sobre la responsabilidad del internado primera notificación",
+    "start": "2026-03-04",
+    "end": "2026-03-06",
+    "category": "Docente",
+    "modality": "GR P · Docentes / Íntegro"
+  },
+  {
+    "id": 179,
+    "title": "Notificar a los docentes sobre la responsabilidad del internado segunda notificación",
+    "start": "2026-04-27",
+    "end": "2026-04-27",
+    "category": "Docente",
+    "modality": "GR P · Docentes / Íntegro"
+  },
+  {
+    "id": 180,
+    "title": "Entrega a la carrera el Plan docente del internado (Coordinador/a de Internado Rotativo)",
+    "start": "2026-03-26",
+    "end": "2026-04-01",
+    "category": "Docente",
+    "modality": "GR P · Docentes / Íntegro"
+  },
+  {
+    "id": 181,
+    "title": "Envío de listados de cursos a canvas",
+    "start": "2026-04-06",
+    "end": "2026-04-10",
+    "category": "Académico",
+    "modality": "GR P · Íntegro"
+  },
+  {
+    "id": 182,
+    "title": "Lectura de cursos de gradebook a canvas",
+    "start": "2026-04-13",
+    "end": "2026-04-14",
+    "category": "Académico",
+    "modality": "GR P · Íntegro"
+  },
+  {
+    "id": 183,
+    "title": "Cargar la plantilla de los cursos en canvas",
+    "start": "2026-04-15",
+    "end": "2026-04-17",
+    "category": "Académico",
+    "modality": "GR P · Íntegro"
+  },
+  {
+    "id": 184,
+    "title": "Ingreso de actividades académicas en el EVA de acuerdo con el plan docente",
+    "start": "2026-04-21",
+    "end": "2026-04-27",
+    "category": "Docente",
+    "modality": "GR P · Docentes / Íntegro"
+  },
+  {
+    "id": 185,
+    "title": "Ingreso del Plan Docente aprobado en el EVA",
+    "start": "2026-04-28",
+    "end": "2026-04-30",
+    "category": "Docente",
+    "modality": "GR P · Docentes / Íntegro"
+  },
+  {
+    "id": 186,
+    "title": "Retiro voluntario de asignaturas",
+    "start": "2026-05-01",
+    "end": "2026-05-30",
+    "category": "Administrativo",
+    "modality": "GR P · Estudiantes / Íntegro"
+  },
+  {
+    "id": 187,
+    "title": "Retiro de asignaturas por caso fortuito",
+    "start": "2026-06-01",
+    "end": "2027-04-30",
+    "category": "Administrativo",
+    "modality": "GR P · Estudiantes / Íntegro"
+  },
+  {
+    "id": 188,
+    "title": "Matrículas ordinarias",
+    "start": "2026-03-06",
+    "end": "2026-03-22",
+    "category": "Matrículas",
+    "modality": "GR P · Estudiantes / Íntegro"
+  },
+  {
+    "id": 189,
+    "title": "Matrículas extraordinarias",
+    "start": "2026-03-23",
+    "end": "2026-04-06",
+    "category": "Matrículas",
+    "modality": "GR P · Estudiantes / Íntegro"
+  },
+  {
+    "id": 190,
+    "title": "Inicio y fin del periodo académico del internado",
+    "start": "2026-05-01",
+    "end": "2027-04-30",
+    "category": "Otro",
+    "modality": "GR P · Estudiantes / Docentes / Íntegro"
+  },
+  {
+    "id": 191,
+    "title": "Notificar a los docentes sobre la responsabilidad del internado primera notificación",
+    "start": "2026-03-04",
+    "end": "2026-03-06",
+    "category": "Docente",
+    "modality": "GR P · Docentes / Íntegro"
+  },
+  {
+    "id": 192,
+    "title": "Notificar a los docentes sobre la responsabilidad del internado segunda notificación",
+    "start": "2026-04-27",
+    "end": "2026-04-27",
+    "category": "Docente",
+    "modality": "GR P · Docentes / Íntegro"
+  },
+  {
+    "id": 193,
+    "title": "Entrega a la carrera el Plan docente del internado (Coordinador/a de Internado Rotativo)",
+    "start": "2026-03-26",
+    "end": "2026-04-01",
+    "category": "Docente",
+    "modality": "GR P · Docentes / Íntegro"
+  },
+  {
+    "id": 194,
+    "title": "Envío de listados de cursos a canvas",
+    "start": "2026-04-06",
+    "end": "2026-04-10",
+    "category": "Académico",
+    "modality": "GR P · Íntegro"
+  },
+  {
+    "id": 195,
+    "title": "Lectura de cursos de gradebook a canvas",
+    "start": "2026-04-13",
+    "end": "2026-04-14",
+    "category": "Académico",
+    "modality": "GR P · Íntegro"
+  },
+  {
+    "id": 196,
+    "title": "Cargar la plantilla de los cursos en canvas",
+    "start": "2026-04-15",
+    "end": "2026-04-17",
+    "category": "Académico",
+    "modality": "GR P · Íntegro"
+  },
+  {
+    "id": 197,
+    "title": "Ingreso de actividades académicas en el EVA de acuerdo con el plan docente",
+    "start": "2026-04-21",
+    "end": "2026-04-27",
+    "category": "Docente",
+    "modality": "GR P · Docentes / Íntegro"
+  },
+  {
+    "id": 198,
+    "title": "Ingreso del Plan Docente aprobado en el EVA",
+    "start": "2026-04-28",
+    "end": "2026-04-30",
+    "category": "Docente",
+    "modality": "GR P · Docentes / Íntegro"
+  },
+  {
+    "id": 199,
+    "title": "Retiro voluntario de asignaturas",
+    "start": "2026-05-01",
+    "end": "2026-05-30",
+    "category": "Administrativo",
+    "modality": "GR P · Estudiantes / Íntegro"
+  },
+  {
+    "id": 200,
+    "title": "Retiro de asignaturas por caso fortuito",
+    "start": "2026-06-01",
+    "end": "2027-04-30",
+    "category": "Administrativo",
+    "modality": "GR P · Estudiantes / Íntegro"
+  },
+  {
+    "id": 201,
+    "title": "Prueba objetiva estandarizada del examen complexivo todos los programas",
+    "start": "2026-08-01",
+    "end": "2026-08-03",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P-H · Estudiantes"
+  },
+  {
+    "id": 202,
+    "title": "Recuperación de la prueba objetiva estandarizada del examen complexivo todos los programas",
+    "start": "2026-09-05",
+    "end": "2026-09-07",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P-H · Estudiantes"
+  },
+  {
+    "id": 203,
+    "title": "Exposición oral - todos los programas",
+    "start": "2026-08-24",
+    "end": "2026-08-28",
+    "category": "Otro",
+    "modality": "PS D-EL-P-H · Estudiantes"
+  },
+  {
+    "id": 204,
+    "title": "Exposición oral - todos los programas.",
+    "start": "2026-08-31",
+    "end": "2026-09-04",
+    "category": "Otro",
+    "modality": "PS D-EL-P-H · Estudiantes"
+  },
+  {
+    "id": 205,
+    "title": "Recuperación de la exposición oral todos los programas",
+    "start": "2026-09-21",
+    "end": "2026-09-25",
+    "category": "Otro",
+    "modality": "PS D-EL-P-H · Estudiantes"
+  },
+  {
+    "id": 206,
+    "title": "Publicación de notas del módulo de titulación Il",
+    "start": "2026-09-11",
+    "end": "2026-09-11",
+    "category": "Administrativo",
+    "modality": "PS D-EL-P-H · Estudiantes"
+  },
+  {
+    "id": 207,
+    "title": "Publicación de notas de recuperación del módulo de titulación II",
+    "start": "2026-10-02",
+    "end": "2026-10-02",
+    "category": "Administrativo",
+    "modality": "PS D-EL-P-H · Estudiantes"
+  },
+  {
+    "id": 208,
+    "title": "Semana Cero (ingreso de horario de tutorías)",
+    "start": "2026-03-30",
+    "end": "2026-04-04",
+    "category": "Docente",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 209,
+    "title": "Actividades académicas del primer bimestre",
+    "start": "2026-04-06",
+    "end": "2026-05-31",
+    "category": "Otro",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 210,
+    "title": "Actividades académicas del segundo bimestre",
+    "start": "2026-06-01",
+    "end": "2026-07-26",
+    "category": "Otro",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 211,
+    "title": "Fin de tutorías",
+    "start": "2026-07-25",
+    "end": "2026-07-25",
+    "category": "Docente",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 212,
+    "title": "Calificación en el EVA de actividades académicas del primer bimestre",
+    "start": "2026-05-04",
+    "end": "2026-06-03",
+    "category": "Evaluación",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 213,
+    "title": "Calificación de exámenes del curso de competencias específicas del primer bimestre",
+    "start": "2026-06-03",
+    "end": "2026-06-09",
+    "category": "Evaluación",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 214,
+    "title": "Calificación en el EVA de actividades académicas del segundo bimestre",
+    "start": "2026-06-15",
+    "end": "2026-07-29",
+    "category": "Evaluación",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 215,
+    "title": "Calificación de actividades del PRACTICUM",
+    "start": "2026-07-24",
+    "end": "2026-09-08",
+    "category": "Evaluación",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 216,
+    "title": "Calificación de exámenes del curso de competencias específicas del segundo bimestre",
+    "start": "2026-07-29",
+    "end": "2026-08-04",
+    "category": "Evaluación",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 217,
+    "title": "Reunión para recepción de primera evaluación",
+    "start": "2026-05-27",
+    "end": "2026-05-28",
+    "category": "Evaluación",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 218,
+    "title": "Reunión para recepción de segunda evaluación",
+    "start": "2026-07-22",
+    "end": "2026-07-23",
+    "category": "Evaluación",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 219,
+    "title": "Exámenes del primer bimestre",
+    "start": "2026-05-29",
+    "end": "2026-06-02",
+    "category": "Evaluación",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 220,
+    "title": "Exámenes del segundo bimestre",
+    "start": "2026-07-24",
+    "end": "2026-07-28",
+    "category": "Evaluación",
+    "modality": "TEC · Docentes"
+  },
+  {
+    "id": 221,
+    "title": "Validación y aprobación de metacursos reutilizables",
+    "start": "2026-02-24",
+    "end": "2026-02-27",
+    "category": "Académico",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 222,
+    "title": "Actualización del banco de preguntas en el sistema Siette primer bimestre.",
+    "start": "2026-03-23",
+    "end": "2026-04-10",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 223,
+    "title": "Ingresar información en el formulario de configuración y validación de preguntas para la evaluación en el sistema siete correspondiente al primer bimestre.",
+    "start": "2026-03-23",
+    "end": "2026-04-17",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 224,
+    "title": "Actualización del banco de preguntas en el sistema Siette segundo bimestre.",
+    "start": "2026-05-11",
+    "end": "2026-05-28",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 225,
+    "title": "Ingresar información en el formulario de configuración y validación de preguntas para la evaluación en el sistema siete correspondiente al segundo bimestre.",
+    "start": "2026-05-11",
+    "end": "2026-06-05",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 226,
+    "title": "Actualización del banco de preguntas en el sistema Siette evaluación de recuperación.",
+    "start": "2026-07-01",
+    "end": "2026-07-16",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 227,
+    "title": "Ingresar información en el formulario de configuración y validación de preguntas para la evaluación en el sistema siete correspondiente a recuperación",
+    "start": "2026-07-01",
+    "end": "2026-07-20",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 228,
+    "title": "Semana cero",
+    "start": "2026-03-30",
+    "end": "2026-04-04",
+    "category": "Otro",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 229,
+    "title": "Actividades académicas del primer bimestre.",
+    "start": "2026-04-06",
+    "end": "2026-05-31",
+    "category": "Otro",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 230,
+    "title": "Inicio de actividades académicas",
+    "start": "2026-04-06",
+    "end": "2026-04-06",
+    "category": "Académico",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 231,
+    "title": "Actividades académicas del segundo bimestre.",
+    "start": "2026-06-01",
+    "end": "2026-07-26",
+    "category": "Otro",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 232,
+    "title": "Fin de tutorías",
+    "start": "2026-08-28",
+    "end": "2026-08-28",
+    "category": "Docente",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 233,
+    "title": "Calificación en el EVA de actividades académicas del primer bimestre",
+    "start": "2026-05-04",
+    "end": "2026-06-03",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 234,
+    "title": "Calificación de evaluaciones en línea y registro de notas del primer bimestre.",
+    "start": "2026-06-03",
+    "end": "2026-06-09",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 235,
+    "title": "Calificación en el EVA de actividades académicas del segundo bimestre",
+    "start": "2026-06-15",
+    "end": "2026-07-29",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 236,
+    "title": "Calificación de actividades en EVA de PRACTICUM y registro de notas",
+    "start": "2026-07-24",
+    "end": "2026-09-08",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 237,
+    "title": "Calificación de evaluaciones en línea y registro de notas del segundo bimestre.",
+    "start": "2026-07-29",
+    "end": "2026-08-04",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 238,
+    "title": "Calificación de evaluaciones en línea y registro de notas de la evaluación de recuperación.",
+    "start": "2026-09-02",
+    "end": "2026-09-08",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 239,
+    "title": "Calificación de evaluaciones en línea de recuperación receptadas en nueva fecha",
+    "start": "2026-09-21",
+    "end": "2026-09-24",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 240,
+    "title": "Reunión de recepción de la primera evaluación.",
+    "start": "2026-05-27",
+    "end": "2026-05-28",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 241,
+    "title": "Reunión de recepción de la segunda evaluación.",
+    "start": "2026-07-22",
+    "end": "2026-07-23",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 242,
+    "title": "Reunión de recepción de la evaluación de recuperación.",
+    "start": "2026-08-26",
+    "end": "2026-08-27",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 243,
+    "title": "Primera evaluación.",
+    "start": "2026-05-29",
+    "end": "2026-06-02",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 244,
+    "title": "Segunda evaluación.",
+    "start": "2026-07-24",
+    "end": "2026-07-28",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 245,
+    "title": "Evaluación de recuperación",
+    "start": "2026-08-29",
+    "end": "2026-09-01",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 246,
+    "title": "Respuesta a recalificaciones del primer bimestre.",
+    "start": "2026-06-11",
+    "end": "2026-06-18",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 247,
+    "title": "Respuesta a recalificaciones del segundo bimestre.",
+    "start": "2026-08-06",
+    "end": "2026-08-27",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 248,
+    "title": "Respuesta a recalificaciones de la evaluación de recuperación.",
+    "start": "2026-09-10",
+    "end": "2026-09-17",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 249,
+    "title": "Autoevaluación al docente",
+    "start": "2026-07-06",
+    "end": "2026-07-20",
+    "category": "Evaluación",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 250,
+    "title": "Matrículas ordinarias para alumnos nuevos",
+    "start": "2026-02-09",
+    "end": "2026-03-22",
+    "category": "Matrículas",
+    "modality": "TEC P · Estudiantes"
+  },
+  {
+    "id": 251,
+    "title": "Matrículas ordinarias para alumnos continuos",
+    "start": "2026-03-06",
+    "end": "2026-03-22",
+    "category": "Matrículas",
+    "modality": "TEC P · Estudiantes"
+  },
+  {
+    "id": 252,
+    "title": "Matrículas extraordinaria para alumnos nuevos y continuos",
+    "start": "2026-03-23",
+    "end": "2026-04-06",
+    "category": "Matrículas",
+    "modality": "TEC P · Estudiantes"
+  },
+  {
+    "id": 253,
+    "title": "Actividades académicas del primer bimestre semana 8",
+    "start": "2026-03-23",
+    "end": "2026-05-17",
+    "category": "Otro",
+    "modality": "TEC P · Estudiantes"
+  },
+  {
+    "id": 254,
+    "title": "Actividades académicas del segundo bimestre semana 8",
+    "start": "2026-06-01",
+    "end": "2026-07-26",
+    "category": "Otro",
+    "modality": "TEC P · Estudiantes"
+  },
+  {
+    "id": 255,
+    "title": "Heteroevaluación al docente primer bimestre",
+    "start": "2026-05-11",
+    "end": "2026-05-25",
+    "category": "Evaluación",
+    "modality": "TEC P · Estudiantes / Docentes"
+  },
+  {
+    "id": 256,
+    "title": "Heteroevaluación al docente segundo bimestre",
+    "start": "2026-07-06",
+    "end": "2026-07-20",
+    "category": "Evaluación",
+    "modality": "TEC P · Estudiantes / Docentes"
+  },
+  {
+    "id": 257,
+    "title": "Registro y publicación de notas del primer bimestre",
+    "start": "2026-05-18",
+    "end": "2026-05-23",
+    "category": "Administrativo",
+    "modality": "TEC P · Estudiantes"
+  },
+  {
+    "id": 258,
+    "title": "Registro y publicación de notas de recuperación del primer bimestre",
+    "start": "2026-05-25",
+    "end": "2026-06-03",
+    "category": "Administrativo",
+    "modality": "TEC P · Estudiantes"
+  },
+  {
+    "id": 259,
+    "title": "Registro y publicación de notas del segundo bimestre",
+    "start": "2026-07-27",
+    "end": "2026-08-01",
+    "category": "Administrativo",
+    "modality": "TEC P · Estudiantes"
+  },
+  {
+    "id": 260,
+    "title": "Registro y publicación de notas de recuperación del segundo bimestre",
+    "start": "2026-08-03",
+    "end": "2026-08-09",
+    "category": "Administrativo",
+    "modality": "TEC P · Estudiantes"
+  },
+  {
+    "id": 261,
+    "title": "Evaluación de recuperación del primer bimestre semana 10",
+    "start": "2026-05-25",
+    "end": "2026-05-31",
+    "category": "Evaluación",
+    "modality": "TEC P · Estudiantes"
+  },
+  {
+    "id": 262,
+    "title": "Evaluación de recuperación del segundo bimestre semana 10",
+    "start": "2026-08-03",
+    "end": "2026-08-09",
+    "category": "Evaluación",
+    "modality": "TEC P · Estudiantes"
+  },
+  {
+    "id": 263,
+    "title": "Matriculas para la Unidad de Titulación Especial (Prórroga1, prórroga2, actualización de conocimiento, examen complexivo con curso, trabajo de titulación, y examen complexivo sin curso)",
+    "start": "2026-03-06",
+    "end": "2026-04-06",
+    "category": "Matrículas",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 264,
+    "title": "Actividades académicas del curso de actualización de conocimientos",
+    "start": "2026-04-06",
+    "end": "2026-08-28",
+    "category": "Académico",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 265,
+    "title": "Actividades en EVA, del curso Preparatorio del Examen Complexivo",
+    "start": "2026-04-06",
+    "end": "2026-08-28",
+    "category": "Evaluación",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 266,
+    "title": "Primera evaluación de actualización de conocimientos.",
+    "start": "2026-05-30",
+    "end": "2026-05-31",
+    "category": "Evaluación",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 267,
+    "title": "Segunda evaluación de actualización de conocimientos.",
+    "start": "2026-07-25",
+    "end": "2026-07-26",
+    "category": "Evaluación",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 268,
+    "title": "Evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-08-29",
+    "end": "2026-08-30",
+    "category": "Evaluación",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 269,
+    "title": "Examen Complexivo escrito ECTS",
+    "start": "2026-09-05",
+    "end": "2026-09-07",
+    "category": "Evaluación",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 270,
+    "title": "Examen Complexivo escrito de gracia ECTS",
+    "start": "2026-09-26",
+    "end": "2026-09-27",
+    "category": "Evaluación",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 271,
+    "title": "Publicación de notas del primer bimestre de actualización de conocimientos.",
+    "start": "2026-06-10",
+    "end": "2026-06-10",
+    "category": "Administrativo",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 272,
+    "title": "Publicación de notas del segundo bimestre de actualización de conocimientos.",
+    "start": "2026-08-05",
+    "end": "2026-08-05",
+    "category": "Administrativo",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 273,
+    "title": "Publicación de notas de la evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-09-09",
+    "end": "2026-09-09",
+    "category": "Evaluación",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 274,
+    "title": "Enviar a los estudiantes mediante correo los resultados de exámenes complexivos.",
+    "start": "2026-09-16",
+    "end": "2026-09-16",
+    "category": "Evaluación",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 275,
+    "title": "Enviar a los estudiantes mediante correo los resultados de exámenes complexivos de gracia.",
+    "start": "2026-10-06",
+    "end": "2026-10-06",
+    "category": "Evaluación",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 276,
+    "title": "Respuesta a recalificaciones del primer bimestre de actualización de conocimientos.",
+    "start": "2026-06-11",
+    "end": "2026-06-18",
+    "category": "Evaluación",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 277,
+    "title": "Solicitar recalificaciones del primer bimestre de actualización de conocimientos.",
+    "start": "2026-06-11",
+    "end": "2026-06-17",
+    "category": "Evaluación",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 278,
+    "title": "Respuesta a recalificaciones del segundo bimestre de actualización de conocimientos.",
+    "start": "2026-08-06",
+    "end": "2026-08-21",
+    "category": "Evaluación",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 279,
+    "title": "Solicitar recalificaciones del segundo bimestre de actualización de conocimientos.",
+    "start": "2026-08-06",
+    "end": "2026-08-07",
+    "category": "Evaluación",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 280,
+    "title": "Respuesta a recalificaciones de la evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-09-10",
+    "end": "2026-09-17",
+    "category": "Evaluación",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 281,
+    "title": "Solicitar recalificaciones de la evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-09-10",
+    "end": "2026-09-16",
+    "category": "Evaluación",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 282,
+    "title": "Comunicar a estudiantes mediante correo, los resultados de recalificaciones de exámenes complexivos y archivo del trámite en el expediente físico.",
+    "start": "2026-09-16",
+    "end": "2026-09-23",
+    "category": "Evaluación",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 283,
+    "title": "Solicitar recalificación del examen complexivo escrito",
+    "start": "2026-09-16",
+    "end": "2026-09-22",
+    "category": "Evaluación",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 284,
+    "title": "Examen Complexivo oral y Trabajo de Titulación ECTS",
+    "start": "2026-09-08",
+    "end": "2026-09-10",
+    "category": "Evaluación",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 285,
+    "title": "Examen Complexivo oral y Trabajo de Titulación de Gracia ECTS",
+    "start": "2026-09-28",
+    "end": "2026-09-30",
+    "category": "Evaluación",
+    "modality": "GR D · Estudiantes"
+  },
+  {
+    "id": 286,
+    "title": "Actualización / elaboración del banco de preguntas en el sistema Siette del curso de actualización de conocimientos primer bimestre.",
+    "start": "2026-03-23",
+    "end": "2026-04-10",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 287,
+    "title": "Entrega de matriz de validación para el sistema Siette para las evaluaciones del curso de actualización de conocimientos de primer bimestre.",
+    "start": "2026-03-23",
+    "end": "2026-04-17",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 288,
+    "title": "Actualización del banco de preguntas en el sistema Siette del curso de actualización de conocimientos segundo bimestre.",
+    "start": "2026-05-11",
+    "end": "2026-05-28",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 289,
+    "title": "Entrega de matriz de validación para el sistema Siette para las evaluaciones del curso de actualización de conocimientos de segundo bimestre",
+    "start": "2026-05-11",
+    "end": "2026-06-05",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 290,
+    "title": "Elaboración de reactivos para examen complexivo (V1) y examen complexivo de gracia (V2)",
+    "start": "2026-06-01",
+    "end": "2026-06-15",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 291,
+    "title": "Ingreso de banco de preguntas al sistema de evaluaciones (SIETTE) para examen complexivo (V1) y examen complexivo de gracia (V2)",
+    "start": "2026-06-16",
+    "end": "2026-06-19",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 292,
+    "title": "Actualización del banco de preguntas en el sistema Siette del curso de actualización de conocimientos evaluación de recuperación.",
+    "start": "2026-07-01",
+    "end": "2026-07-16",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 293,
+    "title": "Entrega de matriz de validación para el sistema Siette para las evaluaciones de recuperación del curso de actualización de conocimientos",
+    "start": "2026-07-01",
+    "end": "2026-07-20",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 294,
+    "title": "Fecha fin para elaboración de Plan Docente del curso de actualización de conocimiento",
+    "start": "2026-03-23",
+    "end": "2026-03-23",
+    "category": "Docente",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 295,
+    "title": "Ingreso de la información en el EVA (del curso completo) de acuerdo a plan académico docente del curso de actualización de conocimiento",
+    "start": "2026-03-26",
+    "end": "2026-03-30",
+    "category": "Docente",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 296,
+    "title": "Actividades académicas del curso de actualización de conocimientos",
+    "start": "2026-04-06",
+    "end": "2026-08-28",
+    "category": "Académico",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 297,
+    "title": "Actividades en EVA, del curso Preparatorio del Examen Complexivo",
+    "start": "2026-04-06",
+    "end": "2026-08-28",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 298,
+    "title": "Primera evaluación de actualización de conocimientos.",
+    "start": "2026-05-30",
+    "end": "2026-05-31",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 299,
+    "title": "Segunda evaluación de actualización de conocimientos.",
+    "start": "2026-07-25",
+    "end": "2026-07-26",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 300,
+    "title": "Evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-08-29",
+    "end": "2026-08-30",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 301,
+    "title": "Examen Complexivo escrito ECTS",
+    "start": "2026-09-05",
+    "end": "2026-09-07",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 302,
+    "title": "Examen Complexivo escrito de gracia ECTS",
+    "start": "2026-09-26",
+    "end": "2026-09-27",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 303,
+    "title": "Calificación de evaluaciones del primer bimestre de actualización de conocimientos",
+    "start": "2026-06-02",
+    "end": "2026-06-09",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 304,
+    "title": "Calificar las actividades en línea del primer bimestre (las actividades síncronas deben calificarse antes del inicio de la actividad suplementaria)",
+    "start": "2026-06-03",
+    "end": "2026-06-09",
+    "category": "Otro",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 305,
+    "title": "Registro de notas (actividades en línea y exámenes) del primer bimestre de actualización de conocimientos",
+    "start": "2026-06-04",
+    "end": "2026-06-09",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 306,
+    "title": "Calificación de evaluaciones del segundo bimestre de actualización de conocimientos",
+    "start": "2026-07-27",
+    "end": "2026-08-04",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 307,
+    "title": "Calificar las actividades en línea del segundo bimestre (las actividades síncronas deben calificarse antes del inicio de la actividad suplementaria)",
+    "start": "2026-07-29",
+    "end": "2026-08-04",
+    "category": "Otro",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 308,
+    "title": "Registro de notas (actividades en línea y exámenes) del segundo bimestre de actualización de conocimientos",
+    "start": "2026-07-30",
+    "end": "2026-08-04",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 309,
+    "title": "Calificación y registro de notas de las evaluaciones de recuperación de actualización de conocimientos",
+    "start": "2026-09-02",
+    "end": "2026-09-08",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 310,
+    "title": "Respuesta a recalificaciones del primer bimestre de actualización de conocimientos.",
+    "start": "2026-06-11",
+    "end": "2026-06-18",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 311,
+    "title": "Respuesta a recalificaciones del segundo bimestre de actualización de conocimientos.",
+    "start": "2026-08-06",
+    "end": "2026-08-21",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 312,
+    "title": "Respuesta a recalificaciones de la evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-09-10",
+    "end": "2026-09-17",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 313,
+    "title": "Respuesta a recalificación del examen complexivo escrito (entregar informe de notas en la secretaría de titulación)",
+    "start": "2026-09-16",
+    "end": "2026-09-23",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 314,
+    "title": "Respuesta a recalificación del examen complexivo de gracia (entregar informe de notas en la secretaría de titulación) no publicar en el calendario",
+    "start": "2026-10-06",
+    "end": "2026-10-13",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 315,
+    "title": "Examen Complexivo oral y Trabajo de Titulación ECTS",
+    "start": "2026-09-08",
+    "end": "2026-09-10",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 316,
+    "title": "Examen Complexivo oral y Trabajo de Titulación de Gracia ECTS",
+    "start": "2026-09-28",
+    "end": "2026-09-30",
+    "category": "Evaluación",
+    "modality": "GR D · Docentes"
+  },
+  {
+    "id": 317,
+    "title": "Inscripción para el examen de validación de conocimiento de inglés (caducan en 72 horas)",
+    "start": "2026-03-02",
+    "end": "2026-04-15",
+    "category": "Matrículas",
+    "modality": "PS D-EL-P · Estudiantes"
+  },
+  {
+    "id": 318,
+    "title": "Examen de validación de conocimiento de inglés",
+    "start": "2026-05-29",
+    "end": "2026-06-02",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P · Estudiantes"
+  },
+  {
+    "id": 319,
+    "title": "Inscripción para el examen de validación de conocimiento de inglés (caducan en 72 horas)",
+    "start": "2026-04-23",
+    "end": "2026-06-17",
+    "category": "Matrículas",
+    "modality": "PS D-EL-P · Estudiantes"
+  },
+  {
+    "id": 320,
+    "title": "Examen de validación de conocimiento de inglés",
+    "start": "2026-07-24",
+    "end": "2026-07-28",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P · Estudiantes"
+  },
+  {
+    "id": 321,
+    "title": "Inscripción para el examen de validación de conocimiento de inglés (caducan en 72 horas)",
+    "start": "2026-06-25",
+    "end": "2026-08-27",
+    "category": "Matrículas",
+    "modality": "PS D-EL-P · Estudiantes"
+  },
+  {
+    "id": 322,
+    "title": "Examen de validación de conocimiento de inglés",
+    "start": "2026-09-19",
+    "end": "2026-09-22",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P · Estudiantes"
+  },
+  {
+    "id": 323,
+    "title": "Cierre del servicio del examen de validación de conocimiento de inglés",
+    "start": "2026-09-28",
+    "end": "2026-09-29",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P · Estudiantes"
+  },
+  {
+    "id": 324,
+    "title": "SERVICIOS DE RECONOCIMIENTO INTERNO",
+    "start": "2025-10-31",
+    "end": "2026-04-03",
+    "category": "Otro",
+    "modality": "TEC"
+  },
+  {
+    "id": 325,
+    "title": "Solicitar cambio de modalidad",
+    "start": "2025-10-31",
+    "end": "2026-04-01",
+    "category": "Otro",
+    "modality": "TEC"
+  },
+  {
+    "id": 326,
+    "title": "Respuesta solicitudes de cambio de modalidad",
+    "start": "2025-11-05",
+    "end": "2026-04-03",
+    "category": "Administrativo",
+    "modality": "TEC"
+  },
+  {
+    "id": 327,
+    "title": "Solicitar cambio de grupo de créditos materias Servicio continuo (sin fecha fin)",
+    "start": "2025-10-31",
+    "end": "2026-04-01",
+    "category": "Otro",
+    "modality": "TEC"
+  },
+  {
+    "id": 328,
+    "title": "Respuesta solicitudes de cambio de grupo de créditos (sin fecha fin)",
+    "start": "2025-11-05",
+    "end": "2026-04-03",
+    "category": "Administrativo",
+    "modality": "TEC"
+  },
+  {
+    "id": 329,
+    "title": "Solicitar cambio de carrera/ programa (Reconocimiento interno de estudios)",
+    "start": "2025-10-31",
+    "end": "2026-04-01",
+    "category": "Otro",
+    "modality": "TEC"
+  },
+  {
+    "id": 330,
+    "title": "Respuesta Solicitar cambio de carrera/ programa (Reconocimiento interno de estudios)",
+    "start": "2025-11-05",
+    "end": "2026-04-03",
+    "category": "Otro",
+    "modality": "TEC"
+  },
+  {
+    "id": 331,
+    "title": "Solicitar segunda carrera",
+    "start": "2025-10-31",
+    "end": "2026-04-01",
+    "category": "Otro",
+    "modality": "TEC"
+  },
+  {
+    "id": 332,
+    "title": "Respuesta Solicitar segunda carrera",
+    "start": "2025-11-05",
+    "end": "2026-04-03",
+    "category": "Otro",
+    "modality": "TEC"
+  },
+  {
+    "id": 333,
+    "title": "SERVICIOS DE HOMOLOGACIÓN EXTERNA",
+    "start": "2025-10-31",
+    "end": "2026-04-01",
+    "category": "Otro",
+    "modality": "TEC"
+  },
+  {
+    "id": 334,
+    "title": "Solicitar homologación de estudios externos (Grado y Posgrado) Servicio continuo",
+    "start": "2025-10-31",
+    "end": "2026-03-16",
+    "category": "Otro",
+    "modality": "TEC"
+  },
+  {
+    "id": 335,
+    "title": "Respuesta Solicitar homologación de estudios externos (Grado y Posgrado) Servicio continuo",
+    "start": "2025-11-12",
+    "end": "2026-04-01",
+    "category": "Otro",
+    "modality": "TEC"
+  },
+  {
+    "id": 336,
+    "title": "Solicitar reconocimiento de título extranjero",
+    "start": "2025-10-31",
+    "end": "2026-03-30",
+    "category": "Otro",
+    "modality": "TEC"
+  },
+  {
+    "id": 337,
+    "title": "Tomar componentes en otra modalidad",
+    "start": "2026-03-06",
+    "end": "2026-04-01",
+    "category": "Otro",
+    "modality": "TEC P"
+  },
+  {
+    "id": 338,
+    "title": "Respuesta tomar componentes en otra modalidad",
+    "start": "2026-03-06",
+    "end": "2026-04-03",
+    "category": "Otro",
+    "modality": "TEC P"
+  },
+  {
+    "id": 339,
+    "title": "Solicitar material bibliográfico físico (casos especiales) comunicar por interno a los centros",
+    "start": "2025-12-10",
+    "end": "2026-04-09",
+    "category": "Otro",
+    "modality": "TEC P"
+  },
+  {
+    "id": 340,
+    "title": "Respuesta Solicitar material bibliográfico físico (casos especiales)",
+    "start": "2025-12-10",
+    "end": "2026-04-13",
+    "category": "Otro",
+    "modality": "TEC P"
+  },
+  {
+    "id": 341,
+    "title": "Solicitar aumento de créditos - MAD ECTS",
+    "start": "2025-11-19",
+    "end": "2026-04-06",
+    "category": "Otro",
+    "modality": "TEC P"
+  },
+  {
+    "id": 342,
+    "title": "Respuesta Solicitar aumento de créditos MAD ECTS",
+    "start": "2025-11-19",
+    "end": "2026-04-09",
+    "category": "Otro",
+    "modality": "TEC P"
+  },
+  {
+    "id": 343,
+    "title": "Solicitar matrícula con excepción de prerrequisito para malla ECTS",
+    "start": "2026-02-04",
+    "end": "2026-04-14",
+    "category": "Matrículas",
+    "modality": "TEC P"
+  },
+  {
+    "id": 344,
+    "title": "Respuesta Solicitar matricula con excepción de prerrequisito para mallas ECTS",
+    "start": "2026-02-04",
+    "end": "2026-04-17",
+    "category": "Matrículas",
+    "modality": "TEC P"
+  },
+  {
+    "id": 345,
+    "title": "Solicitar materia que no consta en la proyección",
+    "start": "2025-11-19",
+    "end": "2026-04-06",
+    "category": "Otro",
+    "modality": "TEC P"
+  },
+  {
+    "id": 346,
+    "title": "Respuesta Solicitar materia que no consta en la proyección",
+    "start": "2025-11-19",
+    "end": "2026-04-07",
+    "category": "Otro",
+    "modality": "TEC P"
+  },
+  {
+    "id": 347,
+    "title": "Solicitar matrícula UTE (servicio automático)",
+    "start": "2026-03-06",
+    "end": "2026-05-07",
+    "category": "Matrículas",
+    "modality": "TEC P / UTE"
+  },
+  {
+    "id": 348,
+    "title": "Respuesta Solicitar matricula UTE (servicio automático)",
+    "start": "2026-03-06",
+    "end": "2026-05-11",
+    "category": "Matrículas",
+    "modality": "TEC P / UTE"
+  },
+  {
+    "id": 349,
+    "title": "Solicitar cambio de opción de titulación para UTE",
+    "start": "2026-03-06",
+    "end": "2026-05-07",
+    "category": "Otro",
+    "modality": "TEC P / UTE"
+  },
+  {
+    "id": 350,
+    "title": "Respuesta solicitar cambio de opción de titulación para UTE",
+    "start": "2026-03-06",
+    "end": "2026-05-11",
+    "category": "Otro",
+    "modality": "TEC P / UTE"
+  },
+  {
+    "id": 351,
+    "title": "Cambio de opción en la UIC (grado) y UT (posgrado) malla rediseño",
+    "start": "2026-01-28",
+    "end": "2026-03-16",
+    "category": "Otro",
+    "modality": "TEC P / UIC"
+  },
+  {
+    "id": 352,
+    "title": "Respuesta a cambio de opción en la UIC (grado) y UT (posgrado) malla rediseño",
+    "start": "2026-01-28",
+    "end": "2026-03-20",
+    "category": "Otro",
+    "modality": "TEC P / UIC"
+  },
+  {
+    "id": 353,
+    "title": "Solicitar cambio de paralelo no publicar al estudiante. UIC y UT todas las modalidades",
+    "start": "2026-04-06",
+    "end": "2026-04-15",
+    "category": "Otro",
+    "modality": "Todas"
+  },
+  {
+    "id": 354,
+    "title": "Respuesta Solicitar cambio de paralelo no publicar al estudiante",
+    "start": "2026-04-06",
+    "end": "2026-04-17",
+    "category": "Otro",
+    "modality": "TEC P · Estudiantes"
+  },
+  {
+    "id": 355,
+    "title": "Solicitar incremento de cupo",
+    "start": "2026-03-06",
+    "end": "2026-04-06",
+    "category": "Otro",
+    "modality": "TEC P"
+  },
+  {
+    "id": 356,
+    "title": "Inscripción a validación general de asignaturas de listening and speaking (las solicitudes caducan a las 72 horas)",
+    "start": "2026-03-09",
+    "end": "2026-06-18",
+    "category": "Matrículas",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 357,
+    "title": "Validación general de asignaturas de Listening and speaking mediante examen oral",
+    "start": "2026-07-16",
+    "end": "2026-07-17",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 358,
+    "title": "Publicación de resultados y cierre de servicio de validación general de asignaturas de listening and speaking",
+    "start": "2026-07-22",
+    "end": "2026-07-22",
+    "category": "Administrativo",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 359,
+    "title": "Solicitar examen de ubicación en idioma inglés. (2do. Evento)",
+    "start": "2026-04-16",
+    "end": "2026-06-12",
+    "category": "Evaluación",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 360,
+    "title": "Solicitar reconocimiento de estudios externos (Grado, Posgrado y TEC) indefinido",
+    "start": "2026-04-30",
+    "end": "2026-06-05",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 361,
+    "title": "Solicitar cambio de carrera/ programa (Reconocimiento interno de estudios).",
+    "start": "2026-04-30",
+    "end": "2026-06-05",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 362,
+    "title": "Solicitar reconocimiento de Certificado Internacional/certificados otras IES. indefinido",
+    "start": "2026-04-30",
+    "end": "2026-06-05",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 363,
+    "title": "Respuesta cambio de carrera/ programa (Reconocimiento interno de estudios).",
+    "start": "2026-05-11",
+    "end": "2026-06-12",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 364,
+    "title": "Respuesta homologación de certificado internacional/certificados otras IES.",
+    "start": "2026-05-11",
+    "end": "2026-06-12",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 365,
+    "title": "Respuesta reconocimiento de estudios externos (Grado y Posgrado)",
+    "start": "2026-05-11",
+    "end": "2026-06-12",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 366,
+    "title": "Solicitar homologación por validación de conocimientos (inscripciones)",
+    "start": "2026-06-01",
+    "end": "2026-07-06",
+    "category": "Matrículas",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 367,
+    "title": "Solicitar examen de ubicación en idioma inglés. (3er. Evento)",
+    "start": "2026-06-16",
+    "end": "2026-08-10",
+    "category": "Evaluación",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 368,
+    "title": "Respuesta Solicitar examen de ubicación en idioma inglés.",
+    "start": "2026-08-05",
+    "end": "2026-08-07",
+    "category": "Evaluación",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 369,
+    "title": "Respuesta Solicitar homologación por validación de conocimientos (Publicación de resultados y cierre de servicio de validación general)",
+    "start": "2026-08-17",
+    "end": "2026-08-18",
+    "category": "Administrativo",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 370,
+    "title": "Día de los Difuntos",
+    "start": "2026-11-02",
+    "end": "2026-11-02",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 371,
+    "title": "Independencia de Cuenca",
+    "start": "2026-11-03",
+    "end": "2026-11-03",
+    "category": "Feriado",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 372,
+    "title": "Independencia de Loja",
+    "start": "2026-11-18",
+    "end": "2026-11-18",
+    "category": "Feriado",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 373,
+    "title": "Fundación de Loja",
+    "start": "2026-12-08",
+    "end": "2026-12-08",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 374,
+    "title": "Navidad",
+    "start": "2026-12-25",
+    "end": "2026-12-25",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 375,
+    "title": "Matriculas para la Unidad de Titulación Especial (Prórroga1, prórroga2, actualización de conocimiento, examen complexivo con curso, trabajo de titulación, y examen complexivo sin curso)",
+    "start": "2026-03-06",
+    "end": "2026-04-06",
+    "category": "Matrículas",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 376,
+    "title": "Actividades para el curso preparatorio del examen complexivo",
+    "start": "2026-04-06",
+    "end": "2026-08-28",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 377,
+    "title": "Actividades para el curso de actualización de conocimientos",
+    "start": "2026-06-01",
+    "end": "2026-08-28",
+    "category": "Académico",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 378,
+    "title": "Exposición de TT de alumnos en prórrogas Periodos 1 y 2",
+    "start": "2026-07-06",
+    "end": "2026-07-31",
+    "category": "Otro",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 379,
+    "title": "Examen Complexivo oral y Trabajo de Titulación ECTS",
+    "start": "2026-09-08",
+    "end": "2026-09-10",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 380,
+    "title": "Examen Complexivo oral y Trabajo de Titulación de Gracia ECTS",
+    "start": "2026-09-28",
+    "end": "2026-09-30",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 381,
+    "title": "Evaluación de actualización de conocimientos.",
+    "start": "2026-07-30",
+    "end": "2026-07-31",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 382,
+    "title": "Evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-08-29",
+    "end": "2026-08-30",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 383,
+    "title": "Examen Complexivo escrito masivo ECTS",
+    "start": "2026-09-05",
+    "end": "2026-09-07",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 384,
+    "title": "Examen Complexivo escrito de gracia masivo ECTS",
+    "start": "2026-09-26",
+    "end": "2026-09-27",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 385,
+    "title": "Publicación de notas del curso de actualización de conocimientos.",
+    "start": "2026-08-05",
+    "end": "2026-08-05",
+    "category": "Administrativo",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 386,
+    "title": "Publicación de notas de la evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-09-09",
+    "end": "2026-09-09",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 387,
+    "title": "Enviar a los estudiantes mediante correo los resultados de exámenes complexivos (examen complexivo parte oral, escrita y TIC)",
+    "start": "2026-09-16",
+    "end": "2026-09-16",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 388,
+    "title": "Enviar a los estudiantes mediante correo los resultados de exámenes complexivos de gracia (examen complexivo parte oral, escrita y TIC)",
+    "start": "2026-10-06",
+    "end": "2026-10-06",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 389,
+    "title": "Respuesta a recalificaciones del curso de actualización de conocimientos.",
+    "start": "2026-08-06",
+    "end": "2026-08-21",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 390,
+    "title": "Solicitar recalificaciones del curso de actualización de conocimientos",
+    "start": "2026-08-06",
+    "end": "2026-08-07",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 391,
+    "title": "Respuesta a recalificaciones de la evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-09-10",
+    "end": "2026-09-17",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 392,
+    "title": "Solicitar recalificaciones de la evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-09-10",
+    "end": "2026-09-16",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 393,
+    "title": "Comunicar a estudiantes mediante correo, los resultados de recalificaciones de exámenes complexivos y archivo del trámite en el expediente físico.",
+    "start": "2026-09-16",
+    "end": "2026-09-23",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 394,
+    "title": "Solicitar recalificación del examen complexivo escrito",
+    "start": "2026-09-16",
+    "end": "2026-09-22",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 395,
+    "title": "Inscripción a la validación general (caduca a las 72 horas)",
+    "start": "2026-03-09",
+    "end": "2026-06-18",
+    "category": "Matrículas",
+    "modality": "TEC / MP · Estudiantes"
+  },
+  {
+    "id": 396,
+    "title": "Examen de validación general.",
+    "start": "2026-07-18",
+    "end": "2026-07-19",
+    "category": "Evaluación",
+    "modality": "TEC / MP · Estudiantes"
+  },
+  {
+    "id": 397,
+    "title": "Publicación de resultados y cierre de servicio de validación general",
+    "start": "2026-07-31",
+    "end": "2026-08-03",
+    "category": "Administrativo",
+    "modality": "TEC / MP · Estudiantes"
+  },
+  {
+    "id": 398,
+    "title": "Solicitar segunda carrera",
+    "start": "2026-04-29",
+    "end": "2026-06-08",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 399,
+    "title": "Solicitar materia que no consta en el proyección",
+    "start": "2026-04-29",
+    "end": "2026-06-08",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 400,
+    "title": "Solicitar edición de matrícula",
+    "start": "2026-04-29",
+    "end": "2026-06-15",
+    "category": "Matrículas",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 401,
+    "title": "Solicitar cambio de centro definitivo",
+    "start": "2026-04-29",
+    "end": "2026-06-15",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 402,
+    "title": "Solicitar aumento de créditos",
+    "start": "2026-04-29",
+    "end": "2026-06-12",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 403,
+    "title": "Retiro voluntario",
+    "start": "2026-06-15",
+    "end": "2026-08-09",
+    "category": "Administrativo",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 404,
+    "title": "Retiro por caso fortuito",
+    "start": "2026-06-15",
+    "end": "2026-08-09",
+    "category": "Administrativo",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 405,
+    "title": "Respuesta retiro voluntario",
+    "start": "2026-06-15",
+    "end": "2026-08-14",
+    "category": "Administrativo",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 406,
+    "title": "Respuesta edición de matrícula",
+    "start": "2026-04-29",
+    "end": "2026-06-22",
+    "category": "Matrículas",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 407,
+    "title": "Respuesta de segunda carrera",
+    "start": "2026-05-06",
+    "end": "2026-06-15",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 408,
+    "title": "Respuesta de requisitos de matrícula",
+    "start": "2026-04-29",
+    "end": "2026-07-02",
+    "category": "Matrículas",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 409,
+    "title": "Respuesta de materia que no consta en la proyección",
+    "start": "2026-05-06",
+    "end": "2026-06-15",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 410,
+    "title": "Respuesta de cambio de centro definitivo",
+    "start": "2026-04-29",
+    "end": "2026-06-15",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 411,
+    "title": "Respuesta de aumento de créditos",
+    "start": "2026-05-04",
+    "end": "2026-06-15",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 412,
+    "title": "Enviar requisitos de matrícula",
+    "start": "2026-04-29",
+    "end": "2026-06-26",
+    "category": "Matrículas",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 413,
+    "title": "Día de los Difuntos",
+    "start": "2026-11-02",
+    "end": "2026-11-02",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 414,
+    "title": "Fundación de Loja",
+    "start": "2026-12-08",
+    "end": "2026-12-08",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 415,
+    "title": "Navidad",
+    "start": "2026-12-25",
+    "end": "2026-12-25",
+    "category": "Otro",
+    "modality": "TEC EL · Íntegro"
+  },
+  {
+    "id": 416,
+    "title": "Homologación de certificado internacional / certificados otras IES",
+    "start": "2026-04-13",
+    "end": "2026-09-28",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 417,
+    "title": "Respuesta Solicitar legalización validación CCE-MP/MAD",
+    "start": "2026-04-13",
+    "end": "2026-10-05",
+    "category": "Matrículas",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 418,
+    "title": "Solicitar análisis de validación de prácticas (gestión productiva/prácticum) MP",
+    "start": "2026-04-13",
+    "end": "2026-09-21",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 419,
+    "title": "Solicitar análisis de validación de trayectorias profesionales o experiencia laboral",
+    "start": "2026-04-13",
+    "end": "2026-09-25",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 420,
+    "title": "Solicitar homologación de estudios externos (Grado y Posgrado) Servicio continuo",
+    "start": "2026-04-13",
+    "end": "2026-09-21",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 421,
+    "title": "Solicitar ingreso de resultados de validación de trayectorias profesionales o experiencia laboral",
+    "start": "2026-04-13",
+    "end": "2027-10-05",
+    "category": "Administrativo",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 422,
+    "title": "Solicitar legalización validación CCE-MP/MAD",
+    "start": "2026-04-13",
+    "end": "2026-10-05",
+    "category": "Matrículas",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 423,
+    "title": "Solicitar reconocimiento de practicum por experiencia laboral MAD y MP",
+    "start": "2026-04-13",
+    "end": "2026-09-28",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 424,
+    "title": "Solicitar reconocimiento de título extranjero",
+    "start": "2026-04-13",
+    "end": "2026-09-21",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 425,
+    "title": "Solicitar registro notas de validación CCE, antes del 2020",
+    "start": "2026-04-13",
+    "end": "2026-10-05",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 426,
+    "title": "Solicitar cambio de carrera/ programa (Reconocimiento interno de estudios)",
+    "start": "2026-04-17",
+    "end": "2026-10-02",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 427,
+    "title": "Solicitar cambio de grupo de créditos materias Servicio continuo (sin fecha fin)",
+    "start": "2026-04-17",
+    "end": "2026-10-02",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 428,
+    "title": "Solicitar cambio de modalidad",
+    "start": "2026-04-17",
+    "end": "2026-10-02",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 429,
+    "title": "Solicitar segunda carrera",
+    "start": "2026-04-17",
+    "end": "2026-10-02",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 430,
+    "title": "Respuesta de registro notas de validación CCE, antes del 2020",
+    "start": "2026-04-20",
+    "end": "2026-10-05",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 431,
+    "title": "Respuesta de Homologación de certificado internacional / certificados otras IES",
+    "start": "2026-04-20",
+    "end": "2026-10-05",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 432,
+    "title": "Respuesta de ingreso de resultados de validación de trayectorias profesionales o experiencia laboral",
+    "start": "2026-04-20",
+    "end": "2026-10-05",
+    "category": "Administrativo",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 433,
+    "title": "Respuesta Solicitar análisis de validación de prácticas (gestión productiva/prácticum) MP",
+    "start": "2026-04-21",
+    "end": "2026-10-02",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 434,
+    "title": "Respuesta Solicitar reconocimiento de practicum por experiencia laboral MAD y MP",
+    "start": "2026-04-21",
+    "end": "2026-10-05",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 435,
+    "title": "Solicitar registro de nota de validación de prácticas (gestión productiva/prácticum) MP",
+    "start": "2026-04-21",
+    "end": "2026-10-05",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 436,
+    "title": "Respuesta solicitudes de cambio de grupo de créditos (sin fecha fin)",
+    "start": "2026-04-22",
+    "end": "2026-10-05",
+    "category": "Administrativo",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 437,
+    "title": "Respuesta solicitudes de cambio de modalidad",
+    "start": "2026-04-22",
+    "end": "2026-10-05",
+    "category": "Administrativo",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 438,
+    "title": "Respuesta Solicitar cambio de carrera/ programa (Reconocimiento interno de estudios)",
+    "start": "2026-04-24",
+    "end": "2026-10-05",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 439,
+    "title": "Respuesta Solicitar registro de nota de validación de prácticas (gestión productiva/prácticum) MP",
+    "start": "2026-04-24",
+    "end": "2026-10-05",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 440,
+    "title": "Respuesta Solicitar segunda carrera",
+    "start": "2026-04-24",
+    "end": "2026-10-05",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 441,
+    "title": "Respuesta Solicitar homologación de estudios externos (Grado y Posgrado) Servicio continuo",
+    "start": "2026-04-28",
+    "end": "2026-10-05",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 442,
+    "title": "Respuesta solicitudes de reconocimiento de título extranjero",
+    "start": "2026-04-28",
+    "end": "2026-10-01",
+    "category": "Administrativo",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 443,
+    "title": "Respuesta análisis de validación de trayectorias profesionales o experiencia laboral",
+    "start": "2026-09-21",
+    "end": "2026-10-02",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 444,
+    "title": "Día de los Difuntos",
+    "start": "2026-11-02",
+    "end": "2026-11-02",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 445,
+    "title": "Fundación de Loja",
+    "start": "2026-12-08",
+    "end": "2026-12-08",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 446,
+    "title": "Navidad",
+    "start": "2026-12-25",
+    "end": "2026-12-25",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 447,
+    "title": "Homologación de certificado internacional / certificados otras IES",
+    "start": "2026-04-13",
+    "end": "2026-09-28",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 448,
+    "title": "Respuesta Solicitar legalización validación CCE-MP/MAD",
+    "start": "2026-04-13",
+    "end": "2026-10-05",
+    "category": "Matrículas",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 449,
+    "title": "Solicitar análisis de validación de prácticas (gestión productiva/prácticum) MP",
+    "start": "2026-04-13",
+    "end": "2026-09-21",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 450,
+    "title": "Solicitar análisis de validación de trayectorias profesionales o experiencia laboral",
+    "start": "2026-04-13",
+    "end": "2026-09-25",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 451,
+    "title": "Solicitar homologación de estudios externos (Grado y Posgrado) Servicio continuo",
+    "start": "2026-04-13",
+    "end": "2026-09-21",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 452,
+    "title": "Solicitar ingreso de resultados de validación de trayectorias profesionales o experiencia laboral",
+    "start": "2026-04-13",
+    "end": "2027-10-05",
+    "category": "Administrativo",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 453,
+    "title": "Solicitar legalización validación CCE-MP/MAD",
+    "start": "2026-04-13",
+    "end": "2026-10-05",
+    "category": "Matrículas",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 454,
+    "title": "Solicitar reconocimiento de practicum por experiencia laboral MAD y MP",
+    "start": "2026-04-13",
+    "end": "2026-09-28",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 455,
+    "title": "Solicitar reconocimiento de título extranjero",
+    "start": "2026-04-13",
+    "end": "2026-09-21",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 456,
+    "title": "Solicitar registro notas de validación CCE, antes del 2020",
+    "start": "2026-04-13",
+    "end": "2026-10-05",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 457,
+    "title": "Solicitar cambio de carrera/ programa (Reconocimiento interno de estudios)",
+    "start": "2026-04-17",
+    "end": "2026-10-02",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 458,
+    "title": "Solicitar cambio de grupo de créditos materias Servicio continuo (sin fecha fin)",
+    "start": "2026-04-17",
+    "end": "2026-10-02",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 459,
+    "title": "Solicitar cambio de modalidad",
+    "start": "2026-04-17",
+    "end": "2026-10-02",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 460,
+    "title": "Solicitar segunda carrera",
+    "start": "2026-04-17",
+    "end": "2026-10-02",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 461,
+    "title": "Respuesta de registro notas de validación CCE, antes del 2020",
+    "start": "2026-04-20",
+    "end": "2026-10-05",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 462,
+    "title": "Respuesta de Homologación de certificado internacional / certificados otras IES",
+    "start": "2026-04-20",
+    "end": "2026-10-05",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 463,
+    "title": "Respuesta de ingreso de resultados de validación de trayectorias profesionales o experiencia laboral",
+    "start": "2026-04-20",
+    "end": "2026-10-05",
+    "category": "Administrativo",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 464,
+    "title": "Respuesta Solicitar análisis de validación de prácticas (gestión productiva/prácticum) MP",
+    "start": "2026-04-21",
+    "end": "2026-10-02",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 465,
+    "title": "Respuesta Solicitar reconocimiento de practicum por experiencia laboral MAD y MP",
+    "start": "2026-04-21",
+    "end": "2026-10-05",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 466,
+    "title": "Solicitar registro de nota de validación de prácticas (gestión productiva/prácticum) MP",
+    "start": "2026-04-21",
+    "end": "2026-10-05",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 467,
+    "title": "Respuesta solicitudes de cambio de grupo de créditos (sin fecha fin)",
+    "start": "2026-04-22",
+    "end": "2026-10-05",
+    "category": "Administrativo",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 468,
+    "title": "Respuesta solicitudes de cambio de modalidad",
+    "start": "2026-04-22",
+    "end": "2026-10-05",
+    "category": "Administrativo",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 469,
+    "title": "Respuesta Solicitar cambio de carrera/ programa (Reconocimiento interno de estudios)",
+    "start": "2026-04-24",
+    "end": "2026-10-05",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 470,
+    "title": "Respuesta Solicitar registro de nota de validación de prácticas (gestión productiva/prácticum) MP",
+    "start": "2026-04-24",
+    "end": "2026-10-05",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 471,
+    "title": "Respuesta Solicitar segunda carrera",
+    "start": "2026-04-24",
+    "end": "2026-10-05",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 472,
+    "title": "Respuesta Solicitar homologación de estudios externos (Grado y Posgrado) Servicio continuo",
+    "start": "2026-04-28",
+    "end": "2026-10-05",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 473,
+    "title": "Respuesta solicitudes de reconocimiento de título extranjero",
+    "start": "2026-04-28",
+    "end": "2026-10-01",
+    "category": "Administrativo",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 474,
+    "title": "Respuesta análisis de validación de trayectorias profesionales o experiencia laboral",
+    "start": "2026-09-21",
+    "end": "2026-10-02",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 475,
+    "title": "Día de los Difuntos",
+    "start": "2026-11-02",
+    "end": "2026-11-02",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 476,
+    "title": "Fundación de Loja",
+    "start": "2026-12-08",
+    "end": "2026-12-08",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 477,
+    "title": "Navidad",
+    "start": "2026-12-25",
+    "end": "2026-12-25",
+    "category": "Otro",
+    "modality": "TEC / MP / MEL"
+  },
+  {
+    "id": 478,
+    "title": "Matrículas ordinarias",
+    "start": "2026-03-06",
+    "end": "2026-03-22",
+    "category": "Matrículas",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 479,
+    "title": "Matrículas extraordinarias",
+    "start": "2026-03-23",
+    "end": "2026-04-06",
+    "category": "Matrículas",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 480,
+    "title": "Inicio y fin del periodo académico del internado",
+    "start": "2026-05-01",
+    "end": "2027-04-30",
+    "category": "Otro",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 481,
+    "title": "Retiro voluntario de asignaturas",
+    "start": "2026-05-01",
+    "end": "2026-05-30",
+    "category": "Administrativo",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 482,
+    "title": "Retiro de asignaturas por caso fortuito",
+    "start": "2026-06-01",
+    "end": "2027-04-30",
+    "category": "Administrativo",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 483,
+    "title": "Validación general de asignaturas de Listening and speaking mediante examen oral",
+    "start": "2026-07-16",
+    "end": "2026-07-17",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 484,
+    "title": "Matriculas para la Unidad de Titulación Especial (Prórroga1, prórroga2, actualización de conocimiento y periodos adicionales)",
+    "start": "2026-03-06",
+    "end": "2026-04-06",
+    "category": "Matrículas",
+    "modality": "PS D-P · Estudiantes"
+  },
+  {
+    "id": 485,
+    "title": "Actividades académicas del curso de actualización de conocimiento",
+    "start": "2026-05-04",
+    "end": "2026-05-29",
+    "category": "Académico",
+    "modality": "PS D-P · Estudiantes"
+  },
+  {
+    "id": 486,
+    "title": "Evaluación de actualización de conocimientos.",
+    "start": "2026-05-30",
+    "end": "2026-05-31",
+    "category": "Evaluación",
+    "modality": "PS D-P · Estudiantes"
+  },
+  {
+    "id": 487,
+    "title": "Evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-07-25",
+    "end": "2026-07-26",
+    "category": "Evaluación",
+    "modality": "PS D-P · Estudiantes"
+  },
+  {
+    "id": 488,
+    "title": "Prueba objetiva estandarizada y evaluación teórica ECTS del EC",
+    "start": "2026-08-01",
+    "end": "2026-08-02",
+    "category": "Evaluación",
+    "modality": "PS D-P · Estudiantes"
+  },
+  {
+    "id": 489,
+    "title": "Examen de gracia de la prueba objetiva estandarizada y evaluación teórica ECTS del EC",
+    "start": "2026-09-05",
+    "end": "2026-09-06",
+    "category": "Evaluación",
+    "modality": "PS D-P · Estudiantes"
+  },
+  {
+    "id": 490,
+    "title": "Publicación de notas del curso de actualización de conocimientos.",
+    "start": "2026-06-10",
+    "end": "2026-06-10",
+    "category": "Administrativo",
+    "modality": "PS D-P · Estudiantes"
+  },
+  {
+    "id": 491,
+    "title": "Publicación de notas de la evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-08-05",
+    "end": "2026-08-05",
+    "category": "Evaluación",
+    "modality": "PS D-P · Estudiantes"
+  },
+  {
+    "id": 492,
+    "title": "Enviar a los estudiantes mediante correo los resultados de exámenes complexivos (EC y TT)",
+    "start": "2026-08-07",
+    "end": "2026-08-07",
+    "category": "Evaluación",
+    "modality": "PS D-P · Estudiantes"
+  },
+  {
+    "id": 493,
+    "title": "Enviar a los estudiantes mediante correo los resultados de exámenes complexivos de gracia (EC y TT)",
+    "start": "2026-09-11",
+    "end": "2026-09-11",
+    "category": "Evaluación",
+    "modality": "PS D-P · Estudiantes"
+  },
+  {
+    "id": 494,
+    "title": "Respuesta a recalificaciones del curso de actualización de conocimientos.",
+    "start": "2026-06-11",
+    "end": "2026-06-18",
+    "category": "Evaluación",
+    "modality": "PS D-P · Estudiantes"
+  },
+  {
+    "id": 495,
+    "title": "Solicitar recalificaciones del curso de actualización de conocimientos",
+    "start": "2026-06-11",
+    "end": "2026-06-17",
+    "category": "Evaluación",
+    "modality": "PS D-P · Estudiantes"
+  },
+  {
+    "id": 496,
+    "title": "Respuesta a recalificaciones de la evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-08-06",
+    "end": "2026-08-21",
+    "category": "Evaluación",
+    "modality": "PS D-P · Estudiantes"
+  },
+  {
+    "id": 497,
+    "title": "Solicitar recalificaciones de la evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-08-06",
+    "end": "2026-08-07",
+    "category": "Evaluación",
+    "modality": "PS D-P · Estudiantes"
+  },
+  {
+    "id": 498,
+    "title": "Solicitar recalificación de la prueba objetiva estandarizada",
+    "start": "2026-08-07",
+    "end": "2026-08-27",
+    "category": "Evaluación",
+    "modality": "PS D-P · Estudiantes"
+  },
+  {
+    "id": 499,
+    "title": "Comunicar a estudiantes mediante correo, los resultados de recalificaciones de la prueba objetiva estandarizada y archivo del trámite en el expediente físico.",
+    "start": "2026-08-28",
+    "end": "2026-08-28",
+    "category": "Evaluación",
+    "modality": "PS D-P · Estudiantes"
+  },
+  {
+    "id": 500,
+    "title": "Exposición oral del Trabajo Técnico y Trabajo de Titulación ECTS",
+    "start": "2026-08-24",
+    "end": "2026-08-28",
+    "category": "Otro",
+    "modality": "PS D-P · Estudiantes"
+  },
+  {
+    "id": 501,
+    "title": "Exposición oral de gracia del Trabajo de Técnico y Trabajo de Titulación/Tesis ECTS",
+    "start": "2026-09-21",
+    "end": "2026-09-25",
+    "category": "Otro",
+    "modality": "PS D-P · Estudiantes"
+  },
+  {
+    "id": 502,
+    "title": "Docente de la asignatura registra notas en EVA (actividades, informes y revisión y aprobación de las TICs)",
+    "start": "2026-06-01",
+    "end": "2026-07-27",
+    "category": "Docente",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 503,
+    "title": "Exposición oral del trabajo de integración curricular",
+    "start": "2026-08-03",
+    "end": "2026-08-07",
+    "category": "Otro",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 504,
+    "title": "Exposición oral del trabajo de integración curricular.",
+    "start": "2026-08-24",
+    "end": "2026-08-27",
+    "category": "Otro",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 505,
+    "title": "Recuperación de la exposición oral del trabajo de integración curricular.",
+    "start": "2026-09-23",
+    "end": "2026-09-30",
+    "category": "Otro",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 506,
+    "title": "Examen complexivo parte oral RED Todas las carreras (excepto derecho)",
+    "start": "2026-07-06",
+    "end": "2026-07-24",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 507,
+    "title": "Exposisicón oral del trabajo de integración curricular RED",
+    "start": "2026-07-06",
+    "end": "2026-07-24",
+    "category": "Otro",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 508,
+    "title": "Recuperación de examen complexivo parte oral RED todas las carreras (excepto derecho)",
+    "start": "2026-09-07",
+    "end": "2026-09-11",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 509,
+    "title": "Recuperación de la exposición oral del trabajo de integración curricular RED",
+    "start": "2026-09-07",
+    "end": "2026-09-11",
+    "category": "Otro",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 510,
+    "title": "Publicación de notas de examen complexivo parte oral y escrito y trabajo de integración curricular (TIC)",
+    "start": "2026-07-27",
+    "end": "2026-08-07",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 511,
+    "title": "Examen complexivo parte escrita RED",
+    "start": "2026-08-01",
+    "end": "2026-08-03",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 512,
+    "title": "Recuperación examen complexivo parte escrita RED",
+    "start": "2026-09-05",
+    "end": "2026-09-07",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 513,
+    "title": "Respuesta a recalificaciones de exámenes complexivos parte escrita",
+    "start": "2026-08-07",
+    "end": "2026-08-28",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 514,
+    "title": "Solicitar recalificaciones de exámenes complexivos parte escrita",
+    "start": "2026-08-07",
+    "end": "2026-08-27",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 515,
+    "title": "Respuesta a recalificaciones de recuperación de exámenes complexivos parte escrita",
+    "start": "2026-09-11",
+    "end": "2026-09-18",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 516,
+    "title": "Solicitar recalificaciones de recuperación de exámenes complexivos parte escrita",
+    "start": "2026-09-11",
+    "end": "2026-09-17",
+    "category": "Evaluación",
+    "modality": "GR P · Estudiantes"
+  },
+  {
+    "id": 517,
+    "title": "Examen de ubicación/suficiencia",
+    "start": "2026-05-29",
+    "end": "2026-06-02",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P / TEC · Docentes"
+  },
+  {
+    "id": 518,
+    "title": "Examen de ubicación/suficiencia",
+    "start": "2026-07-24",
+    "end": "2026-07-28",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P / TEC · Docentes"
+  },
+  {
+    "id": 519,
+    "title": "Examen de ubicación/suficiencia",
+    "start": "2026-09-19",
+    "end": "2026-09-22",
+    "category": "Evaluación",
+    "modality": "PS D-EL-P / TEC · Docentes"
+  },
+  {
+    "id": 520,
+    "title": "Legalizar matrículas (entregar requisitos) alumnos de nuevo ingreso",
+    "start": "2025-11-19",
+    "end": "2026-05-18",
+    "category": "Matrículas",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 521,
+    "title": "Matrículas ordinarias para alumnos nuevos",
+    "start": "2025-11-19",
+    "end": "2026-04-01",
+    "category": "Matrículas",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 522,
+    "title": "Matrículas ordinarias para alumnos continuos",
+    "start": "2026-02-12",
+    "end": "2026-04-01",
+    "category": "Matrículas",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 523,
+    "title": "Matrículas extraordinarias para alumnos nuevos y continuos",
+    "start": "2026-04-02",
+    "end": "2026-04-06",
+    "category": "Matrículas",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 524,
+    "title": "Actividades académicas del primer módulo (8 semanas)",
+    "start": "2026-04-06",
+    "end": "2026-05-31",
+    "category": "Otro",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 525,
+    "title": "Inicio de actividades académicas",
+    "start": "2026-04-06",
+    "end": "2026-04-06",
+    "category": "Académico",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 526,
+    "title": "Actividades académicas del segundo módulo (8 semanas)",
+    "start": "2026-06-15",
+    "end": "2026-08-09",
+    "category": "Otro",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 527,
+    "title": "Heteroevaluación al docente Módulo I",
+    "start": "2026-05-11",
+    "end": "2026-05-25",
+    "category": "Evaluación",
+    "modality": "GR EL · Estudiantes / Docentes"
+  },
+  {
+    "id": 528,
+    "title": "Heteroevaluación al docente Módulo II",
+    "start": "2026-07-27",
+    "end": "2026-08-03",
+    "category": "Evaluación",
+    "modality": "GR EL · Estudiantes / Docentes"
+  },
+  {
+    "id": 529,
+    "title": "Evaluación en EVA del módulo I (semana 9)",
+    "start": "2026-06-01",
+    "end": "2026-06-05",
+    "category": "Evaluación",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 530,
+    "title": "Evaluación en EVA de recuperación del módulo I (semana 10)",
+    "start": "2026-06-08",
+    "end": "2026-06-12",
+    "category": "Evaluación",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 531,
+    "title": "Evaluación en EVA del módulo Il (semana 9)",
+    "start": "2026-08-24",
+    "end": "2026-08-28",
+    "category": "Evaluación",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 532,
+    "title": "Evaluación en EVA de recuperación del módulo II (semana 10)",
+    "start": "2026-08-31",
+    "end": "2026-09-04",
+    "category": "Evaluación",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 533,
+    "title": "Publicación de notas en gradebook módulo I",
+    "start": "2026-06-08",
+    "end": "2026-06-08",
+    "category": "Administrativo",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 534,
+    "title": "Publicación de notas en gradebook de recuperación módulo I",
+    "start": "2026-06-15",
+    "end": "2026-06-15",
+    "category": "Administrativo",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 535,
+    "title": "Publicación de notas en gradebook módulo II",
+    "start": "2026-08-31",
+    "end": "2026-08-31",
+    "category": "Administrativo",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 536,
+    "title": "Respuesta a recalificaciones del módulo I",
+    "start": "2026-06-08",
+    "end": "2026-06-15",
+    "category": "Evaluación",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 537,
+    "title": "Solicitar recalificaciones del módulo I",
+    "start": "2026-06-08",
+    "end": "2026-06-12",
+    "category": "Evaluación",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 538,
+    "title": "Respuesta a recalificaciones de recuperación del módulo I",
+    "start": "2026-06-15",
+    "end": "2026-06-22",
+    "category": "Evaluación",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 539,
+    "title": "Solicitar recalificaciones de recuperación del módulo I",
+    "start": "2026-06-15",
+    "end": "2026-06-19",
+    "category": "Evaluación",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 540,
+    "title": "Respuesta a recalificaciones del módulo II",
+    "start": "2026-08-31",
+    "end": "2026-09-07",
+    "category": "Evaluación",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 541,
+    "title": "Solicitar recalificaciones del módulo II",
+    "start": "2026-08-31",
+    "end": "2026-09-04",
+    "category": "Evaluación",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 542,
+    "title": "Respuesta a recalificaciones de recuperación del módulo Il",
+    "start": "2026-09-07",
+    "end": "2026-09-14",
+    "category": "Evaluación",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 543,
+    "title": "Solicitar recalificaciones de recuperación del módulo Il",
+    "start": "2026-09-07",
+    "end": "2026-09-11",
+    "category": "Evaluación",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 544,
+    "title": "Revisión y aprobación de planes docentes de primer nivel reutilizables",
+    "start": "2025-12-23",
+    "end": "2026-01-15",
+    "category": "Docente",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 545,
+    "title": "Revisión y aprobación de planes docentes de segundo nivel en adelante reutilizables",
+    "start": "2025-12-23",
+    "end": "2026-01-15",
+    "category": "Docente",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 546,
+    "title": "Recepción y registro de planes docentes de primer nivel",
+    "start": "2026-01-16",
+    "end": "2026-01-20",
+    "category": "Docente",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 547,
+    "title": "Entrega de planes docentes de asignaturas de primer nivel de todas las careras a Ediloja",
+    "start": "2026-01-21",
+    "end": "2026-01-23",
+    "category": "Docente",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 548,
+    "title": "Recepción y registro de planes docentes de segundo nivel en adelante",
+    "start": "2026-01-16",
+    "end": "2026-01-20",
+    "category": "Docente",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 549,
+    "title": "Entrega de planes docentes de asignaturas de segundo nivel en adelante de todas las careras a Ediloja",
+    "start": "2026-01-21",
+    "end": "2026-01-23",
+    "category": "Docente",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 550,
+    "title": "Entrega de metacursos de reutilizables para validación",
+    "start": "2026-02-20",
+    "end": "2026-02-20",
+    "category": "Académico",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 551,
+    "title": "Validación y aprobación de metacursos reutilizables",
+    "start": "2026-02-24",
+    "end": "2026-02-27",
+    "category": "Académico",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 552,
+    "title": "Metacursos finalizados",
+    "start": "2026-03-02",
+    "end": "2026-03-04",
+    "category": "Académico",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 553,
+    "title": "Réplica y publicación de metacursos",
+    "start": "2026-03-05",
+    "end": "2026-03-12",
+    "category": "Académico",
+    "modality": "TEC EL · Docentes"
+  },
+  {
+    "id": 554,
+    "title": "Elaboración de los instrumentos de evaluación V1 y V2",
+    "start": "2026-03-23",
+    "end": "2026-04-10",
+    "category": "Evaluación",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 555,
+    "title": "Ingreso del banco de preguntas V1 y V2 al sistema de evaluaciones SIETTE",
+    "start": "2026-03-23",
+    "end": "2026-04-17",
+    "category": "Evaluación",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 556,
+    "title": "Ingreso de información en el EVA (del curso completo) de acuerdo a plan académico docente del curso de actualización de conocimientos",
+    "start": "2026-04-13",
+    "end": "2026-04-15",
+    "category": "Docente",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 557,
+    "title": "Actividades académicas del curso de actualización de conocimiento",
+    "start": "2026-05-04",
+    "end": "2026-05-29",
+    "category": "Académico",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 558,
+    "title": "Calificación de actividades académicas en el EVA del curso de actualización de conocimientos",
+    "start": "2026-05-07",
+    "end": "2026-06-03",
+    "category": "Evaluación",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 559,
+    "title": "Reunión de recepción de evaluación de actualización de conocimientos.",
+    "start": "2026-05-27",
+    "end": "2026-05-28",
+    "category": "Evaluación",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 560,
+    "title": "Reunión de recepción de la evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-07-22",
+    "end": "2026-07-23",
+    "category": "Evaluación",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 561,
+    "title": "Capacitación al personal que evaluará el examen complexivo parte teórica",
+    "start": "2026-07-30",
+    "end": "2026-07-30",
+    "category": "Evaluación",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 562,
+    "title": "Capacitación al personal que aplicará el examen complexivo de recuperación parte teórica",
+    "start": "2026-09-03",
+    "end": "2026-09-03",
+    "category": "Evaluación",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 563,
+    "title": "Evaluación de actualización de conocimientos.",
+    "start": "2026-05-30",
+    "end": "2026-05-31",
+    "category": "Evaluación",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 564,
+    "title": "Evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-07-25",
+    "end": "2026-07-26",
+    "category": "Evaluación",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 565,
+    "title": "Prueba objetiva estandarizada y evaluación teórica ECTS del EC",
+    "start": "2026-08-01",
+    "end": "2026-08-02",
+    "category": "Evaluación",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 566,
+    "title": "Examen de gracia de la prueba objetiva estandarizada y evaluación teórica ECTS del EC",
+    "start": "2026-09-05",
+    "end": "2026-09-06",
+    "category": "Evaluación",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 567,
+    "title": "Calificación de evaluaciones de actualización de conocimientos",
+    "start": "2026-06-02",
+    "end": "2026-06-09",
+    "category": "Evaluación",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 568,
+    "title": "Registro de notas (actividades y exámenes) del curso de actualización de conocimientos",
+    "start": "2026-06-04",
+    "end": "2026-06-09",
+    "category": "Evaluación",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 569,
+    "title": "Calificación de evaluaciones del segundo bimestre de actualización de conocimientos",
+    "start": "2026-07-27",
+    "end": "2026-08-04",
+    "category": "Evaluación",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 570,
+    "title": "Registro de notas (actividades en línea y exámenes) desl segundo bimestre de actualización de conocimientos",
+    "start": "2026-07-30",
+    "end": "2026-08-04",
+    "category": "Evaluación",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 571,
+    "title": "Respuesta a recalificaciones del curso de actualización de conocimientos.",
+    "start": "2026-06-11",
+    "end": "2026-06-18",
+    "category": "Evaluación",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 572,
+    "title": "Respuesta a recalificaciones de la evaluación de recuperación de actualización de conocimientos.",
+    "start": "2026-08-06",
+    "end": "2026-08-21",
+    "category": "Evaluación",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 573,
+    "title": "Respuesta a recalificación de la prueba objetiva estandarizada",
+    "start": "2026-08-07",
+    "end": "2026-08-28",
+    "category": "Evaluación",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 574,
+    "title": "Exposición oral del Trabajo Técnico y Trabajo de Titulación ECTS",
+    "start": "2026-08-24",
+    "end": "2026-08-28",
+    "category": "Otro",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 575,
+    "title": "Exposición oral de gracia del Trabajo de Técnico y Trabajo de Titulación/Tesis ECTS",
+    "start": "2026-09-21",
+    "end": "2026-09-25",
+    "category": "Otro",
+    "modality": "PS D-P · Docentes"
+  },
+  {
+    "id": 576,
+    "title": "Entrega de plan docente a carreras",
+    "start": "2026-03-06",
+    "end": "2026-03-16",
+    "category": "Docente",
+    "modality": "TEC P · Docentes"
+  },
+  {
+    "id": 577,
+    "title": "Registro de las actividades académicas del plan docente aprobado en la plataforma institucional correspondiente.",
+    "start": "2026-03-17",
+    "end": "2026-03-23",
+    "category": "Docente",
+    "modality": "TEC P · Docentes"
+  },
+  {
+    "id": 578,
+    "title": "Actividades académicas del primer bimestre semana 8",
+    "start": "2026-03-23",
+    "end": "2026-05-17",
+    "category": "Otro",
+    "modality": "TEC P · Docentes"
+  },
+  {
+    "id": 579,
+    "title": "Actividades académicas del segundo bimestre semana 8",
+    "start": "2026-06-01",
+    "end": "2026-07-26",
+    "category": "Otro",
+    "modality": "TEC P · Docentes"
+  },
+  {
+    "id": 580,
+    "title": "Autoevaluación al docente primer bimestre",
+    "start": "2026-05-11",
+    "end": "2026-05-25",
+    "category": "Evaluación",
+    "modality": "TEC P · Docentes"
+  },
+  {
+    "id": 581,
+    "title": "Autoevaluación al docente segundo bimestre",
+    "start": "2026-07-06",
+    "end": "2026-07-20",
+    "category": "Evaluación",
+    "modality": "TEC P · Docentes"
+  },
+  {
+    "id": 582,
+    "title": "Registro y publicación de notas del primer bimestre",
+    "start": "2026-05-18",
+    "end": "2026-05-23",
+    "category": "Administrativo",
+    "modality": "TEC P · Docentes"
+  },
+  {
+    "id": 583,
+    "title": "Registro y publicación de notas de recuperación del primer bimestre",
+    "start": "2026-05-25",
+    "end": "2026-06-03",
+    "category": "Administrativo",
+    "modality": "TEC P · Docentes"
+  },
+  {
+    "id": 584,
+    "title": "Registro y publicación de notas del segundo bimestre",
+    "start": "2026-07-27",
+    "end": "2026-08-01",
+    "category": "Administrativo",
+    "modality": "TEC P · Docentes"
+  },
+  {
+    "id": 585,
+    "title": "Registro y publicación de notas de recuperación del segundo bimestre",
+    "start": "2026-08-03",
+    "end": "2026-08-09",
+    "category": "Administrativo",
+    "modality": "TEC P · Docentes"
+  },
+  {
+    "id": 586,
+    "title": "Evaluación de recuperación del primer bimestre semana 10",
+    "start": "2026-05-25",
+    "end": "2026-05-31",
+    "category": "Evaluación",
+    "modality": "TEC P · Docentes"
+  },
+  {
+    "id": 587,
+    "title": "Evaluación de recuperación del segundo bimestre semana 10",
+    "start": "2026-08-03",
+    "end": "2026-08-09",
+    "category": "Evaluación",
+    "modality": "TEC P · Docentes"
+  },
+  {
+    "id": 588,
+    "title": "Inscripciones para Cursos de Competencias Específicas",
+    "start": "2026-02-12",
+    "end": "2026-04-06",
+    "category": "Matrículas",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 589,
+    "title": "Actividades académicas del primer bimestre",
+    "start": "2026-04-06",
+    "end": "2026-05-31",
+    "category": "Otro",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 590,
+    "title": "Actividades académicas del segundo bimestre",
+    "start": "2026-06-01",
+    "end": "2026-07-26",
+    "category": "Otro",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 591,
+    "title": "Fin de tutorías",
+    "start": "2026-07-25",
+    "end": "2026-07-25",
+    "category": "Docente",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 592,
+    "title": "Solicitar retiro de asignaturas por caso fortuito",
+    "start": "2026-04-06",
+    "end": "2026-07-23",
+    "category": "Administrativo",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 593,
+    "title": "Solicitar retiro voluntario de asignaturas",
+    "start": "2026-04-06",
+    "end": "2026-06-25",
+    "category": "Administrativo",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 594,
+    "title": "Exámenes del primer bimestre",
+    "start": "2026-05-29",
+    "end": "2026-06-02",
+    "category": "Evaluación",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 595,
+    "title": "Exámenes del segundo bimestre",
+    "start": "2026-07-24",
+    "end": "2026-07-28",
+    "category": "Evaluación",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 596,
+    "title": "Primer bimestre.",
+    "start": "2026-06-10",
+    "end": "2026-06-10",
+    "category": "Otro",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 597,
+    "title": "Segundo bimestre.",
+    "start": "2026-08-05",
+    "end": "2026-08-05",
+    "category": "Otro",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 598,
+    "title": "Practicums",
+    "start": "2026-09-09",
+    "end": "2026-09-09",
+    "category": "Otro",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 599,
+    "title": "Solicitud de legalización de Validación de asignaturas",
+    "start": "2026-09-14",
+    "end": "2026-09-28",
+    "category": "Matrículas",
+    "modality": "TEC · Estudiantes"
+  },
+  {
+    "id": 600,
+    "title": "Inscripción a validación general de listening and speaking (las solicitudes caducan a las 72 horas)",
+    "start": "2026-03-09",
+    "end": "2026-05-08",
+    "category": "Matrículas",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 601,
+    "title": "Validación general de Listening and speaking mediante examen oral",
+    "start": "2026-06-08",
+    "end": "2026-06-10",
+    "category": "Evaluación",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 602,
+    "title": "Publicación de resultados y cierre de servicio de validación general de listening and speaking",
+    "start": "2026-06-17",
+    "end": "2026-06-17",
+    "category": "Administrativo",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 603,
+    "title": "Inscripción a validación general de listening and speaking (las solicitudes caducan a las 72 horas)",
+    "start": "2026-06-01",
+    "end": "2026-07-03",
+    "category": "Matrículas",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 604,
+    "title": "Validación general de Listening and speaking mediante examen oral",
+    "start": "2026-07-20",
+    "end": "2026-07-22",
+    "category": "Evaluación",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 605,
+    "title": "Publicación de resultados y cierre de servicio de validación general de listening and speaking",
+    "start": "2026-07-29",
+    "end": "2026-07-29",
+    "category": "Administrativo",
+    "modality": "GR EL · Estudiantes"
+  },
+  {
+    "id": 606,
+    "title": "Validación general de Listening and speaking mediante examen oral",
+    "start": "2026-06-08",
+    "end": "2026-06-10",
+    "category": "Evaluación",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 607,
+    "title": "Validación general de Listening and speaking mediante examen oral",
+    "start": "2026-07-20",
+    "end": "2026-07-22",
+    "category": "Evaluación",
+    "modality": "GR EL · Docentes"
+  },
+  {
+    "id": 608,
+    "title": "Docente de la asignatura registra notas en el EVA (actividades) 1er. Bimestre",
+    "start": "2026-04-20",
+    "end": "2026-07-05",
+    "category": "Docente",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 609,
+    "title": "Docente de la asignatura registra notas en gradebook ( informes)",
+    "start": "2026-06-03",
+    "end": "2026-07-05",
+    "category": "Docente",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 610,
+    "title": "Docente de la asignatura registra notas en el EVA (actividades) 2do. Bimestre",
+    "start": "2026-07-15",
+    "end": "2026-07-24",
+    "category": "Docente",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 611,
+    "title": "Calificación del examen complexivo parte escrita",
+    "start": "2026-08-04",
+    "end": "2026-08-06",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 612,
+    "title": "Calificación del examen complexivo de recuperación parte escrita",
+    "start": "2026-09-08",
+    "end": "2026-09-10",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 613,
+    "title": "Elaboración de reactivos para exámenes complexivos y exámenes complexivos de recuperación (V1 y V2)",
+    "start": "2026-06-01",
+    "end": "2026-06-15",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 614,
+    "title": "Ingreso del banco de preguntas al sistema de evaluaciones (SIETTE) de exámenes complexivos y exámenes complexivos de recuperación (V1 y V2)",
+    "start": "2026-06-16",
+    "end": "2026-06-19",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 615,
+    "title": "Examen complexivo parte oral RED todas las carreras",
+    "start": "2026-07-06",
+    "end": "2026-07-10",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 616,
+    "title": "Examen complexivo parte oral RED - todas las carreras.",
+    "start": "2026-07-13",
+    "end": "2026-07-17",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 617,
+    "title": "Exposición oral del trabajo de integración curricular RED",
+    "start": "2026-07-29",
+    "end": "2026-07-31",
+    "category": "Otro",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 618,
+    "title": "Exposición oral del trabajo de integración curricular RED.",
+    "start": "2026-08-03",
+    "end": "2026-08-07",
+    "category": "Otro",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 619,
+    "title": "Exposición oral del trabajo de integración curricular RED",
+    "start": "2026-08-24",
+    "end": "2026-08-27",
+    "category": "Otro",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 620,
+    "title": "Recuperación de examen complexivo parte oral RED todas las carreras",
+    "start": "2026-09-14",
+    "end": "2026-09-17",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 621,
+    "title": "Recuperación de la exposición oral del trabajo de integración curricular RED",
+    "start": "2026-09-14",
+    "end": "2026-09-17",
+    "category": "Otro",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 622,
+    "title": "Recuperación de examen complexivo parte oral RED todas las carreras.",
+    "start": "2026-09-23",
+    "end": "2026-09-30",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 623,
+    "title": "Recuperación de la exposición oral del trabajo de integración curricular RED.",
+    "start": "2026-09-23",
+    "end": "2026-09-30",
+    "category": "Otro",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 624,
+    "title": "Examen complexivo parte escrita RED excepto Derecho",
+    "start": "2026-08-01",
+    "end": "2026-08-03",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 625,
+    "title": "Recuperación de examen complexivo parte escrita RED excepto Derecho",
+    "start": "2026-09-05",
+    "end": "2026-09-07",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 626,
+    "title": "Respuesta a recalificaciones de exámenes complexivos parte escrita",
+    "start": "2026-08-07",
+    "end": "2026-08-28",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 627,
+    "title": "Respuesta a recalificaciones de recuperación de exámenes complexivos parte escrita",
+    "start": "2026-09-11",
+    "end": "2026-09-18",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Docentes"
+  },
+  {
+    "id": 628,
+    "title": "Examen complexivo parte oral RED todas las carreras",
+    "start": "2026-07-06",
+    "end": "2026-07-10",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Estudiantes"
+  },
+  {
+    "id": 629,
+    "title": "Examen complexivo parte oral RED todas las carreras.",
+    "start": "2026-07-13",
+    "end": "2026-07-17",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Estudiantes"
+  },
+  {
+    "id": 630,
+    "title": "Exposición oral del trabajo de integración curricular RED",
+    "start": "2026-07-29",
+    "end": "2026-07-31",
+    "category": "Otro",
+    "modality": "GR D-EL · Estudiantes"
+  },
+  {
+    "id": 631,
+    "title": "Exposición oral del trabajo de integración curricular RED.",
+    "start": "2026-08-03",
+    "end": "2026-08-07",
+    "category": "Otro",
+    "modality": "GR D-EL · Estudiantes"
+  },
+  {
+    "id": 632,
+    "title": "Exposición oral del trabajo de integración curricular RED",
+    "start": "2026-08-24",
+    "end": "2026-08-27",
+    "category": "Otro",
+    "modality": "GR D-EL · Estudiantes"
+  },
+  {
+    "id": 633,
+    "title": "Recuperación de examen complexivo parte oral RED todas las carreras",
+    "start": "2026-09-14",
+    "end": "2026-09-17",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Estudiantes"
+  },
+  {
+    "id": 634,
+    "title": "Recuperación de la exposición oral del trabajo de integración curricular RED",
+    "start": "2026-09-14",
+    "end": "2026-09-17",
+    "category": "Otro",
+    "modality": "GR D-EL · Estudiantes"
+  },
+  {
+    "id": 635,
+    "title": "Recuperación de examen complexivo parte oral RED todas las carreras.",
+    "start": "2026-09-23",
+    "end": "2026-09-30",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Estudiantes"
+  },
+  {
+    "id": 636,
+    "title": "Recuperación de la exposición oral del trabajo de integración curricular RED.",
+    "start": "2026-09-23",
+    "end": "2026-09-30",
+    "category": "Otro",
+    "modality": "GR D-EL · Estudiantes"
+  },
+  {
+    "id": 637,
+    "title": "Examen complexivo parte escrita RED excepto Derecho",
+    "start": "2026-08-01",
+    "end": "2026-08-03",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Estudiantes"
+  },
+  {
+    "id": 638,
+    "title": "Recuperación de examen complexivo parte escrita RED excepto Derecho",
+    "start": "2026-09-05",
+    "end": "2026-09-07",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Estudiantes"
+  },
+  {
+    "id": 639,
+    "title": "Respuesta a recalificaciones de exámenes complexivos parte escrita",
+    "start": "2026-08-07",
+    "end": "2026-08-28",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Estudiantes"
+  },
+  {
+    "id": 640,
+    "title": "Solicitar recalificaciones de exámenes complexivos parte escrita",
+    "start": "2026-08-07",
+    "end": "2026-08-27",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Estudiantes"
+  },
+  {
+    "id": 641,
+    "title": "Respuesta a recalificaciones de recuperación de exámenes complexivos parte escrita",
+    "start": "2026-09-11",
+    "end": "2026-09-18",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Estudiantes"
+  },
+  {
+    "id": 642,
+    "title": "Solicitar recalificaciones de recuperación de exámenes complexivos parte escrita",
+    "start": "2026-09-11",
+    "end": "2026-09-17",
+    "category": "Evaluación",
+    "modality": "GR D-EL · Estudiantes"
+  },
+  {
+    "id": 643,
+    "title": "Entrega a la carrera el Plan docente del internado (Coordinador/a de Internado Rotativo)",
+    "start": "2026-03-26",
+    "end": "2026-04-01",
+    "category": "Docente",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 644,
+    "title": "Ingreso de actividades académicas en el EVA de acuerdo al plan docente",
+    "start": "2026-04-21",
+    "end": "2026-04-27",
+    "category": "Docente",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 645,
+    "title": "Ingreso del Plan Docente aprobado en el EVA",
+    "start": "2026-04-28",
+    "end": "2026-04-30",
+    "category": "Docente",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 646,
+    "title": "Inicio y fin del periodo académico del internado",
+    "start": "2026-05-01",
+    "end": "2027-04-30",
+    "category": "Otro",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 647,
+    "title": "Docente de la asignatura registra notas en el EVA (actividades, informes, revisión y aprobación de los TICs) Semana 13",
+    "start": "2026-04-20",
+    "end": "2026-07-05",
+    "category": "Docente",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 648,
+    "title": "Primer bimestre registro de notas en gradebook del practicum 4.1 opción examen complexivo incluye medicina",
+    "start": "2026-05-31",
+    "end": "2026-06-05",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 649,
+    "title": "Segundo bimestre registro de notas en gradebook del practicum 4.1 y 4.2 opción examen complexivo incluye Medicina",
+    "start": "2026-07-24",
+    "end": "2026-07-28",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 650,
+    "title": "Calificación de examen complexivo parte escrita",
+    "start": "2026-08-04",
+    "end": "2026-08-06",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 651,
+    "title": "Calificación de examen complexivo de recuperación parte escrita",
+    "start": "2026-09-08",
+    "end": "2026-09-10",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 652,
+    "title": "Elaboración de reactivos para exámenes complexivos y exámenes complexivos de recuperación (V1 y V2)",
+    "start": "2026-06-01",
+    "end": "2026-06-15",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 653,
+    "title": "Ingreso del banco de preguntas al sistema de evaluaciones (SIETTE) de examen complexivo y recuperación de examen complexivo (V1 y V2)",
+    "start": "2026-06-16",
+    "end": "2026-06-19",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 654,
+    "title": "Examen complexivo parte oral RED Todas las carreras (excepto derecho)",
+    "start": "2026-07-06",
+    "end": "2026-07-24",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 655,
+    "title": "Exposisicón oral del trabajo de integración curricular RED",
+    "start": "2026-07-06",
+    "end": "2026-07-24",
+    "category": "Otro",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 656,
+    "title": "Recuperación de examen complexivo parte oral RED todas las carreras (excepto derecho)",
+    "start": "2026-09-07",
+    "end": "2026-09-11",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 657,
+    "title": "Recuperación de la exposición oral del trabajo de integración curricular RED",
+    "start": "2026-09-07",
+    "end": "2026-09-11",
+    "category": "Otro",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 658,
+    "title": "Publicación de notas de examen complexivo parte oral y escrito y trabajo de integración curricular (TIC)",
+    "start": "2026-07-27",
+    "end": "2026-08-07",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 659,
+    "title": "Capacitación a docentes y personal de apoyo al examen complexivo parte escrita",
+    "start": "2026-07-30",
+    "end": "2026-07-30",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 660,
+    "title": "Capacitación a docentes y personal de apoyo a la recuperación del examen complexivo parte escrita",
+    "start": "2026-09-03",
+    "end": "2026-09-03",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 661,
+    "title": "Examen complexivo parte escrita RED",
+    "start": "2026-08-01",
+    "end": "2026-08-03",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 662,
+    "title": "Recuperación examen complexivo parte escrita RED",
+    "start": "2026-09-05",
+    "end": "2026-09-07",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 663,
+    "title": "Respuesta a recalificaciones de exámenes complexivos parte escrita",
+    "start": "2026-08-07",
+    "end": "2026-08-28",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 664,
+    "title": "Respuesta a recalificaciones de recuperación de exámenes complexivos parte escrita",
+    "start": "2026-09-11",
+    "end": "2026-09-18",
+    "category": "Evaluación",
+    "modality": "GR P · Docentes"
+  },
+  {
+    "id": 665,
+    "title": "Exposición oral del trabajo de integración curricular",
+    "start": "2026-08-03",
+    "end": "2026-08-07",
+    "category": "Otro",
+    "modality": "TEC EL · Estudiantes"
+  },
+  {
+    "id": 666,
+    "title": "Exposición oral del trabajo de integración curricular.",
+    "start": "2026-08-24",
+    "end": "2026-08-27",
+    "category": "Otro",
+    "modality": "TEC EL · Estudiantes"
+  },
+  {
+    "id": 667,
+    "title": "Recuperación de la exposición oral del trabajo de integración curricular.",
+    "start": "2026-09-23",
+    "end": "2026-09-30",
+    "category": "Otro",
+    "modality": "TEC EL · Estudiantes"
+  }
+]

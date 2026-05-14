@@ -50,7 +50,7 @@ function bestEventForCandidate(
   events: AcademicCalendarEventRecord[],
 ): AcademicCalendarEventRecord | null {
   if (!c.inferredStart || !c.inferredEnd) return null
-  const nt = normalizeTitle(c.rawText)
+  const nt = normalizeTitle(c.title ?? c.rawText)
   let best: { ev: AcademicCalendarEventRecord; score: number } | null = null
   for (const ev of events) {
     if (ev.start !== c.inferredStart || ev.end !== c.inferredEnd) continue
@@ -109,7 +109,7 @@ async function main() {
       continue
     }
     if (c.inferredStart && c.inferredEnd) {
-      const k = `${c.inferredStart}|${c.inferredEnd}|${normalizeTitle(c.rawText)}`
+      const k = `${c.inferredStart}|${c.inferredEnd}|${normalizeTitle(c.title ?? c.rawText)}`
       const ev2 = EVENTS.find((e) => eventKey(e) === k)
       if (ev2) {
         matched.push({ candidate: c, eventId: ev2.id, eventTitle: ev2.title })
