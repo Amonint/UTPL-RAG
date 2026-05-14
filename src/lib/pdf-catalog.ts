@@ -34,7 +34,7 @@ type PdfCatalog = {
   pdfs: PdfCatalogEntry[]
 }
 
-const DEFAULT_PATH = path.join(process.cwd(), 'data', 'derived', 'doop-pdf-catalog.json')
+const DEFAULT_PATH = path.join(process.cwd(), 'src', 'data', 'doop-pdf-catalog.json')
 
 let cache: PdfCatalog | null = null
 

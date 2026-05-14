@@ -26,7 +26,8 @@ function resolveCatalogRoot(arg: string): string {
 
 const ROOT = resolveCatalogRoot(parseRootCli())
 const TEXTRACT_CLEAN_DIR = path.join(REPO, 'data', 'derived', 'textract-clean')
-const OUT = path.join(REPO, 'data', 'derived', 'doop-pdf-catalog.json')
+/** Catálogo servido en producción (Vercel excluye `/data`; va junto al resto de `src/data/`). */
+const OUT = path.join(REPO, 'src', 'data', 'doop-pdf-catalog.json')
 
 interface ExtractionSource {
   sourceTxtPath: string
