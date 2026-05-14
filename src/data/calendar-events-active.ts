@@ -1,11 +1,12 @@
 /**
- * Dataset activo del calendario (embebido en `calendar-events-active.json`, versionado en git).
- * Para regenerar datos desde fuentes locales: `npm run calendar:merge-sources` escribe
- * `calendar-events-from-sources.json`; copia o sustituye el JSON y vuelve a apuntar el import si hace falta.
+ * Dataset activo del calendario: fusiona los JSON de la raíz del repo
+ * (`grado-en-linea.json`, `grado-presencial.json`, `tecnico-tecnologico-*.json`,
+ * `servicios-tramites.json`, `postgrado.json`) vía `npm run calendar:merge-sources`
+ * → `calendar-events-from-sources.json` (versionado en git para Vercel).
  */
 import type { AcademicCalendarEventRecord } from './academic-calendar-events'
 
-import events from './calendar-events-active.json'
+import events from './calendar-events-from-sources.json'
 
 export const EVENTS = events as AcademicCalendarEventRecord[]
 
