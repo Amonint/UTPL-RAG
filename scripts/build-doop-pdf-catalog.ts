@@ -3,7 +3,28 @@ import { readFile, readdir, writeFile, mkdir } from 'node:fs/promises'
 import path from 'node:path'
 
 const REPO = process.cwd()
-const ROOT = path.join(REPO, 'doop')
+
+const DEFAULT_ROOT_REL = 'Abril:agosto-2026'
+
+function parseRootCli(): string {
+  const prefix = '--root='
+  for (const a of process.argv.slice(2)) {
+    if (a.startsWith(prefix)) {
+      const v = a.slice(prefix.length).trim()
+      if (v) return v
+    }
+  }
+  return DEFAULT_ROOT_REL
+}
+
+function resolveCatalogRoot(arg: string): string {
+  const trimmed = arg.trim()
+  if (!trimmed) return path.join(REPO, DEFAULT_ROOT_REL)
+  if (path.isAbsolute(trimmed)) return trimmed
+  return path.resolve(REPO, trimmed)
+}
+
+const ROOT = resolveCatalogRoot(parseRootCli())
 const TEXTRACT_CLEAN_DIR = path.join(REPO, 'data', 'derived', 'textract-clean')
 const OUT = path.join(REPO, 'data', 'derived', 'doop-pdf-catalog.json')
 
@@ -344,6 +365,50 @@ function normalizeSubgrupoLabel(input: string): string {
   return input
 }
 
+/** Jerarquía de carpetas respecto a la raíz del catálogo (p. ej. Abril:agosto-2026 o doop). */
+function deriveGrupoSubgrupoFromTreePath(
+  canonical: string,
+  rootBase: string,
+  inferCtx: {
+    nivel: string
+    tipo: string
+    modalidad: string
+    sourceFolder: string
+    tokens: string
+  },
+): { grupo: string; subgrupo: string } {
+  const parts = normalizePath(canonical)
+    .split('/')
+    .filter((s) => s.length > 0)
+
+  if (parts[0] !== rootBase || parts.length < 2) {
+    const grupo = inferGrupo(inferCtx)
+    const subgrupo = normalizeSubgrupoLabel(inferSubgrupo(inferCtx))
+    return { grupo, subgrupo }
+  }
+
+  const underRoot = parts.slice(1)
+  const dirs = underRoot.slice(0, -1)
+
+  if (dirs.length === 0) {
+    return {
+      grupo: inferGrupo(inferCtx),
+      subgrupo: normalizeSubgrupoLabel(inferSubgrupo(inferCtx)),
+    }
+  }
+
+  const grupo = titleCase(dirs[0])
+  if (dirs.length === 1) {
+    return {
+      grupo,
+      subgrupo: normalizeSubgrupoLabel(inferSubgrupo(inferCtx)),
+    }
+  }
+
+  const subRaw = dirs.slice(1).join(' / ')
+  return { grupo, subgrupo: normalizeSubgrupoLabel(subRaw) }
+}
+
 function inferRolFromTipo(tipo: string, detectedRol: string): string {
   if (detectedRol !== 'Institucional') return detectedRol
   if (tipo === 'Matriculas e inscripciones' || tipo === 'Admisiones' || tipo === 'Validacion y certificacion de ingles') {
@@ -399,26 +464,36 @@ async function main() {
     const textTokens = normalizeAscii(extractedText)
     const tokens = `${pathTokens} ${textTokens}`.trim()
 
-    const sourceFolders = [...new Set(paths.map((p) => p.split(path.sep)[1] ?? 'desconocido'))]
-    const sourceFolder = canonical.split(path.sep)[1] ?? sourceFolders[0] ?? 'desconocido'
+    const rootBase = path.basename(ROOT)
+    const sourceFolders = [
+      ...new Set(
+        paths.map((p) => {
+          const rel = normalizePath(path.relative(ROOT, path.join(REPO, p)))
+          const cut = rel.indexOf('/')
+          if (cut === -1) return rel || rootBase
+          return rel.slice(0, cut)
+        }),
+      ),
+    ]
+    const canonParts = normalizePath(canonical).split('/').filter((s) => s.length > 0)
+    const sourceFolder =
+      canonParts[0] === rootBase && canonParts.length > 1
+        ? canonParts[1]
+        : (canonParts[1] ?? sourceFolders[0] ?? 'desconocido')
 
-    const relFromSource = canonical.split(path.sep).slice(2)
-    const groupParts = relFromSource.slice(0, Math.max(0, relFromSource.length - 1))
     const nivel = detectNivel(tokens)
     const modalidad = detectModalidad(tokens)
     const tipo = detectTipo(tokens)
     const periodo = detectPeriodo(pathTokens, textTokens)
     const detectedRol = detectRol(tokens, canonical)
 
-    let grupo = titleCase(groupParts[0] ?? '')
-    let subgrupo = titleCase(groupParts[1] ?? '')
-    if (!groupParts[0]) {
-      grupo = inferGrupo({ nivel, tipo, sourceFolder, tokens })
-    }
-    if (!groupParts[1]) {
-      subgrupo = inferSubgrupo({ modalidad, tipo, sourceFolder, tokens })
-    }
-    subgrupo = normalizeSubgrupoLabel(subgrupo)
+    const { grupo, subgrupo } = deriveGrupoSubgrupoFromTreePath(canonical, rootBase, {
+      nivel,
+      tipo,
+      modalidad,
+      sourceFolder,
+      tokens,
+    })
     const rol = inferRolFromTipo(tipo, detectedRol)
 
     const hierarchy = {
@@ -444,10 +519,16 @@ async function main() {
     ])
 
     const semanticExcerpt = normalizeAscii(extractedText).slice(0, 3500)
+    const folderTrail =
+      canonParts[0] === rootBase && canonParts.length > 2
+        ? canonParts.slice(1, -1).join(' / ')
+        : ''
     const searchText = [
       name,
       canonical,
       ...paths,
+      rootBase,
+      folderTrail,
       hierarchy.grupo,
       hierarchy.subgrupo,
       hierarchy.modalidad,
@@ -503,7 +584,7 @@ async function main() {
 
   const payload = {
     generatedAt: new Date().toISOString(),
-    root: 'doop',
+    root: normalizePath(path.relative(REPO, ROOT)) || path.basename(ROOT),
     sourceFolders: folders,
     summary: {
       inputPdfCount: allPaths.length,

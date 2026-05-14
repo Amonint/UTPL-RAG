@@ -2,15 +2,21 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 
 const REPO = process.cwd()
-const DOOP_ROOT = path.join(REPO, 'doop')
 
-function safeResolveDoopPath(relativePath: string): string | null {
+/** Raíces permitidas para PDFs indexados (catálogo y enlaces firmes). */
+const PDF_DOC_ROOTS = [path.join(REPO, 'doop'), path.join(REPO, 'Abril:agosto-2026')]
+
+function safeResolveCatalogPdfPath(relativePath: string): string | null {
   if (!relativePath) return null
   if (relativePath.includes('..')) return null
   const abs = path.join(REPO, relativePath)
   const normalized = path.normalize(abs)
-  if (!normalized.startsWith(DOOP_ROOT + path.sep)) return null
-  return normalized
+  for (const root of PDF_DOC_ROOTS) {
+    if (normalized === root || normalized.startsWith(root + path.sep)) {
+      return normalized
+    }
+  }
+  return null
 }
 
 export async function GET(request: Request) {
@@ -22,7 +28,7 @@ export async function GET(request: Request) {
       return Response.json({ message: 'Missing query param: path' }, { status: 400 })
     }
 
-    const abs = safeResolveDoopPath(rel)
+    const abs = safeResolveCatalogPdfPath(rel)
     if (!abs) {
       return Response.json({ message: 'Invalid PDF path' }, { status: 400 })
     }

@@ -36,6 +36,34 @@ type PdfSearchResult = {
   score: number
 }
 
+function formatPdfPeriodFolderName(segment: string): string {
+  const s = segment.trim()
+  if (/^Abril:agosto-\d{4}$/i.test(s)) {
+    return `Abril–Agosto ${s.slice(-4)}`
+  }
+  return s
+}
+
+function buildPdfUbicacionLine(pdf: PdfSearchResult): string {
+  const parts = pdf.canonicalPath.split(/[/\\]/).filter(Boolean)
+  const period = parts[0] ? formatPdfPeriodFolderName(parts[0]) : ''
+  const crumbs = [period, pdf.hierarchy.grupo, pdf.hierarchy.subgrupo].filter(
+    (x) => x && x !== 'Sin especificar',
+  )
+  return crumbs.length > 0 ? `Ubicación: ${crumbs.join(' › ')}` : ''
+}
+
+function buildPdfClasificacionLine(pdf: PdfSearchResult): string {
+  const bits = [pdf.hierarchy.nivel, pdf.hierarchy.tipo, pdf.hierarchy.rol].filter(
+    (x) => x && x !== 'Sin especificar',
+  )
+  if (pdf.hierarchy.periodo && pdf.hierarchy.periodo !== 'Sin especificar') {
+    bits.push(pdf.hierarchy.periodo)
+  }
+  if (bits.length === 0) return ''
+  return `Clasificación: ${bits.join(' · ')}`
+}
+
 /** Columna búsqueda inicial: ~20% más ancha que `max-w-xl` (36rem → 43.2rem). */
 const SEARCH_COLUMN_MAX = 'max-w-[43.2rem]'
 
@@ -433,7 +461,10 @@ export function RagWorkbench() {
                   PDFs del calendario
                 </p>
                 <ul className="m-0 grid gap-1 p-0">
-                  {livePdfResults.map((pdf) => (
+                  {livePdfResults.map((pdf) => {
+                    const ubicacion = buildPdfUbicacionLine(pdf)
+                    const clasificacion = buildPdfClasificacionLine(pdf)
+                    return (
                     <li key={pdf.pdfId} className="list-none">
                       <button
                         type="button"
@@ -443,15 +474,18 @@ export function RagWorkbench() {
                         className="w-full rounded-lg border border-transparent px-3 py-2 text-left transition hover:border-chalk hover:bg-powder"
                       >
                         <p className="m-0 text-sm font-medium text-obsidian">{pdf.name}</p>
-                        <p className="m-0 text-xs text-gravel">
-                          {pdf.hierarchy.nivel} · {pdf.hierarchy.modalidad} · {pdf.hierarchy.tipo}
-                        </p>
-                        <p className="m-0 text-[11px] text-gravel">
-                          {pdf.hierarchy.grupo} / {pdf.hierarchy.subgrupo} · {pdf.hierarchy.periodo} · {pdf.hierarchy.rol}
-                        </p>
+                        {ubicacion ? (
+                          <p className="m-0 text-xs leading-snug text-gravel">{ubicacion}</p>
+                        ) : null}
+                        {clasificacion ? (
+                          <p className="m-0 text-[11px] leading-snug text-gravel">
+                            {clasificacion}
+                          </p>
+                        ) : null}
                       </button>
                     </li>
-                  ))}
+                    )
+                  })}
                 </ul>
               </div>
             ) : null}
