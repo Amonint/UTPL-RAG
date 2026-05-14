@@ -1,0 +1,20 @@
+# Upload de Vercel CLI: excluir artefactos y datos pesados (límite ~100 MB).
+# La app Next usa principalmente src/ y src/data/, no la carpeta data/ del repo.
+
+node_modules
+.next
+.git
+coverage
+dist
+.env
+.env.*
+
+# Datos derivados, textract, PDFs de calendarios (cientos de MB).
+# Usar /data para no excluir src/data/ (código + JSON del calendario).
+/data
+
+# PDFs y cronogramas locales
+/Abril:agosto-2026
+/pdfs_descargados
+
+.DS_Store
