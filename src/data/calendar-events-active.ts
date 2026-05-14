@@ -1,11 +1,11 @@
 /**
- * Dataset activo del calendario: solo eventos de alta confianza extraidos
- * desde `data/derived/utpl-events-2026-high-confidence.json` y copiados a
- * `src/data/calendar-events-high-confidence.json`.
+ * Dataset activo del calendario (embebido en `calendar-events-active.json`, versionado en git).
+ * Para regenerar datos desde fuentes locales: `npm run calendar:merge-sources` escribe
+ * `calendar-events-from-sources.json`; copia o sustituye el JSON y vuelve a apuntar el import si hace falta.
  */
 import type { AcademicCalendarEventRecord } from './academic-calendar-events'
 
-import events from './calendar-events-high-confidence.json'
+import events from './calendar-events-active.json'
 
 export const EVENTS = events as AcademicCalendarEventRecord[]
 
