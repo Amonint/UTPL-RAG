@@ -1,15 +1,16 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
-const REPO = process.cwd()
-
 /** Raíces permitidas para PDFs indexados (catálogo y enlaces firmes). */
-const PDF_DOC_ROOTS = [path.join(REPO, 'doop'), path.join(REPO, 'Abril:agosto-2026')]
+const PDF_DOC_ROOTS = [
+  path.join(/* turbopackIgnore: true */ process.cwd(), 'doop'),
+  path.join(/* turbopackIgnore: true */ process.cwd(), 'Abril:agosto-2026'),
+]
 
 function safeResolveCatalogPdfPath(relativePath: string): string | null {
   if (!relativePath) return null
   if (relativePath.includes('..')) return null
-  const abs = path.join(REPO, relativePath)
+  const abs = path.join(/* turbopackIgnore: true */ process.cwd(), relativePath)
   const normalized = path.normalize(abs)
   for (const root of PDF_DOC_ROOTS) {
     if (normalized === root || normalized.startsWith(root + path.sep)) {

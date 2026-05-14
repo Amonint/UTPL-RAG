@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint .",
     "test": "vitest run",
@@ -25,6 +25,8 @@
     "dedupe:pdf-content:doop": "tsx scripts/pdf-content-dedupe.ts --root=doop --textract-manifest=data/derived/textract-raw/manifest.json --out=data/derived/pdf-content-dedupe.json",
     "extract:utpl-events-json": "tsx --env-file-if-exists=.env scripts/extract-utpl-events-json.ts",
     "calendar:build-high-confidence": "tsx scripts/build-calendar-events-high-confidence.ts",
+    "calendar:merge-sources": "tsx scripts/merge-utpl-calendar-sources.ts",
+    "validate:calendar": "tsx scripts/merge-utpl-calendar-sources.ts",
     "pdf:build-catalog": "tsx scripts/build-doop-pdf-catalog.ts"
   },
   "dependencies": {
