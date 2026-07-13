@@ -1,16 +1,20 @@
-"use client"
+'use client'
 
-import * as React from "react"
+import { useEffect, useState } from 'react'
 
+/**
+ * Returns whether `query` matches. Always starts as `false` so SSR and the
+ * first client paint agree; the real value is applied after mount.
+ */
 export function useMediaQuery(query: string): boolean {
-  const [matches, setMatches] = React.useState(false)
+  const [matches, setMatches] = useState(false)
 
-  React.useEffect(() => {
-    const m = window.matchMedia(query)
-    const onChange = () => setMatches(m.matches)
-    onChange()
-    m.addEventListener("change", onChange)
-    return () => m.removeEventListener("change", onChange)
+  useEffect(() => {
+    const media = window.matchMedia(query)
+    const sync = () => setMatches(media.matches)
+    sync()
+    media.addEventListener('change', sync)
+    return () => media.removeEventListener('change', sync)
   }, [query])
 
   return matches

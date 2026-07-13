@@ -23,6 +23,8 @@ import {
   vectorLiteral,
 } from '@/lib/search/hybrid-search-config'
 import { normalizeText } from '@/lib/search/normalize'
+import { buildSpanishDateSearchText } from '@/lib/search/spanish-date-search'
+import { buildSpanishDateSearchTextSql } from '@/lib/search/spanish-date-search-sql'
 import { EVENTS as STATIC_CALENDAR_EVENTS, type AcademicCalendarEventRecord } from '@/data/academic-calendar-events'
 import { dbQuery } from '@/lib/db/postgres'
 import { dbQueryClient } from '@/lib/db/transaction'
@@ -36,6 +38,8 @@ export type CalendarEventsListQuery = {
   periodValidFrom?: string
   periodValidTo?: string
   includePast?: boolean
+  /** Si true, oculta eventos con editorialStatus=review (calendario público). */
+  excludePendingReview?: boolean
 }
 
 export type CreateCalendarEventInput = {
@@ -93,6 +97,20 @@ export async function calendarEventsTableReady(): Promise<boolean> {
     select to_regclass('public.calendar_events') is not null as ready
   `)
   return Boolean(rows[0]?.ready)
+}
+
+/** Categorías de evento usadas en calendario (desde BD, sin lista fija). */
+export async function fetchDistinctCalendarEventTypes(): Promise<string[]> {
+  const ready = await calendarEventsTableReady()
+  if (!ready) return []
+  const { rows } = await dbQuery<{ event_type: string }>(`
+    select distinct event_type
+    from calendar_events
+    where is_active
+      and nullif(trim(event_type), '') is not null
+    order by event_type asc
+  `)
+  return rows.map((r) => r.event_type)
 }
 
 function slugify(value: string): string {
@@ -170,8 +188,35 @@ async function upsertCyclePeriod(
   client: PoolClient,
   scope: CalendarEventScopeMeta,
 ): Promise<string | null> {
-  if (!scope.periodLabel?.trim()) return null
-  const code = slugify(scope.periodLabel)
+  if (!scope.periodLabel?.trim() && !scope.periodCode?.trim()) return null
+
+  if (scope.periodCode?.trim()) {
+    const byCode = await dbQueryClient<{ id: string }>(
+      client,
+      `select id::text from cycle_periods where code = $1 limit 1`,
+      [scope.periodCode.trim()],
+    )
+    if (byCode.rows[0]?.id) return byCode.rows[0].id
+  }
+
+  if (scope.periodValidFrom && scope.periodValidTo) {
+    const byDates = await dbQueryClient<{ id: string }>(
+      client,
+      `
+      select id::text
+      from cycle_periods
+      where starts_on = $1::date
+        and ends_on = $2::date
+        and is_active
+      order by case when name = $3 then 0 else 1 end, code asc
+      limit 1
+      `,
+      [scope.periodValidFrom, scope.periodValidTo, scope.periodLabel ?? ''],
+    )
+    if (byDates.rows[0]?.id) return byDates.rows[0].id
+  }
+
+  const code = scope.periodCode?.trim() || slugify(scope.periodLabel ?? 'periodo')
   const { rows } = await dbQueryClient<{ id: string }>(
     client,
     `
@@ -181,11 +226,10 @@ async function upsertCyclePeriod(
       set name = excluded.name,
           starts_on = coalesce(excluded.starts_on, cycle_periods.starts_on),
           ends_on = coalesce(excluded.ends_on, cycle_periods.ends_on),
-          is_active = true,
           updated_at = now()
     returning id::text
     `,
-    [code, scope.periodLabel, scope.periodValidFrom ?? null, scope.periodValidTo ?? null],
+    [code, scope.periodLabel ?? code, scope.periodValidFrom ?? null, scope.periodValidTo ?? null],
   )
   return rows[0]?.id ?? null
 }
@@ -284,7 +328,10 @@ const LIST_SELECT = `
 export async function listCalendarEvents(
   query: CalendarEventsListQuery,
 ): Promise<AcademicCalendarEventRecord[]> {
-  const rows = await listCalendarEventsWithScope(query)
+  const rows = await listCalendarEventsWithScope({
+    ...query,
+    excludePendingReview: query.excludePendingReview ?? true,
+  })
   return rows.map(({ scope: _scope, ...event }) => event)
 }
 
@@ -300,6 +347,14 @@ export async function listCalendarEventsWithScope(
 
   if (!query.includePast) {
     conditions.push(`ce.ends_on >= (current_date at time zone 'America/Guayaquil')::date`)
+  }
+
+  if (query.excludePendingReview) {
+    conditions.push(`(
+      ce.details_text is null
+      or ce.details_text not like '{%'
+      or coalesce(ce.details_text::jsonb->>'editorialStatus', 'published') <> 'review'
+    )`)
   }
 
   if (query.domainCode) {
@@ -430,7 +485,14 @@ function searchCalendarEventsStatic(query: string, limit: number): SearchResult[
 
   return STATIC_CALENDAR_EVENTS.filter((event) => {
     const text = normalizeText(
-      `${event.title} ${event.category} ${event.modality} ${event.start} ${event.end}`,
+      [
+        event.title,
+        event.category,
+        event.modality,
+        event.start,
+        event.end,
+        buildSpanishDateSearchText(event.start, event.end),
+      ].join(' '),
     )
     return tokens.some((t) => text.includes(t))
   })
@@ -511,7 +573,9 @@ export async function searchCalendarEventsForChat(input: {
   const periodTextExpr = normalizeSqlTextExpr('b.period_names', unaccentReady)
   const startsOnTextExpr = normalizeSqlTextExpr('b.starts_on::text', unaccentReady)
   const endsOnTextExpr = normalizeSqlTextExpr('b.ends_on::text', unaccentReady)
-  const searchDocExpr = `concat_ws(' ', ${titleTextExpr}, ${eventTypeTextExpr}, ${startsOnTextExpr}, ${endsOnTextExpr}, ${periodTextExpr}, ${detailsTextExpr})`
+  const startsOnSpanishTextExpr = normalizeSqlTextExpr('b.starts_on_spanish', unaccentReady)
+  const endsOnSpanishTextExpr = normalizeSqlTextExpr('b.ends_on_spanish', unaccentReady)
+  const searchDocExpr = `concat_ws(' ', ${titleTextExpr}, ${eventTypeTextExpr}, ${startsOnTextExpr}, ${endsOnTextExpr}, ${startsOnSpanishTextExpr}, ${endsOnSpanishTextExpr}, ${periodTextExpr}, ${detailsTextExpr})`
   const trigramScoreExpr = trgmReady ? `similarity(${searchDocExpr}, ${similarityParam}) * 0.22` : '0'
   const vectorScoreExpr =
     queryVectorParam && vectorMaxDistanceParam
@@ -529,6 +593,8 @@ export async function searchCalendarEventsForChat(input: {
         ce.event_type,
         ce.starts_on::text as starts_on,
         ce.ends_on::text as ends_on,
+        ${buildSpanishDateSearchTextSql('ce.starts_on')} as starts_on_spanish,
+        ${buildSpanishDateSearchTextSql('ce.ends_on')} as ends_on_spanish,
         ce.details_text,
         ${embeddingSelectExpr}
         coalesce(string_agg(distinct cp.name, ' '), '') as period_names,
@@ -555,6 +621,7 @@ export async function searchCalendarEventsForChat(input: {
         (case when ${titleTextExpr} like $1 then 0.38 else 0 end) +
         (case when ${eventTypeTextExpr} like $1 then 0.16 else 0 end) +
         (case when ${startsOnTextExpr} like $1 or ${endsOnTextExpr} like $1 then 0.20 else 0 end) +
+        (case when ${startsOnSpanishTextExpr} like $1 or ${endsOnSpanishTextExpr} like $1 then 0.26 else 0 end) +
         (case when ${periodTextExpr} like $1 then 0.14 else 0 end) +
         (case when ${detailsTextExpr} like $1 then 0.10 else 0 end) +
         coalesce((
@@ -575,6 +642,8 @@ export async function searchCalendarEventsForChat(input: {
       or ${eventTypeTextExpr} like $1
       or ${startsOnTextExpr} like $1
       or ${endsOnTextExpr} like $1
+      or ${startsOnSpanishTextExpr} like $1
+      or ${endsOnSpanishTextExpr} like $1
       or ${detailsTextExpr} like $1
       or ${periodTextExpr} like $1
       ${trgmReady ? `or similarity(${searchDocExpr}, ${similarityParam}) > 0.16` : ''}

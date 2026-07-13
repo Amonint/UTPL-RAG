@@ -1,13 +1,13 @@
 "use client"
 
-import { useCallback, useMemo, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
+import { normalizeText } from "@/lib/search/normalize"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -36,6 +36,7 @@ export interface EventManagerProps {
   colors?: { name: string; value: EventColor; bg: string; text: string }[]
   defaultView?: "month" | "list"
   className?: string
+  initialOpenEventId?: string
 }
 
 const defaultColors: { name: string; value: EventColor; bg: string; text: string }[] = [
@@ -68,18 +69,18 @@ function isExpiringWithinDays(event: Event, days: number): boolean {
   return delta >= 0 && delta <= days
 }
 
-function eventOverlapsDay(event: Event, day: Date): boolean {
-  const dayStr = toLocalYmd(day)
-  const startStr = toLocalYmd(event.startTime)
-  const endStr = toLocalYmd(event.endTime)
-  return startStr <= dayStr && dayStr <= endStr
+/** Eventos cuya vigencia cruza el día calendario local `day` (00:00–23:59:59). */
+function eventOverlapsLocalCalendarDay(event: Event, day: Date): boolean {
+  const dayStart = new Date(day.getFullYear(), day.getMonth(), day.getDate(), 0, 0, 0, 0)
+  const dayEnd = new Date(day.getFullYear(), day.getMonth(), day.getDate(), 23, 59, 59, 999)
+  return event.startTime <= dayEnd && event.endTime >= dayStart
 }
 
 /** Un evento de varios días solo se lista el primer día de cada tramo continuo dentro de la grilla (evita repetir el mismo acto en todas las celdas). */
 function eventStartsVisibleRunOnDay(event: Event, day: Date, dayIndex: number, gridDays: Date[]): boolean {
-  if (!eventOverlapsDay(event, day)) return false
+  if (!eventOverlapsLocalCalendarDay(event, day)) return false
   if (dayIndex === 0) return true
-  return !eventOverlapsDay(event, gridDays[dayIndex - 1]!)
+  return !eventOverlapsLocalCalendarDay(event, gridDays[dayIndex - 1]!)
 }
 
 /** Rango típico UTPL: 00:00 del día inicio → 23:59:59 del día fin (sin hora concreta de actividad). */
@@ -124,6 +125,7 @@ export function EventManager({
   colors = defaultColors,
   defaultView = "month",
   className,
+  initialOpenEventId,
 }: EventManagerProps) {
   const [events] = useState<Event[]>(initialEvents)
   const [currentDate, setCurrentDate] = useState(() => new Date())
@@ -131,28 +133,23 @@ export function EventManager({
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null)
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([])
-  const [expiringOnly, setExpiringOnly] = useState(false)
   const [selectedDayPanel, setSelectedDayPanel] = useState<{ day: Date; events: Event[] } | null>(null)
 
   const filteredEvents = useMemo(() => {
     return events.filter((event) => {
       if (searchQuery) {
-        const q = searchQuery.toLowerCase()
+        const q = normalizeText(searchQuery)
+        const norm = (s: string) => normalizeText(s)
         const matches =
-          event.title.toLowerCase().includes(q) ||
-          event.description?.toLowerCase().includes(q) ||
-          event.category?.toLowerCase().includes(q) ||
-          event.tags?.some((t) => t.toLowerCase().includes(q))
+          norm(event.title).includes(q) ||
+          (event.description ? norm(event.description).includes(q) : false) ||
+          (event.category ? norm(event.category).includes(q) : false) ||
+          event.tags?.some((t) => norm(t).includes(q))
         if (!matches) return false
       }
-      if (selectedCategories.length > 0 && event.category && !selectedCategories.includes(event.category)) {
-        return false
-      }
-      if (expiringOnly && !isExpiringWithinDays(event, 3)) return false
       return true
     })
-  }, [events, searchQuery, selectedCategories, expiringOnly])
+  }, [events, searchQuery])
 
   const expiringEvents = useMemo(
     () =>
@@ -164,6 +161,7 @@ export function EventManager({
 
   const navigateDate = useCallback(
     (direction: "prev" | "next") => {
+      setSelectedDayPanel(null)
       setCurrentDate((prev) => {
         const d = new Date(prev)
         d.setMonth(prev.getMonth() + (direction === "next" ? 1 : -1))
@@ -185,6 +183,15 @@ export function EventManager({
     year: "numeric",
   })
 
+  useEffect(() => {
+    if (!initialOpenEventId) return
+    const target = events.find((event) => event.id === initialOpenEventId)
+    if (!target) return
+    setSelectedEvent(target)
+    setCurrentDate(target.startTime)
+    setIsDialogOpen(true)
+  }, [events, initialOpenEventId])
+
   return (
     <div className={cn("flex flex-col gap-4", className)}>
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
@@ -196,7 +203,14 @@ export function EventManager({
             <Button variant="outline" size="icon" onClick={() => navigateDate("prev")} className="h-8 w-8">
               <ChevronLeft className="h-4 w-4" />
             </Button>
-            <Button variant="outline" size="sm" onClick={() => setCurrentDate(new Date())}>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                setSelectedDayPanel(null)
+                setCurrentDate(new Date())
+              }}
+            >
               Hoy
             </Button>
             <Button variant="outline" size="icon" onClick={() => navigateDate("next")} className="h-8 w-8">
@@ -236,41 +250,6 @@ export function EventManager({
           className="w-full border-chalk/55 shadow-none dark:border-white/10"
         />
       </div>
-
-      {categories.length > 0 ? (
-        <div className="flex flex-wrap gap-2">
-          <span className="text-sm text-muted-foreground">Categoría:</span>
-          <Button
-            variant={selectedCategories.length === 0 ? "secondary" : "outline"}
-            size="sm"
-            onClick={() => setSelectedCategories([])}
-          >
-            Todas
-          </Button>
-          {categories.map((cat) => (
-            <Button
-              key={cat}
-              variant={selectedCategories.includes(cat) ? "secondary" : "outline"}
-              size="sm"
-              onClick={() =>
-                setSelectedCategories((prev) =>
-                  prev.includes(cat) ? prev.filter((c) => c !== cat) : [...prev, cat],
-                )
-              }
-            >
-              {cat}
-            </Button>
-          ))}
-          <Button
-            variant={expiringOnly ? "secondary" : "outline"}
-            size="sm"
-            onClick={() => setExpiringOnly((v) => !v)}
-            title="Muestra solo eventos cuya fecha fin vence dentro de 3 días"
-          >
-            Por vencer (3 días)
-          </Button>
-        </div>
-      ) : null}
 
       {view === "month" && (
         <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_320px]">
@@ -319,10 +298,6 @@ export function EventManager({
         <DialogContent className="max-w-md max-h-[90vh] overflow-y-auto sm:max-w-lg">
           <DialogHeader>
             <DialogTitle className="pr-6 text-base leading-snug sm:text-lg">{selectedEvent?.title}</DialogTitle>
-            <DialogDescription className="text-left text-pretty">
-              Origen: calendario académico publicado por la UTPL (cronograma de plazos y actividades del periodo). Las
-              fechas no son una cita personal: indican en qué días aplica cada ítem en el calendario institucional.
-            </DialogDescription>
           </DialogHeader>
           {selectedEvent ? (
             <div className="space-y-4 text-sm">
@@ -534,6 +509,11 @@ function MonthView({
   const getEventsForDay = (date: Date, dayIndex: number) =>
     events.filter((event) => eventStartsVisibleRunOnDay(event, date, dayIndex, days))
 
+  const getEventsOverlappingDay = (date: Date) => events.filter((event) => eventOverlapsLocalCalendarDay(event, date))
+
+  const sortEventsByStart = (list: Event[]) =>
+    [...list].sort((a, b) => a.startTime.getTime() - b.startTime.getTime() || a.title.localeCompare(b.title, "es"))
+
   const weekdayLabels = ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"]
 
   return (
@@ -551,6 +531,8 @@ function MonthView({
       <div className="grid grid-cols-7">
         {days.map((day, index) => {
           const dayEvents = getEventsForDay(day, index)
+          const overlappingDayEvents = sortEventsByStart(getEventsOverlappingDay(day))
+          const hasEventsThisDay = overlappingDayEvents.length > 0
           const isCurrentMonth = day.getMonth() === currentDate.getMonth()
           const isToday = toLocalYmd(day) === toLocalYmd(new Date())
 
@@ -562,14 +544,31 @@ function MonthView({
                 !isCurrentMonth && "bg-chalk/25 dark:bg-white/[0.04]",
               )}
             >
-              <div
+              <button
+                type="button"
+                disabled={!hasEventsThisDay}
+                title={hasEventsThisDay ? undefined : "Sin eventos este día"}
                 className={cn(
                   "mb-1 flex h-5 w-5 items-center justify-center rounded-full text-xs sm:h-6 sm:w-6 sm:text-sm",
                   isToday && "bg-primary font-semibold text-primary-foreground",
+                  !isToday &&
+                    hasEventsThisDay &&
+                    "hover:bg-muted/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-primary",
+                  !hasEventsThisDay && "cursor-default opacity-50",
                 )}
+                aria-label={
+                  hasEventsThisDay
+                    ? `Ver eventos del ${day.toLocaleDateString("es-EC", { weekday: "long", day: "numeric", month: "long" })}`
+                    : `Sin eventos el ${day.toLocaleDateString("es-EC", { weekday: "long", day: "numeric", month: "long" })}`
+                }
+                onClick={(e) => {
+                  e.stopPropagation()
+                  if (!hasEventsThisDay) return
+                  onOverflowClick(day, overlappingDayEvents)
+                }}
               >
                 {day.getDate()}
-              </div>
+              </button>
               <div className="flex max-h-24 flex-col gap-0.5 overflow-hidden sm:max-h-28">
                 {dayEvents.slice(0, 4).map((event) => (
                   <EventChip
@@ -584,7 +583,7 @@ function MonthView({
                   <button
                     type="button"
                     className="text-left text-[10px] text-primary underline-offset-2 hover:underline sm:text-xs"
-                    onClick={() => onOverflowClick(day, dayEvents)}
+                    onClick={() => onOverflowClick(day, overlappingDayEvents)}
                     title="Ver todos los eventos de este día"
                   >
                     +{dayEvents.length - 4} más

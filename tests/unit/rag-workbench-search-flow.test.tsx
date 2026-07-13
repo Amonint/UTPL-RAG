@@ -1,87 +1,132 @@
 // @vitest-environment jsdom
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { describe, expect, it, vi } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { RagWorkbench } from '@/components/rag-workbench'
 
 describe('RagWorkbench search flow', () => {
-  // Nota: jsdom + layout fijo (composer) hace frágil el foco tras elegir servicio; el flujo real se valida en E2E.
-  it.skip('searches first, allows selecting a service, then queries /api/rag in service context', async () => {
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  it('shows results only after typing and opens selected content in the detail panel', async () => {
     const user = userEvent.setup()
 
-    const fetchMock = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
-      const url = String(input)
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+        const url = String(input)
+        if (url.endsWith('/api/search-services')) {
+          const body = init?.body ? (JSON.parse(String(init.body)) as Record<string, unknown>) : {}
+          if (body.taxonomyOnly) {
+            return {
+              ok: true,
+              json: async () => ({ taxonomy: [], results: [] }),
+            }
+          }
+          return {
+            ok: true,
+            json: async () => ({
+              taxonomy: [],
+              results: [
+                {
+                  serviceId: 'item-1',
+                  serviceName: 'Error en solicitud de certificados',
+                  category: 'Certificados',
+                  score: 0.9,
+                  hasPdfs: false,
+                  snippet: 'No se puede completar la solicitud.',
+                  jsonPayload: {
+                    content_type: 'incident',
+                    question: 'Tengo error en solicitud de certificados',
+                    answer: 'Verifica credenciales y vuelve a generar la solicitud.',
+                  },
+                },
+              ],
+            }),
+          }
+        }
 
-      if (url.endsWith('/api/search-services')) {
-        return new Response(
-          JSON.stringify({
-            results: [
-              {
-                serviceId: 'servicios-matricula__solicitar-retiro-voluntario',
-                serviceName: 'Solicitar retiro voluntario',
-                category: 'SERVICIOS-MATRICULA',
-                score: 0.97,
-                hasPdfs: true,
-                snippet: 'Tramite con soporte documental',
-              },
-            ],
-          }),
-          { status: 200, headers: { 'Content-Type': 'application/json' } },
-        )
-      }
-
-      if (url.endsWith('/api/rag')) {
-        return new Response(
-          JSON.stringify({
-            answer: 'Respuesta de prueba',
-            selectedService: {
-              serviceId: 'servicios-matricula__solicitar-retiro-voluntario',
-              serviceName: 'Solicitar retiro voluntario',
-              category: 'SERVICIOS-MATRICULA',
-              studentTypes: ['CONTINUO'],
-            },
+        return {
+          ok: true,
+          json: async () => ({
+            answer: 'Verifica credenciales y vuelve a generar la solicitud.',
+            selectedService: null,
             usedSources: [],
             needsDisambiguation: false,
             serviceCandidates: [],
           }),
-          { status: 200, headers: { 'Content-Type': 'application/json' } },
-        )
-      }
-
-      return new Response(JSON.stringify({ message: 'Not found' }), { status: 404 })
-    })
-
-    vi.stubGlobal('fetch', fetchMock)
+        }
+      }),
+    )
 
     render(<RagWorkbench />)
 
-    const searchTextarea = screen.getByRole('textbox')
-    await user.type(searchTextarea, 'retiro voluntario')
+    expect(screen.queryByRole('button', { name: /error en solicitud/i })).toBeNull()
 
-    const resultButton = await screen.findByRole('button', { name: /solicitar retiro voluntario/i })
-    await user.click(resultButton)
+    await user.type(screen.getByRole('textbox'), 'certificado')
 
-    const followupTextarea = screen.getByRole('textbox')
-    await user.click(followupTextarea)
-    await user.type(followupTextarea, 'cual es el costo')
-    await user.keyboard('{Enter}')
+    const result = await screen.findByRole('button', { name: /error en solicitud de certificados/i })
+    await user.click(result)
 
     await waitFor(() => {
-      const ragCalls = fetchMock.mock.calls.filter((c) => String(c[0]).endsWith('/api/rag'))
-      expect(ragCalls.length).toBeGreaterThanOrEqual(1)
+      expect(screen.getByRole('button', { name: /volver al chat/i })).toBeTruthy()
+      expect(screen.getByText(/verifica credenciales/i)).toBeTruthy()
     })
 
-    const ragCall = fetchMock.mock.calls.find((c) => String(c[0]).endsWith('/api/rag'))
-    const secondCall = ragCall!
-    expect(String(secondCall?.[0])).toBe('/api/rag')
-    expect(secondCall?.[1]?.method).toBe('POST')
+    expect(screen.queryByRole('textbox')).toBeNull()
+  })
 
-    const parsedBody = JSON.parse(String(secondCall?.[1]?.body))
-    expect(parsedBody).toMatchObject({
-      question: 'cual es el costo',
-      selectedServiceId: 'servicios-matricula__solicitar-retiro-voluntario',
-      allowPdf: true,
+  it('returns to chat mode when clicking Volver al chat', async () => {
+    const user = userEvent.setup()
+
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+        const url = String(input)
+        if (url.endsWith('/api/search-services')) {
+          const body = init?.body ? (JSON.parse(String(init.body)) as Record<string, unknown>) : {}
+          if (body.taxonomyOnly) {
+            return {
+              ok: true,
+              json: async () => ({ taxonomy: [], results: [] }),
+            }
+          }
+          return {
+            ok: true,
+            json: async () => ({
+              taxonomy: [],
+              results: [
+                {
+                  serviceId: 'item-1',
+                  serviceName: 'Error en solicitud de certificados',
+                  category: 'Certificados',
+                  score: 0.9,
+                  hasPdfs: false,
+                  jsonPayload: {
+                    answer: 'Verifica credenciales y vuelve a generar la solicitud.',
+                  },
+                },
+              ],
+            }),
+          }
+        }
+        return { ok: true, json: async () => ({}) }
+      }),
+    )
+
+    render(<RagWorkbench />)
+
+    await user.type(screen.getByRole('textbox'), 'cert')
+    const result = await screen.findByRole('button', { name: /error en solicitud de certificados/i })
+    await user.click(result)
+
+    await user.click(screen.getByRole('button', { name: /volver al chat/i }))
+
+    await waitFor(() => {
+      expect(screen.getByRole('textbox')).toBeTruthy()
     })
+    expect(screen.queryByRole('button', { name: /volver al chat/i })).toBeNull()
   })
 })

@@ -1,31 +1,22 @@
-import { describe, expect, it } from "vitest";
-import { POST } from "@/app/api/search-services/route";
+import { POST } from '@/app/api/search-services/route'
+import { searchKnowledgeServices } from '@/lib/db/knowledge-services'
+import { describe, expect, it, vi } from 'vitest'
 
-describe("POST /api/search-services", () => {
-  it("returns results array", async () => {
-    const limit = 5;
-    const req = new Request("http://localhost/api/search-services", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query: "matricula", limit }),
-    });
+vi.mock('@/lib/db/knowledge-services', () => ({
+  searchKnowledgeServices: vi.fn(async () => []),
+  loadKnowledgeTaxonomy: vi.fn(async () => []),
+}))
 
-    const res = await POST(req);
-    expect(res.status).toBe(200);
-    const json = await res.json();
-    expect(Array.isArray(json.results)).toBe(true);
-    expect(json.results.length).toBeLessThanOrEqual(limit);
-
-    for (const item of json.results) {
-      expect(item).toEqual(
-        expect.objectContaining({
-          serviceId: expect.any(String),
-          serviceName: expect.any(String),
-          category: expect.any(String),
-          score: expect.any(Number),
-          hasPdfs: expect.any(Boolean),
-        }),
-      );
-    }
-  });
-});
+describe('POST /api/search-services', () => {
+  it('uses Neon hybrid search backend', async () => {
+    process.env.DATABASE_URL = 'postgres://test/test'
+    const response = await POST(
+      new Request('http://localhost/api/search-services', {
+        method: 'POST',
+        body: JSON.stringify({ query: 'matricula', limit: 5 }),
+      }),
+    )
+    expect(response.status).toBe(200)
+    expect(searchKnowledgeServices).toHaveBeenCalledTimes(1)
+  })
+})

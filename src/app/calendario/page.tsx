@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Suspense } from 'react'
 
 import { CalendarioClient } from './calendario-client'
 
@@ -12,7 +13,9 @@ export default function CalendarioPage() {
             Volver al inicio
           </Link>
         </header>
-        <CalendarioClient />
+        <Suspense fallback={<p className="text-sm text-muted-foreground">Cargando calendario…</p>}>
+          <CalendarioClient />
+        </Suspense>
       </div>
     </div>
   )

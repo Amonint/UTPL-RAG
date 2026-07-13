@@ -97,7 +97,7 @@ describe('HomePage', () => {
     const { container } = render(React.createElement(HomePage))
     const main = container.querySelector('main')
     expect(main).toBeTruthy()
-    expect(main?.className).toContain('mx-auto')
+    expect(main?.className).toContain('w-full')
   })
 })
 

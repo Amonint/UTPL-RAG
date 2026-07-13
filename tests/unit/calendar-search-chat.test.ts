@@ -32,5 +32,21 @@ describe('searchCalendarEventsForChat', () => {
     expect(values[0]).toBe('%matricula 2026%')
     expect(values[1]).toBe('matricula 2026')
   })
+
+  it('indexa fechas en español natural para consultas como "15 junio"', async () => {
+    dbQueryMock
+      .mockResolvedValueOnce({ rows: [{ ready: true }] })
+      .mockResolvedValueOnce({ rows: [{ ready: true }] })
+      .mockResolvedValueOnce({ rows: [{ ready: true }] })
+      .mockResolvedValueOnce({ rows: [{ ready: false }] })
+      .mockResolvedValueOnce({ rows: [] })
+
+    await searchCalendarEventsForChat({ query: '15 junio', limit: 5 })
+
+    const [sql] = dbQueryMock.mock.calls.at(-1) as [string, unknown[]]
+    expect(sql).toContain('starts_on_spanish')
+    expect(sql).toContain("'junio'")
+    expect(sql).toContain(' de ')
+  })
 })
 

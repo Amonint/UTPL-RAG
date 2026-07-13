@@ -1,15 +1,30 @@
 'use client'
 
-import { ChevronDown, ChevronRight, RotateCcw } from 'lucide-react'
+import { ChevronDown, ChevronRight } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 
 import type { KbFilters, KbLeafSelection, KbNavSection, KbTaxonomyCategory } from './types'
 
+const SECTION_HEADING: Record<
+  KbNavSection,
+  { title: string; description: string }
+> = {
+  documentation: {
+    title: 'Información',
+    description: 'Guías, manuales y políticas para orientar al estudiante.',
+  },
+  services_incidents: {
+    title: 'Preguntas frecuentes',
+    description: 'Trámites, servicios e incidencias habituales con pasos en SGA.',
+  },
+}
+
 type Props = {
   taxonomy: KbTaxonomyCategory[]
   filters: KbFilters
   activeSection: KbNavSection
+  sectionPickerVariant?: 'tabs' | 'select'
   onChange: (next: KbFilters) => void
   onSectionChange: (next: KbNavSection) => void
   onLeafSelect: (leaf: KbLeafSelection) => void
@@ -19,6 +34,7 @@ export function KbLeftNav({
   taxonomy,
   filters,
   activeSection,
+  sectionPickerVariant = 'tabs',
   onChange,
   onSectionChange,
   onLeafSelect,
@@ -37,8 +53,12 @@ export function KbLeftNav({
       : visibleTaxonomy.flatMap((cat) => cat.subcategories.flatMap((sub) => sub.elements))
 
   const selectedElement = elements.find((item) => item.slug === filters.element) ?? null
-  const trailRoot = activeSection === 'documentation' ? 'Documentación' : 'Servicios e Incidencias'
-  const trail = [trailRoot, selectedCategory?.name, selectedSubcategory?.name, selectedElement?.name].filter(Boolean)
+  const heading = SECTION_HEADING[activeSection]
+  const breadcrumb = [selectedCategory?.name, selectedSubcategory?.name, selectedElement?.name].filter(
+    Boolean,
+  )
+  const subtitle =
+    breadcrumb.length > 0 ? breadcrumb.join(' / ') : heading.description
 
   function isLeafActive(catSlug: string, subSlug: string, elSlug: string) {
     return (
@@ -47,97 +67,57 @@ export function KbLeftNav({
   }
 
   return (
-    <aside className="flex h-full min-h-0 flex-col overflow-hidden border-r border-chalk bg-white">
+    <aside className="flex min-h-0 flex-1 flex-col overflow-hidden bg-white">
       <div className="shrink-0 border-b border-chalk px-2 py-2">
-        <div className="grid grid-cols-2 gap-1 rounded-md bg-eggshell p-1">
-          <button
-            type="button"
-            onClick={() => onSectionChange('documentation')}
-            className={cn(
-              'h-9 rounded-md px-2 text-xs font-medium transition',
-              activeSection === 'documentation'
-                ? 'bg-white text-obsidian shadow-sm'
-                : 'text-gravel hover:bg-white/70',
-            )}
-          >
-            Documentación
-          </button>
-          <button
-            type="button"
-            onClick={() => onSectionChange('services_incidents')}
-            className={cn(
-              'h-9 rounded-md px-2 text-xs font-medium transition',
-              activeSection === 'services_incidents'
-                ? 'bg-white text-obsidian shadow-sm'
-                : 'text-gravel hover:bg-white/70',
-            )}
-          >
-            Servicios e Incidencias
-          </button>
-        </div>
-      </div>
-
-      <div className="flex shrink-0 items-center justify-between border-b border-chalk px-2 py-3">
-        <div className="min-w-0">
-          <p className="m-0 truncate text-sm text-obsidian">{trailRoot}</p>
-          <p className="m-0 mt-0.5 truncate text-xs text-gravel">{trail.join(' / ')}</p>
-        </div>
-        <button
-          type="button"
-          aria-label="Limpiar filtros"
-          title="Limpiar filtros"
-          onClick={() => onChange({ category: '', subcategory: '', element: '' })}
-          className="grid size-8 shrink-0 place-items-center rounded-md border border-chalk text-gravel transition hover:bg-powder hover:text-obsidian"
-        >
-          <RotateCcw className="size-4" aria-hidden />
-        </button>
-      </div>
-
-      <div className="grid shrink-0 gap-2 border-b border-chalk px-2 py-3">
-        <select
-          aria-label="Categoría"
-          value={filters.category}
-          onChange={(e) => onChange({ category: e.target.value, subcategory: '', element: '' })}
-          className="h-10 rounded-md border border-chalk bg-eggshell px-2 text-sm text-obsidian outline-none focus:border-slate"
-        >
-          <option value="">Todas las categorías</option>
-          {visibleTaxonomy.map((cat) => (
-            <option key={cat.slug} value={cat.slug}>
-              {cat.name} ({cat.count})
-            </option>
-          ))}
-        </select>
-
-        <select
-          aria-label="Subcategoría"
-          value={filters.subcategory}
-          onChange={(e) => onChange({ ...filters, subcategory: e.target.value, element: '' })}
-          className="h-10 rounded-md border border-chalk bg-eggshell px-2 text-sm text-obsidian outline-none focus:border-slate"
-        >
-          <option value="">Todas las subcategorías</option>
-          {subcategories.map((sub, subIndex) => (
-            <option key={`${filters.category || 'all'}-${sub.slug}-${subIndex}`} value={sub.slug}>
-              {sub.name} ({sub.count})
-            </option>
-          ))}
-        </select>
-
-        <select
-          aria-label="Elemento"
-          value={filters.element}
-          onChange={(e) => onChange({ ...filters, element: e.target.value })}
-          className="h-10 rounded-md border border-chalk bg-eggshell px-2 text-sm text-obsidian outline-none focus:border-slate"
-        >
-          <option value="">Todos los elementos</option>
-          {elements.map((el, elementIndex) => (
-            <option
-              key={`${filters.category || 'all'}-${filters.subcategory || 'all'}-${el.slug}-${elementIndex}`}
-              value={el.slug}
+        {sectionPickerVariant === 'select' ? (
+          <label className="block">
+            <span className="mb-1 block px-1 text-[11px] font-medium uppercase tracking-[0.05em] text-gravel">
+              Consultar en
+            </span>
+            <select
+              value={activeSection}
+              onChange={(event) => onSectionChange(event.target.value as KbNavSection)}
+              className="h-10 w-full rounded-md border border-chalk bg-white px-3 text-sm text-obsidian shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-obsidian/20"
             >
-              {el.name} ({el.count})
-            </option>
-          ))}
-        </select>
+              <option value="documentation">Información</option>
+              <option value="services_incidents">Preguntas frecuentes</option>
+            </select>
+          </label>
+        ) : (
+          <div className="grid grid-cols-2 gap-1 rounded-md bg-eggshell p-1">
+            <button
+              type="button"
+              onClick={() => onSectionChange('documentation')}
+              className={cn(
+                'h-9 rounded-md px-2 text-xs font-medium transition',
+                activeSection === 'documentation'
+                  ? 'bg-white text-obsidian shadow-sm'
+                  : 'text-gravel hover:bg-white/70',
+              )}
+            >
+              Información
+            </button>
+            <button
+              type="button"
+              onClick={() => onSectionChange('services_incidents')}
+              className={cn(
+                'h-9 rounded-md px-2 text-xs font-medium transition',
+                activeSection === 'services_incidents'
+                  ? 'bg-white text-obsidian shadow-sm'
+                  : 'text-gravel hover:bg-white/70',
+              )}
+            >
+              Preguntas frecuentes
+            </button>
+          </div>
+        )}
+      </div>
+
+      <div className="flex shrink-0 items-center border-b border-chalk px-2 py-3">
+        <div className="min-w-0">
+          <p className="m-0 truncate text-sm text-obsidian">{heading.title}</p>
+          <p className="m-0 mt-0.5 line-clamp-2 text-xs text-gravel">{subtitle}</p>
+        </div>
       </div>
 
       <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-1 py-2">

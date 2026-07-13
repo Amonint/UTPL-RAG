@@ -1,7 +1,41 @@
 import type { ReactNode } from 'react'
 import { FileText } from 'lucide-react'
 
-const OMIT_KEYS = new Set(['nombre', 'descripcion'])
+/** Campos de taxonomía / persistencia: no mostrar al usuario final. */
+export const INTERNAL_PAYLOAD_KEYS = new Set([
+  'nombre',
+  'descripcion',
+  'category',
+  'category_slug',
+  'subcategory',
+  'subcategory_slug',
+  'element',
+  'element_slug',
+  'content_type',
+  'source',
+  'question',
+  'answer',
+  'section_code',
+  'domain_code',
+  'domain_name',
+  'service_category_code',
+  'modality',
+  'program_level',
+  'student_lifecycle',
+  'applies_to_all',
+  'period_label',
+])
+
+const OMIT_KEYS = INTERNAL_PAYLOAD_KEYS
+
+export function payloadForDisplay(payload: Record<string, unknown>): Record<string, unknown> {
+  const out: Record<string, unknown> = {}
+  for (const [key, value] of Object.entries(payload)) {
+    if (key.startsWith('_') || INTERNAL_PAYLOAD_KEYS.has(key)) continue
+    out[key] = value
+  }
+  return out
+}
 
 /** URLs que ya se muestran en la prosa (para no duplicar `pdfRefs`). Recorrido puro, mismo criterio que enlaces renderizados. */
 export function collectPayloadLinkUrls(payload: Record<string, unknown>): Set<string> {

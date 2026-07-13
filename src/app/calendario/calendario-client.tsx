@@ -1,19 +1,48 @@
 'use client'
 
 import { useMemo } from 'react'
+import { useSearchParams } from 'next/navigation'
 
 import { EventManager } from '@/components/ui/event-manager'
-import { EVENTS } from '@/data/calendar-events-active'
+import { useAcademicCalendarEvents } from '@/hooks/use-academic-calendar-events'
 import { filterAcademicEventsFromTodayEcuador } from '@/lib/ecuador-calendar'
 import { mapUtplRecordsToManagerEvents } from '@/lib/map-utpl-academic-events'
 
 export function CalendarioClient() {
-  const records = useMemo(() => filterAcademicEventsFromTodayEcuador(EVENTS), [])
-  const events = useMemo(() => mapUtplRecordsToManagerEvents(records), [records])
-  const categories = useMemo(
-    () => [...new Set(records.map((e) => e.category))].sort((a, b) => a.localeCompare(b, 'es')),
-    [records],
-  )
+  const searchParams = useSearchParams()
+  const initialOpenEventId = searchParams.get('eventId')?.trim() || undefined
+  const { events: records, loading, error } = useAcademicCalendarEvents({
+    includePast: Boolean(initialOpenEventId),
+  })
 
-  return <EventManager readOnly events={events} categories={categories} defaultView="month" />
+  const filtered = useMemo(
+    () => (initialOpenEventId ? records : filterAcademicEventsFromTodayEcuador(records)),
+    [records, initialOpenEventId],
+  )
+  const events = useMemo(() => mapUtplRecordsToManagerEvents(filtered), [filtered])
+  if (loading) {
+    return (
+      <div className="flex min-h-[50vh] items-center justify-center text-sm text-muted-foreground">
+        Cargando calendario…
+      </div>
+    )
+  }
+
+  if (error && filtered.length === 0) {
+    return (
+      <div className="flex min-h-[50vh] flex-col items-center justify-center gap-2 px-4 text-center text-sm text-muted-foreground">
+        <p>No se pudo cargar el calendario.</p>
+        <p className="text-xs opacity-80">{error}</p>
+      </div>
+    )
+  }
+
+  return (
+    <EventManager
+      readOnly
+      events={events}
+      defaultView="month"
+      initialOpenEventId={initialOpenEventId}
+    />
+  )
 }

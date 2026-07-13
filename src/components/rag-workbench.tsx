@@ -1,7 +1,9 @@
 'use client'
 
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { useRouter } from 'next/navigation'
 
+import { useMediaQuery } from '@/hooks/use-media-query'
 import {
   createAssistantTurn,
   createErrorTurn,
@@ -13,6 +15,7 @@ import type { SearchResult } from '@/lib/types'
 
 import { KbDetailPanel } from './kb/kb-detail-panel'
 import { KbLeftNav } from './kb/kb-left-nav'
+import { KbMobileDrawer } from './kb/kb-mobile-drawer'
 import { KbSearchPanel } from './kb/kb-search-panel'
 import type {
   KbFilters,
@@ -33,11 +36,12 @@ type SelectedKbItem = {
   jsonPayload: Record<string, unknown>
 }
 
-const DEFAULT_PROFILE_CONTEXT = {
-  profileCode: 'student',
-  profileTypeCode: undefined as string | undefined,
+const STUDENT_SEARCH_CONTEXT = {
+  profileCode: 'student' as const,
+  profileTypeCode: undefined,
+  programLevelCode: undefined,
+  studentLifecycleCode: undefined,
 }
-
 
 function resultToSelected(result: SearchResult): SelectedKbItem {
   return {
@@ -51,6 +55,7 @@ function resultToSelected(result: SearchResult): SelectedKbItem {
 }
 
 export function RagWorkbench() {
+  const router = useRouter()
   const [messages, setMessages] = useState<ChatTurn[]>([])
   const [draft, setDraft] = useState('')
   const [loading, setLoading] = useState(false)
@@ -66,6 +71,9 @@ export function RagWorkbench() {
   const [detailError, setDetailError] = useState<string | null>(null)
   const [selectedService, setSelectedService] = useState<SelectedKbItem | null>(null)
   const [navSection, setNavSection] = useState<KbNavSection>('services_incidents')
+  const [mobileNavOpen, setMobileNavOpen] = useState(false)
+
+  const isLargeScreen = useMediaQuery('(min-width: 1024px)')
 
   const promptTextareaRef = useRef<HTMLTextAreaElement | null>(null)
   const threadScrollRef = useRef<HTMLDivElement | null>(null)
@@ -94,7 +102,7 @@ export function RagWorkbench() {
           body: JSON.stringify({
             taxonomyOnly: true,
             uiSection: navSection,
-            ...DEFAULT_PROFILE_CONTEXT,
+            ...STUDENT_SEARCH_CONTEXT,
           }),
         })
         const body = (await response.json()) as { taxonomy?: KbTaxonomyCategory[] }
@@ -128,8 +136,8 @@ export function RagWorkbench() {
           body: JSON.stringify({
             query,
             limit: 20,
-            uiSection: navSection,
-            ...DEFAULT_PROFILE_CONTEXT,
+            crossSection: true,
+            ...STUDENT_SEARCH_CONTEXT,
           }),
         })
         const body = (await response.json()) as {
@@ -152,10 +160,13 @@ export function RagWorkbench() {
     }, 200)
 
     return () => clearTimeout(timer)
-  }, [draft, navSection, viewMode])
+  }, [draft, viewMode])
 
   const loadLeafDetail = useCallback(async (leaf: KbLeafSelection) => {
     setViewMode('detail')
+    if (!isLargeScreen) {
+      setMobileNavOpen(true)
+    }
     setLeafSelection(leaf)
     setFilters({
       category: leaf.category,
@@ -178,7 +189,8 @@ export function RagWorkbench() {
           element: leaf.element,
           limit: 50,
           uiSection: navSection,
-          ...DEFAULT_PROFILE_CONTEXT,
+          includeUnfiltered: true,
+          ...STUDENT_SEARCH_CONTEXT,
         }),
       })
       const body = (await response.json()) as { results?: SearchResult[]; message?: string }
@@ -197,10 +209,26 @@ export function RagWorkbench() {
     } finally {
       setDetailLoading(false)
     }
-  }, [navSection])
+  }, [isLargeScreen, navSection])
 
   function openDetailFromSearch(result: SearchResult) {
+    const payload = (result.jsonPayload ?? {}) as Record<string, unknown>
+    const contentType = typeof payload.content_type === 'string' ? payload.content_type : ''
+    if (contentType === 'fechas' || contentType === 'calendar') {
+      const rawEventId =
+        (typeof payload.event_id === 'string' && payload.event_id) ||
+        result.serviceId.replace(/^calendar-event-/, '')
+      const target = rawEventId
+        ? `/calendario?eventId=${encodeURIComponent(rawEventId)}`
+        : '/calendario'
+      router.push(target)
+      return
+    }
+
     setViewMode('detail')
+    if (!isLargeScreen) {
+      setMobileNavOpen(true)
+    }
     setLeafSelection(null)
     setDetailItems([result])
     setActiveDetailId(result.serviceId)
@@ -330,30 +358,65 @@ export function RagWorkbench() {
     return [cat?.name, sub?.name, el?.name].filter(Boolean).join(' / ')
   })()
 
+  function handleNavSectionChange(next: KbNavSection) {
+    setNavSection(next)
+  }
+
+  const leftNav = (
+    <KbLeftNav
+      taxonomy={taxonomy}
+      filters={filters}
+      activeSection={navSection}
+      sectionPickerVariant={isLargeScreen ? 'tabs' : 'select'}
+      onChange={setFilters}
+      onSectionChange={handleNavSectionChange}
+      onLeafSelect={loadLeafDetail}
+    />
+  )
+
+  const detailPanel = (
+    <KbDetailPanel
+      items={detailItems}
+      activeItemId={activeDetailId}
+      loading={detailLoading}
+      error={detailError}
+      trailLabel={detailTrail}
+      uiSection={navSection}
+      backLabel={isLargeScreen ? 'Volver al chat' : 'Volver al índice'}
+      showBorder={isLargeScreen}
+      onBackToChat={handleBackToChat}
+      onSelectItem={handleSelectDetailItem}
+    />
+  )
+
+  const drawerTitle =
+    viewMode === 'detail'
+      ? detailTrail ?? 'Detalle'
+      : navSection === 'documentation'
+        ? 'Información'
+        : 'Preguntas frecuentes'
+
   return (
     <section className="grid h-full min-h-0 grid-cols-1 overflow-hidden lg:grid-cols-[minmax(260px,300px)_minmax(0,1fr)]">
-      <KbLeftNav
-        taxonomy={taxonomy}
-        filters={filters}
-        activeSection={navSection}
-        onChange={setFilters}
-        onSectionChange={(next) => {
-          setNavSection(next)
-          setFilters({ category: '', subcategory: '', element: '' })
-          setViewMode('chat')
-          setLeafSelection(null)
-          setDetailItems([])
-          setActiveDetailId(null)
-          setDetailError(null)
-          setDetailLoading(false)
-          setSelectedService(null)
-          setLiveResults([])
-        }}
-        onLeafSelect={loadLeafDetail}
-      />
+      {isLargeScreen ? (
+        <div className="flex h-full min-h-0 flex-col overflow-hidden border-r border-chalk bg-white">
+          {leftNav}
+        </div>
+      ) : null}
 
-      {viewMode === 'chat' ? (
-        <KbSearchPanel
+      {!isLargeScreen ? (
+        <KbMobileDrawer
+          open={mobileNavOpen}
+          title={drawerTitle}
+          onClose={() => setMobileNavOpen(false)}
+        >
+          {viewMode === 'detail' ? detailPanel : leftNav}
+        </KbMobileDrawer>
+      ) : null}
+
+      {!(isLargeScreen && viewMode === 'detail') ? (
+        <div className="flex min-h-0 flex-col overflow-hidden">
+          <KbSearchPanel
           messages={messages}
           liveResults={liveResults}
           draft={draft}
@@ -365,18 +428,14 @@ export function RagWorkbench() {
           onSubmit={handleSubmit}
           onResultClick={openDetailFromSearch}
           onThreadResultClick={handleSelectService}
-        />
-      ) : (
-        <KbDetailPanel
-          items={detailItems}
-          activeItemId={activeDetailId}
-          loading={detailLoading}
-          error={detailError}
-          trailLabel={detailTrail}
-          onBackToChat={handleBackToChat}
-          onSelectItem={handleSelectDetailItem}
-        />
-      )}
+          onOpenKnowledgePanel={isLargeScreen ? undefined : () => setMobileNavOpen(true)}
+          />
+        </div>
+      ) : null}
+
+      {isLargeScreen && viewMode === 'detail' ? (
+        <div className="flex min-h-0 flex-col overflow-hidden">{detailPanel}</div>
+      ) : null}
     </section>
   )
 }

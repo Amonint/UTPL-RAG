@@ -52,7 +52,11 @@ describe('filterAcademicEventsFromTodayEcuador', () => {
 
   it('excluye eventos con end anterior a hoy Ecuador', () => {
     const out = filterAcademicEventsFromTodayEcuador(samples, refUtc)
-    expect(out.map((e) => e.id).sort((a, b) => a - b)).toEqual([2, 3, 4])
+    expect(
+      out
+        .map((e) => e.id)
+        .sort((a, b) => Number(a) - Number(b)),
+    ).toEqual([2, 3, 4])
   })
 
   it('con now ya en 2027 Ecuador, ningún evento del set de ejemplo sigue vigente', () => {

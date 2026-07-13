@@ -10,14 +10,47 @@ describe('RagWorkbench', () => {
     vi.restoreAllMocks()
   })
 
+  it('does not render internal panel headings', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
+        const url = String(input)
+        if (url.endsWith('/api/search-services')) {
+          const body = init?.body ? (JSON.parse(String(init.body)) as Record<string, unknown>) : {}
+          if (body.taxonomyOnly) {
+            return { ok: true, json: async () => ({ results: [], taxonomy: [] }) }
+          }
+        }
+        return { ok: true, json: async () => ({ results: [], taxonomy: [] }) }
+      }),
+    )
+
+    render(<RagWorkbench />)
+
+    expect(screen.queryByText('Panel de consulta')).toBeNull()
+    expect(screen.queryByText('Navegación por servicios')).toBeNull()
+    expect(screen.queryByText('Panel de búsqueda')).toBeNull()
+    expect(screen.queryByText('Buscador de servicios')).toBeNull()
+  })
+
   it('shows live suggestions while typing', async () => {
     const user = userEvent.setup()
 
     vi.stubGlobal(
       'fetch',
-      vi.fn(async (input: RequestInfo | URL) => {
+      vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
         const url = String(input)
         if (url.endsWith('/api/search-services')) {
+          const body = init?.body ? (JSON.parse(String(init.body)) as Record<string, unknown>) : {}
+          if (body.taxonomyOnly) {
+            return {
+              ok: true,
+              json: async () => ({ taxonomy: [], results: [] }),
+            }
+          }
+          expect(body.category).toBeUndefined()
+          expect(body.subcategory).toBeUndefined()
+          expect(body.element).toBeUndefined()
           return {
             ok: true,
             json: async () => ({

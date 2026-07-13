@@ -17,6 +17,7 @@ const CATEGORY_TO_COLOR: Record<string, EventColor> = {
   'Val. General': 'blue',
   Titulación: 'purple',
   'UIC/UTE': 'orange',
+  Otro: 'blue',
 }
 
 export function mapUtplRecordsToManagerEvents(

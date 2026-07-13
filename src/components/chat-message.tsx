@@ -2,7 +2,13 @@ import { FileText } from 'lucide-react'
 
 import type { ChatTurn, SelectedServiceMeta } from '@/lib/chat/create-assistant-turn'
 import type { PdfRef } from '@/lib/types'
-import { collectPayloadLinkUrls, ServicePayloadProse } from '@/components/service-payload-prose'
+import {
+  collectPayloadLinkUrls,
+  payloadForDisplay,
+  ServicePayloadProse,
+} from '@/components/service-payload-prose'
+import { AudienceBadges } from '@/components/kb/audience-badges'
+import { sanitizePublicAnswerText } from '@/lib/kb/sanitize-public-answer'
 import { cn } from '@/lib/utils'
 
 interface ChatMessageProps {
@@ -15,8 +21,11 @@ function SelectedServiceDetails({ meta }: { meta: SelectedServiceMeta }) {
   const payload = meta.jsonPayload ?? {}
   const types = meta.studentTypes ?? []
 
+  const displayPayload = payloadForDisplay(payload)
   const inlinedUrls = collectPayloadLinkUrls(payload)
-  const prose = <ServicePayloadProse payload={payload} />
+  const prose = <ServicePayloadProse payload={displayPayload} />
+  const answerText =
+    typeof payload.answer === 'string' ? sanitizePublicAnswerText(payload.answer) : ''
 
   const extraPdfs = pdfs.filter((ref) => {
     const href = ref.url?.trim()
@@ -24,21 +33,21 @@ function SelectedServiceDetails({ meta }: { meta: SelectedServiceMeta }) {
     return !inlinedUrls.has(href)
   })
 
-  const hasProse = Object.keys(payload).some((k) => {
-    if (k.startsWith('_') || k === 'nombre' || k === 'descripcion') return false
-    const v = payload[k]
+  const hasProse = Object.keys(displayPayload).some((k) => {
+    const v = displayPayload[k]
     if (v === null || v === undefined) return false
     if (typeof v === 'string' && v.trim() === '') return false
     if (Array.isArray(v) && v.length === 0) return false
     return true
   })
 
-  if (!hasProse && types.length === 0 && extraPdfs.length === 0) {
+  if (!hasProse && !answerText && types.length === 0 && extraPdfs.length === 0) {
     return null
   }
 
   return (
     <div className="mt-4 space-y-4 border-t border-chalk pt-4 text-[15px] leading-7 text-obsidian">
+      {answerText ? <p className="m-0 whitespace-pre-wrap">{answerText}</p> : null}
       {types.length > 0 ? (
         <div className="grid gap-1">
           <p className="m-0">
@@ -138,7 +147,11 @@ export function ChatMessage({ turn, onSelectService }: ChatMessageProps) {
                   <div className="flex w-full items-start justify-between gap-3">
                     <span className="min-w-0 flex-1 font-medium">{result.serviceName}</span>
                   </div>
-                  <span className="text-xs uppercase tracking-[0.05em] text-gravel">{result.category}</span>
+                  <AudienceBadges
+                    payload={(result.jsonPayload ?? {}) as Record<string, unknown>}
+                    studentTypes={result.studentTypes}
+                    compact
+                  />
                   {result.matchHints && result.matchHints.length > 0 ? (
                     <ul className="m-0 list-none space-y-1 p-0">
                       {result.matchHints.map((hint, i) => (

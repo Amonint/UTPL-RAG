@@ -19,7 +19,7 @@ import {
   vectorLiteral,
 } from '@/lib/search/hybrid-search-config'
 import { normalizeText } from '@/lib/search/normalize'
-import type { SearchResult, StudentType } from '@/lib/types'
+import type { PdfRef, SearchResult, StudentType } from '@/lib/types'
 
 import { dbQuery } from './postgres'
 
@@ -98,6 +98,43 @@ interface SearchRow {
   score: number
   audience_score?: number
   section_boost?: number
+  pdf_refs_json?: unknown
+}
+
+export function parsePdfRefsFromJson(raw: unknown): PdfRef[] {
+  if (!Array.isArray(raw)) return []
+  const refs: PdfRef[] = []
+  for (const entry of raw) {
+    if (!entry || typeof entry !== 'object') continue
+    const row = entry as Record<string, unknown>
+    const url = typeof row.url === 'string' ? row.url.trim() : ''
+    if (!url) continue
+    const label = typeof row.label === 'string' && row.label.trim() ? row.label.trim() : 'PDF'
+    const localPath = typeof row.localPath === 'string' ? row.localPath : ''
+    const sourcePath =
+      typeof row.sourcePath === 'string' && row.sourcePath.trim()
+        ? row.sourcePath.trim()
+        : localPath || url
+    refs.push({ label, url, localPath, sourcePath })
+  }
+  return refs
+}
+
+let attachmentTablesReadyCache: boolean | null = null
+
+async function areAttachmentTablesReady(): Promise<boolean> {
+  if (attachmentTablesReadyCache !== null) return attachmentTablesReadyCache
+  const { rows } = await dbQuery<{
+    has_attachments: boolean
+    has_item_attachments: boolean
+  }>(`
+    select
+      to_regclass('public.attachments') is not null as has_attachments,
+      to_regclass('public.knowledge_item_attachments') is not null as has_item_attachments
+  `)
+  const row = rows[0]
+  attachmentTablesReadyCache = Boolean(row?.has_attachments && row?.has_item_attachments)
+  return attachmentTablesReadyCache
 }
 
 let audienceTablesReadyCache: boolean | null = null
@@ -220,16 +257,17 @@ function mapRowToSearchResult(row: SearchRow): SearchResult {
     payload: jsonPayload,
     studentTypes: row.student_lifecycle ? [row.student_lifecycle as StudentType] : [],
   })
+  const pdfRefs = parsePdfRefsFromJson(row.pdf_refs_json)
 
   return {
     serviceId: row.service_id,
     serviceName: row.service_name,
     category: row.category,
     score: Number(row.score) || 0,
-    hasPdfs: false,
+    hasPdfs: pdfRefs.length > 0,
     snippet: cleanQuestionText || cleanAnswerText || undefined,
     studentTypes: row.student_lifecycle ? [row.student_lifecycle as StudentType] : [],
-    pdfRefs: [],
+    pdfRefs,
     jsonPayload,
     matchHints: scopeLine ? [scopeLine] : [],
   }
@@ -321,6 +359,7 @@ export async function searchKnowledgeServices(input: SearchKnowledgeInput): Prom
 
   const whereSql = buildWhere(input, values, hybrid, { likeParam, tsqParam, similarityParam })
   const audienceTablesReady = await areAudienceTablesReady()
+  const attachmentTablesReady = await areAttachmentTablesReady()
   const normalizedProfileCode = input.profileCode?.trim().toLowerCase() || null
   const normalizedProfileTypeCode = input.profileTypeCode?.trim().toLowerCase() || null
   const normalizedProgramLevel = input.programLevelCode?.trim().toLowerCase() || null
@@ -331,14 +370,23 @@ export async function searchKnowledgeServices(input: SearchKnowledgeInput): Prom
 
   values.push(clampLimit(input.limit))
   const limitParam = `$${values.length}`
-  values.push(normalizedProfileCode)
-  const profileParam = `$${values.length}`
-  values.push(normalizedProfileTypeCode)
-  const profileTypeParam = `$${values.length}`
-  values.push(normalizedProgramLevel)
-  const programLevelParam = `$${values.length}`
-  values.push(normalizedLifecycle)
-  const lifecycleParam = `$${values.length}`
+
+  // Avoid sending unreferenced bind params when audience tables are missing.
+  let profileParam = 'null'
+  let profileTypeParam = 'null'
+  let programLevelParam = 'null'
+  let lifecycleParam = 'null'
+  if (audienceTablesReady) {
+    values.push(normalizedProfileCode)
+    profileParam = `$${values.length}`
+    values.push(normalizedProfileTypeCode)
+    profileTypeParam = `$${values.length}`
+    values.push(normalizedProgramLevel)
+    programLevelParam = `$${values.length}`
+    values.push(normalizedLifecycle)
+    lifecycleParam = `$${values.length}`
+  }
+
   values.push(preferredSection)
   const sectionHintParam = `$${values.length}`
 
@@ -408,6 +456,7 @@ export async function searchKnowledgeServices(input: SearchKnowledgeInput): Prom
     with latest_versions as (
       select distinct on (v.knowledge_item_id)
         v.knowledge_item_id,
+        v.id as version_id,
         v.question_text,
         v.answer_text,
         v.synonyms_json,
@@ -438,6 +487,11 @@ export async function searchKnowledgeServices(input: SearchKnowledgeInput): Prom
       pa.program_level,
       pa.student_lifecycle,
       coalesce(pa.applies_to_all, true) as applies_to_all,
+      ${
+        attachmentTablesReady
+          ? `coalesce(pdf_attachments.pdf_refs_json, '[]'::json) as pdf_refs_json,`
+          : `'[]'::json as pdf_refs_json,`
+      }
       ar.audience_score::double precision as audience_score,
       (case when ${sectionHintParam}::text is not null and ki.section_code = ${sectionHintParam}::text then 0.05 else 0 end)::double precision as section_boost,
       ${
@@ -469,6 +523,31 @@ export async function searchKnowledgeServices(input: SearchKnowledgeInput): Prom
     left join latest_versions lv on lv.knowledge_item_id = ki.id
     join audience_rank ar on ar.knowledge_item_id = ki.id
     left join primary_audience pa on pa.knowledge_item_id = ki.id
+    ${
+      attachmentTablesReady
+        ? `
+    left join lateral (
+      select coalesce(
+        json_agg(
+          json_build_object(
+            'label', coalesce(a.title, a.url, 'PDF'),
+            'url', a.url,
+            'localPath', coalesce(a.storage_path, ''),
+            'sourcePath', coalesce(a.storage_path, a.url, '')
+          )
+          order by kia.sort_order asc, a.title asc nulls last
+        ) filter (where a.id is not null),
+        '[]'::json
+      ) as pdf_refs_json
+      from knowledge_item_attachments kia
+      join attachments a on a.id = kia.attachment_id and a.is_active
+      where kia.knowledge_item_version_id = lv.version_id
+        and coalesce(a.mime_type, '') in ('application/pdf', '')
+        and coalesce(a.url, a.storage_path, '') <> ''
+    ) pdf_attachments on true
+    `
+        : ''
+    }
     where ${whereSql}
     order by
       section_boost desc,

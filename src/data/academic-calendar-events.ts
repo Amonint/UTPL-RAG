@@ -1,5 +1,6 @@
 export type AcademicCalendarEventRecord = {
-  id: number
+  /** Número en JSON estático; UUID string desde Neon. */
+  id: number | string
   title: string
   start: string
   end: string

@@ -2,7 +2,14 @@ import eslint from '@eslint/js'
 import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
-  { ignores: ['node_modules/**', 'data/derived/**', 'eslint.config.mjs'] },
+  {
+    ignores: [
+      'node_modules/**',
+      'data/derived/**',
+      '.next/**',
+      'eslint.config.mjs',
+    ],
+  },
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {

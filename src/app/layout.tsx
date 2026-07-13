@@ -14,16 +14,16 @@ const interTight = Inter_Tight({
 })
 
 export const metadata: Metadata = {
-  title: 'UTPL RAG',
-  description: 'Herramientas y demo UTPL',
+  title: 'Atenea',
+  description: 'Base de conocimiento para asesores UTPL',
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es" className={interTight.variable}>
-      <body className="min-h-screen antialiased">
+      <body className="flex h-dvh flex-col antialiased">
         <SiteNavbar />
-        {children}
+        <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden">{children}</div>
       </body>
     </html>
   )
