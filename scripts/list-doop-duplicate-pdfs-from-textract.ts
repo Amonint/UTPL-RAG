@@ -424,8 +424,8 @@ async function main() {
     redundantPdfCopiesIfKeepOnePerPdfHash: redundantPdfCount,
     ...(hasTextractBlocksAnalysis(textractContent)
       ? {
-          uniqueTextractContentValues: textractContent.uniqueTextractBlockFingerprints,
-          textractExtractionsRedundantSameBlocks: textractContent.redundantTextractRunsSameBlockContent,
+          uniqueTextractContentValues: textractContent.uniqueNormalizedBlockFingerprints,
+          textractExtractionsRedundantSameBlocks: textractContent.redundantNormalizedSameBlockContent,
         }
       : {}),
   }
@@ -475,22 +475,22 @@ async function main() {
   console.log(JSON.stringify(summary, null, 2))
   if (hasTextractBlocksAnalysis(textractContent)) {
     const tc = textractContent
-    const samePdfDiff = tc.samePdfSha256DifferentTextractFingerprints.length
-    const sameFpDiffPdf = tc.sameTextractFingerprintDifferentPdfSha256.length
+    const samePdfDiff = tc.samePdfSha256DifferentNormalizedFingerprints.length
+    const sameFpDiffPdf = tc.sameNormalizedFingerprintDifferentPdfSha256.length
     console.log(
-      `\nTextract (solo contenido de blocks): ${tc.uniqueTextractBlockFingerprints} valores únicos de ${tc.jsonsReadOk} JSON leídos; ` +
-        `${tc.redundantTextractRunsSameBlockContent} extracciones repiten el mismo blocks que otra.`,
+      `\nTextract (solo contenido de blocks): ${tc.uniqueNormalizedBlockFingerprints} valores únicos de ${tc.jsonsReadOk} JSON leídos; ` +
+        `${tc.redundantNormalizedSameBlockContent} extracciones repiten el mismo blocks que otra.`,
     )
     if (tc.jsonsMissingOrInvalid > 0) {
       console.log(`Aviso: ${tc.jsonsMissingOrInvalid} manifest entries sin JSON válido (no entran en la huella).`)
     }
     console.log(
       `¿Mismo PDF (bytes) pero información Textract distinta? Grupos anómalos: ${samePdfDiff}` +
-        (samePdfDiff > 0 ? ' (ver textractContent.samePdfSha256DifferentTextractFingerprints en el JSON)' : ' → no.'),
+        (samePdfDiff > 0 ? ' (ver textractContent.samePdfSha256DifferentNormalizedFingerprints en el JSON)' : ' → no.'),
     )
     console.log(
       `¿Mismo blocks pero distinto PDF en manifest? Casos: ${sameFpDiffPdf}` +
-        (sameFpDiffPdf > 0 ? ' (ver sameTextractFingerprintDifferentPdfSha256)' : ' → no.'),
+        (sameFpDiffPdf > 0 ? ' (ver sameNormalizedFingerprintDifferentPdfSha256)' : ' → no.'),
     )
   }
 
@@ -502,7 +502,7 @@ async function main() {
     if (n > 0) process.exitCode = 1
   } else if (hasTextractBlocksAnalysis(textractContent)) {
     const tc = textractContent
-    if (tc.samePdfSha256DifferentTextractFingerprints.length > 0) process.exitCode = 1
+    if (tc.samePdfSha256DifferentNormalizedFingerprints.length > 0) process.exitCode = 1
   }
 }
 

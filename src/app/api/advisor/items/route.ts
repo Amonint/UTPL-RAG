@@ -31,6 +31,7 @@ export async function POST(request: Request) {
         title,
         questionText,
         answerText: body.answerText.trim(),
+        referenceUrl: body.referenceUrl,
         editorialStatus: 'review',
         searchForms: [],
         phrases: [],

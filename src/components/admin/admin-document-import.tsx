@@ -63,7 +63,8 @@ export function AdminDocumentImport() {
         <div>
           <h2 className="text-lg font-medium text-obsidian">Cargar desde documento</h2>
           <p className="text-sm text-gravel">
-            Suba un PDF para autocompletar contenido con Gemini. Todo se guarda en estado En revisión.
+            Suba un PDF y el sistema completará los campos automáticamente. Todo se guarda en estado En
+            revisión.
           </p>
         </div>
         <Link href="/admin/items" className="text-sm text-gravel underline">
@@ -103,9 +104,9 @@ export function AdminDocumentImport() {
         <section className="rounded-lg border border-chalk bg-white p-4">
           <h3 className="text-sm font-medium text-obsidian">Resultado de la carga</h3>
           <div className="mt-2 grid gap-2 text-sm text-gravel sm:grid-cols-3">
-            <p>Bloques analizados: {result.processedBlocks}</p>
+            <p>Secciones analizadas: {result.processedBlocks}</p>
             <p>Entradas creadas: {result.createdCount}</p>
-            <p>Bloques omitidos: {result.skippedCount}</p>
+            <p>Secciones omitidas: {result.skippedCount}</p>
           </div>
 
           {result.created.length > 0 ? (
@@ -114,7 +115,7 @@ export function AdminDocumentImport() {
               <ul className="mt-1 list-disc pl-5 text-sm text-obsidian">
                 {result.created.map((row) => (
                   <li key={row.id}>
-                    [{row.sectionCode === 'faq' ? 'FAQ' : 'Información'}]{' '}
+                    [{row.sectionCode === 'faq' ? 'Pregunta frecuente' : 'Información'}]{' '}
                     <Link href={`/admin/items/${row.id}`} className="underline">
                       {row.title}
                     </Link>
@@ -130,7 +131,7 @@ export function AdminDocumentImport() {
               <ul className="mt-1 list-disc pl-5 text-sm text-amber-900">
                 {result.warnings.map((warning) => (
                   <li key={`${warning.index}-${warning.reason}`}>
-                    Bloque #{warning.index}: {warning.reason}
+                    Sección #{warning.index}: {warning.reason}
                   </li>
                 ))}
               </ul>

@@ -84,13 +84,13 @@ export function AdminItemsList() {
       const res = await fetch(`/api/admin/items?${params}`)
       const body = await res.json()
       if (!res.ok) {
-        setError(body.error ?? 'No se pudo cargar la lista de entradas')
+        setError(body.error ?? 'No se pudo cargar la lista de entradas. Recargue la página e intente de nuevo.')
         return
       }
       setItems(body.items ?? [])
       setTotal(body.total ?? 0)
     } catch (reason) {
-      setError(reason instanceof Error ? reason.message : 'No se pudo cargar la lista de entradas')
+      setError(reason instanceof Error ? reason.message : 'No se pudo cargar la lista de entradas. Recargue la página e intente de nuevo.')
     } finally {
       setLoading(false)
     }
@@ -127,9 +127,9 @@ export function AdminItemsList() {
     Boolean(status || sectionCode || domainCode || profileTypeCode || studentTypeCode || periodSelect)
 
   const handleDelete = async (item: ItemRow) => {
-    const name = item.questionPreview || item.title || 'Sin nombre'
+    const name = item.questionPreview || item.title || 'Sin título'
     const typeLabel = item.sectionCode === 'faq' ? 'pregunta frecuente' : 'información'
-    const ok = window.confirm(`¿Deseas eliminar la ${typeLabel} «${name}»? Esta acción no se puede deshacer.`)
+    const ok = window.confirm(`¿Desea eliminar la ${typeLabel} «${name}»? Esta acción no se puede deshacer.`)
     if (!ok) return
     try {
       const res = await fetch(`/api/admin/items/${encodeURIComponent(item.id)}`, { method: 'DELETE' })
@@ -148,7 +148,7 @@ export function AdminItemsList() {
     <div className="flex flex-col gap-4">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h2 className="text-lg font-medium text-obsidian">Administrar información</h2>
+          <h2 className="text-lg font-medium text-obsidian">Administrar información y preguntas frecuentes</h2>
         </div>
         <div className="flex flex-wrap gap-2">
           <Button asChild variant="outline">
@@ -171,7 +171,7 @@ export function AdminItemsList() {
           </Link>
         </div>
         <p className="text-xs text-gravel">
-          Use este botón para crear, editar o activar filtros en una página completa.
+          Cree, edite o active los filtros de este listado en una página aparte.
         </p>
         <div className="flex flex-wrap gap-2">
           <Input
@@ -278,9 +278,9 @@ export function AdminItemsList() {
         </p>
         {missingEmbeddings !== null && missingEmbeddings > 0 ? (
           <p className="mt-2 text-amber-900">
-            {missingEmbeddings} entrada(s) publicada(s) sin embedding semántico. La búsqueda por texto sigue
-            activa; ejecute <code className="text-xs">npm run db:backfill:search-embeddings</code> o active{' '}
-            <code className="text-xs">SEARCH_REINDEX_ENABLED=true</code>.
+            {missingEmbeddings} entrada{missingEmbeddings === 1 ? '' : 's'} publicada
+            {missingEmbeddings === 1 ? '' : 's'} sin procesar para la búsqueda por significado. La búsqueda
+            por texto sigue activa; pida al equipo técnico completar el procesamiento.
           </p>
         ) : null}
       </div>
@@ -298,7 +298,7 @@ export function AdminItemsList() {
           <table className="w-full min-w-[960px] text-left text-sm">
             <thead className="border-b border-chalk bg-chalk/50 text-xs text-gravel">
               <tr>
-                <th className="px-3 py-2">Nombre</th>
+                <th className="px-3 py-2">Título</th>
                 <th className="px-3 py-2">Sección</th>
                 <th className="px-3 py-2">Menú del asesor</th>
                 <th className="px-3 py-2">Aplica a</th>

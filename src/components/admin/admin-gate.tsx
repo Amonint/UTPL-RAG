@@ -10,8 +10,7 @@ export function AdminGate({ children }: { children: React.ReactNode }) {
         <p className="text-sm text-gravel">
           Active el panel en el archivo de configuración del proyecto (
           <code className="rounded bg-chalk px-1">ADMIN_ENABLED=true</code> y conexión a la base de
-          datos). La carga masiva inicial sigue haciéndose con el proceso institucional (ETL), no desde
-          esta pantalla.
+          datos).           La carga inicial de contenido se hace con el proceso institucional, no desde esta pantalla.
         </p>
         <Link href="/" className="text-sm text-obsidian underline">
           Ir al panel de asesores

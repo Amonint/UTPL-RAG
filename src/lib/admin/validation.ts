@@ -78,6 +78,7 @@ export const createItemSchema = z
     synonyms: stringArraySchema.optional().default([]),
     periodLabel: z.string().trim().max(200).optional(),
     responsibleName: z.string().trim().optional(),
+    referenceUrl: z.string().url().optional().nullable(),
     editorialStatus: editorialStatusSchema.default('editorial_draft'),
     validFrom: z.string().date().optional().nullable(),
     validTo: z.string().date().optional().nullable(),
@@ -102,6 +103,7 @@ export const advisorCreateItemSchema = z
     title: z.string().trim().max(1000).optional(),
     questionText: z.string().trim().optional().default(''),
     answerText: z.string().trim().min(1, 'El contenido es obligatorio'),
+    referenceUrl: z.string().url().optional().nullable(),
   })
   .superRefine((data, ctx) => {
     if (data.sectionCode === 'faq') {
@@ -153,6 +155,7 @@ export const patchItemSchema = z.object({
   validTo: z.string().date().optional().nullable(),
   periodLabel: z.string().trim().max(200).optional().nullable(),
   reviewPolicy: z.string().trim().max(500).optional().nullable(),
+  referenceUrl: z.string().url().optional().nullable(),
 })
 
 export const createVersionSchema = z.object({
@@ -367,7 +370,8 @@ export const patchCyclePeriodSchema = z
 export const calendarEventScopeSchema = z.object({
   domainCode: z.string().trim().min(1).max(80),
   profileTypeCode: z.string().trim().min(1).max(80),
-  studentTypeCode: z.string().trim().min(1).max(80),
+  /** Omitir cuando aplica a todos los tipos de estudiante (p. ej. Nuevos y Reingresos). */
+  studentTypeCode: z.string().trim().min(1).max(80).optional(),
   periodLabel: z.string().trim().min(1).max(200),
   periodValidFrom: z.string().date().optional(),
   periodValidTo: z.string().date().optional(),
@@ -404,6 +408,11 @@ export const patchCalendarEventSchema = z
     },
     { message: 'La fecha de fin debe ser igual o posterior a la de inicio.', path: ['endsOn'] },
   )
+
+/** Cambio de estado editorial sin reenviar el resto del evento. */
+export const patchCalendarEventStatusSchema = z.object({
+  editorialStatus: z.enum(['review', 'published']),
+})
 
 export const listCalendarEventsQuerySchema = z.object({
   domainCode: z.string().trim().min(1).optional(),

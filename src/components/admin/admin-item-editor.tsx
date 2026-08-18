@@ -20,12 +20,14 @@ import {
   type SectionCode,
 } from '@/lib/admin/ui-labels'
 import { AdminDocumentPeriodField } from '@/components/admin/admin-document-period-field'
+import { AdminPdfUpload } from '@/components/admin/admin-pdf-upload'
 import {
   labelSectionFromCatalog,
   resolveEditorialFormOptions,
   useAdminFilterCatalogs,
 } from '@/hooks/use-admin-filter-catalogs'
 import { decodeDocumentMeta } from '@/lib/admin/document-meta'
+import type { OcrExtractionResult } from '@/lib/ocr/gemini-pdf-ocr'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
@@ -61,6 +63,7 @@ interface ItemDetail {
   validFrom: string | null
   validTo: string | null
   reviewPolicy: string | null
+  referenceUrl: string | null
   latestVersion: {
     questionText: string | null
     answerText: string | null
@@ -102,6 +105,7 @@ export function AdminItemEditor({ itemId }: { itemId?: string }) {
   const [validFrom, setValidFrom] = useState<string | null>(null)
   const [validTo, setValidTo] = useState<string | null>(null)
   const [responsibleName, setResponsibleName] = useState('')
+  const [referenceUrl, setReferenceUrl] = useState('')
 
   const [loading, setLoading] = useState(!isNew)
   const [saving, setSaving] = useState(false)
@@ -109,6 +113,18 @@ export function AdminItemEditor({ itemId }: { itemId?: string }) {
   const [error, setError] = useState<string | null>(null)
 
   const isDocumentation = sectionCode === 'general_info'
+
+  const handlePdfExtracted = (result: OcrExtractionResult) => {
+    if (!result.success || result.items.length === 0) return
+    const item = result.items[0]
+    if (item.title) setTitle(item.title)
+    if (isDocumentation) {
+      if (item.question) setSubtitle(item.question)
+    } else {
+      if (item.question) setQuestionText(item.question)
+    }
+    if (item.answer) setAnswerText(item.answer)
+  }
 
   useEffect(() => {
     void Promise.all([
@@ -139,7 +155,7 @@ export function AdminItemEditor({ itemId }: { itemId?: string }) {
     const res = await fetch(`/api/admin/items/${itemId}`)
     const body = await res.json()
     if (!res.ok) {
-      setError(body.error ?? 'No se encontró el ítem')
+      setError(body.error ?? 'No se encontró la entrada')
       setLoading(false)
       return
     }
@@ -161,6 +177,7 @@ export function AdminItemEditor({ itemId }: { itemId?: string }) {
     setEditorialStatus(loaded.editorialStatus)
     setValidFrom(loaded.validFrom)
     setValidTo(loaded.validTo)
+    setReferenceUrl(loaded.referenceUrl ?? '')
     setPeriodLabel(decodeDocumentMeta(loaded.reviewPolicy).periodLabel ?? '')
     if (loaded.latestVersion) {
       const q = loaded.latestVersion.questionText ?? ''
@@ -267,13 +284,14 @@ export function AdminItemEditor({ itemId }: { itemId?: string }) {
       editorialStatus,
       validFrom,
       validTo,
+      referenceUrl: referenceUrl.trim() || undefined,
       periodLabel: isDocumentation ? periodLabel.trim() || undefined : undefined,
     }
 
     try {
       if (isNew) {
         if (!domainId || !categoryId || !subcategoryId) {
-          setError('Seleccione dominio, categoría y subcategoría.')
+          setError('Seleccione área, categoría y subcategoría.')
           setSaving(false)
           return
         }
@@ -306,7 +324,11 @@ export function AdminItemEditor({ itemId }: { itemId?: string }) {
             title: resolvedTitle || questionText,
             sectionCode,
             contentType: defaultContentTypeForSection(sectionCode),
-            ...itemMeta,
+            editorialStatus: itemMeta.editorialStatus,
+            validFrom: itemMeta.validFrom,
+            validTo: itemMeta.validTo,
+            referenceUrl: itemMeta.referenceUrl,
+            periodLabel: itemMeta.periodLabel,
             questionText: versionPayload.questionText,
             answerText: versionPayload.answerText,
             searchForms: versionPayload.searchForms,
@@ -317,7 +339,7 @@ export function AdminItemEditor({ itemId }: { itemId?: string }) {
         })
         const body = await res.json()
         if (!res.ok) {
-          setError(body.error ?? 'Error al crear')
+          setError(body.error ?? 'No se pudo crear la entrada. Intente de nuevo.')
           setSaving(false)
           return
         }
@@ -335,7 +357,7 @@ export function AdminItemEditor({ itemId }: { itemId?: string }) {
       })
       if (!patchRes.ok) {
         const body = await patchRes.json()
-        setError(body.error ?? 'Error al actualizar metadatos')
+        setError(body.error ?? 'No se pudo actualizar la entrada. Intente de nuevo.')
         setSaving(false)
         return
       }
@@ -347,7 +369,7 @@ export function AdminItemEditor({ itemId }: { itemId?: string }) {
       })
       const verBody = await verRes.json()
       if (!verRes.ok) {
-        setError(verBody.error ?? 'Error al guardar versión')
+        setError(verBody.error ?? 'No se pudo guardar la versión. Intente de nuevo.')
         setSaving(false)
         return
       }
@@ -355,7 +377,7 @@ export function AdminItemEditor({ itemId }: { itemId?: string }) {
       setMessage('Guardado')
       void loadItem()
     } catch {
-      setError('Error de red')
+      setError('No se pudo conectar. Revise su conexión e intente de nuevo.')
     } finally {
       setSaving(false)
     }
@@ -371,16 +393,33 @@ export function AdminItemEditor({ itemId }: { itemId?: string }) {
           Elija qué tipo de contenido va a crear. La pestaña del asesor queda definida desde el
           inicio.
         </p>
-        <div className="flex flex-wrap gap-2">
-          <Button asChild variant="secondary">
-            <Link href="/admin/items/import">Cargar desde documento</Link>
-          </Button>
-          <Button asChild variant="default">
-            <Link href="/admin/items/new?section=faq">Nueva pregunta frecuente</Link>
-          </Button>
-          <Button asChild variant="outline">
-            <Link href="/admin/items/new?section=general_info">{newItemButtonLabel('general_info')}</Link>
-          </Button>
+        <div className="flex flex-col gap-3">
+          <div className="flex flex-wrap gap-2">
+            <Button asChild variant="secondary">
+              <Link href="/admin/items/import">Cargar desde documento</Link>
+            </Button>
+            <Button asChild variant="default">
+              <Link href="/admin/items/new?section=faq">Nueva pregunta frecuente</Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link href="/admin/items/new?section=general_info">{newItemButtonLabel('general_info')}</Link>
+            </Button>
+          </div>
+
+          <div className="rounded-lg border border-chalk bg-white p-4 space-y-3">
+            <div>
+              <h3 className="text-sm font-medium text-obsidian mb-1">Pregunta frecuente</h3>
+              <p className="text-xs text-gravel">
+                Use esta sección para preguntas que los asesores buscan frecuentemente. Incluya la pregunta exacta, la respuesta completa y sinónimos para mejorar la búsqueda.
+              </p>
+            </div>
+            <div className="border-t border-chalk pt-3">
+              <h3 className="text-sm font-medium text-obsidian mb-1">Información institucional</h3>
+              <p className="text-xs text-gravel">
+                Use esta sección para información general sobre procesos, fechas o trámites de la universidad. Puede incluir un título, descripción y período de vigencia.
+              </p>
+            </div>
+          </div>
         </div>
         <Link href="/admin/items" className="text-sm text-gravel underline">
           Volver a la lista
@@ -458,7 +497,7 @@ export function AdminItemEditor({ itemId }: { itemId?: string }) {
         <aside className="flex flex-col gap-3 rounded-lg border border-chalk bg-white p-4">
           <p className="text-sm font-medium text-obsidian">Ubicación en el menú</p>
 
-          <label className="text-xs font-medium text-gravel">Dominio</label>
+          <label className="text-xs font-medium text-gravel">Área</label>
           <select
             data-testid="admin-domain"
             value={domainId}
@@ -530,7 +569,7 @@ export function AdminItemEditor({ itemId }: { itemId?: string }) {
 
           {missingApartado ? (
             <p className="text-xs text-amber-800">
-              Falta el ancla de menú en esta subcategoría; se creará automáticamente al guardar.
+              Esta subcategoría aún no tiene un tema; se creará automáticamente al guardar.
             </p>
           ) : null}
 
@@ -545,8 +584,24 @@ export function AdminItemEditor({ itemId }: { itemId?: string }) {
         </aside>
 
         <div className="flex flex-col gap-4">
+          {isNew && (
+            <AdminPdfUpload
+              sectionType={isDocumentation ? 'information' : 'faq'}
+              onExtracted={handlePdfExtracted}
+            />
+          )}
+
           {isDocumentation ? (
             <section className="flex flex-col gap-5 rounded-lg border border-chalk bg-white p-4">
+              <div className="rounded-md bg-blue-50 border border-blue-200 p-3">
+                <p className="text-xs font-medium text-blue-900">
+                  💡 <strong>Información institucional</strong>
+                </p>
+                <p className="text-xs text-blue-800 mt-1">
+                  Agregue información sobre procesos, fechas, trámites o procedimientos universitarios. Esta información aparecerá en la pestaña correspondiente del asesor.
+                </p>
+              </div>
+
               <div>
                 <label className="mb-1 block text-xs font-medium text-gravel">Título</label>
                 <Input
@@ -557,7 +612,7 @@ export function AdminItemEditor({ itemId }: { itemId?: string }) {
               </div>
 
               <div>
-                <label className="mb-1 block text-xs font-medium text-gravel">Subtítulo</label>
+                <label className="mb-1 block text-xs font-medium text-gravel">Subtítulo o descripción breve</label>
                 <Input
                   value={subtitle}
                   onChange={(e) => setSubtitle(e.target.value)}
@@ -586,9 +641,30 @@ export function AdminItemEditor({ itemId }: { itemId?: string }) {
                   placeholder="Información principal que verá el asesor"
                 />
               </div>
+
+              <div>
+                <label className="mb-1 block text-xs font-medium text-gravel">URL de referencia (opcional)</label>
+                <Input
+                  type="url"
+                  value={referenceUrl}
+                  onChange={(e) => setReferenceUrl(e.target.value)}
+                  placeholder="https://ejemplo.com/mas-informacion"
+                />
+                <p className="mt-1 text-xs text-gravel">
+                  Enlace a un formulario, portal o recurso relacionado con esta información
+                </p>
+              </div>
             </section>
           ) : (
             <section className="rounded-lg border border-chalk bg-white p-4">
+              <div className="mb-4 rounded-md bg-green-50 border border-green-200 p-3">
+                <p className="text-xs font-medium text-green-900">
+                  ❓ <strong>Pregunta frecuente</strong>
+                </p>
+                <p className="text-xs text-green-800 mt-1">
+                  Escriba la pregunta tal como un asesor la buscaría. Incluya la respuesta completa y detallada. El sistema generará palabras clave automáticamente al guardar.
+                </p>
+              </div>
               <h3 className="mb-3 text-sm font-medium text-obsidian">Pregunta y respuesta</h3>
               <div className="flex flex-col gap-4">
                 <div>
@@ -635,13 +711,26 @@ export function AdminItemEditor({ itemId }: { itemId?: string }) {
                     placeholder="Respuesta completa para el asesor"
                   />
                 </div>
+
+                <div>
+                  <label className="mb-1 block text-xs font-medium text-gravel">URL de referencia (opcional)</label>
+                  <Input
+                    type="url"
+                    value={referenceUrl}
+                    onChange={(e) => setReferenceUrl(e.target.value)}
+                    placeholder="https://ejemplo.com/mas-informacion"
+                  />
+                  <p className="mt-1 text-xs text-gravel">
+                    Enlace a un documento, formulario o página con más información relacionada
+                  </p>
+                </div>
               </div>
             </section>
           )}
 
           <p className="rounded-md border border-chalk bg-[#f7f6f4] px-3 py-2 text-xs text-gravel">
-            Las formas de búsqueda, frases relacionadas y sinónimos se generan automáticamente al
-            guardar, en segundo plano. No hace falta escribirlas aquí.
+            Las palabras clave para la búsqueda se generan automáticamente al guardar. No hace falta
+            escribirlas aquí.
           </p>
         </div>
       </div>

@@ -1,9 +1,10 @@
-import { patchCalendarEventSchema } from '@/lib/admin/validation'
+import { patchCalendarEventSchema, patchCalendarEventStatusSchema } from '@/lib/admin/validation'
 import { assertAdminEnabled } from '@/lib/admin/route-guard'
 import {
   calendarEventsTableReady,
   softDeleteCalendarEvent,
   updateCalendarEvent,
+  updateCalendarEventEditorialStatus,
 } from '@/lib/db/admin/calendar-events-repository'
 import { withDbTransaction } from '@/lib/db/transaction'
 
@@ -19,7 +20,22 @@ export async function PATCH(request: Request, context: RouteContext) {
     }
 
     const { id } = await context.params
-    const body = patchCalendarEventSchema.parse(await request.json())
+    const json: unknown = await request.json()
+    const statusOnly = patchCalendarEventStatusSchema.safeParse(json)
+    const isStatusOnly =
+      statusOnly.success &&
+      typeof json === 'object' &&
+      json !== null &&
+      Object.keys(json).length === 1
+
+    if (isStatusOnly) {
+      await withDbTransaction((client) =>
+        updateCalendarEventEditorialStatus(client, id, statusOnly.data.editorialStatus),
+      )
+      return Response.json({ ok: true })
+    }
+
+    const body = patchCalendarEventSchema.parse(json)
     await withDbTransaction((client) => updateCalendarEvent(client, id, body))
     return Response.json({ ok: true })
   } catch (error) {

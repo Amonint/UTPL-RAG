@@ -46,7 +46,7 @@ export function inferRolesFromHeaders(headerCells: string[]): ColumnRole[] {
 
 /** Si hay una sola columna unknown y el resto cubierto, asignar unknown a activity. */
 function refineRoles(roles: ColumnRole[]): ColumnRole[] {
-  const out = [...roles]
+  const out: ColumnRole[] = [...roles]
   const unknownIdx = out.map((r, i) => (r === 'unknown' ? i : -1)).filter((i) => i >= 0)
   if (unknownIdx.length === 1 && out.length > 1) {
     const i = unknownIdx[0]
@@ -54,11 +54,12 @@ function refineRoles(roles: ColumnRole[]): ColumnRole[] {
     if (!hasAct) out[i] = 'activity'
   }
   if (out.length >= 3 && out.every((r) => r === 'unknown')) {
-    out[0] = 'activity'
-    if (out.length >= 3) {
-      out[out.length - 2] = 'start'
-      out[out.length - 1] = 'end'
-    }
+    // Copia explícita: TS estreña `out` a ('unknown')[] dentro del if y rechaza asignar otros roles.
+    const next: ColumnRole[] = [...out]
+    next[0] = 'activity'
+    next[next.length - 2] = 'start'
+    next[next.length - 1] = 'end'
+    return next
   }
   return out
 }

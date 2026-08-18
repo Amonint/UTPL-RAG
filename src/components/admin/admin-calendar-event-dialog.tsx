@@ -4,7 +4,11 @@ import { useEffect, useMemo, useState } from 'react'
 
 import type { AcademicCalendarEventRecord } from '@/data/academic-calendar-events'
 import { CALENDAR_EVENT_CATEGORIES, defaultCalendarEventCategory } from '@/lib/calendar/event-categories'
-import type { CalendarEventScopeMeta } from '@/lib/calendar/event-scope-meta'
+import {
+  calendarEventEditorialStatus,
+  type CalendarEditorialStatus,
+  type CalendarEventScopeMeta,
+} from '@/lib/calendar/event-scope-meta'
 import {
   ACADEMIC_PERIOD_PRESETS,
   type AcademicPeriodPreset,
@@ -21,6 +25,8 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import { Input } from '@/components/ui/input'
+import { AdminPdfUpload } from '@/components/admin/admin-pdf-upload'
+import type { OcrExtractionResult } from '@/lib/ocr/gemini-pdf-ocr'
 
 type DomainRow = { code: string; name: string }
 type ProfileTypeRow = { typeCode: string; name: string; profileCode: string }
@@ -79,6 +85,7 @@ export function AdminCalendarEventDialog({
   const [profileTypeCode, setProfileTypeCode] = useState('')
   const [studentTypeCode, setStudentTypeCode] = useState('')
   const [periodSelect, setPeriodSelect] = useState('')
+  const [editorialStatus, setEditorialStatus] = useState<CalendarEditorialStatus>('published')
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -132,9 +139,21 @@ export function AdminCalendarEventDialog({
           ) ?? resolvePresetFromScope(initialScope)
         : findPeriodInList(periods, filters.periodSelect)
     setPeriodSelect(periodPreset?.id ?? '')
+    setEditorialStatus(
+      mode === 'edit' ? calendarEventEditorialStatus(initialScope) : 'published',
+    )
   }, [open, mode, event, initialScope, filters, periods])
 
   const selectedPeriod = findPeriodInList(periods, periodSelect)
+
+  const handlePdfExtracted = (result: OcrExtractionResult) => {
+    if (!result.success || result.items.length === 0) return
+    const item = result.items[0]
+    if (item.title) setTitle(item.title)
+    if (item.startDate) setStartsOn(item.startDate)
+    if (item.endDate) setEndsOn(item.endDate)
+    if (item.eventType) setEventType(item.eventType)
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -157,8 +176,7 @@ export function AdminCalendarEventDialog({
       periodValidTo: preset.validTo,
       periodCode: preset.code,
       source: initialScope?.source ?? 'admin',
-      /** Al guardar desde admin se publica (sale de revisión). */
-      editorialStatus: 'published',
+      editorialStatus,
     }
 
     if (!scope.domainCode || !scope.profileTypeCode || !scope.studentTypeCode) {
@@ -188,13 +206,13 @@ export function AdminCalendarEventDialog({
       })
       const body = await res.json()
       if (!res.ok) {
-        setError(body.error ?? 'No se pudo guardar')
+        setError(body.error ?? 'No se pudo guardar el evento. Intente de nuevo.')
         return
       }
       onSaved()
       onClose()
     } catch {
-      setError('Error de red al guardar')
+      setError('No se pudo conectar. Revise su conexión e intente de nuevo.')
     } finally {
       setSaving(false)
     }
@@ -206,14 +224,13 @@ export function AdminCalendarEventDialog({
         <DialogHeader>
           <DialogTitle>{mode === 'create' ? 'Agregar evento' : 'Editar evento'}</DialogTitle>
           <DialogDescription>
-            Indique el alcance (área, modalidad, tipo de estudiante y periodo) y las fechas del
-            evento en el calendario académico.
+            Complete área, modalidad, tipo de estudiante, periodo y fechas del evento.
           </DialogDescription>
         </DialogHeader>
 
         <form onSubmit={(e) => void handleSubmit(e)} className="space-y-4">
           <fieldset className="space-y-2 rounded-md border border-chalk p-3">
-            <legend className="px-1 text-xs font-medium text-gravel">Alcance</legend>
+            <legend className="px-1 text-xs font-medium text-gravel">A quién aplica</legend>
             <label className="block text-xs font-medium text-gravel">Área</label>
             <select
               className={selectClass}
@@ -278,7 +295,27 @@ export function AdminCalendarEventDialog({
                 Vigencia del periodo: {selectedPeriod.validFrom} — {selectedPeriod.validTo}
               </p>
             ) : null}
+
+            <label className="block text-xs font-medium text-gravel">Estado</label>
+            <select
+              className={selectClass}
+              value={editorialStatus}
+              onChange={(ev) => setEditorialStatus(ev.target.value as CalendarEditorialStatus)}
+            >
+              <option value="review">En revisión</option>
+              <option value="published">Publicado</option>
+            </select>
+            <p className="text-xs text-gravel">
+              Publicado: visible para el asesor. En revisión: solo en administración.
+            </p>
           </fieldset>
+
+          {mode === 'create' && (
+            <AdminPdfUpload
+              sectionType="calendar"
+              onExtracted={handlePdfExtracted}
+            />
+          )}
 
           <fieldset className="space-y-2 rounded-md border border-chalk p-3">
             <legend className="px-1 text-xs font-medium text-gravel">Evento</legend>

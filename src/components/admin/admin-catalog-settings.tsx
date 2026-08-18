@@ -42,12 +42,12 @@ const TABS: Array<{ id: CatalogTab; title: string; hint: string }> = [
   {
     id: 'studentTypes',
     title: 'Tipos de estudiante',
-    hint: 'Nuevo, continuo, posgrado… para audiencia.',
+    hint: 'Nuevo, continuo, posgrado…',
   },
   {
     id: 'editorialStatuses',
     title: 'Estados',
-    hint: 'Flujo editorial: borrador, revisión, publicado…',
+    hint: 'Borrador, revisión, publicado…',
   },
   {
     id: 'cyclePeriods',
@@ -81,6 +81,16 @@ const ENDPOINTS: Record<CatalogTab, string> = {
   studentTypes: '/api/admin/catalogs/student-types',
   editorialStatuses: '/api/admin/catalogs/editorial-statuses',
   cyclePeriods: '/api/admin/catalogs/cycle-periods',
+}
+
+/** Sustantivo singular para botones y diálogos de creación. */
+const CREATE_NOUN: Record<CatalogTab, string> = {
+  sections: 'sección',
+  domains: 'área',
+  modalities: 'modalidad',
+  studentTypes: 'tipo de estudiante',
+  editorialStatuses: 'estado',
+  cyclePeriods: 'periodo',
 }
 
 const selectClass = 'rounded-md border border-chalk bg-white px-3 py-2 text-sm text-obsidian'
@@ -152,7 +162,7 @@ export function AdminCatalogSettings() {
       ) {
         setMigrationHint(true)
       }
-      throw new Error(body.error ?? 'Error al cargar')
+      throw new Error(body.error ?? 'No se pudieron cargar los datos. Intente de nuevo.')
     }
     setMigrationHint(false)
 
@@ -358,7 +368,7 @@ export function AdminCatalogSettings() {
       } else {
         await postJson(url, { name: newName, isActive: newIsVisible })
       }
-      notify(`${activeMeta.title}: creado`)
+      notify('Registro creado.')
       resetCreateForm()
       setCreateOpen(false)
       await loadTab(tab)
@@ -374,9 +384,7 @@ export function AdminCatalogSettings() {
     <div className="space-y-6">
       {migrationHint ? (
         <p className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-950">
-          Para secciones y estados editoriales ejecute la migración{' '}
-          <code className="text-xs">scripts/migrations/2026-06-02-admin-filter-catalogs.sql</code>{' '}
-          en la base de datos. Áreas, modalidades y periodos pueden funcionar sin ella.
+          Algunos catálogos aún no están disponibles. Pida al equipo técnico completar su activación.
         </p>
       ) : null}
 
@@ -387,7 +395,7 @@ export function AdminCatalogSettings() {
         </div>
         <div className="flex flex-wrap gap-2">
           <Button type="button" variant="outline" onClick={() => setCreateOpen(true)}>
-            Agregar {activeMeta.title.toLowerCase()}
+            Agregar {CREATE_NOUN[tab]}
           </Button>
           <Button type="button" variant="ghost" onClick={() => void loadTab(tab)}>
             Actualizar
@@ -462,7 +470,7 @@ export function AdminCatalogSettings() {
         <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-lg">
           <DialogHeader>
             <DialogTitle className="text-obsidian">
-              Crear nuevo {activeMeta.title.toLowerCase()}
+              Crear {CREATE_NOUN[tab]}
             </DialogTitle>
             <DialogDescription className="text-gravel">
               Complete los datos para agregar un nuevo registro.
@@ -579,7 +587,7 @@ export function AdminCatalogSettings() {
               >
                 Cancelar
               </Button>
-              <Button type="submit">Crear {activeMeta.title.toLowerCase()}</Button>
+              <Button type="submit">Crear {CREATE_NOUN[tab]}</Button>
             </DialogFooter>
           </form>
         </DialogContent>
@@ -847,7 +855,7 @@ function CatalogTableRow({
               {columns.showFilterColumn ? (
                 <>
                   <span>
-                    <span className="font-medium text-obsidian">En formularios:</span>{' '}
+                    <span className="font-medium text-obsidian">Al editar entradas:</span>{' '}
                     {editorial.showInForm ? 'Sí' : 'No'}
                   </span>
                   <span>

@@ -86,12 +86,28 @@ Diseñar una base de conocimiento escalable para servicio al cliente, donde la c
 - `knowledge_item_id` (fk -> `knowledge_items.id`)
 - `profile_code` (fk -> `profile_catalog.code`)
 - `profile_type_id` (fk -> `profile_type_catalog.id`, nullable)
+- `program_level_code` (fk -> `program_level_catalog.code`, nullable) — **V1**
+- `student_type_id` (fk -> `student_types.id`, nullable) — **V1**
 - `priority` (smallint, default 100)
-- `primary key(knowledge_item_id, profile_code, profile_type_id)`
+- PK surrogate `id`; unicidad operativa por combinación de ejes
 
 Regla:
-- Si `profile_type_id` es null => aplica a todo el perfil.
+- Si `profile_type_id` es null => aplica a todo el perfil en modalidad.
+- Si `program_level_code` es null o `general` => aplica a todos los niveles.
+- Si `student_type_id` es null => aplica a todos los ciclos.
 - Si no hay filas para un item => item "general" (fallback).
+
+### V1 — Decisión FAQ-only
+
+Para **Servicios e Incidencias**, la unidad de búsqueda principal es `knowledge_items` (FAQ), no `services`/`service_variants`. Las tablas de servicio permanecen para evolución posterior.
+
+### V1 — Tres ejes de audiencia
+
+Además de modalidad (`profile_type`), V1 incluye:
+- `program_level_code`: grado, posgrado, tec, competencias_especificas
+- `student_type_id`: NUEVO, CONTINUO, POSTULANTE, ALUMNI
+
+Ver mapeo UTPL en [`utpl-information-hierarchy.md`](utpl-information-hierarchy.md).
 
 #### `service_variant_audiences`
 - `service_variant_id` (fk -> `service_variants.id`)
@@ -153,10 +169,14 @@ Un item entra a consulta solo si:
 ## Proyeccion a Meilisearch
 
 Documento de indice recomendado:
-- `id`
-- `entity_type` (`knowledge_item` o `service_variant`)
-- `section_code`
-- `domain/category/subcategory/element`
+- `id` (compuesto por item + audiencia cuando aplica)
+- `entity_type` (`knowledge_item` en V1)
+- `section_code`, `content_type`, `domain_code`, `service_category_code`
+- `category/subcategory/element` slugs y labels
+- `profile_type_code`, `program_level_code`, `student_lifecycle_code`
+- `question_text`, `answer_text`, `synonyms`, `trigger_phrases`, `search_text`
+
+Búsqueda chat: **cross-sección** con boost suave por sección activa; audiencia como ranking/badges, no corte duro.
 - `title/question/answer`
 - `profile_codes[]`
 - `profile_type_codes[]`

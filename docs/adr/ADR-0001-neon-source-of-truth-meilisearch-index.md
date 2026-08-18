@@ -1,6 +1,6 @@
 # ADR-0001: Neon como fuente de verdad y Meilisearch como indice de consulta
 
-- Estado: Aprobado
+- Estado: Aprobado (consulta por defecto: ver [ADR-0003](./ADR-0003-neon-sql-default-search.md))
 - Fecha: 2026-05-27
 - Decisores: Equipo Atenea KB
 

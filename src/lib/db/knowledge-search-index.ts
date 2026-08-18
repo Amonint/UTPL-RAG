@@ -1,6 +1,5 @@
 import type { PoolClient } from 'pg'
 
-import { dbQuery } from '@/lib/db/postgres'
 import { dbQueryClient } from '@/lib/db/transaction'
 import { embedSearchText } from '@/lib/search/embeddings/gemini-embeddings'
 import { vectorLiteral } from '@/lib/search/hybrid-search-config'
@@ -12,7 +11,10 @@ export async function refreshKnowledgeItemSearchEmbedding(
   client: PoolClient,
   itemId: string,
 ): Promise<void> {
-  const ready = await isKnowledgeSearchEmbeddingColumnReady(dbQuery)
+  // Use the transaction client — dbQuery() on the shared pool deadlocks when max=1.
+  const ready = await isKnowledgeSearchEmbeddingColumnReady((text, values) =>
+    dbQueryClient(client, text, values ?? []),
+  )
   if (!ready) return
 
   const { rows } = await dbQueryClient<{ search_document: string | null }>(

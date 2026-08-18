@@ -20,8 +20,15 @@ const SECTION_HEADING: Record<
   },
 }
 
+function sentenceCase(text: string): string {
+  const trimmed = text.trim()
+  if (!trimmed) return trimmed
+  return trimmed.charAt(0).toUpperCase() + trimmed.slice(1).toLowerCase()
+}
+
 type Props = {
   taxonomy: KbTaxonomyCategory[]
+  loading?: boolean
   filters: KbFilters
   activeSection: KbNavSection
   sectionPickerVariant?: 'tabs' | 'select'
@@ -32,6 +39,7 @@ type Props = {
 
 export function KbLeftNav({
   taxonomy,
+  loading = false,
   filters,
   activeSection,
   sectionPickerVariant = 'tabs',
@@ -89,7 +97,7 @@ export function KbLeftNav({
               type="button"
               onClick={() => onSectionChange('documentation')}
               className={cn(
-                'h-9 rounded-md px-2 text-xs font-medium transition',
+                'h-9 rounded-md px-2 text-sm font-medium transition',
                 activeSection === 'documentation'
                   ? 'bg-white text-obsidian shadow-sm'
                   : 'text-gravel hover:bg-white/70',
@@ -101,7 +109,7 @@ export function KbLeftNav({
               type="button"
               onClick={() => onSectionChange('services_incidents')}
               className={cn(
-                'h-9 rounded-md px-2 text-xs font-medium transition',
+                'h-9 rounded-md px-2 text-sm font-medium transition',
                 activeSection === 'services_incidents'
                   ? 'bg-white text-obsidian shadow-sm'
                   : 'text-gravel hover:bg-white/70',
@@ -115,33 +123,38 @@ export function KbLeftNav({
 
       <div className="flex shrink-0 items-center border-b border-chalk px-2 py-3">
         <div className="min-w-0">
-          <p className="m-0 truncate text-sm text-obsidian">{heading.title}</p>
-          <p className="m-0 mt-0.5 line-clamp-2 text-xs text-gravel">{subtitle}</p>
+          <p className="m-0 truncate text-base font-medium text-obsidian">{heading.title}</p>
+          <p className="m-0 mt-0.5 line-clamp-2 text-sm text-gravel">{subtitle}</p>
         </div>
       </div>
 
       <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-1 py-2">
-        {visibleTaxonomy.length === 0 ? (
+        {loading ? (
+          <div className="m-0 flex items-center gap-2 rounded-md border border-dashed border-chalk bg-eggshell px-3 py-2 text-xs text-gravel">
+            <span className="size-3 shrink-0 animate-spin rounded-full border-2 border-gravel/40 border-t-gravel" aria-hidden />
+            Cargando categorías…
+          </div>
+        ) : visibleTaxonomy.length === 0 ? (
           <p className="m-0 rounded-md border border-dashed border-chalk bg-eggshell px-3 py-2 text-xs text-gravel">
             No hay categorías visibles para esta pestaña todavía.
           </p>
         ) : null}
         {visibleTaxonomy.map((cat) => (
           <details key={cat.slug} className="mb-2 rounded-md border border-chalk bg-eggshell">
-            <summary className="flex cursor-pointer list-none items-center justify-between px-2 py-2 text-sm text-obsidian [&::-webkit-details-marker]:hidden">
+            <summary className="flex cursor-pointer list-none items-center justify-between px-2 py-2 text-base text-obsidian [&::-webkit-details-marker]:hidden">
               <span className="truncate">{cat.name}</span>
-              <span className="inline-flex items-center gap-1 text-xs text-gravel">
-                {cat.count}
+              <span className="inline-flex items-center gap-1 text-sm text-gravel">
+                {cat.count > 1 ? cat.count : null}
                 <ChevronDown className="size-3.5" aria-hidden />
               </span>
             </summary>
             <div className="space-y-1 px-1 pb-2">
               {cat.subcategories.map((sub) => (
                 <details key={`${cat.slug}-${sub.slug}`} className="rounded-md bg-white">
-                  <summary className="flex cursor-pointer list-none items-center justify-between px-2 py-1.5 text-xs text-cinder [&::-webkit-details-marker]:hidden">
-                    <span className="truncate">{sub.name}</span>
-                    <span className="inline-flex items-center gap-1 text-[11px] text-gravel">
-                      {sub.count}
+                  <summary className="flex min-w-0 cursor-pointer list-none items-center justify-between gap-2 px-2 py-1.5 text-sm text-cinder [&::-webkit-details-marker]:hidden">
+                    <span className="min-w-0 break-words">{sentenceCase(sub.name)}</span>
+                    <span className="inline-flex shrink-0 items-center gap-1 text-xs text-gravel">
+                      {sub.count > 1 ? sub.count : null}
                       <ChevronRight className="size-3" aria-hidden />
                     </span>
                   </summary>
@@ -158,14 +171,14 @@ export function KbLeftNav({
                           })
                         }
                         className={cn(
-                          'flex min-h-8 w-full items-center justify-between rounded-md px-2 text-left text-xs transition',
+                          'flex min-h-8 w-full min-w-0 items-center justify-between gap-2 rounded-md px-2 py-1.5 text-left text-sm transition',
                           isLeafActive(cat.slug, sub.slug, el.slug)
                             ? 'bg-obsidian text-eggshell'
                             : 'text-cinder hover:bg-powder',
                         )}
                       >
-                        <span className="truncate">{el.name}</span>
-                        <span className="ml-2 shrink-0 opacity-70">{el.count}</span>
+                        <span className="min-w-0 break-words">{sentenceCase(el.name)}</span>
+                        <span className="ml-2 shrink-0 opacity-70">{el.count > 1 ? el.count : null}</span>
                       </button>
                     ))}
                   </div>

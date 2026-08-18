@@ -45,7 +45,7 @@ export const CONTENT_TYPES_BY_SECTION: Record<SectionCode, ContentTypeCode[]> = 
 }
 
 export const EDITORIAL_STATUS_LABELS: Record<EditorialStatusCode, string> = {
-  ingest_draft: 'Borrador de carga (sistema)',
+  ingest_draft: 'Borrador (carga automática)',
   editorial_draft: 'Borrador',
   review: 'En revisión',
   approved: 'Aprobado',
@@ -207,10 +207,10 @@ const MODALITY_LABELS: Record<string, string> = {
 }
 
 const STUDENT_TYPE_LABELS: Record<string, string> = {
-  NUEVO: 'ESTUDIANTE NUEVO',
-  CONTINUO: 'ESTUDIANTE CONTINUO',
-  ALUMNI: 'ESTUDIANTE ALUMNI',
-  POSTULANTE: 'ESTUDIANTE POSTULANTE',
+  NUEVO: 'Estudiante nuevo',
+  CONTINUO: 'Estudiante continuo',
+  ALUMNI: 'Estudiante alumni',
+  POSTULANTE: 'Estudiante postulante',
   SIN_TIPO_EN_API: 'Sin tipo definido',
 }
 

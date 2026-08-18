@@ -33,8 +33,16 @@ export function decodeScopeMeta(detailsText: string | null | undefined): Calenda
   }
 }
 
+export type CalendarEditorialStatus = 'review' | 'published'
+
+export function calendarEventEditorialStatus(
+  scope: CalendarEventScopeMeta | null | undefined,
+): CalendarEditorialStatus {
+  return scope?.editorialStatus === 'review' ? 'review' : 'published'
+}
+
 export function isCalendarEventPendingReview(scope: CalendarEventScopeMeta | null | undefined): boolean {
-  return scope?.editorialStatus === 'review'
+  return calendarEventEditorialStatus(scope) === 'review'
 }
 
 /** Modalidad de catálogo admin → código en tabla `modalities` (ETL / cronogramas). */

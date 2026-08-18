@@ -29,7 +29,7 @@ export function AdminDashboard() {
     const res = await fetch('/api/admin/stats')
     const body = await res.json()
     if (!res.ok) {
-      setError(body.error ?? 'No se pudieron cargar las estadísticas')
+      setError(body.error ?? 'No se pudieron cargar las estadísticas. Recargue la página e intente de nuevo.')
       return
     }
     setData(body)
@@ -50,16 +50,16 @@ export function AdminDashboard() {
       })
       const body = await res.json()
       if (!res.ok) {
-        setSyncMessage(body.error ?? 'Error al reindexar')
+        setSyncMessage(body.error ?? 'No se pudo actualizar la búsqueda. Intente de nuevo.')
         return
       }
       const remaining = body.remainingMissingEmbeddings ?? 0
       setSyncMessage(
-        `Reindexados ${body.processed} ítems. Pendientes sin embedding: ${remaining}.` +
-          (body.embeddingsConfigured ? '' : ' Configure GEMINI_API_KEY para búsqueda semántica.'),
+        `Se actualizaron ${body.processed} entradas en la búsqueda. Quedan ${remaining} por procesar.` +
+          (body.embeddingsConfigured ? '' : ' La búsqueda por significado aún no está disponible.'),
       )
     } catch {
-      setSyncMessage('Error de red al reindexar')
+      setSyncMessage('No se pudo conectar con el servidor. Intente de nuevo.')
     } finally {
       setSyncing(false)
     }
@@ -71,7 +71,7 @@ export function AdminDashboard() {
         <p className="font-medium">{error}</p>
         {data?.stats.items === 0 && (
           <p className="mt-2">
-            Si Neon está vacío, ejecute primero:{' '}
+            Si la base de datos está vacía, ejecute primero la carga institucional:{' '}
             <code className="rounded bg-white px-1">npm run etl:faq:xlsx</code>
           </p>
         )}
@@ -80,7 +80,7 @@ export function AdminDashboard() {
   }
 
   if (!data) {
-    return <p className="text-sm text-gravel">Cargando estadísticas de Neon…</p>
+    return <p className="text-sm text-gravel">Cargando estadísticas…</p>
   }
 
   const { stats } = data
@@ -90,16 +90,15 @@ export function AdminDashboard() {
     <div className="flex flex-col gap-6">
       {empty ? (
         <div className="rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-950">
-          Aún no hay contenido publicado en la base. Si acaba de instalar el sistema, ejecute primero la
-          carga institucional de preguntas frecuentes (
-          <code className="rounded bg-white px-1">npm run etl:faq:xlsx</code>) o cree entradas desde
-          Contenido.
+          Aún no hay contenido publicado. Ejecute primero la carga institucional de preguntas frecuentes (
+          <code className="rounded bg-white px-1">npm run etl:faq:xlsx</code>) o cree una entrada desde
+          Administrar información.
         </div>
       ) : null}
 
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {[
-          { label: 'Ítems', value: stats.items },
+          { label: 'Entradas', value: stats.items },
           { label: 'Publicados', value: stats.publishedItems },
           { label: 'En borrador', value: stats.draftItems },
           { label: 'Versiones', value: stats.versions },
@@ -116,7 +115,7 @@ export function AdminDashboard() {
       </div>
 
       <section>
-        <h2 className="mb-2 text-sm font-medium text-obsidian">Ítems por dominio</h2>
+        <h2 className="mb-2 text-sm font-medium text-obsidian">Entradas por área</h2>
         <ul className="divide-y divide-chalk rounded-lg border border-chalk bg-white">
           {data.byDomain.map((d) => (
             <li key={d.domainCode} className="flex justify-between px-4 py-2 text-sm">
@@ -129,11 +128,11 @@ export function AdminDashboard() {
 
       <section className="flex flex-wrap items-center gap-3">
         <Button type="button" onClick={() => void runSearchReindex()} disabled={syncing || empty}>
-          {syncing ? 'Reindexando…' : 'Reindexar búsqueda (Neon)'}
+          {syncing ? 'Actualizando…' : 'Actualizar búsqueda'}
         </Button>
         <p className="text-xs text-gravel">
-          Requiere <code>SEARCH_REINDEX_ENABLED=true</code>. FTS + pg_trgm siempre activos; embeddings con{' '}
-          <code>GEMINI_API_KEY</code>.
+          La búsqueda por texto está siempre activa. La búsqueda por significado depende de la
+          configuración del equipo técnico.
         </p>
         {syncMessage ? <p className="text-sm text-obsidian">{syncMessage}</p> : null}
       </section>

@@ -40,7 +40,10 @@ export async function refreshKnowledgeItemSearchDocument(
   client: PoolClient,
   itemId: string,
 ): Promise<void> {
-  const ready = await isKnowledgeSearchDocumentColumnReady(dbQuery)
+  // Use the transaction client — dbQuery() on the shared pool deadlocks when max=1.
+  const ready = await isKnowledgeSearchDocumentColumnReady((text, values) =>
+    dbQueryClient(client, text, values ?? []),
+  )
   if (!ready) return
   await dbQueryClient(client, REFRESH_ONE_SQL, [itemId])
 }

@@ -7,6 +7,8 @@ declare global {
   var __utplPgPool: Pool | undefined
 }
 
+export type DbPoolDriver = 'pg' | 'neon-serverless'
+
 function isNeonDatabaseUrl(connectionString: string): boolean {
   try {
     const host = new URL(connectionString).hostname
@@ -48,30 +50,53 @@ export function normalizeNeonConnectionString(connectionString: string): string 
   return url.toString()
 }
 
+/**
+ * Neon WebSocket Pool.connect() fails on Vercel Node with
+ * "Client has encountered a connection error and is not queryable"
+ * (used by withDbTransaction for /cargar writes). Prefer TCP `pg` + pooler
+ * on Node; keep neon-serverless only for Edge.
+ */
+export function resolveDbPoolDriver(opts: {
+  connectionString: string
+  nextRuntime?: string
+  vercel?: boolean
+}): DbPoolDriver {
+  if (!isNeonDatabaseUrl(opts.connectionString)) return 'pg'
+  if (opts.nextRuntime === 'edge') return 'neon-serverless'
+  return 'pg'
+}
+
 function createPool(): Pool {
   const raw = process.env.DATABASE_URL?.trim()
   if (!raw) {
     throw new Error('DATABASE_URL is required to query canonical database.')
   }
 
-  if (isNeonDatabaseUrl(raw)) {
-    const connectionString = normalizeNeonConnectionString(raw)
+  const driver = resolveDbPoolDriver({
+    connectionString: raw,
+    nextRuntime: process.env.NEXT_RUNTIME,
+    vercel: Boolean(process.env.VERCEL),
+  })
+  const connectionString = isNeonDatabaseUrl(raw)
+    ? normalizeNeonConnectionString(raw)
+    : raw
+
+  if (driver === 'neon-serverless') {
     neonConfig.webSocketConstructor = ws
-    // HTTP fallback for Pool.query on Vercel (more stable than bare WebSockets).
-    if (process.env.VERCEL) {
-      neonConfig.poolQueryViaFetch = true
-    }
     return new NeonPool({
       connectionString,
-      max: process.env.VERCEL ? 1 : 10,
+      max: 1,
     }) as unknown as Pool
   }
 
   return new PgPool({
-    connectionString: raw,
-    max: 8,
+    connectionString,
+    // Keep small on Vercel, but >1 so accidental nested pool.query during a
+    // checkout cannot deadlock the whole request (see knowledge-search-index).
+    max: process.env.VERCEL ? 3 : 8,
     idleTimeoutMillis: 20_000,
-    connectionTimeoutMillis: 8_000,
+    connectionTimeoutMillis: 10_000,
+    allowExitOnIdle: Boolean(process.env.VERCEL),
   })
 }
 

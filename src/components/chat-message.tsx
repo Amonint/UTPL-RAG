@@ -48,14 +48,6 @@ function SelectedServiceDetails({ meta }: { meta: SelectedServiceMeta }) {
   return (
     <div className="mt-4 space-y-4 border-t border-chalk pt-4 text-[15px] leading-7 text-obsidian">
       {answerText ? <p className="m-0 whitespace-pre-wrap">{answerText}</p> : null}
-      {types.length > 0 ? (
-        <div className="grid gap-1">
-          <p className="m-0">
-            <strong>Tipos de estudiante</strong>
-          </p>
-          <p className="m-0">{types.join(', ')}</p>
-        </div>
-      ) : null}
 
       {prose}
 

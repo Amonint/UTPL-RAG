@@ -255,6 +255,7 @@ export interface AdminItemDetail {
   isActive: boolean
   validFrom: string | null
   validTo: string | null
+  referenceUrl: string | null
   publishedAt: string | null
   reviewPolicy: string | null
   updatedAt: string
@@ -320,6 +321,7 @@ export async function getAdminKnowledgeItemById(id: string): Promise<AdminItemDe
     is_active: boolean
     valid_from: string | null
     valid_to: string | null
+    reference_url: string | null
     published_at: string | null
     review_policy: string | null
     updated_at: string
@@ -348,6 +350,7 @@ export async function getAdminKnowledgeItemById(id: string): Promise<AdminItemDe
         ki.is_active,
         ki.valid_from::text,
         ki.valid_to::text,
+        ki.reference_url,
         ki.published_at::text,
         ki.review_policy,
         ki.updated_at::text,
@@ -460,6 +463,7 @@ export async function getAdminKnowledgeItemById(id: string): Promise<AdminItemDe
     isActive: base.is_active,
     validFrom: base.valid_from,
     validTo: base.valid_to,
+    referenceUrl: base.reference_url,
     publishedAt: base.published_at,
     reviewPolicy: base.review_policy,
     updatedAt: base.updated_at,
@@ -609,11 +613,12 @@ export async function createKnowledgeItem(
         review_policy,
         valid_from,
         valid_to,
+        reference_url,
         published_at,
         is_active
       ) values (
         $1, $2, $3, $4, $5, $6,
-        'processed', $7, $8, $9, $10, $11, true
+        'processed', $7, $8, $9, $10, $11, $12, true
       )
       returning id::text
     `,
@@ -628,6 +633,7 @@ export async function createKnowledgeItem(
       encodeDocumentMeta({ periodLabel: input.periodLabel }),
       input.validFrom ?? null,
       input.validTo ?? null,
+      input.referenceUrl ?? null,
       publishedAt,
     ],
   )
@@ -714,6 +720,10 @@ export async function patchKnowledgeItem(
   } else if (input.reviewPolicy !== undefined) {
     values.push(input.reviewPolicy)
     sets.push(`review_policy = $${values.length}`)
+  }
+  if (input.referenceUrl !== undefined) {
+    values.push(input.referenceUrl)
+    sets.push(`reference_url = $${values.length}`)
   }
 
   values.push(id)

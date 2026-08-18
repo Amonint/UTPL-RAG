@@ -196,6 +196,7 @@ function KnowledgeForm({ sectionCode }: { sectionCode: 'faq' | 'general_info' })
   const [title, setTitle] = useState('')
   const [questionText, setQuestionText] = useState('')
   const [answerText, setAnswerText] = useState('')
+  const [referenceUrl, setReferenceUrl] = useState('')
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
@@ -238,6 +239,7 @@ function KnowledgeForm({ sectionCode }: { sectionCode: 'faq' | 'general_info' })
           title: isFaq ? undefined : title.trim(),
           questionText: isFaq ? questionText.trim() : '',
           answerText: answerText.trim(),
+          referenceUrl: referenceUrl.trim() || undefined,
         }),
       })
       const data = (await res.json()) as { error?: string }
@@ -378,6 +380,22 @@ function KnowledgeForm({ sectionCode }: { sectionCode: 'faq' | 'general_info' })
                   required
                 />
               </div>
+              <div>
+                <label htmlFor="url" className={labelClass}>
+                  URL de referencia (opcional)
+                </label>
+                <Input
+                  id="url"
+                  type="url"
+                  className="mt-1"
+                  value={referenceUrl}
+                  onChange={(e) => setReferenceUrl(e.target.value)}
+                  placeholder="https://ejemplo.com/mas-informacion"
+                />
+                <p className="mt-1 text-xs text-gravel">
+                  Enlace a un documento, formulario o página con más información relacionada
+                </p>
+              </div>
             </>
           ) : (
             <>
@@ -407,6 +425,22 @@ function KnowledgeForm({ sectionCode }: { sectionCode: 'faq' | 'general_info' })
                   placeholder="Escriba el contenido"
                   required
                 />
+              </div>
+              <div>
+                <label htmlFor="url-info" className={labelClass}>
+                  URL de referencia (opcional)
+                </label>
+                <Input
+                  id="url-info"
+                  type="url"
+                  className="mt-1"
+                  value={referenceUrl}
+                  onChange={(e) => setReferenceUrl(e.target.value)}
+                  placeholder="https://admisiones.universidad.edu/matricula"
+                />
+                <p className="mt-1 text-xs text-gravel">
+                  Enlace a un formulario, portal o recurso relacionado con esta información
+                </p>
               </div>
             </>
           )}

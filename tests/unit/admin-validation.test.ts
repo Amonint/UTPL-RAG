@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
-import { createItemSchema, editorialStatusSchema } from '@/lib/admin/validation'
+import { createItemSchema, editorialStatusSchema, patchCalendarEventStatusSchema } from '@/lib/admin/validation'
+import { calendarEventEditorialStatus } from '@/lib/calendar/event-scope-meta'
 
 describe('admin validation', () => {
   it('accepts editorial statuses from db check', () => {
@@ -27,5 +28,23 @@ describe('admin validation', () => {
       answerText: '',
     })
     expect(result.success).toBe(false)
+  })
+
+  it('acepta cambio de estado de calendario a publicado o revisión', () => {
+    expect(patchCalendarEventStatusSchema.parse({ editorialStatus: 'published' })).toEqual({
+      editorialStatus: 'published',
+    })
+    expect(patchCalendarEventStatusSchema.parse({ editorialStatus: 'review' })).toEqual({
+      editorialStatus: 'review',
+    })
+    expect(patchCalendarEventStatusSchema.safeParse({ editorialStatus: 'archived' }).success).toBe(
+      false,
+    )
+  })
+
+  it('trata eventos sin estado como publicados', () => {
+    expect(calendarEventEditorialStatus(null)).toBe('published')
+    expect(calendarEventEditorialStatus({ editorialStatus: 'review' })).toBe('review')
+    expect(calendarEventEditorialStatus({ editorialStatus: 'published' })).toBe('published')
   })
 })

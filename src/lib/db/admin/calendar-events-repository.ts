@@ -6,6 +6,7 @@ import {
   decodeScopeMeta,
   encodeScopeMeta,
   PROFILE_TYPE_TO_MODALITY_CODE,
+  type CalendarEditorialStatus,
   type CalendarEventScopeMeta,
 } from '@/lib/calendar/event-scope-meta'
 import {
@@ -606,6 +607,11 @@ export async function searchCalendarEventsForChat(input: {
       left join calendar_event_cycles cec on cec.calendar_event_id = ce.id
       left join cycle_periods cp on cp.id = cec.cycle_period_id
       where ce.is_active = true
+        and (
+          ce.details_text is null
+          or ce.details_text not like '{%'
+          or coalesce(ce.details_text::jsonb->>'editorialStatus', 'published') <> 'review'
+        )
       group by ce.id, ce.title, ce.event_type, ce.starts_on, ce.ends_on, ce.details_text${embeddingGroupByExpr}
     )
     select
@@ -756,6 +762,57 @@ export async function updateCalendarEvent(
   if (input.scope) {
     await replaceEventLinks(client, eventId, input.scope)
   }
+}
+
+const EDITORIAL_STATUS_JSON_SQL = `
+  jsonb_set(
+    case
+      when details_text is null or btrim(details_text) = '' or left(btrim(details_text), 1) <> '{'
+        then '{}'::jsonb
+      else details_text::jsonb
+    end,
+    '{editorialStatus}',
+    to_jsonb($status::text)
+  )::text
+`
+
+export async function updateCalendarEventEditorialStatus(
+  client: PoolClient,
+  eventId: string,
+  editorialStatus: CalendarEditorialStatus,
+): Promise<void> {
+  await dbQueryClient(
+    client,
+    `
+    update calendar_events
+    set details_text = ${EDITORIAL_STATUS_JSON_SQL.replace('$status', '$2')},
+        updated_at = now()
+    where id = $1::uuid and is_active
+    `,
+    [eventId, editorialStatus],
+  )
+}
+
+export async function publishAllCalendarEvents(client: PoolClient): Promise<number> {
+  const { rowCount } = await dbQueryClient(
+    client,
+    `
+    update calendar_events
+    set details_text = ${EDITORIAL_STATUS_JSON_SQL.replace('$status', '$1')},
+        updated_at = now()
+    where is_active
+      and coalesce(
+        case
+          when details_text is null or btrim(details_text) = '' or left(btrim(details_text), 1) <> '{'
+            then 'review'
+          else details_text::jsonb->>'editorialStatus'
+        end,
+        'review'
+      ) <> 'published'
+    `,
+    ['published'],
+  )
+  return rowCount ?? 0
 }
 
 export async function softDeleteCalendarEvent(client: PoolClient, eventId: string): Promise<void> {

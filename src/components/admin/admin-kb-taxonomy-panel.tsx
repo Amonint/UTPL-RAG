@@ -160,7 +160,7 @@ export function AdminKbTaxonomyPanel() {
         <div>
           <h2 className="text-lg font-medium text-obsidian">Organizar menú del asesor</h2>
           <p className="text-sm text-gravel">
-            Cree categorías, subcategorías y temas. El asesor solo ve nodos con contenido publicado.
+            Cree categorías, subcategorías y temas. El asesor solo ve lo que tiene contenido publicado.
           </p>
         </div>
         <Button type="button" variant="outline" onClick={() => void load()} disabled={loading}>
@@ -299,7 +299,7 @@ export function AdminKbTaxonomyPanel() {
                             <span className="text-obsidian">{el.name}</span>
                             <span className="text-xs text-gravel">
                               {el.itemCount > 0
-                                ? `${el.itemCount} publicado(s)`
+                                ? `${el.itemCount} publicado${el.itemCount === 1 ? '' : 's'}`
                                 : TAXONOMY_EMPTY_ELEMENT_HINT}
                             </span>
                           </li>

@@ -67,7 +67,8 @@ async function main() {
       console.warn(`Omitido (no es Textract raw v1): ${name}`)
       continue
     }
-    const { version: _v, ...rest } = raw
+    const { version: _version, ...rest } = raw
+    void _version
     documentos.push(rest)
     totalBloques += raw.blocks.length
     totalBytes += raw.bytes ?? 0

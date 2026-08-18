@@ -9,7 +9,7 @@ export function AdminTaxonomyManager() {
         <h2 className="text-xl font-medium tracking-tight text-obsidian">Administrar filtros</h2>
         <p className="max-w-2xl text-sm leading-relaxed text-gravel">
           Cree o edite los filtros del listado de información: secciones, áreas, modalidades, tipos de
-          estudiante, estados editoriales y periodos académicos.
+          estudiante, estados y periodos académicos.
         </p>
       </header>
 

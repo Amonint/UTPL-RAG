@@ -7,10 +7,19 @@ import {
   AdminCalendarEventDialog,
   type CalendarEventDialogFilters,
 } from '@/components/admin/admin-calendar-event-dialog'
+import { AdminCalendarImport } from '@/components/admin/admin-calendar-import'
 import type { CalendarEventWithScope } from '@/lib/calendar/types'
 import { colorForCategory } from '@/lib/calendar/event-categories'
-import { isCalendarEventPendingReview } from '@/lib/calendar/event-scope-meta'
-import { labelModality } from '@/lib/admin/ui-labels'
+import {
+  calendarEventEditorialStatus,
+  isCalendarEventPendingReview,
+  type CalendarEditorialStatus,
+} from '@/lib/calendar/event-scope-meta'
+import {
+  editorialStatusBadgeClass,
+  labelEditorialStatus,
+  labelModality,
+} from '@/lib/admin/ui-labels'
 import { normalizeText } from '@/lib/search/normalize'
 import { findPeriodPresetById, useAdminFilterCatalogs } from '@/hooks/use-admin-filter-catalogs'
 import { Button } from '@/components/ui/button'
@@ -48,6 +57,8 @@ export function AdminAcademicCalendarPanel({ fullPage = false }: { fullPage?: bo
   const [dialogOpen, setDialogOpen] = useState(false)
   const [dialogMode, setDialogMode] = useState<'create' | 'edit'>('create')
   const [editingEvent, setEditingEvent] = useState<CalendarEventWithScope | null>(null)
+  const [statusUpdatingId, setStatusUpdatingId] = useState<string | null>(null)
+  const [publishingAll, setPublishingAll] = useState(false)
 
   const load = useCallback(async () => {
     setLoading(true)
@@ -67,7 +78,7 @@ export function AdminAcademicCalendarPanel({ fullPage = false }: { fullPage?: bo
     const body = await res.json()
     if (!res.ok) {
       setTablesReady(res.status !== 503)
-      setError(body.error ?? 'No se pudo cargar el calendario')
+      setError(body.error ?? 'No se pudo cargar el calendario. Recargue la página e intente de nuevo.')
       setEvents([])
       setTotal(0)
     } else {
@@ -147,17 +158,57 @@ export function AdminAcademicCalendarPanel({ fullPage = false }: { fullPage?: bo
 
   const handleDelete = async (event: CalendarEventWithScope) => {
     if (typeof event.id !== 'string') return
-    const ok = window.confirm(`¿Deseas eliminar el evento «${event.title}»? Esta acción no se puede deshacer.`)
+    const ok = window.confirm(`¿Desea eliminar el evento «${event.title}»? Esta acción no se puede deshacer.`)
     if (!ok) return
     const res = await fetch(`/api/admin/calendar-events/${encodeURIComponent(event.id)}`, {
       method: 'DELETE',
     })
     const body = await res.json()
     if (!res.ok) {
-      window.alert(body.error ?? 'No se pudo eliminar')
+      window.alert(body.error ?? 'No se pudo eliminar el evento. Intente de nuevo.')
       return
     }
     await load()
+  }
+
+  const handleStatusChange = async (event: CalendarEventWithScope, editorialStatus: CalendarEditorialStatus) => {
+    if (typeof event.id !== 'string') return
+    if (calendarEventEditorialStatus(event.scope) === editorialStatus) return
+    setStatusUpdatingId(event.id)
+    try {
+      const res = await fetch(`/api/admin/calendar-events/${encodeURIComponent(event.id)}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ editorialStatus }),
+      })
+      const body = await res.json()
+      if (!res.ok) {
+        window.alert(body.error ?? 'No se pudo actualizar el estado. Intente de nuevo.')
+        return
+      }
+      await load()
+    } finally {
+      setStatusUpdatingId(null)
+    }
+  }
+
+  const handlePublishAll = async () => {
+    const ok = window.confirm(
+      `¿Publicar los ${pendingCount} evento${pendingCount === 1 ? '' : 's'} en revisión? Pasarán a ser visibles para el asesor.`,
+    )
+    if (!ok) return
+    setPublishingAll(true)
+    try {
+      const res = await fetch('/api/admin/calendar-events/publish-all', { method: 'POST' })
+      const body = await res.json()
+      if (!res.ok) {
+        window.alert(body.error ?? 'No se pudieron publicar los eventos')
+        return
+      }
+      await load()
+    } finally {
+      setPublishingAll(false)
+    }
   }
 
   const domainName = (code: string | undefined) =>
@@ -173,18 +224,36 @@ export function AdminAcademicCalendarPanel({ fullPage = false }: { fullPage?: bo
         <div>
           <h2 className="text-lg font-medium text-obsidian">Calendario académico</h2>
           <p className="text-sm text-gravel">
-            Al crear un evento complete el tipo de evento y la audiencia (área, modalidad, tipo de
-            estudiante y periodo) para que aparezca en el calendario del asesor.
+            Al crear un evento, defina a quién aplica (área, modalidad, tipo de estudiante y periodo)
+            y las fechas, para que aparezca en el calendario del asesor.
           </p>
           {pendingCount > 0 ? (
             <p className="mt-1 text-sm text-amber-800">
-              Hay {pendingCount} evento{pendingCount === 1 ? '' : 's'} pendiente
-              {pendingCount === 1 ? '' : 's'} de revisión (cargados desde /cargar).
+              Hay {pendingCount} evento{pendingCount === 1 ? '' : 's'} en revisión esperando
+              publicación.
             </p>
           ) : null}
         </div>
-        {tablesReady ? <Button onClick={openCreate}>Nuevo evento</Button> : null}
+        {tablesReady ? (
+          <div className="flex flex-wrap gap-2">
+            {pendingCount > 0 ? (
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => void handlePublishAll()}
+                disabled={publishingAll}
+              >
+                {publishingAll ? 'Publicando…' : `Publicar todos (${pendingCount})`}
+              </Button>
+            ) : null}
+            <Button onClick={openCreate}>Nuevo evento</Button>
+          </div>
+        ) : null}
       </div>
+
+      {tablesReady ? (
+        <AdminCalendarImport onImported={() => void load()} />
+      ) : null}
 
       <div className="flex flex-col gap-2 rounded-lg border border-chalk bg-white p-3">
         <div className="flex flex-wrap items-center justify-between gap-2">
@@ -263,7 +332,7 @@ export function AdminAcademicCalendarPanel({ fullPage = false }: { fullPage?: bo
       {error ? <p className="text-sm text-red-700">{error}</p> : null}
       {!tablesReady ? (
         <p className="text-sm text-amber-800">
-          Ejecute la migración SQL de calendario en Neon para habilitar la edición.
+          La edición de calendario aún no está disponible. Pida al equipo técnico activarla.
         </p>
       ) : null}
 
@@ -284,6 +353,7 @@ export function AdminAcademicCalendarPanel({ fullPage = false }: { fullPage?: bo
                 <th className="px-3 py-2">Modalidad</th>
                 <th className="px-3 py-2">Inicio</th>
                 <th className="px-3 py-2">Fin</th>
+                <th className="px-3 py-2">Estado</th>
                 <th className="px-3 py-2" />
               </tr>
             </thead>
@@ -315,14 +385,7 @@ export function AdminAcademicCalendarPanel({ fullPage = false }: { fullPage?: bo
                         )}
                       </td>
                       <td className="max-w-[280px] px-3 py-2">
-                        <div className="flex flex-col gap-1">
-                          <p className="line-clamp-2 font-medium text-obsidian">{event.title}</p>
-                          {isCalendarEventPendingReview(event.scope) ? (
-                            <span className="inline-flex w-fit rounded bg-amber-100 px-2 py-0.5 text-[11px] font-medium text-amber-900">
-                              En revisión
-                            </span>
-                          ) : null}
-                        </div>
+                        <p className="line-clamp-2 font-medium text-obsidian">{event.title}</p>
                       </td>
                       <td className="px-3 py-2">
                         <span
@@ -342,6 +405,38 @@ export function AdminAcademicCalendarPanel({ fullPage = false }: { fullPage?: bo
                       </td>
                       <td className="whitespace-nowrap px-3 py-2 text-xs text-gravel">
                         {formatDateShort(event.end)}
+                      </td>
+                      <td className="px-3 py-2" onClick={(e) => e.stopPropagation()}>
+                        {isDbEvent ? (
+                          <div className="flex flex-col gap-1">
+                            <span
+                              className={editorialStatusBadgeClass(
+                                calendarEventEditorialStatus(event.scope),
+                              )}
+                            >
+                              {labelEditorialStatus(calendarEventEditorialStatus(event.scope))}
+                            </span>
+                            <select
+                              className="rounded-md border border-chalk bg-white px-2 py-1 text-xs text-obsidian"
+                              aria-label={`Estado de ${event.title}`}
+                              value={calendarEventEditorialStatus(event.scope)}
+                              disabled={statusUpdatingId === id}
+                              onChange={(e) =>
+                                void handleStatusChange(
+                                  event,
+                                  e.target.value as CalendarEditorialStatus,
+                                )
+                              }
+                            >
+                              <option value="review">En revisión</option>
+                              <option value="published">Publicado</option>
+                            </select>
+                          </div>
+                        ) : (
+                          <span className={editorialStatusBadgeClass('published')}>
+                            {labelEditorialStatus('published')}
+                          </span>
+                        )}
                       </td>
                       <td
                         className="px-3 py-2 text-right"
@@ -370,7 +465,7 @@ export function AdminAcademicCalendarPanel({ fullPage = false }: { fullPage?: bo
                     {isExpanded ? (
                       <tr className="border-b border-chalk bg-chalk/20">
                         <td />
-                        <td colSpan={6} className="px-3 pb-3 pt-2">
+                        <td colSpan={7} className="px-3 pb-3 pt-2">
                           {hasScope ? (
                             <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-gravel">
                               {scope?.domainCode ? (
@@ -408,7 +503,7 @@ export function AdminAcademicCalendarPanel({ fullPage = false }: { fullPage?: bo
                             </div>
                           ) : (
                             <p className="text-xs italic text-gravel">
-                              Sin alcance específico — aplica a todos los asesores.
+                              Aplica a todos los asesores.
                             </p>
                           )}
                         </td>

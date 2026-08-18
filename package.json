@@ -62,7 +62,14 @@
     "db:migrate:search-document": "tsx --env-file-if-exists=.env scripts/backfill-knowledge-search-document.ts",
     "db:migrate:search-embeddings": "tsx --env-file-if-exists=.env scripts/backfill-knowledge-embeddings.ts",
     "db:backfill:search-embeddings": "tsx --env-file-if-exists=.env scripts/backfill-knowledge-embeddings.ts",
-    "admin:db-stats": "bash -c 'if [ -f .env ]; then export DATABASE_URL=\"$(grep -m1 ^DATABASE_URL= .env | cut -d= -f2-)\"; fi; bash scripts/admin-db-stats.sh'"
+    "admin:db-stats": "bash -c 'if [ -f .env ]; then export DATABASE_URL=\"$(grep -m1 ^DATABASE_URL= .env | cut -d= -f2-)\"; fi; bash scripts/admin-db-stats.sh'",
+    "import:descuentos:calendar:emit-json": "tsx scripts/import_calendar_events_bulk.ts --seed descuentos --emit-json",
+    "import:descuentos:calendar:dry-run": "tsx scripts/import_calendar_events_bulk.ts --seed descuentos",
+    "import:descuentos:calendar": "tsx --env-file-if-exists=.env scripts/import_calendar_events_bulk.ts --seed descuentos --apply",
+    "import:matriculas:calendar:emit-json": "tsx scripts/import_calendar_events_bulk.ts --seed matriculas --emit-json",
+    "import:matriculas:calendar:dry-run": "tsx scripts/import_calendar_events_bulk.ts --seed matriculas",
+    "import:matriculas:calendar": "tsx --env-file-if-exists=.env scripts/import_calendar_events_bulk.ts --seed matriculas --apply",
+    "publish:calendar:all": "tsx --env-file-if-exists=.env scripts/publish_all_calendar_events.ts"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

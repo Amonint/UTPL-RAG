@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es" className={interTight.variable}>
-      <body className="flex h-dvh flex-col antialiased">
+      <body className="flex h-dvh flex-col antialiased" suppressHydrationWarning>
         <SiteNavbar />
         <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden">{children}</div>
       </body>

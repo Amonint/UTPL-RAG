@@ -1,6 +1,9 @@
 import { describe, expect, it } from 'vitest'
 
-import { normalizeNeonConnectionString } from '@/lib/db/postgres-internal'
+import {
+  normalizeNeonConnectionString,
+  resolveDbPoolDriver,
+} from '@/lib/db/postgres-internal'
 
 describe('normalizeNeonConnectionString', () => {
   it('adds pooler and drops channel_binding for Neon hosts', () => {
@@ -19,5 +22,30 @@ describe('normalizeNeonConnectionString', () => {
       'ep-empty-queen-aq4t12ad-pooler.c-8.us-east-1.aws.neon.tech',
     )
     expect(normalizeNeonConnectionString(input).match(/-pooler/g)).toHaveLength(1)
+  })
+})
+
+describe('resolveDbPoolDriver', () => {
+  const neonUrl =
+    'postgresql://u:p@ep-empty-queen-aq4t12ad.c-8.us-east-1.aws.neon.tech/neondb?sslmode=require'
+
+  it('uses pg (TCP) for Neon on Node/Vercel so transactions do not need WebSockets', () => {
+    expect(resolveDbPoolDriver({ connectionString: neonUrl, nextRuntime: 'nodejs' })).toBe('pg')
+    expect(resolveDbPoolDriver({ connectionString: neonUrl, vercel: true })).toBe('pg')
+    expect(resolveDbPoolDriver({ connectionString: neonUrl })).toBe('pg')
+  })
+
+  it('keeps neon-serverless only for Edge runtime', () => {
+    expect(resolveDbPoolDriver({ connectionString: neonUrl, nextRuntime: 'edge' })).toBe(
+      'neon-serverless',
+    )
+  })
+
+  it('uses pg for non-Neon URLs', () => {
+    expect(
+      resolveDbPoolDriver({
+        connectionString: 'postgresql://u:p@localhost:5432/db',
+      }),
+    ).toBe('pg')
   })
 })

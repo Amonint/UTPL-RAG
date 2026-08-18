@@ -10,8 +10,7 @@ export function AdminFiltersModalContent() {
         <p className={styles.eyebrow}>Administración interna</p>
         <h3 className={styles.title}>Administrar filtros</h3>
         <p className={styles.description}>
-          Cree, edite o desactive filtros para el listado de información. Esta ventana concentra toda la
-          gestión.
+          Cree, edite o desactive los filtros del listado de información.
         </p>
       </header>
       <div className={styles.body}>

@@ -4,13 +4,21 @@ import { getPool } from './postgres-internal'
 
 export async function withDbTransaction<T>(fn: (client: PoolClient) => Promise<T>): Promise<T> {
   const client = await getPool().connect()
+  let transactionStarted = false
   try {
     await client.query('BEGIN')
+    transactionStarted = true
     const result = await fn(client)
     await client.query('COMMIT')
     return result
   } catch (error) {
-    await client.query('ROLLBACK')
+    if (transactionStarted) {
+      try {
+        await client.query('ROLLBACK')
+      } catch {
+        // Dead client: do not mask the original error with "not queryable".
+      }
+    }
     throw error
   } finally {
     client.release()

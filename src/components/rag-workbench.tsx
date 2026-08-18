@@ -62,6 +62,7 @@ export function RagWorkbench() {
   const [searching, setSearching] = useState(false)
   const [liveResults, setLiveResults] = useState<SearchResult[]>([])
   const [taxonomy, setTaxonomy] = useState<KbTaxonomyCategory[]>([])
+  const [taxonomyLoading, setTaxonomyLoading] = useState(false)
   const [filters, setFilters] = useState<KbFilters>({ category: '', subcategory: '', element: '' })
   const [viewMode, setViewMode] = useState<KbViewMode>('chat')
   const [leafSelection, setLeafSelection] = useState<KbLeafSelection | null>(null)
@@ -94,6 +95,7 @@ export function RagWorkbench() {
 
   useEffect(() => {
     let cancelled = false
+    setTaxonomyLoading(true)
     ;(async () => {
       try {
         const response = await fetch('/api/search-services', {
@@ -111,6 +113,8 @@ export function RagWorkbench() {
         }
       } catch {
         // taxonomy stays empty until a search response provides it
+      } finally {
+        if (!cancelled) setTaxonomyLoading(false)
       }
     })()
     return () => {
@@ -359,12 +363,23 @@ export function RagWorkbench() {
   })()
 
   function handleNavSectionChange(next: KbNavSection) {
+    if (next === navSection) return
     setNavSection(next)
+    setTaxonomy([])
+    setViewMode('chat')
+    setLeafSelection(null)
+    setFilters({ category: '', subcategory: '', element: '' })
+    setDetailItems([])
+    setActiveDetailId(null)
+    setDetailError(null)
+    setDetailLoading(false)
+    setSelectedService(null)
   }
 
   const leftNav = (
     <KbLeftNav
       taxonomy={taxonomy}
+      loading={taxonomyLoading}
       filters={filters}
       activeSection={navSection}
       sectionPickerVariant={isLargeScreen ? 'tabs' : 'select'}
@@ -397,7 +412,7 @@ export function RagWorkbench() {
         : 'Preguntas frecuentes'
 
   return (
-    <section className="grid h-full min-h-0 grid-cols-1 overflow-hidden lg:grid-cols-[minmax(260px,300px)_minmax(0,1fr)]">
+    <section className="grid h-full min-h-0 grid-cols-1 overflow-hidden lg:grid-cols-[minmax(260px,420px)_minmax(0,1fr)]">
       {isLargeScreen ? (
         <div className="flex h-full min-h-0 flex-col overflow-hidden border-r border-chalk bg-white">
           {leftNav}
