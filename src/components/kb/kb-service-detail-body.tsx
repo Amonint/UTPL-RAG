@@ -11,6 +11,7 @@ import { AudienceBadges } from '@/components/kb/audience-badges'
 import { contentTypeLabel } from '@/lib/kb/content-labels'
 import { documentationDetailTitle } from '@/lib/kb/audience-labels'
 import { sanitizePublicAnswerText } from '@/lib/kb/sanitize-public-answer'
+import { ParsedAnswerText } from '@/components/kb/parsed-answer-text'
 import type { PdfRef } from '@/lib/types'
 
 export type KbServiceDetailItem = {
@@ -85,7 +86,9 @@ export function KbServiceDetailBody({ item }: { item: KbServiceDetailItem }) {
       </header>
 
       {answerText ? (
-        <div className="whitespace-pre-wrap text-[15px] leading-7 text-obsidian">{answerText}</div>
+        <div className="whitespace-pre-wrap text-[15px] leading-7 text-obsidian">
+          <ParsedAnswerText text={answerText} />
+        </div>
       ) : null}
 
       {hasExtraProse ? <div className="text-[15px] leading-7 text-obsidian">{prose}</div> : null}

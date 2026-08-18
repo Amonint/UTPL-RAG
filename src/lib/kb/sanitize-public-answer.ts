@@ -43,3 +43,47 @@ export function sanitizePublicAnswerText(text: string): string {
   const cleaned = kept.join('\n')
   return cleaned.replace(/\n{3,}/g, '\n\n').trim()
 }
+
+export interface EmbeddedLink {
+  url: string
+  text: string
+}
+
+/**
+ * Extrae URLs embebidas entre [ y ] del texto
+ * Ejemplo: "Ver en el siguiente [https://ejemplo.com]" → { url: "https://...", text: "[https://...]" }
+ */
+export function extractEmbeddedLinks(text: string): EmbeddedLink[] {
+  const links: EmbeddedLink[] = []
+  const regex = /\[([^\]]+)\]/g
+  let match
+
+  while ((match = regex.exec(text)) !== null) {
+    const content = match[1]!.trim()
+    if (content.startsWith('http://') || content.startsWith('https://')) {
+      links.push({
+        url: content,
+        text: match[0]!,
+      })
+    }
+  }
+
+  return links
+}
+
+/**
+ * Reemplaza URLs embebidas entre [ y ] con marcadores únicos
+ * Mantiene un mapa para reconstruir después
+ */
+export function replaceEmbeddedLinksWithPlaceholders(
+  text: string,
+): { text: string; links: EmbeddedLink[] } {
+  const links = extractEmbeddedLinks(text)
+  let result = text
+
+  links.forEach((link, index) => {
+    result = result.replace(link.text, `__EMBEDDED_LINK_${index}__`)
+  })
+
+  return { text: result, links }
+}
