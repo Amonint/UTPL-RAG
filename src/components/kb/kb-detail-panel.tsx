@@ -117,6 +117,7 @@ export function KbDetailPanel({
               jsonPayload: (activeItem.jsonPayload ?? {}) as Record<string, unknown>,
               studentTypes: activeItem.studentTypes,
               pdfRefs: activeItem.pdfRefs,
+              referenceUrl: activeItem.referenceUrl,
               uiSection,
             }}
           />

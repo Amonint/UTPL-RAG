@@ -133,9 +133,12 @@ export function documentationDetailTitle(input: {
   elementName?: string | null
   serviceName?: string | null
 }): string {
-  const element = input.elementName?.trim() || input.serviceName?.trim()
+  const realTitle = input.serviceName?.trim()
+  if (realTitle) return realTitle
+
+  const element = input.elementName?.trim()
   if (input.sectionCode === 'general_info' && element) {
     return `Información de ${element} para los diferentes perfiles`
   }
-  return input.serviceName?.trim() || element || 'Contenido'
+  return element || 'Contenido'
 }

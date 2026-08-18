@@ -20,6 +20,7 @@ export type KbServiceDetailItem = {
   jsonPayload: Record<string, unknown>
   studentTypes?: string[]
   pdfRefs?: PdfRef[]
+  referenceUrl?: string | null
   uiSection?: 'documentation' | 'services_incidents'
 }
 
@@ -87,15 +88,6 @@ export function KbServiceDetailBody({ item }: { item: KbServiceDetailItem }) {
         <div className="whitespace-pre-wrap text-[15px] leading-7 text-obsidian">{answerText}</div>
       ) : null}
 
-      {types.length > 0 ? (
-        <div className="grid gap-1 text-[15px] leading-7 text-obsidian">
-          <p className="m-0">
-            <strong>Tipos de estudiante</strong>
-          </p>
-          <p className="m-0">{types.join(', ')}</p>
-        </div>
-      ) : null}
-
       {hasExtraProse ? <div className="text-[15px] leading-7 text-obsidian">{prose}</div> : null}
 
       {extraPdfs.length > 0 ? (
@@ -122,6 +114,22 @@ export function KbServiceDetailBody({ item }: { item: KbServiceDetailItem }) {
               )
             })}
           </ul>
+        </div>
+      ) : null}
+
+      {item.referenceUrl ? (
+        <div className="grid gap-2 text-[15px] leading-7 text-obsidian">
+          <p className="m-0">
+            <strong>Más información</strong>
+          </p>
+          <a
+            href={item.referenceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 font-medium text-primary underline underline-offset-2 hover:text-primary/90"
+          >
+            Ver enlace
+          </a>
         </div>
       ) : null}
     </article>

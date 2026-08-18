@@ -45,4 +45,5 @@ export type SearchResult = {
   studentTypes?: StudentType[]
   pdfRefs?: PdfRef[]
   jsonPayload?: Record<string, unknown>
+  referenceUrl?: string | null
 }

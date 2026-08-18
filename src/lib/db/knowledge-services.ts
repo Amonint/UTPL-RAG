@@ -99,6 +99,7 @@ interface SearchRow {
   audience_score?: number
   section_boost?: number
   pdf_refs_json?: unknown
+  reference_url?: string | null
 }
 
 export function parsePdfRefsFromJson(raw: unknown): PdfRef[] {
@@ -175,6 +176,7 @@ function buildWhere(
   values: unknown[],
   hybrid: HybridSearchContext,
   queryParams: { likeParam: string; tsqParam: string; similarityParam: string },
+  taxonomyParams: { categoryParam?: string; subcategoryParam?: string; elementParam?: string },
 ): string {
   const hasTaxonomyFilters = Boolean(input.category || input.subcategory || input.element)
   const crossSection = input.crossSection === true || (Boolean(input.query?.trim()) && !hasTaxonomyFilters)
@@ -190,14 +192,14 @@ function buildWhere(
     clauses.push(`ki.section_code = '${sectionCode}'`)
   }
 
-  if (input.category) {
-    clauses.push(`kc.slug = $${values.indexOf(input.category) + 1}`)
+  if (input.category && taxonomyParams.categoryParam) {
+    clauses.push(`kc.slug = ${taxonomyParams.categoryParam}`)
   }
-  if (input.subcategory) {
-    clauses.push(`ks.slug = $${values.indexOf(input.subcategory) + 1}`)
+  if (input.subcategory && taxonomyParams.subcategoryParam) {
+    clauses.push(`ks.slug = ${taxonomyParams.subcategoryParam}`)
   }
-  if (input.element) {
-    clauses.push(`ke.slug = $${values.indexOf(input.element) + 1}`)
+  if (input.element && taxonomyParams.elementParam) {
+    clauses.push(`ke.slug = ${taxonomyParams.elementParam}`)
   }
 
   const q = input.query?.trim()
@@ -270,6 +272,7 @@ function mapRowToSearchResult(row: SearchRow): SearchResult {
     pdfRefs,
     jsonPayload,
     matchHints: scopeLine ? [scopeLine] : [],
+    referenceUrl: row.reference_url || undefined,
   }
 }
 
@@ -299,9 +302,21 @@ export async function searchKnowledgeServices(input: SearchKnowledgeInput): Prom
   if (!tablesReady) return []
 
   const values: unknown[] = []
-  if (input.category) values.push(input.category)
-  if (input.subcategory) values.push(input.subcategory)
-  if (input.element) values.push(input.element)
+  let categoryParam: string | undefined
+  let subcategoryParam: string | undefined
+  let elementParam: string | undefined
+  if (input.category) {
+    values.push(input.category)
+    categoryParam = `$${values.length}`
+  }
+  if (input.subcategory) {
+    values.push(input.subcategory)
+    subcategoryParam = `$${values.length}`
+  }
+  if (input.element) {
+    values.push(input.element)
+    elementParam = `$${values.length}`
+  }
 
   const searchDocReady = await isKnowledgeSearchDocumentColumnReady(dbQuery)
   const embeddingReady = await isKnowledgeSearchEmbeddingColumnReady(dbQuery)
@@ -357,7 +372,11 @@ export async function searchKnowledgeServices(input: SearchKnowledgeInput): Prom
     semanticWeight: searchSemanticWeight(),
   }
 
-  const whereSql = buildWhere(input, values, hybrid, { likeParam, tsqParam, similarityParam })
+  const whereSql = buildWhere(input, values, hybrid, { likeParam, tsqParam, similarityParam }, {
+    categoryParam,
+    subcategoryParam,
+    elementParam,
+  })
   const audienceTablesReady = await areAudienceTablesReady()
   const attachmentTablesReady = await areAttachmentTablesReady()
   const normalizedProfileCode = input.profileCode?.trim().toLowerCase() || null
@@ -482,6 +501,7 @@ export async function searchKnowledgeServices(input: SearchKnowledgeInput): Prom
       d.code as domain_code,
       d.name as domain_name,
       ki.review_policy,
+      ki.reference_url,
       kc.service_category_code,
       pa.modality,
       pa.program_level,
