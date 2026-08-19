@@ -1,6 +1,8 @@
 import { extractPdfContent } from '@/lib/ocr/gemini-pdf-ocr'
 import { dbQuery } from '@/lib/db/postgres'
 
+export const maxDuration = 60
+
 interface CreatedItem {
   id: string
   sectionCode: 'faq' | 'general_info'
